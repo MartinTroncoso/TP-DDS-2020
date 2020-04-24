@@ -13,8 +13,14 @@ public class TestDummyDesing
     DummyDesign dummyTest = new DummyDesign();
 
     @Test
-    public void integrante2Devuelve2()
+    public void testIntegrante2()
     {
-        assertEquals( 2 , dummyTest.integrante2() );
+        assertEquals(2, dummyTest.integrante2());
+    }
+    
+    @Test
+    public void testIntegrante1()
+    {
+        assertEquals(1, dummyTest.integrante1());
     }
 }
