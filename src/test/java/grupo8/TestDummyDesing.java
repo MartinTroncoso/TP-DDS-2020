@@ -28,4 +28,10 @@ public class TestDummyDesing
     {
     	assertEquals(4, dummyTest.integrante4());
     }
+    
+    @Test
+    public void testIntegrante3()
+    {
+    	assertEquals(3, dummyTest.integrante3());
+    }
 }
