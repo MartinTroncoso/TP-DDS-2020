@@ -17,6 +17,10 @@ public class DummyDesign {
     public int integrante3() {
     	return 3;
     }
+    
+    public int integrante5() {
+    	return 5;
+    }
 }
 
 
@@ -25,7 +29,7 @@ public class DummyDesign {
  * 2 Cervantes, Marisol
  * 3 Tapia, Paul
  * 4 Troncoso, Martin
- * 5 Vazquez, Paul
+ * 5 Vazquez, Paul Roussel
  *
  */
 
