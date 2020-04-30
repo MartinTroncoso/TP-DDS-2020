@@ -38,7 +38,7 @@ public class TestDummyDesing
     @Test
     public void testIntegrante5() {
     	
-    	assertEquals(3, dummyTest.integrante5());
+    	assertEquals(5, dummyTest.integrante5());
     }
     
 }
