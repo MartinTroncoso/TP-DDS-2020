@@ -52,6 +52,7 @@ public class UsuarioBuilder {
 			throw new UsuarioIncompletoException("No se ha especificado todos los datos del usuario");
 		}
 		return new Usuario(nombreUsuario, contrasenia, tipoUsuario);
+		//TODO: falta la Entidad en ese constructor
 	}
 
 	public void controlarTopPeoresContrasenias(String contrasenia) {

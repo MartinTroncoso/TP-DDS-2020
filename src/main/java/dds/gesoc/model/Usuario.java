@@ -1,5 +1,7 @@
 package dds.gesoc.model;
 
+import dds.gesoc.model.organizaciones.Entidad;
+
 public class Usuario {
 	
 	private String nombreUsuario;
