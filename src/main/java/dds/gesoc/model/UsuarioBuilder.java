@@ -8,15 +8,18 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import dds.gesoc.exceptions.AtributoNullException;
 import dds.gesoc.exceptions.NombreUsuarioNullException;
 import dds.gesoc.exceptions.PeoresContraseniasException;
 import dds.gesoc.exceptions.UsuarioIncompletoException;
+import dds.gesoc.model.organizaciones.Entidad;
 
 public class UsuarioBuilder {
 
 	private String nombreUsuario;
 	private String contrasenia;
-	TipoUsuario tipoUsuario;
+	private TipoUsuario tipoUsuario;
+	private Entidad entidad;
 
 	public UsuarioBuilder() {
 	}
@@ -29,15 +32,27 @@ public class UsuarioBuilder {
 		return this.contrasenia;
 	}
 	
+	public Entidad getEntidad() {
+		return this.entidad;
+	}
+	
 	public void especificarNombreUsuario(String nombreUsuario) {
+		validateNonNull(nombreUsuario);
 		this.nombreUsuario = nombreUsuario;
 	}
 	
 	public void especificarTipoUsuario(TipoUsuario tipoUsuario) {
+		validateNonNull(tipoUsuario);
 		this.tipoUsuario = tipoUsuario;
+	}
+	
+	public void especificarEntidad(Entidad entidad) {
+		validateNonNull(entidad);
+		this.entidad = entidad;
 	}
 
 	public void especificarContrasenia(String posibleContrasenia) {
+		validateNonNull(entidad);
 		if (nombreUsuario == null) {
 			throw new NombreUsuarioNullException(
 					"Se debe especificar el nombre de usuario antes que la contraseña, para poder hacer las validaciones");
@@ -48,10 +63,11 @@ public class UsuarioBuilder {
 	}
 	
 	public Usuario crearUsuario() {
-		if(nombreUsuario == null || contrasenia == null || tipoUsuario == null) {
-			throw new UsuarioIncompletoException("No se ha especificado todos los datos del usuario");
-		}
-		return new Usuario(nombreUsuario, contrasenia, tipoUsuario);
+		validateNonNull(nombreUsuario);
+		validateNonNull(tipoUsuario);
+		validateNonNull(entidad);
+		validateNonNull(entidad);
+		return new Usuario(nombreUsuario, contrasenia, tipoUsuario, entidad);
 		//TODO: falta la Entidad en ese constructor
 	}
 
@@ -65,6 +81,12 @@ public class UsuarioBuilder {
 	private void validacionComplejidadContrasenia(String contrasenia) {
 		List<ValidacionContrasenia> validaciones = Arrays.asList(ValidacionContrasenia.values());
 		validaciones.forEach(v -> v.ejecutar(this.getNombreUsuario(), contrasenia));
+	}
+	
+	private void validateNonNull(Object obj) {
+		if(obj == null) {
+			throw new AtributoNullException("Se trato de especificar un null como atributo de usuario");
+		}
 	}
 
 	private List<String> obtenerContrasenias() {
