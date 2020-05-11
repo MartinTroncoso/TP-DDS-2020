@@ -2,7 +2,7 @@ package dds.gesoc.model.organizaciones;
 
 import dds.gesoc.model.organizaciones.Exeptions.NoClasificaComoPymeException;
 
-public class Sector {
+class Sector {
 
     private int maxMicro;
     private int maxPequenia;
@@ -10,6 +10,7 @@ public class Sector {
     private int maxMediana2;
 
     public TipoEmpresa clasificarPorMonto(int ventasAnuales) {
+        //Ventas anuales debe ser positivo
 
         if(ventasAnuales <= maxMicro)
             return TipoEmpresa.MICRO;
@@ -57,54 +58,4 @@ public class Sector {
     }
 }
 
-
-class SectorConstruccion extends Sector {
-
-    public SectorConstruccion() {
-        setMaxMicro(15230000);
-        setMaxPequenia(90310000);
-        setMaxMediana1(503880000);
-        setMaxMediana2(755740000);
-    }
-}
-
-class SectorIndustriaMineria extends Sector {
-
-    public SectorIndustriaMineria() {
-        setMaxMicro(26540000);
-        setMaxPequenia(190410000);
-        setMaxMediana1(1190330000);
-        setMaxMediana2(1739590000);
-    }
-}
-
-class SectorServicios extends Sector {
-
-    public SectorServicios() {
-        setMaxMicro(8500000);
-        setMaxPequenia(50950000);
-        setMaxMediana1(425170000);
-        setMaxMediana2(607210000);
-    }
-}
-
-class SectorAgropecuario extends Sector {
-
-    public SectorAgropecuario() {
-        setMaxMicro(12890000);
-        setMaxPequenia(48480000);
-        setMaxMediana1(345430000);
-        setMaxMediana2(547890000);
-    }
-}
-
-class SectorComercio extends Sector {
-
-    public SectorComercio() {
-        setMaxMicro(29740000);
-        setMaxPequenia(178860000);
-        setMaxMediana1(1502750000);
-        setMaxMediana2(2146810000);
-    }
-}
 

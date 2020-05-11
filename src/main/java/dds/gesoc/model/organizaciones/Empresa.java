@@ -18,15 +18,20 @@ public class Empresa extends EntidadJuridica {
         tipoEmpresa = sector.clasificarPorMonto(ventasAnuales);
     }
 
+    public int getVentasAnuales() {
+        return ventasAnuales;
+    }
 
+    public TipoEmpresa getTipoEmpresa() {
+        return tipoEmpresa;
+    }
 
-}
+    public Sector getSector() {
+        return sector;
+    }
 
-
-enum TipoEmpresa {
-    MICRO,
-    PEQUEÑA,
-    MEDIANA_TRAMO1,
-    MEDIANA_TRAMO2;
+    public void setVentasAnuales(int ventasAnuales) {  //nada más para hacer el test
+        this.ventasAnuales = ventasAnuales;
+    }
 }
 
