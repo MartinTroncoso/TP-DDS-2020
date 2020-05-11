@@ -15,7 +15,7 @@ class Sector {
         if(ventasAnuales <= maxMicro)
             return TipoEmpresa.MICRO;
         else if (ventasAnuales <= maxPequenia)
-            return TipoEmpresa.PEQUEÑA;
+            return TipoEmpresa.PEQUENIA;
         else if (ventasAnuales <= maxMediana1)
             return TipoEmpresa.MEDIANA_TRAMO1;
         else if (ventasAnuales <= maxMediana2)
