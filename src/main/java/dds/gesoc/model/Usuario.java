@@ -12,8 +12,13 @@ public class Usuario {
 		this.tipoUsuario = tipoUsuario;
 	}
 	
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+	
 	boolean autenticarUsuario(String contraseniaCandidata) {
 		String contraseniaCandidataHasheada = CreadorHash.getInstance().hashContrasenia(contraseniaCandidata);
 		return contrasenia.equals(contraseniaCandidataHasheada);
 	}
+	
 }
