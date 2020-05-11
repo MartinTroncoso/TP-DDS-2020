@@ -1,5 +1,6 @@
 package dds.gesoc.model;
 
+import java.util.Collections;
 import java.util.stream.Stream;
 
 import dds.gesoc.exceptions.ContraseniaConLongitudCortaException;
@@ -28,7 +29,8 @@ public enum ValidacionContrasenia {
 		public void ejecutar(String nombre, String contrasenia) {
 			Stream<Character> sch = contrasenia.chars().mapToObj(i -> (char) i);
 			sch.forEach(c ->{
-				if(contrasenia.contains(c.toString().repeat(4))) {
+				String caracRepetido = String.join("", Collections.nCopies(4, c.toString()));
+				if(contrasenia.contains(caracRepetido)) {
 					throw new ContraseniaConRepetidosSeguidosException("La contraseña ingresada contiene el caracter " + c.toString() + " repetido de forma consecutiva");
 				}
 			});

@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 import dds.gesoc.exceptions.AtributoNullException;
 import dds.gesoc.exceptions.NombreUsuarioNullException;
 import dds.gesoc.exceptions.PeoresContraseniasException;
-import dds.gesoc.exceptions.UsuarioIncompletoException;
 import dds.gesoc.model.organizaciones.Entidad;
 
 public class UsuarioBuilder {
@@ -65,7 +64,7 @@ public class UsuarioBuilder {
 	public Usuario crearUsuario() {
 		validateNonNull(nombreUsuario);
 		validateNonNull(tipoUsuario);
-		validateNonNull(entidad);
+		validateNonNull(contrasenia);
 		validateNonNull(entidad);
 		return new Usuario(nombreUsuario, contrasenia, tipoUsuario, entidad);
 		//TODO: falta la Entidad en ese constructor
