@@ -7,8 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="PruebaConcepto" />
-        <module name="prueba-concepto" />
+        <module name="dds.gesoc" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="prueba-concepto" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
