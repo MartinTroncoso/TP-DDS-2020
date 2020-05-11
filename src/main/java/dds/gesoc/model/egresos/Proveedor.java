@@ -2,6 +2,9 @@ package dds.gesoc.model.egresos;
 
 import java.util.Objects;
 
+import dds.gesoc.model.egresos.exceptions.CuitIncorrectoException;
+import dds.gesoc.model.egresos.exceptions.DniIncorrectoException;
+
 public class Proveedor {
 	private String nombreORazonSocial;
 	private int dni;
@@ -32,7 +35,7 @@ public class Proveedor {
 		if(ValidacionCuit.validate(cuit)) {
 			this.setCuil_cuit(cuit);
 		}else {
-			throw new CuitIncorrectoExcepction("Se ingresó un numero de CUIT incorrecto");
+			throw new CuitIncorrectoException("Se ingresó un numero de CUIT incorrecto");
 		}
 	}
 
