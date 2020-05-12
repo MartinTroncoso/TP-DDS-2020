@@ -1,10 +1,10 @@
 package dds.gesoc.model.organizaciones;
 
-import dds.gesoc.model.organizaciones.Exeptions.CuitInvalidoException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import dds.gesoc.exceptions.CuitInvalidoException;
 
 public class EntidadJuridica extends Entidad
 {

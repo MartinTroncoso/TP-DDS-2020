@@ -1,7 +1,7 @@
 package dds.gesoc.model;
 
+import dds.gesoc.exceptions.NoClasificaComoPymeException;
 import dds.gesoc.model.organizaciones.Empresa;
-import dds.gesoc.model.organizaciones.Exeptions.NoClasificaComoPymeException;
 import dds.gesoc.model.organizaciones.SectorServicios;
 import dds.gesoc.model.organizaciones.TipoEmpresa;
 import org.junit.Assert;

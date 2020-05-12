@@ -1,4 +1,4 @@
-package dds.gesoc.model.egresos.exceptions;
+package dds.gesoc.exceptions;
 
 public class DniIncorrectoException extends RuntimeException {
 	public DniIncorrectoException(String mensaje) {

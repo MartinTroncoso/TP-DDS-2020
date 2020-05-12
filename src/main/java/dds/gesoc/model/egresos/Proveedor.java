@@ -1,10 +1,9 @@
 package dds.gesoc.model.egresos;
 
-import java.util.Objects;
 import java.util.regex.Pattern;
 
-import dds.gesoc.model.egresos.exceptions.CuitIncorrectoException;
-import dds.gesoc.model.egresos.exceptions.DniIncorrectoException;
+import dds.gesoc.exceptions.CuitInvalidoException;
+import dds.gesoc.exceptions.DniIncorrectoException;
 
 public class Proveedor {
 	private String nombreORazonSocial;
@@ -42,7 +41,7 @@ public class Proveedor {
 		if(Pattern.matches(cuitValidoRegex, cuit)) {
 			this.setCuit(cuit);
 		}else {
-			throw new CuitIncorrectoException("Se ingresó un numero de CUIT incorrecto");
+			throw new CuitInvalidoException("Se ingresó un numero de CUIT incorrecto");
 		}
 	}
 

@@ -4,14 +4,14 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import dds.gesoc.exceptions.CuitInvalidoException;
+import dds.gesoc.exceptions.DniIncorrectoException;
+import dds.gesoc.exceptions.ValidarTarjetaException;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Item;
 import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
 import dds.gesoc.model.egresos.TipoMedioPago;
-import dds.gesoc.model.egresos.exceptions.CuitIncorrectoException;
-import dds.gesoc.model.egresos.exceptions.DniIncorrectoException;
-import dds.gesoc.model.egresos.exceptions.ValidarTarjetaException;
 
 public class EgresosTest {
 	private Egreso egreso;
@@ -59,7 +59,7 @@ public class EgresosTest {
     	burguerKing.establecerDNI(100000000);
     }
     
-    @Test(expected = CuitIncorrectoException.class)
+    @Test(expected = CuitInvalidoException.class)
     public void ingresandoCuitIncorrecto() {
     	burguerKing.establecerCuit("20-12345-678-0");
     }

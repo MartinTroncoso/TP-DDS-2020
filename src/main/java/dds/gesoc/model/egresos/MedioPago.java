@@ -2,7 +2,7 @@ package dds.gesoc.model.egresos;
 
 import java.util.regex.Pattern;
 
-import dds.gesoc.model.egresos.exceptions.ValidarTarjetaException;
+import dds.gesoc.exceptions.ValidarTarjetaException;
 
 public class MedioPago {
 	private TipoMedioPago tipo;

@@ -1,4 +1,4 @@
-package dds.gesoc.model.organizaciones.Exeptions;
+package dds.gesoc.exceptions;
 
 public class NoClasificaComoPymeException extends RuntimeException {
     public NoClasificaComoPymeException (String mensaje) {

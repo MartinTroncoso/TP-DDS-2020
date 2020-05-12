@@ -1,6 +1,6 @@
 package dds.gesoc.model.organizaciones;
 
-import dds.gesoc.model.organizaciones.Exeptions.NoClasificaComoPymeException;
+import dds.gesoc.exceptions.NoClasificaComoPymeException;
 
 class Sector {
 
