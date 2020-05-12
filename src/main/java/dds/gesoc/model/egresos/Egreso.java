@@ -10,7 +10,6 @@ public class Egreso {
 	Documento docComercial;
 	MedioPago medioPago;
 	List<Item> items;
-	//Organizacion organizacion;
 	
 	public Egreso(Proveedor prov, MedioPago medioPago) {
 		this.proveedor = prov;

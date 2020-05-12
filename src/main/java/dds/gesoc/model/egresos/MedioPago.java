@@ -2,7 +2,7 @@ package dds.gesoc.model.egresos;
 
 import java.util.regex.Pattern;
 
-import dds.gesoc.model.egresos.exceptions.TarjetaInvalidaException;
+import dds.gesoc.model.egresos.exceptions.ValidarTarjetaException;
 
 public class MedioPago {
 	private TipoMedioPago tipo;
@@ -14,19 +14,19 @@ public class MedioPago {
 	}
 	
 	public MedioPago(TipoMedioPago tipo, String numero) {
-		this.validarNumero(tipo, numero);
+		this.tipo = tipo;
+		this.establecerNroTarjeta(numero);
 	}
 	
-	public boolean esTarjeta(TipoMedioPago tipo) {
-		return tipo == TipoMedioPago.TARJETA_DE_CREDITO || tipo == TipoMedioPago.TARJETA_DE_DEBITO;
+	public boolean esTarjeta() {
+		return this.getTipo() == TipoMedioPago.TARJETA_DE_CREDITO || this.getTipo() == TipoMedioPago.TARJETA_DE_DEBITO;
 	}
 	
-	public void validarNumero(TipoMedioPago tipo, String numero) {
-		if(this.esTarjeta(tipo) && !Pattern.matches(nroTrajetaValidaRegex, numero)) {
-			this.setTipo(tipo);
+	public void establecerNroTarjeta(String numero) {
+		if(this.esTarjeta() && !Pattern.matches(nroTrajetaValidaRegex, numero)) {
 			this.setNumero(numero);
 		}else {
-			throw new TarjetaInvalidaException("El metodo de pago ingresado no es tarjeta o el numero de tarjeta es incorrecto");
+			throw new ValidarTarjetaException("El medio de pago ingresado no es tarjeta o el numero de tarjeta es incorrecto");
 		}
 	}
 

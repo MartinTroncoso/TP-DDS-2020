@@ -9,24 +9,28 @@ import dds.gesoc.model.egresos.exceptions.DniIncorrectoException;
 public class Proveedor {
 	private String nombreORazonSocial;
 	private int dni;
-	private String cuil_cuit;
+	private String cuit;
 	private String direccionPostal;
 	
 	private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}";
 	
+	public Proveedor(String nombreORazonSocial) {
+		this.nombreORazonSocial = nombreORazonSocial;
+	}
+	
 	public Proveedor(String nombreORazonSocial, int dni, String direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
-		this.validarDNI(dni);
+		this.establecerDNI(dni);
 		this.direccionPostal = direccionPostal;
 	}
 	
 	public Proveedor(String nombreORazonSocial, String cuil_cuit, String direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
-		this.validarCuit(cuil_cuit);
+		this.establecerCuit(cuit);
 		this.direccionPostal = direccionPostal;
 	}
 	
-	private void validarDNI(int dni) {
+	public void establecerDNI(int dni) {
 		if(dni <= 99999999 && dni > 0) {
 			this.setDni(dni);
 		}else {
@@ -34,20 +38,20 @@ public class Proveedor {
 		}
 	}
 
-	private void validarCuit(String cuit){
+	public void establecerCuit(String cuit){
 		if(Pattern.matches(cuitValidoRegex, cuit)) {
-			this.setCuil_cuit(cuit);
+			this.setCuit(cuit);
 		}else {
 			throw new CuitIncorrectoException("Se ingresó un numero de CUIT incorrecto");
 		}
 	}
 
-	public String getCuil_cuit() {
-		return cuil_cuit;
+	public String getCuit() {
+		return cuit;
 	}
 
-	public void setCuil_cuit(String cuil_cuit) {
-		this.cuil_cuit = cuil_cuit;
+	public void setCuit(String cuit) {
+		this.cuit = cuit;
 	}
 
 	public int getDni() {
