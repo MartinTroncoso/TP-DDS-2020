@@ -29,6 +29,8 @@ public class EntidadJuridica extends Entidad
         this.direccionPostal = direccionPostal;
     }
 
+
+
     public void setCodigoInscripcionIGJ(int codigoInscripcionIGJ) {
         this.codigoInscripcionIGJ = codigoInscripcionIGJ;
     }

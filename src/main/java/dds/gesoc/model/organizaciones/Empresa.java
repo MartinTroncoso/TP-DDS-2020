@@ -32,6 +32,7 @@ public class Empresa extends EntidadJuridica {
 
     public void setVentasAnuales(int ventasAnuales) {  //nada más para hacer el test
         this.ventasAnuales = ventasAnuales;
+        tipoEmpresa = sector.clasificarPorMonto(ventasAnuales);
     }
 }
 
