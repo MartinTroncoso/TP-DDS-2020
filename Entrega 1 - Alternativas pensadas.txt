@@ -1,0 +1,9 @@
+- Sobre Requerimiento 16:
+
+método hashContrasenia
+
+En un principio lo habría propuesto como método de UsuarioBuilder (así tambien el atributo Salt). 
+Un Usuario para autenticarse entonces, ya que tiene que hashear las contrasenias ingresadas, debía usar el método de UsuarioBuilder, necesitando hacer un:
+new UsuarioBuilder().hashContrasenia(contraseniaCandidata)
+
+Debido a esto, se decidió hacer que el método hashContrasenia sea responsabilidad del CreadorHash, objeto que se encargaría de exponer globalmente el método, para así lo puedan usar los objetos que lo requieran.
