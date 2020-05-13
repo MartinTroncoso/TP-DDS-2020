@@ -1,4 +1,4 @@
-package dds.gesoc.model;
+package dds.gesoc.model.usuarios;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
