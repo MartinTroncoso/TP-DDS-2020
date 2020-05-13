@@ -1,9 +1,14 @@
 - Sobre Requerimiento 16:
 
-m�todo hashContrasenia
+método hashContrasenia
 
-En un principio lo habr�a propuesto como m�todo de UsuarioBuilder (as� tambien el atributo Salt). 
-Un Usuario para autenticarse entonces, ya que tiene que hashear las contrasenias ingresadas, deb�a usar el m�todo de UsuarioBuilder, necesitando hacer un:
+En un principio lo habría propuesto como método de UsuarioBuilder (así tambien el atributo Salt). 
+Un Usuario para autenticarse entonces, ya que tiene que hashear las contrasenias ingresadas, debía usar el método de UsuarioBuilder, necesitando hacer un:
 new UsuarioBuilder().hashContrasenia(contraseniaCandidata)
 
-Debido a esto, se decidi� hacer que el m�todo hashContrasenia sea responsabilidad del CreadorHash, objeto que se encargar�a de exponer globalmente el m�todo, para as� lo puedan usar los objetos que lo requieran.
+Debido a esto, se decidió hacer que el método hashContrasenia sea responsabilidad del CreadorHash, objeto que se encargaría de exponer globalmente el método, para así lo puedan usar los objetos que lo requieran.
+
+- Sobre Requerimiento 6:
+
+Optamos por diseñar los medios de pago con un Enum TipoMedioPago porque solamente va a poder tener un conjunto limitado de valores,  y de ésta forma el programa no te deja insertar cualquier otro valor no definido. Ejemplo:
+Supongamos que al medio de pago la diseño como un String. Yo voy a poder asignarle a esa variable la cadena “tarjeta de credito”, un compañero puede asignarle “tarjeta credito”, otro compañero puede asignarle “bleh”, incluso puedo asignarle “tarjta credito”. Si se produce un error grosero así en el tipeo, cuando quiera conseguir los egresos cuyo medio de pago sea tarjeta de crédito, ese último ingreso nunca va a ser tomado en cuenta.
