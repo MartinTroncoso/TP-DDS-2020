@@ -11,6 +11,10 @@ import dds.gesoc.exceptions.ContraseniaConRepetidosSeguidosException;
 import dds.gesoc.exceptions.PeoresContraseniasException;
 import dds.gesoc.model.organizaciones.Empresa;
 import dds.gesoc.model.organizaciones.SectorServicios;
+import dds.gesoc.model.usuarios.TipoUsuario;
+import dds.gesoc.model.usuarios.Usuario;
+import dds.gesoc.model.usuarios.UsuarioBuilder;
+import dds.gesoc.model.usuarios.ValidacionContrasenia;
 
 public class UsuariosTest {
 

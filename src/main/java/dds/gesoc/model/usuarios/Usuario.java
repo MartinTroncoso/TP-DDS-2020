@@ -1,4 +1,4 @@
-package dds.gesoc.model;
+package dds.gesoc.model.usuarios;
 
 import dds.gesoc.model.organizaciones.Entidad;
 
@@ -20,7 +20,7 @@ public class Usuario {
 		return nombreUsuario;
 	}
 	
-	boolean autenticarUsuario(String contraseniaCandidata) {
+	public boolean autenticarUsuario(String contraseniaCandidata) {
 		String contraseniaCandidataHasheada = CreadorHash.getInstance().hashContrasenia(contraseniaCandidata);
 		return contrasenia.equals(contraseniaCandidataHasheada);
 	}

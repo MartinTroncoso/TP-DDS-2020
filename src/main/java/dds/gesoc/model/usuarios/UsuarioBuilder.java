@@ -1,4 +1,4 @@
-package dds.gesoc.model;
+package dds.gesoc.model.usuarios;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

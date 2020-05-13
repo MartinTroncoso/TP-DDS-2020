@@ -1,4 +1,4 @@
-package dds.gesoc.model;
+package dds.gesoc.model.usuarios;
 
 public enum TipoUsuario {
 	ESTANDAR,
