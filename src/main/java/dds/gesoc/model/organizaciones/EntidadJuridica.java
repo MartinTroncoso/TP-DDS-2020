@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 import dds.gesoc.exceptions.CuitInvalidoException;
+import dds.gesoc.model.RepoEntidades.RepoEntidades;
 
 public class EntidadJuridica extends Entidad
 {
@@ -15,6 +16,7 @@ public class EntidadJuridica extends Entidad
     private String direccionPostal;
     private int codigoInscripcionIGJ;
     private List<EntidadBase> entidadesBase = new ArrayList<>();
+    private RepoEntidades repoEntidades;
 
     private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}"; //2 dígitos iniciales + "-" + 8 dígitos + "-" + 1 dígito
 
@@ -27,15 +29,15 @@ public class EntidadJuridica extends Entidad
         this.cuit = cuit;
 
         this.direccionPostal = direccionPostal;
+        this.repoEntidades = RepoEntidades.getInstance();
     }
-
-
 
     public void setCodigoInscripcionIGJ(int codigoInscripcionIGJ) {
         this.codigoInscripcionIGJ = codigoInscripcionIGJ;
     }
 
     public void agregarEntidadBase(EntidadBase entidadBaseNueva) {
+        repoEntidades.agregarEntidadBaseDeEntidadJuridica(entidadBaseNueva);
         entidadesBase.add(entidadBaseNueva);
     }
 }
