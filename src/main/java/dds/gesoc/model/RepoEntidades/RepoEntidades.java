@@ -14,7 +14,7 @@ public class RepoEntidades {
     private List<EntidadBase> entidadesBaseEnUnaEntidadJuridica = new ArrayList<>();
     //private List<EntidadJuridica> entidadesJuridicas = new ArrayList<>();
 
-    //private RepoEntidades();
+    private RepoEntidades() {};
 
     public static RepoEntidades getInstance() {
         if (repoEntidades == null) {

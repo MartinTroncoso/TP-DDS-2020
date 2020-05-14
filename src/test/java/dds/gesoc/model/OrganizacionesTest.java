@@ -68,6 +68,6 @@ public class OrganizacionesTest {
         empresaDeModa.agregarEntidadBase(entidadBase);
         empresaDeTrajes.agregarEntidadBase(entidadBase);
     }
-    
+
 }
 
