@@ -11,6 +11,11 @@ import org.junit.Test;
 
 public class OrganizacionesTest {
 
+    public static final int VENTAS_ANUALES_EMPRESA_MEDIANA1 = 425169999;
+    private static final int VENTAS_ANUALES_GRAN_EMPRESA = 999999999;
+    private static final int VENTAS_ANUALES_PEQUENIA_EMPRESA = 50949999;
+
+
     private Empresa miEmpresa;
 
 
@@ -28,21 +33,21 @@ public class OrganizacionesTest {
 
     @Test (expected = NoClasificaComoPymeException.class)
     public void conGrandesVentasNoEsPyme() {
-        miEmpresa.setVentasAnuales(999999999); //TODO Solo se trabajan com pymes
+        miEmpresa.setVentasAnuales(VENTAS_ANUALES_GRAN_EMPRESA);
 
     }
 
 
     @Test
-    public void sectorServiciosConVentas50949999DeEsPequenia() {
-        miEmpresa.setVentasAnuales(50949999); //TODO Solo se trabajan com pymes
+    public void sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia() {
+        miEmpresa.setVentasAnuales(VENTAS_ANUALES_PEQUENIA_EMPRESA);
 
     }
 
 
     @Test
-    public void sectorServiciosConVentas425169999DeEsMEDIANA1() {
-        miEmpresa.setVentasAnuales(425169999); //TODO Solo se trabajan com pymes
+    public void sectorServiciosConVENTAS_ANUALES_EMPRESA_MEDIANA1EsMEDIANA1() {
+        miEmpresa.setVentasAnuales(VENTAS_ANUALES_EMPRESA_MEDIANA1);
         Assert.assertEquals(TipoEmpresa.MEDIANA_TRAMO1, miEmpresa.getTipoEmpresa());
     }
 
