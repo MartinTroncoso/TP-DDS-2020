@@ -6,8 +6,8 @@ public class Documento {
 	 * que los egresos tengan asociado un documento comercial, 
 	 * de momento el tipo lo pondremos como un String
 	 */
-	String tipo;
-	int numero;
+	private String tipo;
+	private int numero;
 	
 	public Documento(String tipo, int numero) {
 		this.tipo = tipo;

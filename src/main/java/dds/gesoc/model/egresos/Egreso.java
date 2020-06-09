@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Egreso {
-	Proveedor proveedor;
-	LocalDate fechaOperacion;
-	Documento docComercial;
-	MedioPago medioPago;
-	List<Item> items;
+	private Proveedor proveedor;
+	private LocalDate fechaOperacion;
+	private Documento docComercial;
+	private MedioPago medioPago;
+	private List<Item> items;
 	
 	public Egreso(Proveedor prov, MedioPago medioPago) {
 		this.proveedor = prov;

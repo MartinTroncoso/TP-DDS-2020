@@ -1,8 +1,8 @@
 package dds.gesoc.model.egresos;
 
 public class Item {
-	String descripcion;
-	double valorItem;
+	private String descripcion;
+	private double valorItem;
 	
 	public Item(String descripcion, double valor) {
 		this.descripcion = descripcion;
