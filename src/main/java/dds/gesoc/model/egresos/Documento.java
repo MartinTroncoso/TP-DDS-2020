@@ -13,6 +13,4 @@ public class Documento {
 		this.tipo = tipo;
 		this.numero = numero;
 	}
-	
-	
 }
