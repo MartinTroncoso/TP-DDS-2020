@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class EgresoConPresupuesto extends Egreso{
 
-    List<Presupuestos> presupuestosPropuestos = new ArrayList<>();
+    List<Presupuesto> presupuestosPropuestos = new ArrayList<>();
 
 
     public EgresoConPresupuesto(DatosEgreso datosDelEgreso, int cantMinimaPresupuestos) {
