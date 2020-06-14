@@ -2,13 +2,11 @@ package dds.gesoc.model.egresos;
 
 import java.util.regex.Pattern;
 
-import dds.gesoc.exceptions.CuitInvalidoException;
-import dds.gesoc.exceptions.DniIncorrectoException;
+import dds.gesoc.exceptions.DniOCuitInvalidoException;
 
 public class Proveedor {
 	private String nombreORazonSocial;
-	private int dni;
-	private String cuit;
+	private String dniOCuit;
 	private String direccionPostal;
 	
 	private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}";
@@ -17,48 +15,35 @@ public class Proveedor {
 		this.nombreORazonSocial = nombreORazonSocial;
 	}
 	
-	public Proveedor(String nombreORazonSocial, int dni, String direccionPostal) {
+	public Proveedor(String nombreORazonSocial, String dniOCuit, String direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
-		this.establecerDNI(dni);
+		this.establecerDniOCuit(dniOCuit);
 		this.direccionPostal = direccionPostal;
 	}
-	
-	public Proveedor(String nombreORazonSocial, String cuil_cuit, String direccionPostal) {
-		this.nombreORazonSocial = nombreORazonSocial;
-		this.establecerCuit(cuit);
-		this.direccionPostal = direccionPostal;
-	}
-	
-	public void establecerDNI(int dni) {
-		if(dni <= 99999999 && dni > 0) {
-			this.setDni(dni);
-		}else {
-			throw new DniIncorrectoException("Se ingresó un DNI negativo o de 9 cifras o mas");
+
+	public void establecerDniOCuit(String dniOCuit){
+		if(!(dniEstaEntre(dniOCuit) || Pattern.matches(cuitValidoRegex, dniOCuit))) {
+			throw new DniOCuitInvalidoException("El numero de CUIT o DNI es incorrecto");
 		}
+		
+		this.setDniOCuit(dniOCuit);
 	}
 
-	public void establecerCuit(String cuit){
-		if(Pattern.matches(cuitValidoRegex, cuit)) {
-			this.setCuit(cuit);
-		}else {
-			throw new CuitInvalidoException("Se ingresó un numero de CUIT incorrecto");
+	private boolean dniEstaEntre(String dniOCuit) {
+		if(!dniOCuit.contains("-")) {
+			int dni = Integer.parseInt(dniOCuit);
+			return dni <= 99999999 && dni > 0;
 		}
+		
+		return false;
 	}
 
-	public String getCuit() {
-		return cuit;
+	public String getDniOCuit() {
+		return dniOCuit;
 	}
 
-	public void setCuit(String cuit) {
-		this.cuit = cuit;
-	}
-
-	public int getDni() {
-		return dni;
-	}
-
-	public void setDni(int dni) {
-		this.dni = dni;
+	public void setDniOCuit(String dniOCuit) {
+		this.dniOCuit = dniOCuit;
 	}
 
 	public String getNombreORazonSocial() {

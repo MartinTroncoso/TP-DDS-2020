@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import dds.gesoc.exceptions.CuitInvalidoException;
+import dds.gesoc.exceptions.DniOCuitInvalidoException;
 import dds.gesoc.model.RepoEntidades.RepoEntidades;
 
 public class EntidadJuridica extends Entidad
@@ -25,7 +25,7 @@ public class EntidadJuridica extends Entidad
         this.razonSocial = razonSocial;
 
         if (!Pattern.matches(cuitValidoRegex, cuit))
-            throw new CuitInvalidoException("El cuit no tiene formato válido");
+            throw new DniOCuitInvalidoException("El cuit no tiene formato valido");
         this.cuit = cuit;
 
         this.direccionPostal = direccionPostal;

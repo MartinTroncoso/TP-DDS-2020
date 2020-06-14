@@ -4,8 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import dds.gesoc.exceptions.CuitInvalidoException;
-import dds.gesoc.exceptions.DniIncorrectoException;
+import dds.gesoc.exceptions.DniOCuitInvalidoException;
 import dds.gesoc.exceptions.ValidarTarjetaException;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Item;
@@ -22,6 +21,10 @@ public class EgresosTest {
 	private Item tomate;
 	private Item cheddar;
 	private Item cebolla;
+	private static String DNI_CERO = "0";
+	private static String DNI_NEGATIVO = "-1";
+	private static String DNI_CON_NUEVE_CIFRAS = "100000000";
+	private static String CUIT_INCORRECTO = "20-12345-678-0";
 
     @Before
     public void init() {
@@ -44,24 +47,24 @@ public class EgresosTest {
     	Assert.assertEquals(270.00, egreso.valorTotal(), 0);
     }
     
-    @Test(expected = DniIncorrectoException.class)
+    @Test(expected = DniOCuitInvalidoException.class)
     public void ingresandoDniCero() {
-    	burguerKing.establecerDNI(0);
+    	burguerKing.establecerDniOCuit(DNI_CERO);
     }
     
-    @Test(expected = DniIncorrectoException.class)
+    @Test(expected = DniOCuitInvalidoException.class)
     public void ingresandoDniNegativo() {
-    	burguerKing.establecerDNI(-1);
+    	burguerKing.establecerDniOCuit(DNI_NEGATIVO);
     }
     
-    @Test(expected = DniIncorrectoException.class)
+    @Test(expected = DniOCuitInvalidoException.class)
     public void ingresandoDniConNueveCifrasOMas() {
-    	burguerKing.establecerDNI(100000000);
+    	burguerKing.establecerDniOCuit(DNI_CON_NUEVE_CIFRAS);
     }
     
-    @Test(expected = CuitInvalidoException.class)
+    @Test(expected = DniOCuitInvalidoException.class)
     public void ingresandoCuitIncorrecto() {
-    	burguerKing.establecerCuit("20-12345-678-0");
+    	burguerKing.establecerDniOCuit(CUIT_INCORRECTO);
     }
     
     @Test(expected = ValidarTarjetaException.class)

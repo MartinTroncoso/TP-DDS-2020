@@ -1,6 +1,6 @@
 package dds.gesoc.model;
 
-import dds.gesoc.exceptions.CuitInvalidoException;
+import dds.gesoc.exceptions.DniOCuitInvalidoException;
 import dds.gesoc.exceptions.EntidadBaseTieneEntidaJuridicaException;
 import dds.gesoc.exceptions.NoClasificaComoPymeException;
 import dds.gesoc.model.organizaciones.*;
@@ -57,7 +57,7 @@ public class OrganizacionesTest {
         Assert.assertEquals(TipoEmpresa.MEDIANA_TRAMO1, miEmpresa.getTipoEmpresa());
     }
 
-    @Test (expected = CuitInvalidoException.class)
+    @Test (expected = DniOCuitInvalidoException.class)
     public void seDetectanCuitInvalidos() {
         Empresa miEmpresa2 = new Empresa("mc Donaldo", "Arcos Dorados SRL",
                 "27-123456-1", "Av. Corrientes 5600", new SectorServicios(), 150000);
