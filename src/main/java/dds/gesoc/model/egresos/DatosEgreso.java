@@ -7,7 +7,12 @@ public class DatosEgreso {
     private Proveedor proveedor;
     private Documento docComercial;
     private MedioPago medioPago;
-
+    
+    public DatosEgreso(Proveedor prov, MedioPago medioPago) {
+        this.proveedor = prov;
+        this.medioPago = medioPago;
+    }
+    
     public DatosEgreso(Proveedor prov, Documento documento, MedioPago medioPago) {
         this.proveedor = prov;
         this.docComercial = documento;

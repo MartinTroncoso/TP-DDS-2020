@@ -7,7 +7,7 @@ import dds.gesoc.exceptions.DniOCuitInvalidoException;
 public class Proveedor {
 	private String nombreORazonSocial;
 	private String dniOCuit;
-	private String direccionPostal;
+	private DireccionPostal direccionPostal;
 	
 	private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}";
 	
@@ -15,7 +15,7 @@ public class Proveedor {
 		this.nombreORazonSocial = nombreORazonSocial;
 	}
 	
-	public Proveedor(String nombreORazonSocial, String dniOCuit, String direccionPostal) {
+	public Proveedor(String nombreORazonSocial, String dniOCuit, DireccionPostal direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
 		this.establecerDniOCuit(dniOCuit);
 		this.direccionPostal = direccionPostal;
@@ -54,11 +54,11 @@ public class Proveedor {
 		this.nombreORazonSocial = nombreORazonSocial;
 	}
 
-	public String getDireccionPostal() {
+	public DireccionPostal getDireccionPostal() {
 		return direccionPostal;
 	}
 
-	public void setDireccionPostal(String direccionPostal) {
+	public void setDireccionPostal(DireccionPostal direccionPostal) {
 		this.direccionPostal = direccionPostal;
 	}
 	
