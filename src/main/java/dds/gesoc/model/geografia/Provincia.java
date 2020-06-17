@@ -4,13 +4,26 @@ import java.util.List;
 
 public class Provincia {
 	
+	private String id;
 	private String nombre;
-	private List<Ciudad> ciudades;
+	private Pais pais;
 	
-	public Provincia(String nombre, List<Ciudad> ciudades) {
+	public Provincia(String id, String nombre, Pais pais) {
+		this.id = id;
 		this.nombre = nombre;
-		this.ciudades = ciudades;
+		this.pais = pais;
 	}
-	
+
+	public String getId() {
+		return id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public Pais getPais() {
+		return pais;
+	}
 	
 }
