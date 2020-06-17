@@ -28,6 +28,10 @@ public class Egreso {
 		this.usuariosRevisores = new ArrayList<>();
 	}
 	
+	public Egreso(Proveedor burguerKing, MedioPago tarjeta) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void agregarItem(Item item) {
 		this.items.add(item);
 	}
@@ -98,5 +102,10 @@ public class Egreso {
 		}
 		
 		this.usuariosRevisores.add(usuario);
+	}
+
+	public void aniadirItem(Item lechuga) {
+		// TODO Auto-generated method stub
+		
 	}
 }
