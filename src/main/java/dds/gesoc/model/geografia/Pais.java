@@ -1,15 +1,22 @@
 package dds.gesoc.model.geografia;
 
-import java.util.List;
 
 public class Pais {
 
+	private String id;
 	private String nombre;
-	private List<Provincia> provincias;
-	
-	public Pais(String nombre, List<Provincia> provincias) {
+
+
+	public Pais(String id, String nombre) {
+		this.id = id;
 		this.nombre = nombre;
-		this.provincias = provincias;
 	}
 	
+	public String getId() {
+		return id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
 }
