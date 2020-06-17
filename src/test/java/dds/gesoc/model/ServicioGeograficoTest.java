@@ -11,7 +11,7 @@ import dds.gesoc.model.geografia.Ciudad;
 import dds.gesoc.model.geografia.Pais;
 import dds.gesoc.model.geografia.Provincia;
 import dds.gesoc.model.geografia.ServicioGeografico;
-import dds.gesoc.model.geografia.ServicioGeograficoMercadoLibre;
+import dds.gesoc.model.mercadolibre.ServicioGeograficoMercadoLibre;
 
 
 public class ServicioGeograficoTest {

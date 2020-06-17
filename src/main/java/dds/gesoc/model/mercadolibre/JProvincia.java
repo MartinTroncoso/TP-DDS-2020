@@ -1,11 +1,11 @@
-package dds.gesoc.model.geografia;
+package dds.gesoc.model.mercadolibre;
 
-public class JPais {
+public class JProvincia {
 	
 	private String id;
 	private String name;
 	
-	public JPais(String id, String name) {
+	public JProvincia(String id, String name) {
 		this.id = id;
 		this.name = name;
 	}

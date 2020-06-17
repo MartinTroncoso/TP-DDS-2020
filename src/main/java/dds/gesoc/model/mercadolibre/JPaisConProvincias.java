@@ -1,4 +1,4 @@
-package dds.gesoc.model.geografia;
+package dds.gesoc.model.mercadolibre;
 
 import java.util.List;
 

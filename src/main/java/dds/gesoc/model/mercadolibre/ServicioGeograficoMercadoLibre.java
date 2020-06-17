@@ -1,7 +1,13 @@
-package dds.gesoc.model.geografia;
+package dds.gesoc.model.mercadolibre;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import dds.gesoc.model.geografia.Ciudad;
+import dds.gesoc.model.geografia.Moneda;
+import dds.gesoc.model.geografia.Pais;
+import dds.gesoc.model.geografia.Provincia;
+import dds.gesoc.model.geografia.ServicioGeografico;
 
 public class ServicioGeograficoMercadoLibre implements ServicioGeografico {
 
@@ -31,6 +37,13 @@ public class ServicioGeograficoMercadoLibre implements ServicioGeografico {
 		return jProvincia.getCities()
 				.stream()
 				.map(c -> new Ciudad(c.getId(), c.getName(), provincia))
+				.collect(Collectors.toList());
+	}
+
+	public List<Moneda> obtenerTodasLasMonedas() {
+		List<JMoneda> jmonedas = api.obtenerJMonedas();
+		return jmonedas.stream()
+				.map(j -> new Moneda(j.getId(), j.getDescription(), j.getDescription()))
 				.collect(Collectors.toList());
 	}
 }

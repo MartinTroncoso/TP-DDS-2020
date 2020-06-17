@@ -1,4 +1,4 @@
-package dds.gesoc.model.geografia;
+package dds.gesoc.model.mercadolibre;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -16,6 +16,7 @@ public class MercadoLibreAPI {
 	public static final String API_MERCADO_LIBRE = "https://api.mercadolibre.com";
 	public static final String RESOURCE_COUNTRIES = "classified_locations/countries";
 	public static final String RESOURCE_STATES = "classified_locations/states";
+	public static final String RESOURCE_CURRENCIES = "currencies";
 	
 	public MercadoLibreAPI() {
 		
@@ -35,6 +36,12 @@ public class MercadoLibreAPI {
 	public JProvinciaConCiudades obtenerJCiudadesDeProvincia(String idProvincia) {
 		String respuesta = this.getResponseJson(RESOURCE_STATES + "/" + idProvincia);
 		return new Gson().fromJson(respuesta, JProvinciaConCiudades.class);
+	}
+	
+	public List<JMoneda> obtenerJMonedas() {
+		String respuesta = this.getResponseJson(RESOURCE_CURRENCIES);
+		Type listTypeMonedas = new TypeToken<ArrayList<JMoneda>>(){}.getType();
+		return new Gson().fromJson(respuesta, listTypeMonedas);
 	}
 	
 	private String getResponseJson(String path) {
