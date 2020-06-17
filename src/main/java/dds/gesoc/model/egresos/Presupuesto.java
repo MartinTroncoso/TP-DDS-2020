@@ -1,5 +1,7 @@
 package dds.gesoc.model.egresos;
 
+import dds.gesoc.exceptions.PresupuestoSinEgresoAsociadoException;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,13 +10,18 @@ public class Presupuesto {
 	private String detalle;
 	private List<Item> items;
 	private Proveedor unProveedor;
+	private Egreso egresoAsociado;
 
 	
-	public Presupuesto(Proveedor unProveedor, Documento docComercial, String detalle) {
+	public Presupuesto(Proveedor unProveedor, Documento docComercial, String detalle, Egreso unEgreso) {
 		this.docComercial = docComercial;
 		this.detalle = detalle;
 		this.items = new ArrayList<>();
 		this.unProveedor = unProveedor;
+
+		if (unEgreso == null)
+			throw new PresupuestoSinEgresoAsociadoException("No se pueden crear presupuestos sin un egreso asociado");
+		this.egresoAsociado = unEgreso;
 	}
 
 	public Documento getDocComercial() {
