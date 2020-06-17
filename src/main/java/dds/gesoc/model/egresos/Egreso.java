@@ -12,20 +12,27 @@ public class Egreso {
 	private LocalDate fechaOperacion;
 	private List<Item> items;
 	private List<Presupuesto> presupuestos;
-	private List<Presupuesto> presupuestosValidados;
+
 	private int cantPresupuestosMinima;
 	private CriterioSeleccionProveedor criterioProveedor;
 	private List<Usuario> usuariosRevisores;
+	private RepoEgresos repoEgresos;
+	private ResultadoValidacion resultadoValidacion;
 	
 	public Egreso(DatosEgreso datosEgreso, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.datosEgreso = datosEgreso;
 		this.fechaOperacion = LocalDate.now();
 		this.items = new ArrayList<Item>();
 		this.presupuestos = new ArrayList<>();
-		this.presupuestosValidados = new ArrayList<>();
+
 		this.cantPresupuestosMinima = cantPresupuestosMinima;
 		this.criterioProveedor = criterioProveedor;
 		this.usuariosRevisores = new ArrayList<>();
+		this.repoEgresos = RepoEgresos.getInstance();
+
+		this.repoEgresos.agregarEgresoNoValidado(this);
+
+		this.resultadoValidacion = new ResultadoValidacion();
 	}
 	
 	public Egreso(Proveedor burguerKing, MedioPago tarjeta) {
@@ -53,15 +60,12 @@ public class Egreso {
 	}
 	
 	public void agregarPresupuesto(Presupuesto presupuesto){
+		this.repoEgresos.agregarEgresoNoValidado(this);
 		this.getPresupuestos().add(presupuesto);
 	}
 
 	public List<Presupuesto> getPresupuestos() {
 		return this.presupuestos;
-	}
-
-	public List<Presupuesto> getPresupuestosValidados() {
-		return this.presupuestosValidados;
 	}
 
 	public int getCantPresupuestosMinima() {
@@ -106,6 +110,56 @@ public class Egreso {
 
 	public void aniadirItem(Item lechuga) {
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	public Proveedor getProveedorSeleccionado() {
+		return this.datosEgreso.getProveedor();
+	}
+
+	public Proveedor proveedorCandidatoSegunCriterio() {
+		return this.criterioProveedor.seleccionarProveedor(presupuestos);
+	}
+
+
+	private void agregarMensajeSegunEstado(boolean estado, String mensaje) {
+
+		resultadoValidacion.agregarMensaje(mensaje + ": " + estado);
+	}
+
+	//todo acá repito código, pero no puedo evitarlo. Ayudaa
+	private boolean compraRealizadaSegunAlgunPresupuesto() {
+		boolean estado = presupuestos.stream().anyMatch(presupuesto -> presupuesto.getUnProveedor().equals(this.datosEgreso.getProveedor())
+				&& presupuesto.getItems().equals(this.items) && presupuesto.valorTotal() == this.valorTotal());
+				//todo averiguar si comparar dos listas funciona si los elementos están en distintos ordenes
+		agregarMensajeSegunEstado(estado, "Compra realizada segíún un presupuesto");
+		return estado;
+	}
+
+	private boolean eligioProveedorSegunCriterio() {
+		boolean estado =  this.proveedorCandidatoSegunCriterio().equals(this.datosEgreso.getProveedor());
+		agregarMensajeSegunEstado(estado,"Proveedor fue elegido según el criterio de " +
+				"selección de presupuestos" );
+		return estado;
+	}
+
+	private boolean tieneCantidadMinimaDePresupuestos() {
+		boolean estado = this.presupuestos.size() == cantPresupuestosMinima;
+		agregarMensajeSegunEstado(estado, "Compra realizada con cantidad minima de presupuestos");
+		return estado;
+	}
+
+	private void notificarUsuariosRevisores() {
+		resultadoValidacion.actualizarFecha();
+		usuariosRevisores.stream().forEach(usuario -> usuario.serNotificado(resultadoValidacion));
+		resultadoValidacion = new ResultadoValidacion();
+	}
+
+	public boolean egresoValido() {
+		boolean estado = this.compraRealizadaSegunAlgunPresupuesto() && this.eligioProveedorSegunCriterio()
+				&& this.tieneCantidadMinimaDePresupuestos();
+		notificarUsuariosRevisores();
+		return estado;
+
 	}
 }

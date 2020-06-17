@@ -1,15 +1,20 @@
 package dds.gesoc.model.usuarios;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.Stack;
 
+import dds.gesoc.model.egresos.ResultadoValidacion;
 import dds.gesoc.model.organizaciones.Entidad;
 
 public class Usuario {
 	
 	private String nombreUsuario;
 	private String contrasenia;
-	TipoUsuario tipoUsuario;
-	Entidad entidad;
+	private TipoUsuario tipoUsuario;
+	private Entidad entidad;
+	private Stack<ResultadoValidacion> bandejaDeMensajes = new Stack<>();
 	
 	public Usuario(String nombreUsuario, String contrasenia, TipoUsuario tipoUsuario, Entidad entidad) {
 		
@@ -30,5 +35,9 @@ public class Usuario {
 		String contraseniaCandidataHasheada = CreadorHash.getInstance().hashContrasenia(contraseniaCandidata);
 		return contrasenia.equals(contraseniaCandidataHasheada);
 	}
-	
+
+
+	public void serNotificado(ResultadoValidacion respuestaEgreso) {
+		bandejaDeMensajes.push(respuestaEgreso);
+	}
 }

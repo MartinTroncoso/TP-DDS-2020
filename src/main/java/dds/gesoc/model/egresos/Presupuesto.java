@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Presupuesto {
-	Documento docComercial;
-	String detalle;
-	List<Item> items;
-	Proveedor unProveedor;
+	private Documento docComercial;
+	private String detalle;
+	private List<Item> items;
+	private Proveedor unProveedor;
 
 	
 	public Presupuesto(Proveedor unProveedor, Documento docComercial, String detalle) {
@@ -35,5 +35,9 @@ public class Presupuesto {
 	
 	public double valorTotal() {
 		return this.getItems().stream().mapToDouble(Item::getValor).sum();
+	}
+
+	public Proveedor getUnProveedor() {
+		return unProveedor;
 	}
 }

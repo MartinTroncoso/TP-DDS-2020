@@ -1,7 +1,5 @@
 package dds.gesoc.model.egresos;
 
-import dds.gesoc.model.organizaciones.Entidad;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +19,18 @@ public class RepoEgresos {
     }
 
     public void agregarEgresoNoValidado(Egreso unEgreso) {
-        egresosNoValidados.add(unEgreso);
+
+        if (!egresosNoValidados.contains(unEgreso))
+             egresosNoValidados.add(unEgreso);
+    }
+
+    private void removerEgreso(Egreso unEgreso) {
+        egresosNoValidados.remove(unEgreso);
+    }
+
+
+    public void validarEgresos() {
+        egresosNoValidados = (List<Egreso>) egresosNoValidados.stream().filter(egreso -> !egreso.egresoValido());
     }
 
 
