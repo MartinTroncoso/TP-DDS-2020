@@ -7,11 +7,14 @@ public class Presupuesto {
 	Documento docComercial;
 	String detalle;
 	List<Item> items;
+	Proveedor unProveedor;
+
 	
-	public Presupuesto(Documento docComercial, String detalle) {
+	public Presupuesto(Proveedor unProveedor, Documento docComercial, String detalle) {
 		this.docComercial = docComercial;
 		this.detalle = detalle;
 		this.items = new ArrayList<>();
+		this.unProveedor = unProveedor;
 	}
 
 	public Documento getDocComercial() {
