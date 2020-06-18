@@ -36,8 +36,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/PresupuestosTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2176">
-              <caret line="128" column="66" lean-forward="true" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="66" />
+            <state relative-caret-position="340">
+              <caret line="73" selection-start-line="68" selection-start-column="6" selection-end-line="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/Principal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +73,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/EgresosTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -85,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="134" column="81" lean-forward="true" selection-start-line="134" selection-start-column="81" selection-end-line="134" selection-end-column="81" />
+            <state relative-caret-position="153">
+              <caret line="134" selection-start-line="134" selection-end-line="134" />
               <folding>
                 <element signature="e#1870#1871#0" expanded="true" />
                 <element signature="e#1928#1929#0" expanded="true" />
@@ -123,15 +135,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/ServicioGeograficoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -185,11 +188,14 @@
         <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/DatosEgreso.java" />
         <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/usuarios/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/geografia/ValorMonetario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java" />
         <option value="$PROJECT_DIR$/src/test/java/dds/gesoc/model/PresupuestosTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Presupuesto.java" />
         <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/CriterioSeleccionProveedorMenorValor.java" />
         <option value="$PROJECT_DIR$/src/test/java/dds/gesoc/model/EgresosTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/Principal.java" />
       </list>
     </option>
   </component>
@@ -270,36 +276,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="egresos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
@@ -493,12 +470,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PresupuestosTest_egresoSegunMejorPresupuesto - 2020.06.18 at 00h 07m 31s.xml">
-      <configuration name="PresupuestosTest.egresoSegunMejorPresupuesto" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PresupuestosTest_egresoSegunMejorPresupuesto - 2020.06.18 at 00h 14m 30s.xml">
-      <configuration name="PresupuestosTest.egresoSegunMejorPresupuesto" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PresupuestosTest_egresoConProveedorQueNoCumpleCriterio - 2020.06.18 at 00h 14m 41s.xml">
       <configuration name="PresupuestosTest.egresoConProveedorQueNoCumpleCriterio" configurationId="JUnit" />
     </history-entry>
@@ -523,6 +494,12 @@
     <history-entry file="PresupuestosTest - 2020.06.18 at 01h 04m 17s.xml">
       <configuration name="PresupuestosTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PresupuestosTest - 2020.06.18 at 01h 46m 55s.xml">
+      <configuration name="PresupuestosTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PresupuestosTest - 2020.06.18 at 01h 48m 06s.xml">
+      <configuration name="PresupuestosTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -542,8 +519,8 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49268293" visible="true" weight="0.28895614" />
-      <window_info id="Structure" order="6" sideWeight="0.50731707" side_tool="true" visible="true" weight="0.28895614" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.492635" visible="true" weight="0.28895614" />
+      <window_info id="Structure" order="6" sideWeight="0.507365" side_tool="true" weight="0.28895614" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
@@ -554,7 +531,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
       <window_info anchor="bottom" id="SOQL Query" order="11" />
       <window_info anchor="bottom" id="Anonymous Apex" order="12" />
       <window_info anchor="bottom" id="Log Analyzer" order="13" weight="0.3289689" />
@@ -584,7 +561,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/grupo8/DummyDesign.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/grupo8/TestDummyDesing.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -895,19 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="134" column="81" lean-forward="true" selection-start-line="134" selection-start-column="81" selection-end-line="134" selection-end-column="81" />
-          <folding>
-            <element signature="e#1870#1871#0" expanded="true" />
-            <element signature="e#1928#1929#0" expanded="true" />
-            <element signature="e#4299#4300#0" expanded="true" />
-            <element signature="e#4369#4370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/geografia/ValorMonetario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -936,20 +899,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/EgresosTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="45" column="69" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <element signature="e#1870#1871#0" expanded="true" />
+            <element signature="e#1928#1929#0" expanded="true" />
+            <element signature="e#4299#4300#0" expanded="true" />
+            <element signature="e#4369#4370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/PresupuestosTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="128" column="66" lean-forward="true" selection-start-line="128" selection-start-column="66" selection-end-line="128" selection-end-column="66" />
+        <state relative-caret-position="340">
+          <caret line="73" selection-start-line="68" selection-start-column="6" selection-end-line="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/EgresosTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" column="69" selection-start-line="45" selection-start-column="69" selection-end-line="45" selection-end-column="69" />
+        <state relative-caret-position="425">
+          <caret line="69" column="10" selection-start-line="69" selection-start-column="10" selection-end-line="69" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
