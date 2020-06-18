@@ -9,6 +9,7 @@ import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.usuarios.Usuario;
 
 public class Egreso {
+
 	private DatosEgreso datosEgreso;
 	private ValorMonetario valorMonetario;
 	private LocalDate fechaOperacion;
@@ -20,7 +21,8 @@ public class Egreso {
 	private List<Usuario> usuariosRevisores;
 	private RepoEgresos repoEgresos;
 	private ResultadoValidacion resultadoValidacion;
-	
+	private Proveedor miProveedor;
+
 	public Egreso(DatosEgreso datosEgreso, ValorMonetario valorMonetario, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.datosEgreso = datosEgreso;
 		this.valorMonetario = valorMonetario; 
@@ -37,10 +39,6 @@ public class Egreso {
 		this.repoEgresos.agregarEgresoNoValidado(this);
 
 		this.resultadoValidacion = new ResultadoValidacion();
-	}
-	
-	public Egreso(Proveedor burguerKing, MedioPago tarjeta) {
-		// TODO Auto-generated constructor stub
 	}
 
 	public void agregarItem(Item item) {
@@ -62,8 +60,12 @@ public class Egreso {
 	public void setFechaOperacion(LocalDate fechaOperacion) {
 		this.fechaOperacion = fechaOperacion;
 	}
-	
-	public void agregarPresupuesto(Presupuesto presupuesto){
+
+    public void setMiProveedor(Proveedor miProveedor) {
+        this.datosEgreso.setProveedor(miProveedor);
+    }
+
+    public void agregarPresupuesto(Presupuesto presupuesto){
 		this.repoEgresos.agregarEgresoNoValidado(this);
 		this.getPresupuestos().add(presupuesto);
 	}
@@ -112,11 +114,6 @@ public class Egreso {
 		this.usuariosRevisores.add(usuario);
 	}
 
-	public void aniadirItem(Item lechuga) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public Proveedor getProveedorSeleccionado() {
 		return this.datosEgreso.getProveedor();
 	}
@@ -132,38 +129,46 @@ public class Egreso {
 	}
 
 	//todo acá repito código, pero no puedo evitarlo. Ayudaa
-	private boolean compraRealizadaSegunAlgunPresupuesto() {
-		boolean estado = presupuestos.stream().anyMatch(presupuesto -> presupuesto.getUnProveedor().equals(this.datosEgreso.getProveedor())
+	public boolean compraRealizadaSegunAlgunPresupuesto() {
+        return presupuestos.stream().anyMatch(presupuesto -> presupuesto.getUnProveedor().equals(this.datosEgreso.getProveedor())
 				&& presupuesto.getItems().equals(this.items) && presupuesto.valorTotal() == this.valorTotal());
 				//todo averiguar si comparar dos listas funciona si los elementos están en distintos ordenes
-		agregarMensajeSegunEstado(estado, "Compra realizada segíún un presupuesto");
-		return estado;
 	}
 
-	private boolean eligioProveedorSegunCriterio() {
-		boolean estado =  this.proveedorCandidatoSegunCriterio().equals(this.datosEgreso.getProveedor());
-		agregarMensajeSegunEstado(estado,"Proveedor fue elegido según el criterio de " +
-				"selección de presupuestos" );
-		return estado;
+	public boolean eligioProveedorSegunCriterio() {
+        return  this.proveedorCandidatoSegunCriterio().equals(this.datosEgreso.getProveedor());
 	}
 
-	private boolean tieneCantidadMinimaDePresupuestos() {
-		boolean estado = this.presupuestos.size() == cantPresupuestosMinima;
-		agregarMensajeSegunEstado(estado, "Compra realizada con cantidad minima de presupuestos");
-		return estado;
+	public boolean tieneCantidadMinimaDePresupuestos() {
+        return this.presupuestos.size() >= cantPresupuestosMinima;
 	}
 
-	private void notificarUsuariosRevisores() {
+	public void notificarUsuariosRevisores() {
 		resultadoValidacion.actualizarFecha();
-		usuariosRevisores.stream().forEach(usuario -> usuario.serNotificado(resultadoValidacion));
+		usuariosRevisores.forEach(usuario -> usuario.serNotificado(resultadoValidacion));
 		resultadoValidacion = new ResultadoValidacion();
 	}
 
-	public boolean egresoValido() {
-		boolean estado = this.compraRealizadaSegunAlgunPresupuesto() && this.eligioProveedorSegunCriterio()
-				&& this.tieneCantidadMinimaDePresupuestos();
-		notificarUsuariosRevisores();
-		return estado;
 
+/*
+* egresoValido devuelve true o false según la validez del egreso sin notificar a los usuarios
+* */
+	public boolean egresoValido() {
+        return compraRealizadaSegunAlgunPresupuesto() && eligioProveedorSegunCriterio()
+                && tieneCantidadMinimaDePresupuestos();
+    }
+
+/*
+* Validar notifica a los usuarios el resultado de una validación
+* */
+	public void validar() {
+
+        agregarMensajeSegunEstado(this.egresoValido(), "----\nEgreso valido");
+        agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");
+        agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"Proveedor fue elegido según el criterio de " +
+                "selección de presupuestos" );
+        agregarMensajeSegunEstado(this.tieneCantidadMinimaDePresupuestos(), "Compra realizada con cantidad minima de presupuestos");
+		notificarUsuariosRevisores();
 	}
+
 }

@@ -22,6 +22,7 @@ public class Presupuesto {
 		if (unEgreso == null)
 			throw new PresupuestoSinEgresoAsociadoException("No se pueden crear presupuestos sin un egreso asociado");
 		this.egresoAsociado = unEgreso;
+		unEgreso.agregarPresupuesto(this);
 	}
 
 	public Documento getDocComercial() {

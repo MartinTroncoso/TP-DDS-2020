@@ -30,4 +30,8 @@ public class DatosEgreso {
     public MedioPago getMedioPago() {
         return medioPago;
     }
+
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
+    }
 }

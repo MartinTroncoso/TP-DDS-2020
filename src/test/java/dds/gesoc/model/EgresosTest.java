@@ -1,16 +1,12 @@
 package dds.gesoc.model;
 
+import dds.gesoc.model.egresos.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import dds.gesoc.exceptions.DniOCuitInvalidoException;
 import dds.gesoc.exceptions.ValidarTarjetaException;
-import dds.gesoc.model.egresos.Egreso;
-import dds.gesoc.model.egresos.Item;
-import dds.gesoc.model.egresos.MedioPago;
-import dds.gesoc.model.egresos.Proveedor;
-import dds.gesoc.model.egresos.TipoMedioPago;
 
 public class EgresosTest {
 	private Egreso egreso;
@@ -26,6 +22,7 @@ public class EgresosTest {
 	private static String DNI_CON_NUEVE_CIFRAS = "100000000";
 	private static String CUIT_INCORRECTO = "20-12345-678-0";
 
+	private DatosEgreso datosEgreso;
     @Before
     public void init() {
     	
@@ -36,14 +33,16 @@ public class EgresosTest {
     	tomate = new Item("tomate", 150.00);
     	cheddar = new Item("cheddar", 70.00);
     	cebolla = new Item("cebolla", 175.00);
-    	
-        egreso = new Egreso(burguerKing, tarjeta);
+
+    	datosEgreso = new DatosEgreso(burguerKing, tarjeta);
+
+        egreso = new Egreso(datosEgreso, null, 0, null);
     }
     
     @Test
     public void aniadirItems() {
-    	egreso.aniadirItem(lechuga);
-    	egreso.aniadirItem(cheddar);
+    	egreso.agregarItem(lechuga);
+    	egreso.agregarItem(cheddar);
     	Assert.assertEquals(270.00, egreso.valorTotal(), 0);
     }
     
