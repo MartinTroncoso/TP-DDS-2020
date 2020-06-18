@@ -26,7 +26,7 @@ public class PresupuestosTest {
     private MedioPago unMedioDePago;
     private Egreso egreso;
     private Egreso egresoInvalido;
-    private ValorMonetario valorTotal;
+    private Moneda moneda;
 
     private Item parrillaCara;
     private Item parrillaMedia;
@@ -47,14 +47,14 @@ public class PresupuestosTest {
         unMedioDePago = new MedioPago(TipoMedioPago.EFECTIVO);
         datosEgreso = new DatosEgreso(proveedorA, documentoFactura,unMedioDePago);
 
-        valorTotal = new ValorMonetario(20000, new Moneda("lala", "dinero", "$"));
+        moneda = new Moneda("ARS", "plata", "$");
 
-        egreso = new Egreso(datosEgreso, valorTotal, 2, new CriterioSeleccionProveedorMenorValor());
-        egresoInvalido = new Egreso(datosEgreso, valorTotal, 5, new CriterioSeleccionProveedorMenorValor());
+        egreso = new Egreso(datosEgreso, moneda, 2, new CriterioSeleccionProveedorMenorValor());
+        egresoInvalido = new Egreso(datosEgreso, moneda, 5, new CriterioSeleccionProveedorMenorValor());
 
-        presupuestoCasa9DeJulio = new Presupuesto(proveedorA, presupuestoDocumento, "Vende cerca", egreso);
-        presupuestoJardinBarato = new Presupuesto(proveedorBarato, presupuestoDocumento, "Vende barato", egreso);
-        presupuestoGarbarino = new Presupuesto(proveedorC, presupuestoDocumento, "Vende caro", egreso);
+        presupuestoCasa9DeJulio = new Presupuesto(proveedorA, presupuestoDocumento, moneda, "Vende cerca", egreso);
+        presupuestoJardinBarato = new Presupuesto(proveedorBarato, presupuestoDocumento, moneda, "Vende barato", egreso);
+        presupuestoGarbarino = new Presupuesto(proveedorC, presupuestoDocumento, moneda, "Vende caro", egreso);
 
 
         parrillaCara = new Item("parrilla", 35000);
@@ -77,7 +77,7 @@ public class PresupuestosTest {
     //2. Cada presupuesto debe estar asociado obligatoriamente a un ​egreso​
     @Test (expected = PresupuestoSinEgresoAsociadoException.class)
     public void noSePuedenCrearPresupuestosSinEgresoAsociado() {
-        new Presupuesto(proveedorA, presupuestoDocumento, "Oferta muebles de jardin", null);
+        new Presupuesto(proveedorA, presupuestoDocumento, moneda, "Oferta muebles de jardin", null);
     }
 
     //Si la compra requiere presupuestos se debe verificar que
@@ -108,7 +108,7 @@ public class PresupuestosTest {
 
     @Test
     public void compraInvalidaSiNoSeRealizoEnBaseAPresupuesto() {
-        new Presupuesto(proveedorA, presupuestoDocumento, "Oferta", egresoInvalido);
+        new Presupuesto(proveedorA, presupuestoDocumento, moneda,"Oferta", egresoInvalido);
         egresoInvalido.agregarItem(new Item("Nada que ver", 8000));
         egresoInvalido.setMiProveedor(new Proveedor("solo prueba SA"));
 
@@ -126,7 +126,7 @@ public class PresupuestosTest {
 
     @Test
     public void egresoConProveedorQueNoCumpleCriterio() {
-        new Presupuesto(proveedorA, presupuestoDocumento, "Oferta", egresoInvalido);
+        new Presupuesto(proveedorA, presupuestoDocumento, moneda, "Oferta", egresoInvalido);
         egresoInvalido.setMiProveedor(new Proveedor("Otro que nada que ver SA"));
         Assert.assertFalse(egresoInvalido.eligioProveedorSegunCriterio());
     }

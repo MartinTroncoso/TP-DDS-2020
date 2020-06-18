@@ -2,15 +2,15 @@ package dds.gesoc.model.geografia;
 
 public class ValorMonetario {
 	
-	private int cantidad;
+	private double cantidad;
 	private Moneda moneda;
 	
-	public ValorMonetario(int cantidad, Moneda moneda) {
+	public ValorMonetario(double cantidad, Moneda moneda) {
 		this.cantidad = cantidad;
 		this.moneda = moneda;
 	}
 	
-	public int getCantidad() {
+	public double getCantidad() {
 		return cantidad;
 	}
 	public Moneda getMoneda() {

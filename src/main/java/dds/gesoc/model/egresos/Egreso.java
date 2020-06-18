@@ -30,7 +30,7 @@ public class Egreso {
 		this.fechaOperacion = LocalDate.now();
 		this.items = new ArrayList<Item>();
 		this.presupuestos = new ArrayList<>();
-
+		this.moneda = moneda;
 		this.cantPresupuestosMinima = cantPresupuestosMinima;
 		this.criterioProveedor = criterioProveedor;
 		this.usuariosRevisores = new ArrayList<>();
@@ -94,10 +94,9 @@ public class Egreso {
 		return this.usuariosRevisores;
 	}
 	
-	public double valorTotal() {
+	public ValorMonetario valorTotal() {
 
-        ValorMonetario valorMonetario = new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
-		return this.getItems().stream().mapToDouble(Item::getValor).sum();
+        return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
 	}
 
 	public void agregarUsuarioRevisor(Usuario usuario){
@@ -133,7 +132,7 @@ public class Egreso {
 	//todo acá repito código, pero no puedo evitarlo. Ayudaa
 	public boolean compraRealizadaSegunAlgunPresupuesto() {
         return presupuestos.stream().anyMatch(presupuesto -> presupuesto.getUnProveedor().equals(this.datosEgreso.getProveedor())
-				&& presupuesto.getItems().equals(this.items) && presupuesto.valorTotal() == this.valorTotal());
+				&& presupuesto.getItems().equals(this.items) && presupuesto.valorTotal().getCantidad() == this.valorTotal().getCantidad());
 				//todo averiguar si comparar dos listas funciona si los elementos están en distintos ordenes
 	}
 

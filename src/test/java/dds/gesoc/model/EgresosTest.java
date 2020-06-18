@@ -43,7 +43,7 @@ public class EgresosTest {
     public void aniadirItems() {
     	egreso.agregarItem(lechuga);
     	egreso.agregarItem(cheddar);
-    	Assert.assertEquals(270.00, egreso.valorTotal(), 0);
+    	Assert.assertEquals(270.00, egreso.valorTotal().getCantidad(), 0);
     }
     
     @Test(expected = DniOCuitInvalidoException.class)
