@@ -141,12 +141,10 @@ public class PresupuestosTest {
 
     @Test
     public void usuarioSuscritoRecibeNotificacionesCuandoElEgresoSeValida() {
+        Assert.assertEquals(primerRevisor.mensajesEnBandeja(), 0);
         egreso.agregarUsuarioRevisor(primerRevisor);
-        egreso.agregarUsuarioRevisor(segundoRevisor);
-
         egreso.validar();
-
-        Assert.assertEquals(primerRevisor.);
+        Assert.assertEquals(primerRevisor.mensajesEnBandeja(), 1);
     }
 
 }

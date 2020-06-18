@@ -5,27 +5,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dds.gesoc.exceptions.UsuarioRevisorException;
+import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.usuarios.Usuario;
 
 public class Egreso {
 
 	private DatosEgreso datosEgreso;
-	private ValorMonetario valorMonetario;
+
 	private LocalDate fechaOperacion;
 	private List<Item> items;
 	private List<Presupuesto> presupuestos;
-
+    private Moneda moneda;
 	private int cantPresupuestosMinima;
 	private CriterioSeleccionProveedor criterioProveedor;
 	private List<Usuario> usuariosRevisores;
 	private RepoEgresos repoEgresos;
 	private ResultadoValidacion resultadoValidacion;
-	private Proveedor miProveedor;
 
-	public Egreso(DatosEgreso datosEgreso, ValorMonetario valorMonetario, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
+	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.datosEgreso = datosEgreso;
-		this.valorMonetario = valorMonetario; 
+
 		//TODO: ver como validar si la moneda es alguna de las que nos proporciona la api
 		this.fechaOperacion = LocalDate.now();
 		this.items = new ArrayList<Item>();
@@ -95,6 +95,8 @@ public class Egreso {
 	}
 	
 	public double valorTotal() {
+
+        ValorMonetario valorMonetario = new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
 		return this.getItems().stream().mapToDouble(Item::getValor).sum();
 	}
 

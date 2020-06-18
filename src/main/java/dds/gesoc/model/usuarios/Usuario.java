@@ -40,4 +40,9 @@ public class Usuario {
 	public void serNotificado(ResultadoValidacion respuestaEgreso) {
 		bandejaDeMensajes.push(respuestaEgreso);
 	}
+
+
+	public int mensajesEnBandeja() {
+		return bandejaDeMensajes.size();
+	}
 }
