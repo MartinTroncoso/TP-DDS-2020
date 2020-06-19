@@ -1,4 +1,4 @@
-package dds.gesoc.model;
+package dds.gesoc.Main;
 
 import dds.gesoc.model.egresos.*;
 import dds.gesoc.model.geografia.Moneda;
@@ -9,29 +9,29 @@ import dds.gesoc.model.usuarios.Usuario;
 
 public class Main {
 
-    private Presupuesto presupuestoJardinBarato;
-    private Presupuesto presupuestoCasa9DeJulio;
-    private Presupuesto presupuestoGarbarino;
-    private Proveedor proveedorA;
-    private Proveedor proveedorBarato;
-    private Proveedor proveedorC;
-    private Documento presupuestoDocumento;
-    private Documento documentoFactura;
-    private DatosEgreso datosEgreso;
-    private MedioPago unMedioDePago;
-    private Egreso egreso;
-    private Egreso egresoInvalido;
-    private Moneda moneda;
+    private static Presupuesto presupuestoJardinBarato;
+    private static Presupuesto presupuestoCasa9DeJulio;
+    private static Presupuesto presupuestoGarbarino;
+    private static Proveedor proveedorA;
+    private static Proveedor proveedorBarato;
+    private static Proveedor proveedorC;
+    private static Documento presupuestoDocumento;
+    private static Documento documentoFactura;
+    private static DatosEgreso datosEgreso;
+    private static MedioPago unMedioDePago;
+    private static Egreso egreso;
+    private static Egreso egresoInvalido;
+    private static Moneda moneda;
 
-    private Item parrillaCara;
-    private Item parrillaMedia;
-    private Item parrillaEconomica;
+    private static Item parrillaCara;
+    private static Item parrillaMedia;
+    private static Item parrillaEconomica;
 
-    private Empresa empresaEjemplo;
-    private Usuario primerRevisor;
-    private Usuario segundoRevisor;
+    private static Empresa empresaEjemplo;
+    private static Usuario primerRevisor;
+    private static Usuario segundoRevisor;
 
-    public static void ​ ​main(String[] args)​ {
+    public static void main(String[] args) {
 
         proveedorA = new Proveedor("Casa 9 de Julio");
         proveedorBarato = new Proveedor("jardineria");
