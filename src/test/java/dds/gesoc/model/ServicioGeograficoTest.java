@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import dds.gesoc.model.geografia.Ciudad;
+import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.Pais;
 import dds.gesoc.model.geografia.Provincia;
 import dds.gesoc.model.geografia.ServicioGeografico;
@@ -54,6 +55,15 @@ public class ServicioGeograficoTest {
 		System.out.println("Provincia: " + ciudadAleatoria.getProvincia().getNombre());
 		System.out.println("Pais: " + ciudadAleatoria.getProvincia().getPais().getNombre());
 		Assert.assertNotNull(ciudadAleatoria);
+	}
+	
+	@Test
+	public void obtengoUnaListaDeMonedas() {
+		List<Moneda> monedas = servicio.obtenerTodasLasMonedas();
+		Moneda unaMoneda = this.getRandomItem(monedas);
+		System.out.println(unaMoneda.getId()+","+ unaMoneda.getDescripcion()+","+unaMoneda.getSimbolo());
+		Assert.assertTrue(monedas.size() > 0);
+		Assert.assertNotNull(unaMoneda);
 	}
 	
 	private <T> T getRandomItem(List<T> list) {

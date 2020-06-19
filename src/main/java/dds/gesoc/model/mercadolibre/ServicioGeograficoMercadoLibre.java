@@ -43,7 +43,7 @@ public class ServicioGeograficoMercadoLibre implements ServicioGeografico {
 	public List<Moneda> obtenerTodasLasMonedas() {
 		List<JMoneda> jmonedas = api.obtenerJMonedas();
 		return jmonedas.stream()
-				.map(j -> new Moneda(j.getId(), j.getDescription(), j.getDescription()))
+				.map(j -> new Moneda(j.getId(), j.getDescription(), j.getSymbol()))
 				.collect(Collectors.toList());
 	}
 }
