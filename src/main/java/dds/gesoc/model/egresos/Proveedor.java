@@ -15,6 +15,11 @@ public class Proveedor {
 		this.nombreORazonSocial = nombreORazonSocial;
 	}
 	
+	public Proveedor(String nombreORazonSocial, String dniOCuit) {
+		this.nombreORazonSocial = nombreORazonSocial;
+		this.establecerDniOCuit(dniOCuit);
+	}
+	
 	public Proveedor(String nombreORazonSocial, String dniOCuit, DireccionPostal direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
 		this.establecerDniOCuit(dniOCuit);
