@@ -145,6 +145,10 @@ public class PresupuestosTest {
         egreso.agregarUsuarioRevisor(primerRevisor);
         egreso.validar();
         Assert.assertEquals(primerRevisor.mensajesEnBandeja(), 1);
+
+
     }
+
+
 
 }
