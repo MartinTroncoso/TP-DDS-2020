@@ -18,11 +18,14 @@ public class Presupuesto {
 	
 	public Presupuesto(Proveedor unProveedor, Documento docComercial, Moneda moneda, String detalle, Egreso unEgreso) {
 		this.docComercial = docComercial;
-		this.detalle = detalle;
+		this.setDetalle(detalle);
 		this.items = new ArrayList<>();
 		this.unProveedor = unProveedor;
 		this.moneda = moneda;
+		this.establecerEgresoAsociado(unEgreso);
+	}
 
+	private void establecerEgresoAsociado(Egreso unEgreso) {
 		if (unEgreso == null)
 			throw new PresupuestoSinEgresoAsociadoException("No se pueden crear presupuestos sin un egreso asociado");
 		this.egresoAsociado = unEgreso;
@@ -55,5 +58,13 @@ public class Presupuesto {
 
 	public Proveedor getUnProveedor() {
 		return unProveedor;
+	}
+
+	public String getDetalle() {
+		return detalle;
+	}
+
+	public void setDetalle(String detalle) {
+		this.detalle = detalle;
 	}
 }

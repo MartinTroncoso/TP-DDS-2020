@@ -16,6 +16,7 @@ public class RepoEgresos {
     }
 
     private RepoEgresos() {
+    
     }
 
     public void agregarEgresoNoValidado(Egreso unEgreso) {
@@ -24,15 +25,12 @@ public class RepoEgresos {
              egresosNoValidados.add(unEgreso);
     }
 
-    private void removerEgreso(Egreso unEgreso) {
-        egresosNoValidados.remove(unEgreso);
+    private void removerEgresoNoValidado(Egreso unEgreso) {
+        if(egresosNoValidados.contains(unEgreso))
+        	egresosNoValidados.remove(unEgreso);
     }
-
 
     public void validarEgresos() {
         egresosNoValidados = (List<Egreso>) egresosNoValidados.stream().filter(egreso -> !egreso.egresoValido());
     }
-
-
-
 }
