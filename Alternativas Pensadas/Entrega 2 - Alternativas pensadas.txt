@@ -1,0 +1,4 @@
+- Sobre Requerimiento 1:
+
+Pensábamos en hacer una clase EgresoConPresupuestos que herede de Egreso y que Presupuesto herede de egresos, pero Presupuesto es una clase que no hereda de egresos porque solo tienen en común los atributos. 
+Aparte es mucho mejor que Egreso tenga una lista de Presupuestos y otra de PresupuestosValidados.
