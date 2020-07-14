@@ -74,6 +74,11 @@ public class Egreso {
 		return this.presupuestos;
 	}
 
+	public Proveedor getProveedor() {
+		return this.datosEgreso.getProveedor();
+	}
+
+
 	public int getCantPresupuestosMinima() {
 		return this.cantPresupuestosMinima;
 	}
@@ -120,7 +125,7 @@ public class Egreso {
 	}
 
 	public Proveedor proveedorCandidatoSegunCriterio() {
-		return this.criterioProveedor.seleccionarProveedor(presupuestos);
+		return this.criterioProveedor.seleccionarProveedor(this.presupuestos);
 	}
 
 
@@ -131,8 +136,7 @@ public class Egreso {
 
 	//todo acá repito código, pero no puedo evitarlo. Ayudaa
 	public boolean compraRealizadaSegunAlgunPresupuesto() {
-        return presupuestos.stream().anyMatch(presupuesto -> presupuesto.getUnProveedor().equals(this.datosEgreso.getProveedor())
-				&& presupuesto.getItems().equals(this.items) && presupuesto.valorTotal().getCantidad() == this.valorTotal().getCantidad());
+        return this.presupuestos.stream().anyMatch(presupuesto -> presupuesto.compraRealizadaSegunEstePresupuesto(this));
 				//todo averiguar si comparar dos listas funciona si los elementos están en distintos ordenes
 	}
 

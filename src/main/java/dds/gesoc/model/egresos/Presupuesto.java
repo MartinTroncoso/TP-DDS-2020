@@ -67,4 +67,10 @@ public class Presupuesto {
 	public void setDetalle(String detalle) {
 		this.detalle = detalle;
 	}
+
+	public boolean compraRealizadaSegunEstePresupuesto(Egreso unEgreso) {
+		return this.getUnProveedor().equals(unEgreso.getProveedor())
+				&& this.getItems().equals(unEgreso.getItems()) && this.valorTotal().getCantidad() == unEgreso.valorTotal().getCantidad();
+	}
+
 }
