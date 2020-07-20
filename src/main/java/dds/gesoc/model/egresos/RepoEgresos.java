@@ -2,11 +2,11 @@ package dds.gesoc.model.egresos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RepoEgresos {
 
     private static RepoEgresos ourInstance;
-    private List<Egreso> egresosNoValidados = new ArrayList<>();
     private List<Egreso> todosLosEgresos = new ArrayList<>();
 
     public static RepoEgresos getInstance() {
@@ -28,19 +28,11 @@ public class RepoEgresos {
         todosLosEgresos.remove(unEgreso);
     }
 
-    public void agregarEgresoNoValidado(Egreso unEgreso) {
-
-        if (!egresosNoValidados.contains(unEgreso))
-             egresosNoValidados.add(unEgreso);
+    public List<Egreso> egresosNoValidados() {
+		return todosLosEgresos.stream().filter(e -> !e.isValido()).collect(Collectors.toList());
     }
-
-    private void removerEgresoNoValidado(Egreso unEgreso) {
-        if(egresosNoValidados.contains(unEgreso))
-        	egresosNoValidados.remove(unEgreso);
-    }
-
+    
     public void validarEgresos() {
-        egresosNoValidados.stream().forEach(egreso -> egreso.validar());
-        egresosNoValidados = (List<Egreso>) egresosNoValidados.stream().filter(egreso -> !egreso.egresoValido());
+    	this.egresosNoValidados().forEach(e -> e.validar());
     }
 }

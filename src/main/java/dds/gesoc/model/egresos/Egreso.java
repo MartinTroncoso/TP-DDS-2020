@@ -22,6 +22,7 @@ public class Egreso {
 	private List<Usuario> usuariosRevisores;
 	private RepoEgresos repoEgresos;
 	private ResultadoValidacion resultadoValidacion;
+	private boolean valido;
 
 	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.datosEgreso = datosEgreso;
@@ -35,9 +36,8 @@ public class Egreso {
 		this.criterioProveedor = criterioProveedor;
 		this.usuariosRevisores = new ArrayList<>();
 		this.repoEgresos = RepoEgresos.getInstance();
-
-		this.repoEgresos.agregarEgresoNoValidado(this);
-
+		this.repoEgresos.agregarEgresoNuevo(this);
+		this.setValido(false);
 		this.resultadoValidacion = new ResultadoValidacion();
 	}
 
@@ -64,9 +64,17 @@ public class Egreso {
     public void setMiProveedor(Proveedor miProveedor) {
         this.datosEgreso.setProveedor(miProveedor);
     }
+    
+	public boolean isValido() {
+		return valido;
+	}
+
+	public void setValido(boolean valido) {
+		this.valido = valido;
+	}
 
     public void agregarPresupuesto(Presupuesto presupuesto){
-		this.repoEgresos.agregarEgresoNoValidado(this);
+		this.setValido(false);
 		this.getPresupuestos().add(presupuesto);
 	}
 
@@ -77,7 +85,6 @@ public class Egreso {
 	public Proveedor getProveedor() {
 		return this.datosEgreso.getProveedor();
 	}
-
 
 	public int getCantPresupuestosMinima() {
 		return this.cantPresupuestosMinima;
@@ -154,7 +161,6 @@ public class Egreso {
 		resultadoValidacion = new ResultadoValidacion();
 	}
 
-
 /*
 * egresoValido devuelve true o false según la validez del egreso sin notificar a los usuarios
 * */
@@ -168,12 +174,14 @@ public class Egreso {
 * */
 	public void validar() {
 
-        agregarMensajeSegunEstado(this.egresoValido(), "----\nEgreso valido");
+		boolean estadoValidacion = this.egresoValido();
+        agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
         agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");
         agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"Proveedor fue elegido según el criterio de " +
                 "selección de presupuestos" );
         agregarMensajeSegunEstado(this.tieneCantidadMinimaDePresupuestos(), "Compra realizada con cantidad minima de presupuestos");
 		notificarUsuariosRevisores();
+		this.setValido(estadoValidacion);
 	}
 
 }
