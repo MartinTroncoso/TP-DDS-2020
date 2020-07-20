@@ -12,6 +12,7 @@ import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.Pais;
 import dds.gesoc.model.geografia.Provincia;
 import dds.gesoc.model.geografia.ServicioGeografico;
+import dds.gesoc.model.geografia.ServicioGeograficoImpostor;
 import dds.gesoc.model.mercadolibre.ServicioGeograficoMercadoLibre;
 
 
@@ -21,15 +22,13 @@ public class ServicioGeograficoTest {
 
 	@Before
 	public void init() {
-
-		servicio = new ServicioGeograficoMercadoLibre();
+		servicio = new ServicioGeograficoImpostor();
 	}
 
 	@Test
 	public void obtengoUnaListaDePaises() {
 		List<Pais> paises = servicio.obtenerTodosLosPaises();
 		Pais unPais = this.getRandomItem(paises);
-		System.out.println(unPais.getId()+","+unPais.getNombre());
 		Assert.assertTrue(paises.size() > 0);
 		Assert.assertNotNull(unPais);
 	}
@@ -39,8 +38,6 @@ public class ServicioGeograficoTest {
 		Pais unPaisAleatorio = this.getRandomItem(servicio.obtenerTodosLosPaises());
 		List<Provincia> provincias = servicio.obtenerProvinciasDeUnPais(unPaisAleatorio);
 		Provincia unaProvincia = this.getRandomItem(provincias);
-		System.out.println(unPaisAleatorio.getId()+","+unPaisAleatorio.getNombre());
-		System.out.println(unaProvincia.getId()+","+unaProvincia.getNombre());
 		Assert.assertNotNull(provincias);
 	}
 	
@@ -49,11 +46,6 @@ public class ServicioGeograficoTest {
 		Pais unPais = this.getRandomItem(servicio.obtenerTodosLosPaises());
 		Provincia unaProvincia = this.getRandomItem(servicio.obtenerProvinciasDeUnPais(unPais));
 		Ciudad ciudadAleatoria = this.getRandomItem(servicio.obtenerCiudadesDeUnaProvincia(unaProvincia));
-		System.out.println("Info de la ciudad:");
-		System.out.println("ID: " + ciudadAleatoria.getId());
-		System.out.println("Nombre: " + ciudadAleatoria.getNombre());
-		System.out.println("Provincia: " + ciudadAleatoria.getProvincia().getNombre());
-		System.out.println("Pais: " + ciudadAleatoria.getProvincia().getPais().getNombre());
 		Assert.assertNotNull(ciudadAleatoria);
 	}
 	
@@ -61,7 +53,6 @@ public class ServicioGeograficoTest {
 	public void obtengoUnaListaDeMonedas() {
 		List<Moneda> monedas = servicio.obtenerTodasLasMonedas();
 		Moneda unaMoneda = this.getRandomItem(monedas);
-		System.out.println(unaMoneda.getId()+","+ unaMoneda.getDescripcion()+","+unaMoneda.getSimbolo());
 		Assert.assertTrue(monedas.size() > 0);
 		Assert.assertNotNull(unaMoneda);
 	}
