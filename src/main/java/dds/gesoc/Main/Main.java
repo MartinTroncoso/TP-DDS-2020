@@ -1,5 +1,9 @@
 package dds.gesoc.Main;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 import dds.gesoc.model.egresos.*;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.organizaciones.Empresa;
@@ -30,10 +34,17 @@ public class Main {
     private static Empresa empresaEjemplo;
     private static Usuario primerRevisor;
     private static Usuario segundoRevisor;
+    
+    private static RepoEgresos repo;
 
+    public static void validar() {
+        repo.validarEgresos();
+        //System.out.println("Hola");
+    }
+    
     public static void main(String[] args) {
 
-        proveedorA = new Proveedor("Casa 9 de Julio");
+        /*proveedorA = new Proveedor("Casa 9 de Julio");
         proveedorBarato = new Proveedor("jardineria");
         proveedorC = new Proveedor("garbarino");
         presupuestoDocumento = new Documento("Presupuesto", 44);
@@ -68,10 +79,10 @@ public class Main {
 
         //while() {
         //}
+        */
+        repo = RepoEgresos.getInstance();
 
-
-
-
-
+        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.scheduleAtFixedRate(Main::validar, 0, 10, TimeUnit.DAYS);
     }
 }
