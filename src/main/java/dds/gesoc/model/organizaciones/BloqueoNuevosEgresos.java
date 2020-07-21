@@ -8,7 +8,7 @@ public class BloqueoNuevosEgresos implements ComportamientoSegunReglaDeNegocio{
 	}
 	
 	public void ejecutarSobre(Entidad entidad) {
-		if(entidad.getMontosTotales() + egresoAgregar.getMonto() > entidad.getMontoEsperado()) {
+		if(entidad.getMontosTotales() + egresoAgregar.valorTotal().getMonto() > entidad.getMontoEsperado()) {
 			throw new BloquearEgresoException("Si se agrega el egreso, la entidad va a superar su monto esperado.");
 		}
 	}

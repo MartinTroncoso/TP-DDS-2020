@@ -49,11 +49,11 @@ public class Presupuesto {
 	}
 	
 	public ValorMonetario valorTotal() {
-		return new ValorMonetario( this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
+		return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
 	}
 
 	public double valorTotalNumerico() {
-		return valorTotal().getCantidad();
+		return valorTotal().getMonto();
 	}
 
 	public Proveedor getUnProveedor() {
@@ -70,7 +70,8 @@ public class Presupuesto {
 
 	public boolean compraRealizadaSegunEstePresupuesto(Egreso unEgreso) {
 		return this.getUnProveedor().equals(unEgreso.getProveedor())
-				&& this.getItems().equals(unEgreso.getItems()) && this.valorTotal().getCantidad() == unEgreso.valorTotal().getCantidad();
+			   && this.getItems().equals(unEgreso.getItems())
+			   && this.valorTotal().getMonto() == unEgreso.valorTotal().getMonto();
 	}
 
 }

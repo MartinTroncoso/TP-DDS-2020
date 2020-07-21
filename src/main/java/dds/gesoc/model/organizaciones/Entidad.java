@@ -1,6 +1,9 @@
 package dds.gesoc.model.organizaciones;
 
+import dds.gesoc.exceptions.EtiquetaNoValidaException;
+import dds.gesoc.exceptions.EtiquetaYaExistenteException;
 import dds.gesoc.model.egresos.Egreso;
+import dds.gesoc.model.egresos.Etiqueta;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +32,9 @@ public abstract class Entidad {
 
     public void eliminarEtiqueta(Etiqueta unaEtiqueta) {
         etiquetasEgresos.remove(unaEtiqueta);
-        egresosEntidad.stream().filter(egreso -> egreso.getEtiqueta().equals(unaEtiqueta)).forEach(egreso -> egreso.borrarEtiqueta());
+        egresosEntidad.stream()
+        			  .filter(egreso -> egreso.getEtiqueta().equals(unaEtiqueta))
+        			  .forEach(egreso -> egreso.borrarEtiqueta());
     }
     
     public Categoria getCategoria() {
@@ -41,7 +46,7 @@ public abstract class Entidad {
     }
     
     public double getMontosTotales(){
-    	return egresosEntidad.stream().mapToDouble(Egreso::getMonto).sum();
+    	return egresosEntidad.stream().mapToDouble(e -> e.valorTotal().getMonto()).sum();
     }
     
     public double getMontoEsperado() {
@@ -57,7 +62,7 @@ public abstract class Entidad {
     }
 
     private boolean egresoConEqituetaValida(Egreso unEgreso) {
-        return  unEgreso.getEtiqueta() ==  null || etiquetasEgresos.contains(unEgreso.getEtiqueta());
+        return unEgreso.getEtiqueta() == null || etiquetasEgresos.contains(unEgreso.getEtiqueta());
     }
 
 /*

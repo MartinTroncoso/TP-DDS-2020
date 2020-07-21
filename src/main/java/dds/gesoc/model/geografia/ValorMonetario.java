@@ -2,16 +2,16 @@ package dds.gesoc.model.geografia;
 
 public class ValorMonetario {
 	
-	private double cantidad;
+	private double monto;
 	private Moneda moneda;
 	
-	public ValorMonetario(double cantidad, Moneda moneda) {
-		this.cantidad = cantidad;
+	public ValorMonetario(double monto, Moneda moneda) {
+		this.monto = monto;
 		this.moneda = moneda;
 	}
 	
-	public double getCantidad() {
-		return cantidad;
+	public double getMonto() {
+		return monto;
 	}
 	public Moneda getMoneda() {
 		return moneda;
