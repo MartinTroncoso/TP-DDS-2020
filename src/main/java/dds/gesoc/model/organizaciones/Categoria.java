@@ -16,11 +16,13 @@ public class Categoria {
 	}
 
 	public void agregarReglaDeNegocio(ComportamientoSegunReglaDeNegocio comportamiento) {
-		comportamientoSegunReglasDeNegocio.add(comportamiento);
+		if(!comportamientoSegunReglasDeNegocio.contains(comportamiento))
+			comportamientoSegunReglasDeNegocio.add(comportamiento);
 	}
 	
-	public void quitarReglaDeNegocio(int posicion) {
-		comportamientoSegunReglasDeNegocio.remove(posicion);
+	public void quitarReglaDeNegocio(ComportamientoSegunReglaDeNegocio comportamiento) {
+		if(comportamientoSegunReglasDeNegocio.contains(comportamiento))
+			comportamientoSegunReglasDeNegocio.remove(comportamiento);
 	}
 	
 	public void aplicarReglasDeNegocio(Entidad entidad) {
