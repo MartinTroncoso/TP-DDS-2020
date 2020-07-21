@@ -3,11 +3,11 @@ package dds.gesoc.model.organizaciones;
 public class EntidadBase extends Entidad {
 
     private String descripcion;
-    //TODO Es una lista de egresos. Preguntar si es de la entidad o de la organizacion
+    private Categoria categoria;
+    private double montoEsperado;
 
-
-    public EntidadBase (String nombreFicticio, String descripcion) {
-        super(nombreFicticio);
+    public EntidadBase (String nombreFicticio, Categoria categoria, double montoEsperado, String descripcion) {
+        super(nombreFicticio, categoria, montoEsperado);
         this.descripcion = descripcion;
     }
 
