@@ -52,7 +52,7 @@ public class EgresosTest {
 
     	datosEgreso = new DatosEgreso(burguerKing, tarjeta);
 
-        egreso = new Egreso(datosEgreso, null, 0, null, null);
+        egreso = new Egreso(datosEgreso, null, 0, null);
         
         categoria = new Categoria("ONG");
         entidadJuridica = new EntidadJuridica("Hermanos Scott",categoria, 200.0,"IBM","20-42498956-2","6600");
@@ -108,6 +108,6 @@ public class EgresosTest {
     	categoria.agregarReglaDeNegocio(bloqueoNuevosEgresos);
     	egreso.agregarItem(cebolla);
     	egreso.agregarItem(queso);
-    	entidadJuridica.setListaEgresos(egreso);
+    	entidadJuridica.agregarEgreso(egreso);
     }
 }

@@ -20,16 +20,16 @@ public class OrganizacionesTest {
     private EntidadJuridica empresaDeTrajes;
     private EntidadJuridica empresaDeModa;
 
-
+    //TODO: arreglar la categoria y el monto esperado, estan null y 0 respectivamente para que no tire error
     @Before
     public void init() {
-        miEmpresa = new Empresa("mc Donaldo", "Arcos Dorados SRL",
+        miEmpresa = new Empresa("mc Donaldo", null, 0, "Arcos Dorados SRL",
                 "27-12345678-1", "Av. Corrientes 5600", new SectorServicios(), 150000);
 
-        entidadBase = new EntidadBase("Altos pantalones", "Taller de pantalones");
-        empresaDeTrajes = new Empresa("macowins", "Mac o wins SRL",
+        entidadBase = new EntidadBase("Altos pantalones", null, 0, "Taller de pantalones");
+        empresaDeTrajes = new Empresa("macowins", null, 0, "Mac o wins SRL",
                 "10-12345678-1", "Av. Medrano 950", new SectorComercio(), 200000);
-        empresaDeModa = new Empresa("La salada", "Salada SRL",
+        empresaDeModa = new Empresa("La salada", null, 0, "Salada SRL",
                 "22-12345678-2", "Newton 3200", new SectorComercio(), 400000);
     }
 
@@ -59,7 +59,7 @@ public class OrganizacionesTest {
 
     @Test (expected = DniOCuitInvalidoException.class)
     public void seDetectanCuitInvalidos() {
-        Empresa miEmpresa2 = new Empresa("mc Donaldo", "Arcos Dorados SRL",
+        Empresa miEmpresa2 = new Empresa("mc Donaldo", null, 0, "Arcos Dorados SRL",
                 "27-123456-1", "Av. Corrientes 5600", new SectorServicios(), 150000);
     }
 
