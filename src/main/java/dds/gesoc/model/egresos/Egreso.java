@@ -22,7 +22,10 @@ public class Egreso {
 	private List<Usuario> usuariosRevisores;
 	private RepoEgresos repoEgresos;
 	private ResultadoValidacion resultadoValidacion;
-	private boolean valido;
+	private Etiqueta etiqueta;
+
+	private boolean valido;  //TODO esto puede causar inconsistencia. Debería ser calculable
+
 
 	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.datosEgreso = datosEgreso;
@@ -39,6 +42,19 @@ public class Egreso {
 		this.repoEgresos.agregarEgresoNuevo(this);
 		this.setValido(false);
 		this.resultadoValidacion = new ResultadoValidacion();
+	}
+
+
+	public Etiqueta getEtiqueta() {
+		return etiqueta;
+	}
+
+	public void setEtiqueta(Etiqueta etiqueta) {
+		this.etiqueta = etiqueta;
+	}
+
+	public void borrarEtiqueta() {
+		this.etiqueta = null;
 	}
 
 	public void agregarItem(Item item) {
