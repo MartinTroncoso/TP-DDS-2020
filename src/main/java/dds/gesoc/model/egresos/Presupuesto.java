@@ -49,7 +49,7 @@ public class Presupuesto {
 	}
 	
 	public ValorMonetario valorTotal() {
-		return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
+		return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getMonto).sum(), moneda);
 	}
 
 	public double valorTotalNumerico() {

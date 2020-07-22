@@ -1,6 +1,8 @@
 package dds.gesoc.model;
 
 import dds.gesoc.model.egresos.*;
+import dds.gesoc.model.geografia.Moneda;
+import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.organizaciones.BloqueoAgregarEntidadBase;
 import dds.gesoc.model.organizaciones.BloqueoNuevosEgresos;
 import dds.gesoc.model.organizaciones.Categoria;
@@ -36,19 +38,22 @@ public class EgresosTest {
 	private Categoria categoria;
 	private BloqueoNuevosEgresos bloqueoNuevosEgresos;
 	private BloqueoAgregarEntidadBase bloqueoAgregarEntidadBase;
+	private Moneda pesosArgentinos;
 
 	private DatosEgreso datosEgreso;
     @Before
     public void init() {
     	
+    	pesosArgentinos = new Moneda("ARS", "Peso argentino", "$");
+    	
     	burguerKing = new Proveedor("Burguer King");
     	tarjeta = new MedioPago(TipoMedioPago.TARJETA_DE_CREDITO);
     	efectivo = new MedioPago(TipoMedioPago.EFECTIVO);
-    	lechuga = new Item("lechuga", 200.00);
-    	tomate = new Item("tomate", 150.00);
-    	cheddar = new Item("cheddar", 70.00);
-    	cebolla = new Item("cebolla", 175.00);
-    	queso = new Item("queso",26.00);
+    	lechuga = new Item("lechuga", new ValorMonetario(200.00, pesosArgentinos));
+    	tomate = new Item("tomate", new ValorMonetario(150.00, pesosArgentinos));
+    	cheddar = new Item("cheddar", new ValorMonetario(70.00, pesosArgentinos));
+    	cebolla = new Item("cebolla", new ValorMonetario(175.00, pesosArgentinos));
+    	queso = new Item("queso", new ValorMonetario(26.00, pesosArgentinos));
 
     	datosEgreso = new DatosEgreso(burguerKing, tarjeta);
 
@@ -100,7 +105,7 @@ public class EgresosTest {
     
     @Test
     public void sabiendoElValorDeUnItem() {
-    	Assert.assertEquals(200.00, lechuga.getValor(), 0);
+    	Assert.assertEquals(200.00, lechuga.getMonto(), 0);
     }
     
     @Test(expected = BloquearEgresoException.class)

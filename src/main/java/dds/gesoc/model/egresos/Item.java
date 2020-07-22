@@ -1,11 +1,13 @@
 package dds.gesoc.model.egresos;
 
+import dds.gesoc.model.geografia.Moneda;
+import dds.gesoc.model.geografia.ValorMonetario;
+
 public class Item {
 	private String descripcion;
-	//TODO cambiar a valormonetario
-	private double valorItem;
+	private ValorMonetario valorItem;
 	
-	public Item(String descripcion, double valor) {
+	public Item(String descripcion, ValorMonetario valor) {
 		this.descripcion = descripcion;
 		this.valorItem = valor;
 	}
@@ -14,9 +16,11 @@ public class Item {
 		return this.descripcion;
 	}
 	
-	public double getValor() {
-		return this.valorItem;
+	public double getMonto() {
+		return this.valorItem.getMonto();
 	}
 	
-	//TODO: Ver si usar BigDecimal para el precio
+	public Moneda getMoneda() {
+		return this.valorItem.getMoneda();
+	}
 }

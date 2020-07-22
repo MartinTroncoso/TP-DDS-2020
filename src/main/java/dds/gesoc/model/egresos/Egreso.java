@@ -127,7 +127,7 @@ public class Egreso {
 	}
 	
 	public ValorMonetario valorTotal() {
-        return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
+        return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getMonto).sum(), moneda);
 	}
 
 

@@ -1,10 +1,10 @@
 package dds.gesoc.model;
 
 import dds.gesoc.model.egresos.*;
+import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.organizaciones.Empresa;
 import dds.gesoc.model.organizaciones.SectorServicios;
-import jdk.internal.dynalink.linker.LinkerServices;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -35,9 +35,13 @@ public class EtiquetasTest {
     private Proveedor rolando;
 
     DatosEgreso datosEgreso;
+	private Moneda pesosArgentinos;
 
     @Before
     public void init() {
+    	
+    	pesosArgentinos = new Moneda("ARS", "Peso argentino", "$");
+    	
         miEmpresa = new Empresa("mc Donaldo", null, 10000000,"Arcos Dorados SRL",
                 "27-12345678-1", "Av. Corrientes 5600", new SectorServicios(), 150000);
 
@@ -49,13 +53,13 @@ public class EtiquetasTest {
         rolando = new Proveedor("Rolando srl");
         tarjeta = new MedioPago(TipoMedioPago.TARJETA_DE_CREDITO);
         efectivo = new MedioPago(TipoMedioPago.EFECTIVO);
-        lechuga = new Item("lechuga", 200.00);
-        tomate = new Item("tomate", 150.00);
-        huevo = new Item("huevo", 50.00);
-        carne = new Item("carne", 150.00);
+        lechuga = new Item("lechuga", new ValorMonetario(200.00, pesosArgentinos));
+        tomate = new Item("tomate", new ValorMonetario(150.00, pesosArgentinos));
+        huevo = new Item("huevo", new ValorMonetario(50.00, pesosArgentinos));
+        carne = new Item("carne", new ValorMonetario(150.00, pesosArgentinos));
 
-        mesa = new Item("mesa", 70.00);
-        sillas = new Item("sillas", 175.00);
+        mesa = new Item("mesa", new ValorMonetario(70.00, pesosArgentinos));
+        sillas = new Item("sillas", new ValorMonetario(175.00, pesosArgentinos));
 
         datosEgreso = new DatosEgreso(rolando, tarjeta);
 

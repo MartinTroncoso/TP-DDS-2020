@@ -36,9 +36,9 @@ public class PresupuestosTest {
     private Usuario primerRevisor;
     private Usuario segundoRevisor;
 
-
     @Before
     public void init() {
+    	
         proveedorA = new Proveedor("Casa 9 de Julio");
         proveedorBarato = new Proveedor("jardineria");
         proveedorC = new Proveedor("garbarino");
@@ -57,9 +57,9 @@ public class PresupuestosTest {
         presupuestoGarbarino = new Presupuesto(proveedorC, presupuestoDocumento, moneda, "Vende caro", egreso);
 
 
-        parrillaCara = new Item("parrilla", 35000);
-        parrillaEconomica = new Item("parilla", 1200);
-        parrillaMedia = new Item("parrilla", 12500);
+        parrillaCara = new Item("parrilla", new ValorMonetario(35000, moneda));
+        parrillaEconomica = new Item("parilla", new ValorMonetario(1200, moneda));
+        parrillaMedia = new Item("parrilla", new ValorMonetario(12500, moneda));
         presupuestoCasa9DeJulio.agregarItem(parrillaMedia);
         presupuestoJardinBarato.agregarItem(parrillaEconomica);
         presupuestoGarbarino.agregarItem(parrillaCara);
@@ -109,7 +109,7 @@ public class PresupuestosTest {
     @Test
     public void compraInvalidaSiNoSeRealizoEnBaseAPresupuesto() {
         new Presupuesto(proveedorA, presupuestoDocumento, moneda,"Oferta", egresoInvalido);
-        egresoInvalido.agregarItem(new Item("Nada que ver", 8000));
+        egresoInvalido.agregarItem(new Item("Nada que ver", new ValorMonetario(8000, moneda)));
         egresoInvalido.setMiProveedor(new Proveedor("solo prueba SA"));
 
         Assert.assertFalse(egresoInvalido.compraRealizadaSegunAlgunPresupuesto());
