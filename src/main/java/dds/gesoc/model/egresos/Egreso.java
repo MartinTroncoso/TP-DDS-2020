@@ -45,6 +45,10 @@ public class Egreso {
 	}
 
 
+	public String toString() {
+		return datosEgreso.toString() + "Valor total: " + valorTotal();
+	}
+
 	public Etiqueta getEtiqueta() {
 		return etiqueta;
 	}
@@ -125,6 +129,11 @@ public class Egreso {
 	public ValorMonetario valorTotal() {
 
         return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getValor).sum(), moneda);
+	}
+
+
+	public double valorTotalEnMoneda(Moneda unaMoneda) {
+		return valorTotal().getCantidadConvertida(unaMoneda);
 	}
 
 	public void agregarUsuarioRevisor(Usuario usuario){
