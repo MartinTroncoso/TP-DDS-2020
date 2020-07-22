@@ -38,7 +38,7 @@ public class EtiquetasTest {
 
     @Before
     public void init() {
-        miEmpresa = new Empresa("mc Donaldo", "Arcos Dorados SRL",
+        miEmpresa = new Empresa("mc Donaldo", null, 10000000,"Arcos Dorados SRL",
                 "27-12345678-1", "Av. Corrientes 5600", new SectorServicios(), 150000);
 
         proveedorEt = new Etiqueta("Rolando");
@@ -89,7 +89,7 @@ public class EtiquetasTest {
 
        while(iterable.hasNext()) {
            Etiqueta etiqueta = (Etiqueta) iterable.next();
-           System.out.println( "Etiqueta: " + etiqueta.getNombre() + "  " + "- Monto total: "+ reporte.get(etiqueta).getCantidad());
+           System.out.println( "Etiqueta: " + etiqueta.getNombre() + "  " + "- Monto total: "+ reporte.get(etiqueta).getMontoConvertido(null));
 
        }
     }

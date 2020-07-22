@@ -132,7 +132,7 @@ public class Egreso {
 
 
 	public double valorTotalEnMoneda(Moneda unaMoneda) {
-		return valorTotal().getCantidadConvertida(unaMoneda);
+		return valorTotal().getMontoConvertido(unaMoneda);
 	}
 
 	public void agregarUsuarioRevisor(Usuario usuario){

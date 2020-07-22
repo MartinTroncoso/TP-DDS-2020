@@ -16,4 +16,10 @@ public class ValorMonetario {
 	public Moneda getMoneda() {
 		return moneda;
 	}
+
+	public double getMontoConvertido(Moneda moneda) {
+
+		//HACER UNA CONVERSIÓN DE MONEDAS...
+		return monto;
+	}
 }
