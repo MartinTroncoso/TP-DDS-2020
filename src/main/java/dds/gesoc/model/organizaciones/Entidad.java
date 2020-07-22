@@ -1,7 +1,6 @@
+
 package dds.gesoc.model.organizaciones;
 
-import dds.gesoc.exceptions.EtiquetaNoValidaException;
-import dds.gesoc.exceptions.EtiquetaYaExistenteException;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Etiqueta;
 import dds.gesoc.model.geografia.ValorMonetario;
@@ -10,17 +9,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public abstract class Entidad {
-    //TODO la clase es abstracta porque no quiero instancias de esta, sino de sus subclases, pero no tengo métodos abstractos. Preguntar
 
     private String nombreFicticio;
-
+    protected Categoria categoria;
+    protected double montoEsperado;
     protected List<Egreso> egresosEntidad = new ArrayList<>();
 
-    protected Entidad (String nombreFicticio) {
+
+    protected Entidad(String nombreFicticio, Categoria categoria, double montoEsperado) {
         this.nombreFicticio = nombreFicticio;
+        this.categoria = categoria;
+        this.montoEsperado = montoEsperado;
     }
 
     public String getNombreFicticio() {
@@ -35,6 +37,8 @@ public abstract class Entidad {
     public Map<Etiqueta, List<Egreso>> generarReporteEgresosPorEtiqueta() {
         return egresosEntidad.stream().collect(Collectors.groupingBy(Egreso::getEtiqueta));
     }
+
+//TODO la clase es abstracta porque no quiero instancias de esta, sino de sus subclases, pero no tengo métodos abstractos. Preguntar
 
 
     public Map<Etiqueta, ValorMonetario> generarReporteMontosTotalesPorEtiqueta() {
@@ -52,7 +56,24 @@ public abstract class Entidad {
         return new ValorMonetario(valorTotal, null);
     }
 
-}
 
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public List<Egreso> getEgresos() {
+        return egresosEntidad;
+    }
+
+    public double getMontosTotales() {
+        return egresosEntidad.stream().mapToDouble(e -> e.valorTotal().getMonto()).sum();
+    }
+
+    public double getMontoEsperado() {
+        return montoEsperado;
+    }
+
+
+}
 
 

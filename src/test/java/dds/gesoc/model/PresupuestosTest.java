@@ -65,9 +65,9 @@ public class PresupuestosTest {
         presupuestoGarbarino.agregarItem(parrillaCara);
 
 
-
+        //TODO: arreglar la categoria y el monto esperado, estan null y 0 respectivamente para que no tire error
         //Usuarios
-        empresaEjemplo = new Empresa("mc Donaldo", "Arcos Dorados SRL", "27-12345678-1",
+        empresaEjemplo = new Empresa("mc Donaldo", null, 0, "Arcos Dorados SRL", "27-12345678-1",
                 "Av. Corrientes 5600", new SectorServicios(), 150000);
         primerRevisor = new Usuario("juancito", "12Q4ldldldld", TipoUsuario.ESTANDAR, empresaEjemplo);
         segundoRevisor = new Usuario("maarilulis", "ppp1utututut", TipoUsuario.ESTANDAR, empresaEjemplo);

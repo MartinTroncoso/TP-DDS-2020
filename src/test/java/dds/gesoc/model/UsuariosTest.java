@@ -20,10 +20,11 @@ public class UsuariosTest {
 	private Empresa empresaEjemplo;
 	private String nombreUsuarioEjemplo;
 
+	//TODO: arreglar la categoria y el monto esperado, estan null y 0 respectivamente para que no tire error
 	@Before
 	public void init() {
 		nombreUsuarioEjemplo = "usuario1";
-		empresaEjemplo = new Empresa("mc Donaldo", "Arcos Dorados SRL", "27-12345678-1",
+		empresaEjemplo = new Empresa("mc Donaldo", null, 0, "Arcos Dorados SRL", "27-12345678-1",
 				"Av. Corrientes 5600", new SectorServicios(), 150000);
 	}
 
