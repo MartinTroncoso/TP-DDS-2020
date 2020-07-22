@@ -2,6 +2,7 @@ package dds.gesoc.model.egresos;
 
 public class Item {
 	private String descripcion;
+	//TODO cambiar a valormonetario
 	private double valorItem;
 	
 	public Item(String descripcion, double valor) {

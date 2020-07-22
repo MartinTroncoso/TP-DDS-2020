@@ -34,4 +34,9 @@ public class DatosEgreso {
     public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
+
+
+    public String toString() {
+        return "Proveedor: " + proveedor.getNombreORazonSocial();
+    }
 }
