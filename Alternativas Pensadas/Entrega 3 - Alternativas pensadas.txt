@@ -1,0 +1,3 @@
+#En lugar de modelar cada bloqueo que hace una categorìa como un objeto, primero los habíamos planteado dentro de la clase Categoría como 3 métodos 
+separados y cada vez que fuera necesario, se los invocaba. Decidimos modelarlos como objetos separados porque el enunciado especificaba que más adelante
+probablemente se les agregue nuevo comportamiento, entonces era más factible realizarlo de esa forma.
