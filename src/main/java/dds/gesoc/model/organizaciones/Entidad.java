@@ -30,8 +30,9 @@ public abstract class Entidad {
     }
 
 
-    public void agregarEgreso(Egreso unEgreso) {
-        egresosEntidad.add(unEgreso);
+    public void setListaEgresos(Egreso unEgreso) {
+        categoria.aplicarReglasDeNegocio(this);
+    	egresosEntidad.add(unEgreso);
     }
 
     public Map<Etiqueta, List<Egreso>> generarReporteEgresosPorEtiqueta() {
