@@ -33,7 +33,7 @@ public class EgresosTest {
 	private static String DNI_NEGATIVO = "-1";
 	private static String DNI_CON_NUEVE_CIFRAS = "100000000";
 	private static String CUIT_INCORRECTO = "20-12345-678-0";
-	private Entidad entidadJuridica;
+	private EntidadJuridica entidadJuridica;
 	private EntidadBase entidadBase;
 	private Categoria categoria;
 	private BloqueoNuevosEgresos bloqueoNuevosEgresos;
@@ -109,10 +109,18 @@ public class EgresosTest {
     }
     
     @Test(expected = BloquearEgresoException.class)
-    public void egresoBloqueadoException(){
+    public void egresoBloqueadoEnEntidad(){
     	categoria.agregarReglaDeNegocio(bloqueoNuevosEgresos);
     	egreso.agregarItem(cebolla);
     	egreso.agregarItem(queso);
-    	entidadJuridica.agregarEgreso(egreso);
+    	entidadJuridica.setListaEgresos(egreso);
+    	//Se lanza la excepcion porque el monto del egreso es de 201, y el monto esperado de la entidad es menor (200).
+    }
+    
+    @Test(expected = BloquearEntidadBaseEnJuridicaException.class)
+    public void entidadBaseBloqueadaEnEntidadJuridica(){
+    	categoria.agregarReglaDeNegocio(bloqueoAgregarEntidadBase);
+    	entidadJuridica.agregarEntidadBase(entidadBase);
+    	//Estamos queriendo agregar una entidad base a una juridica pero se lanza la excepcion BloquearEntidadBaseEnJuridicaException.
     }
 }
