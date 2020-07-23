@@ -113,7 +113,7 @@ public class EgresosTest {
     	categoria.agregarReglaDeNegocio(bloqueoNuevosEgresos);
     	egreso.agregarItem(cebolla);
     	egreso.agregarItem(queso);
-    	entidadJuridica.setListaEgresos(egreso);
+    	entidadJuridica.agregarEgreso(egreso);
     	//Se lanza la excepcion porque el monto del egreso es de 201, y el monto esperado de la entidad es menor (200).
     }
     
