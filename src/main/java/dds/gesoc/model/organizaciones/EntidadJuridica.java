@@ -40,8 +40,10 @@ public class EntidadJuridica extends Entidad{
 
     public void agregarEntidadBase(EntidadBase entidadNueva){
     	//BLOQUEOS CATEGORIA
-    	categoria.aplicarReglasDeNegocio(this);
-        repoEntidades.agregarEntidadBaseDeEntidadJuridica(entidadNueva);
+	if(categoria != null)    
+    		categoria.aplicarReglasDeNegocio(this);
+        
+	repoEntidades.agregarEntidadBaseDeEntidadJuridica(entidadNueva);
         entidades.add(entidadNueva);
     }
     
