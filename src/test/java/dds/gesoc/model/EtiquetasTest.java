@@ -78,9 +78,9 @@ public class EtiquetasTest {
         egresoMuebles.setEtiqueta(amoblamientoEt);
 
 
-        miEmpresa.agregarEgreso(egresoIngredientes);
-        miEmpresa.agregarEgreso(egresoIngredientes2);
-        miEmpresa.agregarEgreso(egresoMuebles);
+        miEmpresa.setListaEgresos(egresoIngredientes);
+        miEmpresa.setListaEgresos(egresoIngredientes2);
+        miEmpresa.setListaEgresos(egresoMuebles);
 
 
     }
