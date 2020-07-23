@@ -14,8 +14,6 @@ public class EntidadJuridica extends Entidad{
     private String direccionPostal;
     private int codigoInscripcionIGJ;
     private List<Entidad> entidades = new ArrayList<>();
-    private Categoria categoria;
-    private double montoEsperado;
     private RepoEntidades repoEntidades;
 
     private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}"; //2 dígitos iniciales + "-" + 8 dígitos + "-" + 1 dígito
@@ -42,7 +40,7 @@ public class EntidadJuridica extends Entidad{
 
     public void agregarEntidadBase(EntidadBase entidadNueva){
     	//BLOQUEOS CATEGORIA
-	categoria.aplicarReglasDeNegocio(this);
+    	categoria.aplicarReglasDeNegocio(this);
         repoEntidades.agregarEntidadBaseDeEntidadJuridica(entidadNueva);
         entidades.add(entidadNueva);
     }

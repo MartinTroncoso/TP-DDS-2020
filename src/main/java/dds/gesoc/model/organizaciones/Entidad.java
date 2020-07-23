@@ -29,7 +29,6 @@ public abstract class Entidad {
         return nombreFicticio;
     }
 
-
     public void setListaEgresos(Egreso unEgreso) {
         categoria.aplicarReglasDeNegocio(this);
     	egresosEntidad.add(unEgreso);

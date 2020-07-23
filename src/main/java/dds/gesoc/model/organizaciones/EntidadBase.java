@@ -1,10 +1,8 @@
 package dds.gesoc.model.organizaciones;
 
-public class EntidadBase extends Entidad {
+public class EntidadBase extends Entidad{
 
     private String descripcion;
-    private Categoria categoria;
-    private double montoEsperado;
 
     public EntidadBase (String nombreFicticio, Categoria categoria, double montoEsperado, String descripcion) {
         super(nombreFicticio, categoria, montoEsperado);
