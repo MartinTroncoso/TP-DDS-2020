@@ -30,7 +30,9 @@ public abstract class Entidad {
     }
 
     public void agregarEgreso(Egreso unEgreso) {
-        categoria.aplicarReglasDeNegocio(this);
+
+        if(categoria != null)
+            categoria.aplicarReglasDeNegocio(this);
     	egresosEntidad.add(unEgreso);
     }
 
