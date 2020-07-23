@@ -29,7 +29,7 @@ public abstract class Entidad {
         return nombreFicticio;
     }
 
-    public void setListaEgresos(Egreso unEgreso) {
+    public void agregarEgreso(Egreso unEgreso) {
         categoria.aplicarReglasDeNegocio(this);
     	egresosEntidad.add(unEgreso);
     }
