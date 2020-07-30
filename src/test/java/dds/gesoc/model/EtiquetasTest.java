@@ -5,6 +5,7 @@ import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.organizaciones.Empresa;
 import dds.gesoc.model.organizaciones.SectorServicios;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,9 +16,6 @@ import java.util.Map;
 public class EtiquetasTest {
 
     private Empresa miEmpresa;
-    private Etiqueta amoblamientoEt;
-    private Etiqueta ingredientesEt;
-    private Etiqueta proveedorEt;
 
     private MedioPago tarjeta;
     private MedioPago efectivo;
@@ -37,6 +35,11 @@ public class EtiquetasTest {
     DatosEgreso datosEgreso;
 	private Moneda pesosArgentinos;
 
+	private static String AMOBLAMIENTO = "amoblamiento";
+	private static String CARNICERIA = "carniceria";
+	private static String INGREDIENTES = "ingredientes";
+
+
     @Before
     public void init() {
     	
@@ -44,10 +47,6 @@ public class EtiquetasTest {
     	
         miEmpresa = new Empresa("mc Donaldo", null, 10000000,"Arcos Dorados SRL",
                 "27-12345678-1", "Av. Corrientes 5600", new SectorServicios(), 150000);
-
-        proveedorEt = new Etiqueta("Rolando");
-        amoblamientoEt = new Etiqueta("Amoblamiento");
-        ingredientesEt = new Etiqueta("Ingredentes");
 
 
         rolando = new Proveedor("Rolando srl");
@@ -69,13 +68,15 @@ public class EtiquetasTest {
         egresoIngredientes.agregarItem(tomate);
         egresoIngredientes2.agregarItem(huevo);
         egresoIngredientes2.agregarItem(carne);
-        egresoIngredientes.setEtiqueta(ingredientesEt);
-        egresoIngredientes2.setEtiqueta(ingredientesEt);
+        egresoIngredientes.agregarEtiqueta(INGREDIENTES);
+        egresoIngredientes2.agregarEtiqueta(INGREDIENTES);
+        egresoIngredientes2.agregarEtiqueta(CARNICERIA);
+
 
         egresoMuebles = new Egreso(datosEgreso, null, 0, null);
         egresoMuebles.agregarItem(mesa);
         egresoMuebles.agregarItem(sillas);
-        egresoMuebles.setEtiqueta(amoblamientoEt);
+        egresoMuebles.agregarEtiqueta(AMOBLAMIENTO);
 
 
         miEmpresa.agregarEgreso(egresoIngredientes);
@@ -88,26 +89,20 @@ public class EtiquetasTest {
 
     @Test
     public void seGeneraUnReporteTotalesSegunEtiqueta() {
-       Map<Etiqueta, ValorMonetario> reporte = miEmpresa.generarReporteMontosTotalesPorEtiqueta();
-       Iterator iterable = reporte.keySet().iterator();
+       Map<String, ValorMonetario> reporte = miEmpresa.generarReporteMontosTotalesPorEtiqueta();
 
-       while(iterable.hasNext()) {
-           Etiqueta etiqueta = (Etiqueta) iterable.next();
-           System.out.println( "Etiqueta: " + etiqueta.getNombre() + "  " + "- Monto total: "+ reporte.get(etiqueta).getMontoConvertido(null));
-
-       }
+        Assert.assertEquals(245.0, reporte.get(AMOBLAMIENTO.toLowerCase()).getMonto(), 0.0);
+        Assert.assertEquals(200.0, reporte.get(CARNICERIA.toLowerCase()).getMonto(), 0.0);
+        Assert.assertEquals(550.0, reporte.get(INGREDIENTES.toLowerCase()).getMonto(), 0.0);
     }
 
     @Test
     public void seGeneraUnReporteEgresosSegunEtiqueta() {
-        Map<Etiqueta, List<Egreso>> reporte = miEmpresa.generarReporteEgresosPorEtiqueta();
+        Map<String, List<Egreso>> reporte = miEmpresa.generarReporteEgresosPorEtiqueta();
 
-        Iterator iterable = reporte.keySet().iterator();
-
-        while(iterable.hasNext()) {
-            Etiqueta etiqueta = (Etiqueta) iterable.next();
-            System.out.println( "Etiqueta: " + etiqueta.getNombre() + "  " + "- Egresos: "+ reporte.get(etiqueta));
-        }
+        Assert.assertEquals(1, reporte.get(AMOBLAMIENTO.toLowerCase()).size());
+        Assert.assertEquals(1, reporte.get(CARNICERIA.toLowerCase()).size());
+        Assert.assertEquals(2, reporte.get(INGREDIENTES.toLowerCase()).size());
     }
 
 }

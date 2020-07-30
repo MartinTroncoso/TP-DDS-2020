@@ -2,8 +2,11 @@ package dds.gesoc.model.egresos;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import dds.gesoc.exceptions.EtiquetaYaExistenteException;
 import dds.gesoc.exceptions.UsuarioRevisorException;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
@@ -22,7 +25,7 @@ public class Egreso {
 	private List<Usuario> usuariosRevisores;
 	private RepoEgresos repoEgresos;
 	private ResultadoValidacion resultadoValidacion;
-	private Etiqueta etiqueta;
+	private Set<String> etiquetas;
 
 	private boolean valido;  //TODO esto puede causar inconsistencia. Debería ser calculable
 
@@ -42,6 +45,7 @@ public class Egreso {
 		this.repoEgresos.agregarEgresoNuevo(this);
 		this.setValido(false);
 		this.resultadoValidacion = new ResultadoValidacion();
+		this.etiquetas = new HashSet<>();
 	}
 
 
@@ -49,16 +53,16 @@ public class Egreso {
 		return datosEgreso.toString() + "Valor total: " + valorTotal();
 	}
 
-	public Etiqueta getEtiqueta() {
-		return etiqueta;
+	public Set<String> getEtiquetas() {
+		return this.etiquetas;
 	}
 
-	public void setEtiqueta(Etiqueta etiqueta) {
-		this.etiqueta = etiqueta;
+	public void agregarEtiqueta(String etiqueta) {
+		this.etiquetas.add(etiqueta.toLowerCase());
 	}
 
-	public void borrarEtiqueta() {
-		this.etiqueta = null;
+	public void borrarEtiqueta(String etiqueta) {
+		etiquetas.remove(etiqueta.toLowerCase());
 	}
 
 	public void agregarItem(Item item) {

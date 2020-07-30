@@ -48,7 +48,7 @@ public class OrganizacionesTest {
     @Test
     public void sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia() {
         miEmpresa.setVentasAnuales(VENTAS_ANUALES_PEQUENIA_EMPRESA);
-
+        Assert.assertEquals(TipoEmpresa.PEQUENIA, miEmpresa.getTipoEmpresa());
     }
 
     @Test
