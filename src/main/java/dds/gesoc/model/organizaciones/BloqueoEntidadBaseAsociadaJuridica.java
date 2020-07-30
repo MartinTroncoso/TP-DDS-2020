@@ -1,10 +1,11 @@
 package dds.gesoc.model.organizaciones;
 
 public class BloqueoEntidadBaseAsociadaJuridica implements ComportamientoSegunReglaDeNegocio{
+	TipoRegla tipoDeRegla;
 	public void ejecutarSobre(Entidad entidad) {
 		if(entidad instanceof EntidadJuridica) {
 			((EntidadJuridica) entidad).getEntidades().stream().filter(unaEntidad -> !(unaEntidad instanceof EntidadBase));
-			//acá iría una excepción?
+			//acï¿½ irï¿½a una excepciï¿½n?
 		}
 	}
 }

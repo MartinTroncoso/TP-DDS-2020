@@ -2,6 +2,8 @@ package dds.gesoc.model.organizaciones;import dds.gesoc.exceptions.BloquearEgres
 import dds.gesoc.model.egresos.Egreso;
 
 public class BloqueoNuevosEgresos implements ComportamientoSegunReglaDeNegocio{
+	TipoRegla tipoDeRegla;
+
 	Egreso egresoAgregar;
 	public BloqueoNuevosEgresos(Egreso egresoAgregar) {
 		this.egresoAgregar = egresoAgregar;
