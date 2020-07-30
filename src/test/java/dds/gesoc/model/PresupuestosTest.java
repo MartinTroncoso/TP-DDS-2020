@@ -137,6 +137,7 @@ public class PresupuestosTest {
     public void usuarioPuedeDarseDeAltaComoRevisor() {
         egreso.agregarUsuarioRevisor(primerRevisor);
         egreso.agregarUsuarioRevisor(segundoRevisor);
+        Assert.assertEquals(2.0, egreso.getUsuariosRevisores().size(), 0.0);
     }
 
     @Test
