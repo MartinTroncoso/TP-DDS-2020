@@ -3,10 +3,9 @@ package dds.gesoc.model;
 import dds.gesoc.model.egresos.*;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
-import dds.gesoc.model.organizaciones.BloqueoAgregarEntidadBase;
+import dds.gesoc.model.organizaciones.BloqueoEntidadBasePuedeEstarEnJuridica;
 import dds.gesoc.model.organizaciones.BloqueoNuevosEgresos;
 import dds.gesoc.model.organizaciones.Categoria;
-import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
 import dds.gesoc.model.organizaciones.EntidadJuridica;
 
@@ -37,7 +36,7 @@ public class EgresosTest {
 	private EntidadBase entidadBase;
 	private Categoria categoria;
 	private BloqueoNuevosEgresos bloqueoNuevosEgresos;
-	private BloqueoAgregarEntidadBase bloqueoAgregarEntidadBase;
+	private BloqueoEntidadBasePuedeEstarEnJuridica bloqueoAgregarEntidadBase;
 	private Moneda pesosArgentinos;
 
 	private DatosEgreso datosEgreso;
@@ -63,7 +62,7 @@ public class EgresosTest {
         entidadJuridica = new EntidadJuridica("Hermanos Scott",categoria, 200.0,"IBM","20-42498956-2","6600");
         entidadBase = new EntidadBase("Hermanos perez",categoria, 200.0, "Venta de autos");
         bloqueoNuevosEgresos = new BloqueoNuevosEgresos(egreso);
-        bloqueoAgregarEntidadBase = new BloqueoAgregarEntidadBase(entidadBase);
+        bloqueoAgregarEntidadBase = new BloqueoEntidadBasePuedeEstarEnJuridica(entidadBase);
     }
     
     @Test

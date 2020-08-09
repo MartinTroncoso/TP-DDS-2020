@@ -1,11 +1,13 @@
 package dds.gesoc.model.organizaciones;
 
+import dds.gesoc.model.egresos.Egreso;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Categoria {
-	private String nombre; 
-	private List<ComportamientoSegunReglaDeNegocio> comportamientoSegunReglasDeNegocio = new ArrayList<>();
+	private String nombre;
+	private List<ComportamientoSegunReglaDeNegocio> comportamientosSegunReglasDeNegocio = new ArrayList<>();
 	
 	public Categoria(String nombre) {
 		this.nombre = nombre;
@@ -16,17 +18,22 @@ public class Categoria {
 	}
 
 	public void agregarReglaDeNegocio(ComportamientoSegunReglaDeNegocio comportamiento) {
-		if(!comportamientoSegunReglasDeNegocio.contains(comportamiento))
-			comportamientoSegunReglasDeNegocio.add(comportamiento);
+		if(!comportamientosSegunReglasDeNegocio.contains(comportamiento))
+			comportamientosSegunReglasDeNegocio.add(comportamiento);
 	}
 	
 	public void quitarReglaDeNegocio(ComportamientoSegunReglaDeNegocio comportamiento) {
-		if(comportamientoSegunReglasDeNegocio.contains(comportamiento))
-			comportamientoSegunReglasDeNegocio.remove(comportamiento);
+		if(comportamientosSegunReglasDeNegocio.contains(comportamiento))
+			comportamientosSegunReglasDeNegocio.remove(comportamiento);
 	}
-	
-	public void aplicarReglasDeNegocio(Entidad entidad) {
-		comportamientoSegunReglasDeNegocio.forEach(comportamiento -> comportamiento.ejecutarSobre(entidad));
+
+
+	/*
+	* Aplica las reglas de negocio relacionadas a la acciónn que quiera realizar una entidad
+	* */
+	public void aplicarReglasDeNegocio(Entidad entidad, TipoRegla tipoRegla, Double monto, Egreso egresoNuevo) {
+		comportamientosSegunReglasDeNegocio.stream().filter(comportamiento -> comportamiento.getTipoDeRegla()
+				.equals(tipoRegla)).forEach(comportamiento -> comportamiento.ejecutarSobre(entidad, monto, egresoNuevo));
 	}
 
 }

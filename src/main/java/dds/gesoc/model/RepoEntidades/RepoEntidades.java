@@ -23,11 +23,12 @@ public class RepoEntidades {
         return repoEntidades;
     }
 
-    public void agregarEntidadBaseDeEntidadJuridica(EntidadBase unaEntidad) {
-        if(entidadBaseTieneEntidadJuridica(unaEntidad))
+    public void agregarEntidadBaseDeEntidadJuridica(EntidadBase entidadBase) {
+        if(entidadBaseTieneEntidadJuridica(entidadBase))
             throw new EntidadBaseTieneEntidaJuridicaException("La entidad base ya está asociada a una entidad jurídica");
 
-        entidadesBaseEnUnaEntidadJuridica.add(unaEntidad);
+
+        entidadesBaseEnUnaEntidadJuridica.add(entidadBase);
     }
 
     public boolean entidadBaseTieneEntidadJuridica(EntidadBase unaEntidad) {

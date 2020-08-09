@@ -2,15 +2,21 @@ package dds.gesoc.model.organizaciones;import dds.gesoc.exceptions.BloquearEgres
 import dds.gesoc.model.egresos.Egreso;
 
 public class BloqueoNuevosEgresos implements ComportamientoSegunReglaDeNegocio{
-	TipoRegla tipoDeRegla;
+	private TipoRegla tipoDeRegla;
 
-	Egreso egresoAgregar;
-	public BloqueoNuevosEgresos(Egreso egresoAgregar) {
-		this.egresoAgregar = egresoAgregar;
+	public BloqueoNuevosEgresos() {
+		this.tipoDeRegla = TipoRegla.ACEPTACION_NUEVOS_EGRESOS;
 	}
-	
-	public void ejecutarSobre(Entidad entidad) {
-		if(entidad.getMontosTotales() + egresoAgregar.valorTotal().getMonto() > entidad.getMontoEsperado()) {
+
+	@Override
+	public TipoRegla getTipoDeRegla() {
+		return this.tipoDeRegla;
+	}
+
+	public void ejecutarSobre(Entidad entidad, Double monto, Egreso egresoNuevo) {
+
+		//DUDA: El monto máximo es según la categoría o según cada egreso?
+		if(entidad.getMontosTotales() + egresoNuevo.valorTotal().getMonto() > entidad.getMontoEsperado()) {
 			throw new BloquearEgresoException("Si se agrega el egreso, la entidad va a superar su monto esperado.");
 		}
 	}

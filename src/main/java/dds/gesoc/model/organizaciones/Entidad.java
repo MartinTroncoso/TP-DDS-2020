@@ -29,7 +29,7 @@ public abstract class Entidad {
     public void agregarEgreso(Egreso unEgreso) {
 
         if(categoria != null)
-            categoria.aplicarReglasDeNegocio(this);
+            categoria.aplicarReglasDeNegocio(this, TipoRegla.ACEPTACION_NUEVOS_EGRESOS, this.getMontoEsperado(), unEgreso);
     	egresosEntidad.add(unEgreso);
     }
 
