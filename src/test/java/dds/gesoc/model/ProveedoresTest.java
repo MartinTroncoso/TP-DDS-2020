@@ -54,19 +54,19 @@ public class ProveedoresTest {
      * Tests que fallan para comprobar si sale su respectivo mensaje de excepcion
      */
     
-    @Test
+    @Test (expected = DireccionPostalIncorrectaException.class)
     public void proveedorConPaisNoPermitidoFalla() {
     	unProveedor.setDireccionPostal(
     			new DireccionPostal(VARIABLE_SARASA, VARIABLE_SARASA, VARIABLE_SARASA, VARIABLE_SARASA));
     }
     
-    @Test
+    @Test (expected = DireccionPostalIncorrectaException.class)
     public void proveedorConProvinciaNoPermitidaFalla() {
     	unProveedor.setDireccionPostal(
     			new DireccionPostal(VARIABLE_PAIS, VARIABLE_SARASA, VARIABLE_SARASA, VARIABLE_SARASA));
     }
     
-    @Test
+    @Test (expected = DireccionPostalIncorrectaException.class)
     public void proveedorConCiudadNoPermitidaFalla() {
     	unProveedor.setDireccionPostal(
     			new DireccionPostal(VARIABLE_PAIS, VARIABLE_PROV, VARIABLE_SARASA, VARIABLE_SARASA));

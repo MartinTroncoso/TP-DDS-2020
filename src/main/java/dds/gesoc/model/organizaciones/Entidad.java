@@ -63,13 +63,17 @@ public abstract class Entidad {
 
         //TODO Acá supongo que todos los items están en la misma moneda. Corregir si se pueden tener egresos en distintas monedas
         //TODO usar una moneda por defecto
-        System.out.println(valorTotal);
         return new ValorMonetario(valorTotal, null);
     }
 
 
     public Categoria getCategoria() {
         return categoria;
+    }
+
+
+    public void setCategoria(Categoria unaCategoria) {
+        this.categoria = unaCategoria;
     }
 
     public List<Egreso> getEgresos() {

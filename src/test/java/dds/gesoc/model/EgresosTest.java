@@ -1,22 +1,14 @@
 package dds.gesoc.model;
 
+import dds.gesoc.exceptions.*;
 import dds.gesoc.model.egresos.*;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
-import dds.gesoc.model.organizaciones.BloqueoEntidadBasePuedeEstarEnJuridica;
-import dds.gesoc.model.organizaciones.BloqueoNuevosEgresos;
-import dds.gesoc.model.organizaciones.Categoria;
-import dds.gesoc.model.organizaciones.EntidadBase;
-import dds.gesoc.model.organizaciones.EntidadJuridica;
+import dds.gesoc.model.organizaciones.*;
 
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import dds.gesoc.exceptions.BloquearEgresoException;
-import dds.gesoc.exceptions.BloquearEntidadBaseEnJuridicaException;
-import dds.gesoc.exceptions.DniOCuitInvalidoException;
-import dds.gesoc.exceptions.ValidarTarjetaException;
 
 public class EgresosTest {
 	private Egreso egreso;
@@ -34,9 +26,11 @@ public class EgresosTest {
 	private static String CUIT_INCORRECTO = "20-12345-678-0";
 	private EntidadJuridica entidadJuridica;
 	private EntidadBase entidadBase;
-	private Categoria categoria;
-	private BloqueoNuevosEgresos bloqueoNuevosEgresos;
-	private BloqueoEntidadBasePuedeEstarEnJuridica bloqueoAgregarEntidadBase;
+	private Categoria categoriaParaJuridica;
+	private Categoria categoriaParaBase;
+	private ComportamientoSegunReglaDeNegocio bloqueoNuevosEgresos;
+	private ComportamientoSegunReglaDeNegocio bloqueoAgregarEntidadBase;
+	private ComportamientoSegunReglaDeNegocio bloqueoEntidadBaseNoPuedePertenecerAJuridica;
 	private Moneda pesosArgentinos;
 
 	private DatosEgreso datosEgreso;
@@ -58,11 +52,13 @@ public class EgresosTest {
 
         egreso = new Egreso(datosEgreso, null, 0, null);
         
-        categoria = new Categoria("ONG");
-        entidadJuridica = new EntidadJuridica("Hermanos Scott",categoria, 200.0,"IBM","20-42498956-2","6600");
-        entidadBase = new EntidadBase("Hermanos perez",categoria, 200.0, "Venta de autos");
-        bloqueoNuevosEgresos = new BloqueoNuevosEgresos(egreso);
-        bloqueoAgregarEntidadBase = new BloqueoEntidadBasePuedeEstarEnJuridica(entidadBase);
+        categoriaParaJuridica = new Categoria("ONG");
+        categoriaParaBase = new Categoria("ONG");
+        entidadJuridica = new EntidadJuridica("Hermanos Scott", categoriaParaJuridica, 200.0,"IBM","20-42498956-2","6600");
+        entidadBase = new EntidadBase("Hermanos perez", categoriaParaBase, 200.0, "Venta de autos");
+        bloqueoNuevosEgresos = new BloqueoNuevosEgresos();
+        bloqueoAgregarEntidadBase = new BloqueoEntidadJuridicaNoAceptaEntidadesBase();
+        bloqueoEntidadBaseNoPuedePertenecerAJuridica = new BloqueoEntidadBaseNoPuedePertenecerAJuridicas();
     }
     
     @Test
@@ -106,20 +102,30 @@ public class EgresosTest {
     public void sabiendoElValorDeUnItem() {
     	Assert.assertEquals(200.00, lechuga.getMonto(), 0);
     }
-    
-    @Test(expected = BloquearEgresoException.class)
+
+    //TERCERA ENTREGA: Tests de categorías de entidades
+
+    @Test(expected = BloqueoEgresoExcedeMontoMaxException.class)
     public void egresoBloqueadoEnEntidad(){
-    	categoria.agregarReglaDeNegocio(bloqueoNuevosEgresos);
+    	categoriaParaJuridica.agregarReglaDeNegocio(bloqueoNuevosEgresos);
     	egreso.agregarItem(cebolla);
     	egreso.agregarItem(queso);
     	entidadJuridica.agregarEgreso(egreso);
     	//Se lanza la excepcion porque el monto del egreso es de 201, y el monto esperado de la entidad es menor (200).
     }
     
-    @Test(expected = BloquearEntidadBaseEnJuridicaException.class)
-    public void entidadBaseBloqueadaEnEntidadJuridica(){
-    	categoria.agregarReglaDeNegocio(bloqueoAgregarEntidadBase);
+    @Test(expected = BloqueoJuridicaNoAceptaEntBasesException.class)
+    public void entidadJuridicaNoPuedeAceptarEntidadesBasicasSegunCategoria(){
+    	categoriaParaJuridica.agregarReglaDeNegocio(bloqueoAgregarEntidadBase);
     	entidadJuridica.agregarEntidadBase(entidadBase);
-    	//Estamos queriendo agregar una entidad base a una juridica pero se lanza la excepcion BloquearEntidadBaseEnJuridicaException.
+    	//La entidad jurídica tiene prohibido aceptar entidades base
     }
+
+    @Test (expected = BloqueoEntidadBaseNoPuedePertenecerAJuridicasException.class)
+	public void entidadBasicaNoPuedePertenecerAJuridicas() {
+    	categoriaParaBase.agregarReglaDeNegocio(bloqueoEntidadBaseNoPuedePertenecerAJuridica);
+    	entidadJuridica.agregarEntidadBase(entidadBase);
+    	//La entidad base que quiero agregar en la entdad jurídica tiene prohibido pertenecer a entidades jurídicas
+	}
+
 }

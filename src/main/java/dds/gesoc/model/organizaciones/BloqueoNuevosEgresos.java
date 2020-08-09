@@ -1,4 +1,4 @@
-package dds.gesoc.model.organizaciones;import dds.gesoc.exceptions.BloquearEgresoException;
+package dds.gesoc.model.organizaciones;import dds.gesoc.exceptions.BloqueoEgresoExcedeMontoMaxException;
 import dds.gesoc.model.egresos.Egreso;
 
 public class BloqueoNuevosEgresos implements ComportamientoSegunReglaDeNegocio{
@@ -17,7 +17,7 @@ public class BloqueoNuevosEgresos implements ComportamientoSegunReglaDeNegocio{
 
 		//DUDA: El monto máximo es según la categoría o según cada egreso?
 		if(entidad.getMontosTotales() + egresoNuevo.valorTotal().getMonto() > entidad.getMontoEsperado()) {
-			throw new BloquearEgresoException("Si se agrega el egreso, la entidad va a superar su monto esperado.");
+			throw new BloqueoEgresoExcedeMontoMaxException("Si se agrega el egreso, la entidad va a superar su monto esperado.");
 		}
 	}
 }
