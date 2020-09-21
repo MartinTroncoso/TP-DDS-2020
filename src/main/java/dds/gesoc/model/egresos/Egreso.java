@@ -14,7 +14,9 @@ import dds.gesoc.model.usuarios.Usuario;
 
 public class Egreso {
 
-	private DatosEgreso datosEgreso;
+	private Proveedor proveedor;
+	private Documento docComercial;
+	private MedioPago medioPago;
 
 	private LocalDate fechaOperacion;
 	private List<Item> items;
@@ -31,7 +33,9 @@ public class Egreso {
 
 
 	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
-		this.datosEgreso = datosEgreso;
+		this.proveedor = datosEgreso.getProveedor();
+		this.docComercial = datosEgreso.getDocComercial();
+		this.medioPago = datosEgreso.getMedioPago();
 
 		//TODO: ver como validar si la moneda es alguna de las que nos proporciona la api
 		this.fechaOperacion = LocalDate.now();
@@ -48,10 +52,6 @@ public class Egreso {
 		this.etiquetas = new HashSet<>();
 	}
 
-
-	public String toString() {
-		return datosEgreso.toString() + "Valor total: " + valorTotal();
-	}
 
 	public Set<String> getEtiquetas() {
 		return this.etiquetas;
@@ -72,10 +72,6 @@ public class Egreso {
 	public List<Item> getItems(){
 		return this.items;
 	}
-	
-	public DatosEgreso getDatosEgreso() {
-		return this.datosEgreso;
-	}
 
 	public LocalDate getFechaOperacion() {
 		return this.fechaOperacion;
@@ -86,7 +82,7 @@ public class Egreso {
 	}
 
     public void setMiProveedor(Proveedor miProveedor) {
-        this.datosEgreso.setProveedor(miProveedor);
+        this.setProveedor(miProveedor);
     }
     
 	public boolean isValido() {
@@ -107,7 +103,7 @@ public class Egreso {
 	}
 
 	public Proveedor getProveedor() {
-		return this.datosEgreso.getProveedor();
+		return this.getProveedor();
 	}
 
 	public int getCantPresupuestosMinima() {
@@ -156,7 +152,7 @@ public class Egreso {
 	}
 
 	public Proveedor getProveedorSeleccionado() {
-		return this.datosEgreso.getProveedor();
+		return this.getProveedor();
 	}
 
 	public Proveedor proveedorCandidatoSegunCriterio() {
@@ -176,7 +172,7 @@ public class Egreso {
 	}
 
 	public boolean eligioProveedorSegunCriterio() {
-        return  this.proveedorCandidatoSegunCriterio().equals(this.datosEgreso.getProveedor());
+        return  this.proveedorCandidatoSegunCriterio().equals(this.getProveedor());
 	}
 
 	public boolean tieneCantidadMinimaDePresupuestos() {
@@ -212,4 +208,23 @@ public class Egreso {
 		this.setValido(estadoValidacion);
 	}
 
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
+
+	public Documento getDocComercial() {
+		return docComercial;
+	}
+
+	public void setDocComercial(Documento docComercial) {
+		this.docComercial = docComercial;
+	}
+
+	public MedioPago getMedioPago() {
+		return medioPago;
+	}
+
+	public void setMedioPago(MedioPago medioPago) {
+		this.medioPago = medioPago;
+	}
 }

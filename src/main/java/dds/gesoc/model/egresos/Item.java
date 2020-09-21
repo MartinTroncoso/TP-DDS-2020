@@ -3,7 +3,16 @@ package dds.gesoc.model.egresos;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+@Entity
 public class Item {
+	@Id
+	@GeneratedValue
+	private Long id;
 	private String descripcion;
 	private ValorMonetario valorItem;
 	
