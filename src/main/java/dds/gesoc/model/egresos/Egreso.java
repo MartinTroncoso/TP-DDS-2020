@@ -6,29 +6,73 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.exceptions.EtiquetaYaExistenteException;
 import dds.gesoc.exceptions.UsuarioRevisorException;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.usuarios.Usuario;
 
-public class Egreso {
-
+@Entity
+@Table(name = "proveedor")
+public class Egreso extends EntidadPersistente{
+	
+	@ManyToOne
+	@JoinColumn(name = "proveedor_id", referencedColumnName = "id")
 	private Proveedor proveedor;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "documento_id")
 	private Documento docComercial;
+	
+	@ManyToOne
+	@JoinColumn(name = "mediopago_id", referencedColumnName = "id")
 	private MedioPago medioPago;
-
+	
+	@Column(columnDefinition = "DATE")
 	private LocalDate fechaOperacion;
+	
+	@Transient //TODO: ver si un mismo item puede estar en varios egresos
 	private List<Item> items;
+	
+	@OneToMany(mappedBy = "egresoAsociado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Presupuesto> presupuestos;
+	
+	@ManyToOne
+	@JoinColumn(name = "moneda_id", referencedColumnName = "id")
     private Moneda moneda;
+	
+	@Column
 	private int cantPresupuestosMinima;
+	
+	@Transient //TODO: ver si es mapeable
 	private CriterioSeleccionProveedor criterioProveedor;
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Usuario> usuariosRevisores;
+	
+	@Transient
 	private RepoEgresos repoEgresos;
+	
+	@Transient //TODO: ver si hay relacion entre ResultadoValidacion y Egreso
 	private ResultadoValidacion resultadoValidacion;
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private Set<String> etiquetas;
-
+	
+	@Column
 	private boolean valido;  //TODO esto puede causar inconsistencia. Debería ser calculable
 
 
