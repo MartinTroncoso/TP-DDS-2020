@@ -2,12 +2,24 @@ package dds.gesoc.model.egresos;
 
 import java.util.regex.Pattern;
 
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.Transient;
+
+import db.PersistentEntity;
 import dds.gesoc.exceptions.ValidarTarjetaException;
 
-public class MedioPago {
+@Entity
+public class MedioPago extends PersistentEntity{
+	
+	@Enumerated
 	private TipoMedioPago tipo;
 	private String numero;
+	@Transient
 	private String nroTrajetaValidaRegex = "\\d{16}";
+	
+	public MedioPago() {
+	}
 	
 	public MedioPago(TipoMedioPago tipo) {
 		this.tipo = tipo;

@@ -3,18 +3,22 @@ package dds.gesoc.model.egresos;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+
+import db.PersistentEntity;
 
 
 @Entity
-public class Item {
-	@Id
-	@GeneratedValue
-	private Long id;
+public class Item extends PersistentEntity{
+	
 	private String descripcion;
+	
+	@Embedded
 	private ValorMonetario valorItem;
+	
+	public Item() {
+	}
 	
 	public Item(String descripcion, ValorMonetario valor) {
 		this.descripcion = descripcion;

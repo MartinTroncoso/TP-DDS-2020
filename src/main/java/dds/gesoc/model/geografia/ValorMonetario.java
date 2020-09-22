@@ -1,9 +1,19 @@
 package dds.gesoc.model.geografia;
 
+import javax.persistence.Embeddable;
+import javax.persistence.ManyToOne;
+
+
+@Embeddable
 public class ValorMonetario {
 	
 	private double monto;
+	
+	@ManyToOne
 	private Moneda moneda;
+	
+	public ValorMonetario() {
+	}
 	
 	public ValorMonetario(double monto, Moneda moneda) {
 		this.monto = monto;

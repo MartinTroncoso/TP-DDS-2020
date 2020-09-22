@@ -1,20 +1,24 @@
 package dds.gesoc.model.geografia;
 
-public class Moneda {
+import javax.persistence.Entity;
 
-	private String id;
+import db.PersistentEntity;
+
+@Entity
+public class Moneda extends PersistentEntity{
+
+	private String cadenaIdentificadora;
 	private String descripcion;
 	private String simbolo;
 	
-	public Moneda(String id, String descripcion, String simbolo) {
-		super();
-		this.id = id;
-		this.descripcion = descripcion;
-		this.simbolo = simbolo;
+	public Moneda() {
 	}
 	
-	public String getId() {
-		return id;
+	public Moneda(String cadenaIdentificadora, String descripcion, String simbolo) {
+		super();
+		this.setCadenaIdentificadora(cadenaIdentificadora);
+		this.descripcion = descripcion;
+		this.simbolo = simbolo;
 	}
 	
 	public String getDescripcion() {
@@ -23,6 +27,14 @@ public class Moneda {
 	
 	public String getSimbolo() {
 		return simbolo;
+	}
+
+	public String getCadenaIdentificadora() {
+		return cadenaIdentificadora;
+	}
+
+	public void setCadenaIdentificadora(String cadenaIdentificadora) {
+		this.cadenaIdentificadora = cadenaIdentificadora;
 	}
 	
 }
