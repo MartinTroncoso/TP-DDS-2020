@@ -103,7 +103,7 @@ public class Egreso {
 	}
 
 	public Proveedor getProveedor() {
-		return this.getProveedor();
+		return this.proveedor;
 	}
 
 	public int getCantPresupuestosMinima() {
