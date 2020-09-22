@@ -7,7 +7,7 @@
 
     <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>package dds.gesoc.model.egresos.Item</class>
+        <class>dds.gesoc.model.egresos.Item</class>
 
         <properties>
             <property name="hibernate.archive.autodetection" value="class"/>
