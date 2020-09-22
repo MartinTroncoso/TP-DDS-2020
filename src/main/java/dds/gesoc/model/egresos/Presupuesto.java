@@ -1,5 +1,6 @@
 package dds.gesoc.model.egresos;
 
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.exceptions.PresupuestoSinEgresoAsociadoException;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
@@ -19,7 +20,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "presupuesto")
-public class Presupuesto {
+public class Presupuesto extends EntidadPersistente{
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "documento_id")
