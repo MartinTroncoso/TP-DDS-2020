@@ -2,13 +2,37 @@ package dds.gesoc.model.egresos;
 
 import java.util.regex.Pattern;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.exceptions.DniOCuitInvalidoException;
 
-public class Proveedor {
-	private String nombreORazonSocial;
-	private String dniOCuit;
-	private DireccionPostal direccionPostal;
+@Entity
+@Table(name = "proveedor")
+public class Proveedor extends EntidadPersistente{
 	
+	@Column
+	private String nombreORazonSocial;
+	
+	@Column
+	private String dniOCuit;
+	
+	@Column
+	private String pais;
+	
+	@Column
+	private String provincia;
+	
+	@Column
+	private String ciudad;
+	
+	@Column
+	private String direccion;
+	
+	@Transient
 	private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}";
 	
 	public Proveedor(String nombreORazonSocial) {
@@ -23,7 +47,7 @@ public class Proveedor {
 	public Proveedor(String nombreORazonSocial, String dniOCuit, DireccionPostal direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
 		this.establecerDniOCuit(dniOCuit);
-		this.direccionPostal = direccionPostal;
+		this.setDireccionPostal(direccionPostal);
 	}
 
 	public void establecerDniOCuit(String dniOCuit){
@@ -58,14 +82,50 @@ public class Proveedor {
 	public void setNombreORazonSocial(String nombreORazonSocial) {
 		this.nombreORazonSocial = nombreORazonSocial;
 	}
-
+	
 	public DireccionPostal getDireccionPostal() {
-		return direccionPostal;
+		return null;
+		//TODO: como conseguir la direccion postal ahora
 	}
 
 	public void setDireccionPostal(DireccionPostal direccionPostal) {
-		this.direccionPostal = direccionPostal;
+		this.pais = direccionPostal.getPais();
+		this.provincia = direccionPostal.getProvincia();
+		this.ciudad = direccionPostal.getCiudad();
+		this.direccion = direccionPostal.getDireccion();
 	}
-	
-	
+
+	/*public String getPais() {
+		return pais;
+	}
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+	public String getProvincia() {
+		return provincia;
+	}
+
+	public void setProvincia(String provincia) {
+		this.provincia = provincia;
+	}
+
+	public String getCiudad() {
+		return ciudad;
+	}
+
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+
+	public String getDireccion() {
+		return direccion;
+	}
+
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}*/
+
+		
 }
