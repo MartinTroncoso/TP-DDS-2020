@@ -1,12 +1,17 @@
 package dds.gesoc.model.egresos;
 
-public class Documento {
-	/*
-	 * como para esta entrega no es necesariamente esperado 
-	 * que los egresos tengan asociado un documento comercial, 
-	 * de momento el tipo lo pondremos como un String
-	 */
+import javax.persistence.*;
+
+import dds.gesoc.entities.EntidadPersistente;
+
+@Entity
+@Table(name="documento")
+public class Documento extends EntidadPersistente{
+	
+	@Column
 	private String tipo;
+	
+	@Column
 	private int numero;
 	
 	public Documento(String tipo, int numero) {
