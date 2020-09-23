@@ -2,10 +2,10 @@ package dds.gesoc.model.geografia;
 
 import javax.persistence.Entity;
 
-import db.PersistentEntity;
+import dds.gesoc.entities.EntidadPersistente;
 
 @Entity
-public class Moneda extends PersistentEntity{
+public class Moneda extends EntidadPersistente{
 
 	private String cadenaIdentificadora;
 	private String descripcion;

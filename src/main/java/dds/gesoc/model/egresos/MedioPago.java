@@ -6,11 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.Transient;
 
-import db.PersistentEntity;
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.exceptions.ValidarTarjetaException;
 
 @Entity
-public class MedioPago extends PersistentEntity{
+public class MedioPago extends EntidadPersistente{
 	
 	@Enumerated
 	private TipoMedioPago tipo;
