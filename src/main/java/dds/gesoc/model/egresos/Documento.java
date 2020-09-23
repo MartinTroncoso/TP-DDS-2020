@@ -14,6 +14,8 @@ public class Documento extends EntidadPersistente{
 	@Column
 	private int numero;
 	
+	public Documento(){}
+	
 	public Documento(String tipo, int numero) {
 		this.tipo = tipo;
 		this.numero = numero;
