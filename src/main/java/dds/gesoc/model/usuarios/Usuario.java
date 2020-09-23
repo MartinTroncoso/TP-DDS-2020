@@ -31,6 +31,8 @@ public class Usuario extends EntidadPersistente{
 	@Transient
 	private Stack<ResultadoValidacion> bandejaDeMensajes = new Stack<>();
 	
+	public Usuario(){}
+	
 	public Usuario(String nombreUsuario, String contrasenia, TipoUsuario tipoUsuario, Entidad entidad) {
 		
 		this.nombreUsuario = Objects.requireNonNull(nombreUsuario);
