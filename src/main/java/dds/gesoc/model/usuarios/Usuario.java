@@ -29,7 +29,6 @@ public class Usuario extends EntidadPersistente{
 	private Entidad entidad;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name="id_mensaje", referencedColumnName = "id")
 	private Stack<ResultadoValidacion> bandejaDeMensajes;
 	
 	public Usuario(){}
