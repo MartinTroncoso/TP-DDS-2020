@@ -1,8 +1,12 @@
 package dds.gesoc.model.organizaciones;
 
+import javax.persistence.Entity;
+
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.exceptions.NoClasificaComoPymeException;
 
-class Sector {
+@Entity
+class Sector extends EntidadPersistente{
 
     private int maxMicro;
     private int maxPequenia;
