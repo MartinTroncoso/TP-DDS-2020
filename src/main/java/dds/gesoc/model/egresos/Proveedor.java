@@ -35,6 +35,9 @@ public class Proveedor extends EntidadPersistente{
 	@Transient
 	private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}";
 	
+	public Proveedor() {
+	}
+	
 	public Proveedor(String nombreORazonSocial) {
 		this.nombreORazonSocial = nombreORazonSocial;
 	}

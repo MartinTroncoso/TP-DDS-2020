@@ -8,6 +8,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -44,7 +45,8 @@ public class Egreso extends EntidadPersistente{
 	@Column(columnDefinition = "DATE")
 	private LocalDate fechaOperacion;
 	
-	@Transient //TODO: ver si un mismo item puede estar en varios egresos
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "egreso_id")
 	private List<Item> items;
 	
 	@OneToMany(mappedBy = "egresoAsociado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -69,12 +71,14 @@ public class Egreso extends EntidadPersistente{
 	@Transient //TODO: ver si hay relacion entre ResultadoValidacion y Egreso
 	private ResultadoValidacion resultadoValidacion;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ElementCollection
 	private Set<String> etiquetas;
 	
 	@Column
 	private boolean valido;  //TODO esto puede causar inconsistencia. Debería ser calculable
 
+	public Egreso() {
+	}
 
 	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.proveedor = datosEgreso.getProveedor();

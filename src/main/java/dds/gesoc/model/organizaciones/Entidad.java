@@ -1,20 +1,30 @@
 
 package dds.gesoc.model.organizaciones;
 
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.geografia.ValorMonetario;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-public abstract class Entidad {
+@Entity
+@DiscriminatorColumn(name = "tipo_entidad", length = 1)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class Entidad extends EntidadPersistente{
 
     private String nombreFicticio;
     protected Categoria categoria;
     protected double montoEsperado;
     protected List<Egreso> egresosEntidad = new ArrayList<>();
 
+    protected Entidad() {
+    }
 
     protected Entidad(String nombreFicticio, Categoria categoria, double montoEsperado) {
         this.nombreFicticio = nombreFicticio;

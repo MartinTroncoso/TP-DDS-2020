@@ -44,6 +44,8 @@ public class Presupuesto extends EntidadPersistente{
 	@JoinColumn(name = "moneda_id", referencedColumnName = "id")
 	private Moneda moneda;
 
+	public Presupuesto() {
+	}
 	
 	public Presupuesto(Proveedor unProveedor, Documento docComercial, Moneda moneda, String detalle, Egreso unEgreso) {
 		this.docComercial = docComercial;

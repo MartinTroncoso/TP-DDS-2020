@@ -4,8 +4,20 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResultadoValidacion {
+import javax.persistence.Convert;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+
+import converters.LocalDateAttributeConverter;
+import dds.gesoc.entities.EntidadPersistente;
+
+@Entity
+public class ResultadoValidacion extends EntidadPersistente{
+	
+	@ElementCollection
     private List<String> mensajes;
+	
+	@Convert(converter = LocalDateAttributeConverter.class)
     private LocalDateTime horaDeMensaje;
 
     public ResultadoValidacion() {
