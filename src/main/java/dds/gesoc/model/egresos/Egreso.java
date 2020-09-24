@@ -27,7 +27,7 @@ import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.usuarios.Usuario;
 
 @Entity
-@Table(name = "proveedor")
+@Table(name = "egreso")
 public class Egreso extends EntidadPersistente{
 	
 	@ManyToOne
@@ -72,6 +72,7 @@ public class Egreso extends EntidadPersistente{
 	private ResultadoValidacion resultadoValidacion;
 	
 	@ElementCollection
+	@Column(name="nombre_etiqueta")
 	private Set<String> etiquetas;
 	
 	@Column

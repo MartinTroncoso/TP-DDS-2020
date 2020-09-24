@@ -3,12 +3,30 @@ package dds.gesoc.model.organizaciones;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Organizacion  {
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
+import dds.gesoc.entities.EntidadPersistente;
+
+@Entity
+public class Organizacion  extends EntidadPersistente{
+	
+	String nombre;
+	@OneToMany
+	@JoinColumn(name = "organizacion_id")
     private List<Entidad> estructurasDeEntidades = new ArrayList<>();
     //private List<Categoria> categoriasDeEntidades = new ArrayList<>();
 
-    public void agregarEntidad(Entidad unaEntidad) {
+    public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void agregarEntidad(Entidad unaEntidad) {
         estructurasDeEntidades.add(unaEntidad);
     }
 

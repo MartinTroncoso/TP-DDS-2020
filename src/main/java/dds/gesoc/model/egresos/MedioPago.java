@@ -35,7 +35,7 @@ public class MedioPago extends EntidadPersistente{
 	}
 	
 	public void establecerNroTarjeta(String numero) {
-		if(this.esTarjeta() && !Pattern.matches(nroTrajetaValidaRegex, numero)) {
+		if(this.esTarjeta() && Pattern.matches(nroTrajetaValidaRegex, numero)) {
 			this.setNumero(numero);
 		}else {
 			throw new ValidarTarjetaException("El medio de pago ingresado no es tarjeta o el numero de tarjeta es incorrecto");

@@ -1,14 +1,24 @@
 package dds.gesoc.model.organizaciones;
 
+import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.model.egresos.Egreso;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Categoria {
+import javax.persistence.Entity;
+import javax.persistence.Transient;
+
+@Entity
+public class Categoria extends EntidadPersistente{
+	
 	private String nombre;
+	
+	@Transient
 	private List<ComportamientoSegunReglaDeNegocio> comportamientosSegunReglasDeNegocio = new ArrayList<>();
 	
+	public Categoria() {
+	}
 	public Categoria(String nombre) {
 		this.nombre = nombre;
 	}
@@ -26,7 +36,6 @@ public class Categoria {
 		if(comportamientosSegunReglasDeNegocio.contains(comportamiento))
 			comportamientosSegunReglasDeNegocio.remove(comportamiento);
 	}
-
 
 	/*
 	* Aplica las reglas de negocio relacionadas a la acciónn que quiera realizar una entidad

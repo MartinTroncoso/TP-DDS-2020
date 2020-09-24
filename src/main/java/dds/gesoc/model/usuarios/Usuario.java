@@ -29,7 +29,7 @@ public class Usuario extends EntidadPersistente{
 	private Entidad entidad;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private Stack<ResultadoValidacion> bandejaDeMensajes;
+	private List<ResultadoValidacion> bandejaDeMensajes;
 	
 	public Usuario(){}
 	
@@ -55,7 +55,7 @@ public class Usuario extends EntidadPersistente{
 
 
 	public void serNotificado(ResultadoValidacion respuestaEgreso) {
-		bandejaDeMensajes.push(respuestaEgreso);
+		bandejaDeMensajes.add(respuestaEgreso);
 	}
 
 

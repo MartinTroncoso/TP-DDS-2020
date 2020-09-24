@@ -1,11 +1,22 @@
 package dds.gesoc.model.organizaciones;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
+
 import dds.gesoc.model.RepoEntidades.RepoEntidades;
 
+@Entity
+@DiscriminatorValue("B")
 public class EntidadBase extends Entidad {
 
     private String descripcion;
+    
+    @Transient
     private RepoEntidades repoEntidades;
+    
+    public EntidadBase() {
+    }
 
     public EntidadBase(String nombreFicticio, Categoria categoria, double montoEsperado, String descripcion) {
         super(nombreFicticio, categoria, montoEsperado);

@@ -11,8 +11,10 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -29,7 +31,8 @@ public class Presupuesto extends EntidadPersistente{
 	@Column
 	private String detalle;
 	
-	@Transient //TODO: ver si un mismo item puede estar en varios presupuestos
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@JoinColumn(name = "presupuesto_id")
 	private List<Item> items;
 	
 	@ManyToOne
