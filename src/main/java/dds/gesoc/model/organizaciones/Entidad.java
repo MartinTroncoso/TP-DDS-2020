@@ -2,6 +2,7 @@
 package dds.gesoc.model.organizaciones;
 
 import dds.gesoc.entities.EntidadPersistente;
+import dds.gesoc.model.RepoEntidades.RepoEntidades;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.geografia.ValorMonetario;
 
@@ -19,7 +20,7 @@ import javax.persistence.OneToMany;
 @Entity
 @DiscriminatorColumn(name = "tipo_entidad", length = 1)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-public abstract class Entidad extends EntidadPersistente{
+public class Entidad extends EntidadPersistente{
 
     private String nombreFicticio;
     
@@ -33,12 +34,14 @@ public abstract class Entidad extends EntidadPersistente{
     protected List<Egreso> egresosEntidad = new ArrayList<>();
 
     protected Entidad() {
+    	RepoEntidades.getInstance().getEntidades().add(this);
     }
 
     protected Entidad(String nombreFicticio, Categoria categoria, double montoEsperado) {
         this.nombreFicticio = nombreFicticio;
         this.categoria = categoria;
         this.montoEsperado = montoEsperado;
+        RepoEntidades.getInstance().getEntidades().add(this);
     }
 
     public String getNombreFicticio() {

@@ -42,12 +42,12 @@ public class Main {
         //System.out.println("Hola");
     }
     
-    public static void main(String[] args) {
-
-
-        repo = RepoEgresos.getInstance();
-
-        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-        executorService.scheduleAtFixedRate(Main::validar, 0, 10, TimeUnit.DAYS);
-    }
+//    public static void main(String[] args) {
+//
+//
+//        repo = RepoEgresos.getInstance();
+//
+//        ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+//        executorService.scheduleAtFixedRate(Main::validar, 0, 10, TimeUnit.DAYS);
+//    }
 }

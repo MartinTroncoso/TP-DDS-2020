@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RepoEgresos {
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+
+public class RepoEgresos implements WithGlobalEntityManager{
 
     private static RepoEgresos ourInstance;
     private List<Egreso> todosLosEgresos = new ArrayList<>();
 
     public static RepoEgresos getInstance() {
-        if (ourInstance == null) {
+        if (ourInstance == null){
             ourInstance = new RepoEgresos();
         }
         return ourInstance;
@@ -34,5 +36,17 @@ public class RepoEgresos {
     
     public void validarEgresos() {
     	this.egresosNoValidados().forEach(e -> e.validar());
+    }
+    
+    public List<Egreso> getEgresos(){
+    	return todosLosEgresos;
+    }
+    
+    public Egreso buscar(long id){
+        return entityManager().find(Egreso.class, id);
+    }
+    
+    public Egreso get(int index) {
+    	return todosLosEgresos.get(index);
     }
 }

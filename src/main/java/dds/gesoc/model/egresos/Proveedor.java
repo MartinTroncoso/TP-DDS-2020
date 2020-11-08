@@ -36,21 +36,25 @@ public class Proveedor extends EntidadPersistente{
 	private String cuitValidoRegex = "\\d{2}-\\d{8}-\\d{1}";
 	
 	public Proveedor() {
+		RepoProveedores.getInstance().agregarProveedor(this);
 	}
 	
 	public Proveedor(String nombreORazonSocial) {
 		this.nombreORazonSocial = nombreORazonSocial;
+		RepoProveedores.getInstance().agregarProveedor(this);
 	}
 	
 	public Proveedor(String nombreORazonSocial, String dniOCuit) {
 		this.nombreORazonSocial = nombreORazonSocial;
 		this.establecerDniOCuit(dniOCuit);
+		RepoProveedores.getInstance().agregarProveedor(this);
 	}
 	
 	public Proveedor(String nombreORazonSocial, String dniOCuit, DireccionPostal direccionPostal) {
 		this.nombreORazonSocial = nombreORazonSocial;
 		this.establecerDniOCuit(dniOCuit);
 		this.setDireccionPostal(direccionPostal);
+		RepoProveedores.getInstance().agregarProveedor(this);
 	}
 
 	public void establecerDniOCuit(String dniOCuit){

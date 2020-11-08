@@ -76,10 +76,9 @@ public class Egreso extends EntidadPersistente{
 	private Set<String> etiquetas;
 	
 	@Column
-	private boolean valido;  //TODO esto puede causar inconsistencia. Debería ser calculable
+	private boolean valido;  //TODO esto puede causar inconsistencia. Deberia ser calculable
 
-	public Egreso() {
-	}
+	public Egreso() {}
 
 	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.proveedor = datosEgreso.getProveedor();
@@ -250,8 +249,7 @@ public class Egreso extends EntidadPersistente{
 		boolean estadoValidacion = this.egresoValido();
         agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
         agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");
-        agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"Proveedor fue elegido según el criterio de " +
-                "selección de presupuestos" );
+        agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"Proveedor fue elegido según el criterio de " + "selección de presupuestos" );
         agregarMensajeSegunEstado(this.tieneCantidadMinimaDePresupuestos(), "Compra realizada con cantidad minima de presupuestos");
 		notificarUsuariosRevisores();
 		this.setValido(estadoValidacion);
