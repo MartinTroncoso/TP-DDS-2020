@@ -22,7 +22,7 @@ public class ControllerMensajes{
 	        //model.put("mensaje", mensaje);
 	        //Para conseguir un dato de la sesi�n, como el nombre del usuario
 	       // model.put("usuario", req.session().attribute("usuario-logueado"));
-	        return new ModelAndView(model, "proyectos/show.hbs");
+	        return new ModelAndView(model, "/mensajes/show.hbs");
 	    }
 	
 	public static ModelAndView listar(Request req, Response res) {
