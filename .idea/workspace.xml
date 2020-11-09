@@ -55,6 +55,7 @@
       <recent name="dds.gesoc.model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates/login" />
       <recent name="$PROJECT_DIR$/src/main/resources/public/images" />
       <recent name="$PROJECT_DIR$/src/main/resources/templates" />
     </key>
@@ -250,22 +251,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="Método y test del integrante 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1272" height="174" key="GridCell.Tab.0.bottom" timestamp="1604901646535">
+    <state width="1272" height="174" key="GridCell.Tab.0.bottom" timestamp="1604902549539">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1604901646535" />
-    <state width="1272" height="174" key="GridCell.Tab.0.center" timestamp="1604901646533">
+    <state width="1272" height="174" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1604902549539" />
+    <state width="1272" height="174" key="GridCell.Tab.0.center" timestamp="1604902549537">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1604901646533" />
-    <state width="1272" height="174" key="GridCell.Tab.0.left" timestamp="1604901646532">
+    <state width="1272" height="174" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1604902549537" />
+    <state width="1272" height="174" key="GridCell.Tab.0.left" timestamp="1604902549536">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1604901646532" />
-    <state width="1272" height="174" key="GridCell.Tab.0.right" timestamp="1604901646534">
+    <state width="1272" height="174" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1604902549536" />
+    <state width="1272" height="174" key="GridCell.Tab.0.right" timestamp="1604902549538">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1604901646534" />
+    <state width="1272" height="174" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1604902549538" />
     <state x="371" y="89" key="search.everywhere.popup" timestamp="1604893902221">
       <screen x="50" y="28" width="1316" height="740" />
     </state>

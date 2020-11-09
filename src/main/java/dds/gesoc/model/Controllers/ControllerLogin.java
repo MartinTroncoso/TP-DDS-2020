@@ -6,10 +6,10 @@ import spark.Response;
 
 public class ControllerLogin {
 	public static ModelAndView show(Request req, Response res) {
-		return new ModelAndView(null,"/login");
+		return new ModelAndView(null,"/login/login.hbs");
 	}
 	
-	//TODO: CONTROLAR LA CONTRASEÑA
+	//TODO: CONTROLAR LA CONTRASEï¿½A
 	public static ModelAndView login(Request req, Response res) {
 		String nombre = req.queryParams("usuario");
         req.session().attribute("usuario-logueado", nombre);
