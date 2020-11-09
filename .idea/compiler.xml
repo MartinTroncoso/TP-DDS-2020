@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="PruebaConcepto" />
         <module name="dds.gesoc" />
+        <module name="2020-ju-ma-group-08" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

@@ -8,8 +8,7 @@ public class Server {
 	public static void main(String[] args){
 		Bootstrap.init();
 		Spark.port(9000);
-		Spark.get("/",(request,response)-> "Holiwis :-D");
+		Spark.staticFiles.location("/public");
 		Router.configure();
 	}
-	
 }

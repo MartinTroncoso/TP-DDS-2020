@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Entidad.java" line="58" mnemonic="7" />
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edce720-d29d-4085-a5b5-17010a0085b7" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,139 +18,6 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoNuevosEgresos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="15" column="80" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="80" />
-              <folding>
-                <element signature="e#279#280#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="e#308#309#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoAceptarEntidadBaseEnJuridica.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
-                <element signature="e#328#329#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/RepoEntidades/RepoEntidades.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/EntidadBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="26" column="106" selection-start-line="26" selection-start-column="106" selection-end-line="26" selection-end-column="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/ComportamientoSegunReglaDeNegocio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Categoria.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-              <folding>
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="e#310#311#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Entidad.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2738#2739#0" expanded="true" />
-                <element signature="e#2774#2775#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/BloquearJuridicaNoAceptaEntBasesException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="54" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="54" />
-              <folding>
-                <element signature="e#181#182#0" expanded="true" />
-                <element signature="e#201#202#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/EntidadJuridica.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1195#1196#0" expanded="true" />
-                <element signature="e#1224#1225#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoEntidadBasePuedeEstarEnJuridica.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="80" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#269#270#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -165,225 +29,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/test/java/grupo8/TestDummyDesing.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Organizacion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/OSC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Exeptions/CuitInvalidoException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Exeptions/NoClasificaComoPymeException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/SectorComercio.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/SectorIndustriaMineria.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/SectorAgropecuario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/SectorConstruccion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Sector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/TipoEmpresa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/SectorServicios.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Empresa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/RepoEntidades/RepoEntitades.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/EntidadBaseTieneEntidaJuridicaException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Item.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Documento.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/EgresoConPresupuesto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/CriterioSeleccionProveedor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/ResultadoValidacion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/PresupuestoSinEgresoAsociadoException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/DatosEgreso.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/usuarios/Usuario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/CriterioSeleccionProveedorMenorValor.java" />
-        <option value="$PROJECT_DIR$/src/test/java/dds/gesoc/model/EgresosTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/Principal.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/RepoEgresos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Presupuesto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Etiqueta.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/EtiquetaYaExistenteException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/EtiquetaNoValidaException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/geografia/ValorMonetario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java" />
-        <option value="$PROJECT_DIR$/src/test/java/dds/gesoc/model/OrganizacionesTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/dds/gesoc/model/EtiquetasTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/dds/gesoc/model/PresupuestosTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoEntidadBaseAsociadaJuridica.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoAgregarEntidadBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/TipoRegla.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/BloquearJuridicaNoAceptaEntBasesException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoNuevosEgresos.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/RepoEntidades/RepoEntidades.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/ComportamientoSegunReglaDeNegocio.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoEntidadBasePuedeEstarEnJuridica.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoAceptarEntidadBaseEnJuridica.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Categoria.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/EntidadJuridica.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/EntidadBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Entidad.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="prueba-concepto" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="prueba-concepto" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
-  </component>
+  <component name="ProjectId" id="1k2HZoDalE5sQx0NSMaQetQ8k2y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="organizaciones" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="RepoEntidades" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gesoc" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="2020-ju-ma-group-08" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2020-ju-ma-group-08" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -395,20 +54,24 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="dds.gesoc.model" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="JUnit.PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor">
+  <component name="RunManager" selected="Application.Server">
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.Server" />
+      <module name="2020-ju-ma-group-08" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EtiquetasTest.seGeneraUnReporteEgresosSegunEtiqueta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dds.gesoc" />
       <extension name="coverage">
@@ -457,21 +120,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PresupuestosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dds.gesoc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dds.gesoc.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dds.gesoc.model" />
-      <option name="MAIN_CLASS_NAME" value="dds.gesoc.model.PresupuestosTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dds.gesoc" />
       <extension name="coverage">
@@ -512,25 +160,23 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.PresupuestosTest" />
       <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteEgresosSegunEtiqueta" />
       <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteTotalesSegunEtiqueta" />
       <item itemvalue="JUnit.OrganizacionesTest.sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" />
       <item itemvalue="JUnit.PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor" />
+      <item itemvalue="Application.Server" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
         <item itemvalue="JUnit.PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor" />
         <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteEgresosSegunEtiqueta" />
         <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteTotalesSegunEtiqueta" />
         <item itemvalue="JUnit.OrganizacionesTest.sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" />
-        <item itemvalue="JUnit.PresupuestosTest" />
       </list>
     </recent_temporary>
   </component>
-  <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",SHOW_INHERITED" />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -593,42 +239,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Designer" order="1" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6841244" visible="true" weight="0.2602118" />
-      <window_info id="Structure" order="6" sideWeight="0.31587562" side_tool="true" visible="true" weight="0.2602118" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
-      <window_info anchor="bottom" id="SOQL Query" order="11" />
-      <window_info anchor="bottom" id="Anonymous Apex" order="12" />
-      <window_info anchor="bottom" id="Log Analyzer" order="13" weight="0.3289689" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32980332" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="8" side_tool="true" visible="true" weight="0.32980332" />
-    </layout>
-  </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
@@ -638,472 +248,31 @@
     <MESSAGE value="Método y test del integrante 2" />
     <option name="LAST_COMMIT_MESSAGE" value="Método y test del integrante 2" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1272" height="174" key="GridCell.Tab.0.bottom" timestamp="1604901018878">
+      <screen x="50" y="28" width="1316" height="740" />
+    </state>
+    <state width="1272" height="174" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1604901018878" />
+    <state width="1272" height="174" key="GridCell.Tab.0.center" timestamp="1604901018875">
+      <screen x="50" y="28" width="1316" height="740" />
+    </state>
+    <state width="1272" height="174" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1604901018875" />
+    <state width="1272" height="174" key="GridCell.Tab.0.left" timestamp="1604901018873">
+      <screen x="50" y="28" width="1316" height="740" />
+    </state>
+    <state width="1272" height="174" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1604901018873" />
+    <state width="1272" height="174" key="GridCell.Tab.0.right" timestamp="1604901018878">
+      <screen x="50" y="28" width="1316" height="740" />
+    </state>
+    <state width="1272" height="174" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1604901018878" />
+    <state x="371" y="89" key="search.everywhere.popup" timestamp="1604893902221">
+      <screen x="50" y="28" width="1316" height="740" />
+    </state>
+    <state x="371" y="89" key="search.everywhere.popup/50.28.1316.740@50.28.1316.740" timestamp="1604893902221" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/2020_ju_ma_group_08$OrganizacionesTest.ic" NAME="OrganizacionesTest Coverage Results" MODIFIED="1589411313027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>dds.gesoc.model.*</FILTER>
     </SUITE>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/EgresoConPresupuesto.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/ResultadoValidacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Proveedor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-          <folding>
-            <element signature="e#410#411#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/PresupuestoSinEgresoAsociadoException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/MedioPago.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
-          <folding>
-            <element signature="e#290#291#0" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/DatosEgreso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#830#831#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#913#914#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/usuarios/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1347#1348#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/RepoEgresos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Presupuesto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
-          <folding>
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="e#1629#1630#0" expanded="true" />
-            <element signature="e#1650#1651#0" expanded="true" />
-            <element signature="e#1722#1723#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/mercadolibre/ServicioGeograficoMercadoLibre.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/mercadolibre/MercadoLibreAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/mercadolibre/JProvinciaConCiudades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/mercadolibre/JCiudad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/geografia/Moneda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Documento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/MetodoHashIncorrectoException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/EtiquetaYaExistenteException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding>
-            <element signature="e#156#157#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/EtiquetaNoValidaException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <element signature="e#150#151#0" expanded="true" />
-            <element signature="e#170#171#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Etiqueta.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/dds/gesoc/model/EgresosTest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/dds/gesoc/model/EtiquetasTest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/dds/gesoc/model/PresupuestosTest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/test-classes/dds/gesoc/model/OrganizacionesTest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#3097#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/Egreso.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="132" column="21" selection-start-line="132" selection-start-column="21" selection-end-line="132" selection-end-column="21" />
-          <folding>
-            <element signature="e#1903#1904#0" expanded="true" />
-            <element signature="e#1952#1953#0" expanded="true" />
-            <element signature="e#2117#2118#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-            <element signature="e#3465#3466#0" expanded="true" />
-            <element signature="e#3521#3522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/geografia/ValorMonetario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#296#297#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/ServicioGeograficoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="66" column="1" lean-forward="true" selection-start-line="66" selection-start-column="1" selection-end-line="66" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/UsuariosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/ProveedoresTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-722">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/PresupuestosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/OrganizacionesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="50" column="48" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/EgresosTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="124" column="5" lean-forward="true" selection-start-line="124" selection-start-column="5" selection-end-line="124" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/dds/gesoc/model/EtiquetasTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="106" selection-start-line="106" selection-end-line="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/usuarios/CreadorHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/CriterioSeleccionProveedor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/egresos/CriterioSeleccionProveedorMenorValor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/geografia/ServicioGeografico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/TipoRegla.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/BloquearEntidadBaseEnJuridicaException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/exceptions/BloquearJuridicaNoAceptaEntBasesException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="54" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="54" />
-          <folding>
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#201#202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/RepoEntidades/RepoEntidades.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoNuevosEgresos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="80" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="80" />
-          <folding>
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#308#309#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoEntidadBasePuedeEstarEnJuridica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="80" selection-start-line="18" selection-start-column="80" selection-end-line="18" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#269#270#0" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/BloqueoAceptarEntidadBaseEnJuridica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="80" selection-start-line="19" selection-start-column="80" selection-end-line="19" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/ComportamientoSegunReglaDeNegocio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="73" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Categoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-          <folding>
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/Entidad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2738#2739#0" expanded="true" />
-            <element signature="e#2774#2775#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/EntidadBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="106" selection-start-line="26" selection-start-column="106" selection-end-line="26" selection-end-column="106" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dds/gesoc/model/organizaciones/EntidadJuridica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="37" column="61" lean-forward="true" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1224#1225#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
