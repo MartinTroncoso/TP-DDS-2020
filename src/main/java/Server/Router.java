@@ -20,8 +20,8 @@ public class Router {
 
 
 
-		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
-		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
+//		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
+//		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
 
 		Spark.get("/",(request,response)-> "Holiwis :-D");
 		Spark.get("/home", ControllerHome::home, engine);

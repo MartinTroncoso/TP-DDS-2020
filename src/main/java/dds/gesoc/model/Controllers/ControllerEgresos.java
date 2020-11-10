@@ -20,7 +20,7 @@ public class ControllerEgresos {
 	}
 	
 	public static ModelAndView nuevo(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/new.hbs");
+		return new ModelAndView(null,"/egresos/egresosnew.hbs");
 	}
 	
 	public static ModelAndView mostrar(Request req, Response res) {
@@ -30,7 +30,7 @@ public class ControllerEgresos {
 		List<Proveedor> proveedores = RepoProveedores.getInstance().getProveedores();
 		modelo.put("proveedores", proveedores);
 		modelo.put("egreso", egreso);
-		return new ModelAndView(null,"/egresos/new.hbs");
+		return new ModelAndView(modelo,"/egresos/egreso.hbs");
 	}
 	
 	//TODO: Ver los DatosEgreso

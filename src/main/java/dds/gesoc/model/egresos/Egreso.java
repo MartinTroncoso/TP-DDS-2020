@@ -270,6 +270,18 @@ public class Egreso extends EntidadPersistente{
 	public MedioPago getMedioPago() {
 		return medioPago;
 	}
+	
+	public int getCantidadItems() {
+		return items.size();
+	}
+	
+	public int getCantidadPresupuestos() {
+		return presupuestos.size();
+	}
+	
+	public int getCantidadEtiquetas() {
+		return etiquetas.size();
+	}
 
 	public void setMedioPago(MedioPago medioPago) {
 		this.medioPago = medioPago;

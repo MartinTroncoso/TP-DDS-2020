@@ -17,7 +17,7 @@ public class ControllerEntidades {
 		Map<String, List<Entidad>> modelo = new HashMap<>();
 		List<Entidad> entidades = RepoEntidades.getInstance().getEntidades();
 		modelo.put("entidades", entidades);
-		return new ModelAndView(modelo,"/egresos/egresos.hbs");
+		return new ModelAndView(modelo,"/entidades/entidades.hbs");
 	}
 	
 	public static ModelAndView nuevo(Request req, Response res) {
