@@ -15,3 +15,5 @@
 :pencil2: [Enunciado de la 3ra entrega](https://docs.google.com/document/d/1mtYaUC0X5NH-vHnJxd1mKQrZOiyMTVpM0VnbK05cD3g/edit)
 
 :pencil2: [Enunciado de la 4ta entrega](https://docs.google.com/document/d/1GNJDaTuO192ntS5Y8sqic2sucV5HPIvHt3izsl-ySLs/edit)
+
+:pencil2: [Enunciado de la 5ta entrega](https://docs.google.com/document/d/1_PWZduzAN-C1fsrlG1qLui_hnKKSNFlt5J8MHolGixI/edit)
