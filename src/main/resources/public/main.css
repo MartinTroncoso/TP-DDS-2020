@@ -146,9 +146,9 @@ table{
     border-radius: 2em;
     margin: 1em;
     background-color: #3887ba;
-    height: 8em;
+    height: 12em;
     font-size: 150%;
-    width: 12em;
+    width: 16em;
 
 
 }
@@ -172,3 +172,10 @@ table{
 }
 
 /*********************************************************/
+.options_panel {
+height: inherit;
+width: 70em;
+display: inherit;
+justify-content: inherit;
+align-content: inherit;
+}

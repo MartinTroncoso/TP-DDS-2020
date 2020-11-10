@@ -251,26 +251,26 @@
     <option name="LAST_COMMIT_MESSAGE" value="Método y test del integrante 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1272" height="174" key="GridCell.Tab.0.bottom" timestamp="1604902549539">
+    <state width="1272" height="173" key="GridCell.Tab.0.bottom" timestamp="1605046156491">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1604902549539" />
-    <state width="1272" height="174" key="GridCell.Tab.0.center" timestamp="1604902549537">
+    <state width="1272" height="173" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1605046156491" />
+    <state width="1272" height="173" key="GridCell.Tab.0.center" timestamp="1605046156489">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1604902549537" />
-    <state width="1272" height="174" key="GridCell.Tab.0.left" timestamp="1604902549536">
+    <state width="1272" height="173" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1605046156489" />
+    <state width="1272" height="173" key="GridCell.Tab.0.left" timestamp="1605046156488">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1604902549536" />
-    <state width="1272" height="174" key="GridCell.Tab.0.right" timestamp="1604902549538">
+    <state width="1272" height="173" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1605046156488" />
+    <state width="1272" height="173" key="GridCell.Tab.0.right" timestamp="1605046156490">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="174" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1604902549538" />
-    <state x="371" y="89" key="search.everywhere.popup" timestamp="1604893902221">
+    <state width="1272" height="173" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1605046156490" />
+    <state x="371" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1605045325350">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state x="371" y="89" key="search.everywhere.popup/50.28.1316.740@50.28.1316.740" timestamp="1604893902221" />
+    <state x="371" y="89" width="672" height="678" key="search.everywhere.popup/50.28.1316.740@50.28.1316.740" timestamp="1605045325350" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/2020_ju_ma_group_08$OrganizacionesTest.ic" NAME="OrganizacionesTest Coverage Results" MODIFIED="1589411313027" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
