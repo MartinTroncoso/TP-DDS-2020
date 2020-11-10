@@ -162,11 +162,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.Server" />
       <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteEgresosSegunEtiqueta" />
       <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteTotalesSegunEtiqueta" />
       <item itemvalue="JUnit.OrganizacionesTest.sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" />
       <item itemvalue="JUnit.PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor" />
-      <item itemvalue="Application.Server" />
     </list>
     <recent_temporary>
       <list>
