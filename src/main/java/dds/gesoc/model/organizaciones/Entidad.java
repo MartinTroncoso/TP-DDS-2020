@@ -9,6 +9,7 @@ import dds.gesoc.model.geografia.ValorMonetario;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
@@ -23,12 +24,15 @@ import javax.persistence.Table;
 @DiscriminatorColumn(name = "tipo_entidad", length = 1)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Entidad extends EntidadPersistente{
-
+	
+	@Column
     private String nombreFicticio;
     
     @ManyToOne
     @JoinColumn(name = "categoria_id", referencedColumnName = "id")
     protected Categoria categoria;
+    
+    @Column
     protected double montoEsperado;
     
     @OneToMany
