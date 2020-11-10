@@ -28,12 +28,12 @@
   }
 
 
-  body {
+ body {
 	background: aliceblue;
 	font-family: "Source Sans Pro", sans-serif;
 	/*Tiene un margen por defento*/
 	margin: 0;
-	background-color: #fafafa;
+	background-image: url("https://i.pinimg.com/564x/71/8f/32/718f328baef999bfa9c77e23a40d7dad.jpg");
 }
 
 
@@ -47,8 +47,6 @@
     flex-wrap: inherit;
 }
 
-
-
 .footer {
     background-color: #A3ACB2;
     color: aliceblue;
@@ -58,6 +56,66 @@
     align-items: center;
     justify-content: center;
 }
+
+.titulo{
+    border: 10px;
+    text-decoration: blink;
+    color: black;
+    padding: 15px;
+    border-style: double;
+    text-align: center; 
+}
+
+h2{
+    text-align: center; 
+    text-decoration: underline;
+}
+
+div p{
+    margin:10px;
+}
+
+table{
+    border-style: double;
+    padding: 5px;
+}
+
+
+.imagen{
+    width: 1.5vw;
+}
+
+.formulario{
+    border: 10px;
+    text-decoration: blink;
+    color: black;
+    padding: 15px;
+    border-style: double;
+    text-align: center;
+    background-color: skyblue;
+}
+
+.añadir{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    background-color: #515BF9;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+ }
+
+ .crearEgreso{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #5BB954;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+ }
 
 /* .header a {
     text-decoration: none;
