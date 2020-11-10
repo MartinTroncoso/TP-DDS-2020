@@ -1,5 +1,6 @@
 package dds.gesoc.model.organizaciones;
 
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
@@ -9,7 +10,7 @@ import dds.gesoc.model.RepoEntidades.RepoEntidades;
 @Entity
 @DiscriminatorValue("B")
 public class EntidadBase extends Entidad {
-
+	
     private String descripcion;
     
     @Transient

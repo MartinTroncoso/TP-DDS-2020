@@ -16,8 +16,10 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "entidad")
 @DiscriminatorColumn(name = "tipo_entidad", length = 1)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Entidad extends EntidadPersistente{

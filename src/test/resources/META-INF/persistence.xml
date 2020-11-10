@@ -33,10 +33,10 @@
 
             <!-- Implementación -->
 
-            <!-- property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/dds_grupo8?serverTimezone=UTC" />
             <property name="hibernate.connection.username" value="root" /> 
-            <property name="hibernate.connection.password" value="1234" /-->
+            <property name="hibernate.connection.password" value="1234" />
 
             <!-- TESTS -->
             <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
