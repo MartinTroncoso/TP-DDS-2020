@@ -1,36 +1,36 @@
 {{#partial "contenido"}}
+<h1 style="text-decoration:underline;">Egresos</h1>
 
-            <h1>Egresos</h1>
-
-                <table border="5">
-                    <tr>
-                        <th>Egreso</th>
-                        <th>Proveedor</th>
-                        <th>Documento</th>
-                        <th>Medio de Pago</th>
-                        <th>Fecha de operación</th>
-                        <th>Cantidad de items</th>
-                        <th>Cantidad de presupuestos</th>
-                        <th>Moneda</th>
-                        <th>Cantidad de etiquetas</th>
-                        <th>Opciones</th>
-                    </tr>
-                    <!--{{#each egresos}}-->
-                    <tr>
-                        <td>Egreso {{id}}</td>
-                        <td>{{proveedor.nombreorazonsocial}}</td>
-                        <td>{{docComercial.tipo}}</td>
-                        <td>{{medioPago.tipo}}</td>
-                        <td>{{fechaOperacion}}</td>
-                        <td>{{cantidaditems}}</td>
-                        <td>{{cantidadPresupuestos}}</td>
-                        <td>{{moneda.cadenaidentificadora}}</td>
-                        <td>{{cantidadEtiquetas}}</td>
-                        <td><a href="/egresos/{{id}}">Ver</a><td>
-                    </tr>
-                    <!--{{/each}}-->
-                </table>
-
+	<table align="center" border="5">
+		<tr>
+			<th>EGRESO</th>
+			<th>PROVEEDOR</th>
+			<th>DOCUMENTO</th>
+			<th>MEDIO DE PAGO</th>
+			<th>FECHA DE OPERACIÓN</th>
+			<th>CANTIDAD DE ITEMS</th>
+			<th>CANTIDAD DE PRESUPUESTOS</th>
+			<th>MONEDA</th>
+			<th>CANTIDAD DE ETIQUETAS</th>
+			<th>OPCIONES</th>
+		</tr>
+		{{#each egresos}}
+		<tr>
+			<td>Egreso {{id}}</td>
+			<td>{{proveedor.nombreORazonSocial}}</td>
+			<td>{{docComercial.tipo}}</td>
+			<td>{{medioPago.tipo}}</td>
+			<td>{{fechaOperacion}}</td>
+			<td>{{cantidadItems}}</td>
+			<td>{{cantidadPresupuestos}}</td>
+			<td>{{moneda.cadenaIdentificadora}}</td>
+			<td>{{cantidadEtiquetas}}</td>
+			<td><a href="/egresos/{{id}}">Ver</a></td>
+		</tr>
+		{{/each}}
+	</table>
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<a href="/egresos/new" class="nuevoEgreso">Nuevo</a><br><br>
 
 {{/partial}}
 

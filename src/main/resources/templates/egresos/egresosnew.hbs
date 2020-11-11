@@ -1,72 +1,73 @@
 {{#partial "contenido"}}
 
-
-            <h2>Proveedor</h2>
-            <form class="formulario">
-                <label><img align="center" class="imagen" src="images/otroUsuario.png"></label>
-                <input type="text" placeholder="Nombre del proveedor">
-                <br><br>
-                <label><img align="center" class="imagen" src="images/DNI.png"></label>
-                <input type="number" placeholder="DNI">
-                <br><br>
-                <label><img align="center" class="imagen" src="images/house.png"></label>
-                <input type="text" placeholder="Direccion">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" placeholder="Ciudad">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" placeholder="Provincia">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" placeholder="Pais">
-                <br>
-            </form>
-            <h2>Documento Asociado</h2>
-            <form class="formulario">
-                <label><img align="center" class="imagen" src="images/tipodocumento.png"></label>
-                <input type="text" placeholder="Tipo de documento" id="input-tipoDocumento">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="number" placeholder="Numero de documento" id="input-numeroDocumento">
-                <br>
-            </form>
-            <h2>Medio de Pago</h2>
-            <form class="formulario">
-                <label><img align="center" class="imagen" src="images/mediopago.png"></label>
-                <select>
-                    <option>Seleccione un medio de pago</option>
-                    <option>Tarjeta de Crédito</option>
-                    <option>Tarjeta de Débito</option>
-                    <option>Efectivo</option>
-                    <option>Cajero automático</option>
-                    <option>Dinero en cuenta</option>
-                </select>
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input style="width: 10vw" type="number" placeholder="Numero de medio de pago">
-                <br>
-            </form>
-            <h2>Moneda</h2>
-            <form class="formulario">
-                <label><img align="center" class="imagen" src="images/moneda.png"></label>
-                <input type="text" placeholder="Cadena identificadora">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" placeholder="Descripcion">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" placeholder="Simbolo">
-                <br>
-            </form>
-            <h2>Presupuestos</h2>
-            <form class="formulario">
-                <label><img align="center" class="imagen" src="images/presupuesto.png"></label>
-                <input style="width: 12vw" type="number" placeholder="Cantidad mínima de Presupuestos">
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <select>
-                    <option>Seleccione un criterio de selección</option>
-                    <option>Menor Valor</option>
-                </select>
-                <h2><button type="button" name="button" class="añadir">Añadir Presupuesto</button></h2>
-            </form>
-            <h2><button type="button" name="button" class="añadir">Añadir Etiqueta</button></h2>
-            <h2><button type="button" name="button" class="añadir">Añadir Item</button></h2>
-            <h2><button type="button" name="button" class="crearEgreso">CREAR EGRESO</button></h2>
-
+		<form action="/egresos" method="post">
+			<h2>Proveedor</h2>
+			<div class="formulario">
+				<label><img align="center" class="imagen" src="images/icons/otroUsuario.png"></label>
+				<input type="text" placeholder="Nombre del proveedor" required>
+				<br><br>
+				<label><img align="center" class="imagen" src="images/icons/DNI.png"></label>
+				<input type="number" placeholder="DNI" required>
+				<br><br>
+				<label><img align="center" class="imagen" src="images/icons/house.png"></label>
+				<input type="text" placeholder="Direccion" required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" placeholder="Ciudad" required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" placeholder="Provincia" required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" placeholder="Pais" required>
+				<br>
+			</div>
+			<h2>Documento Asociado</h2>
+			<div class="formulario">
+				<label><img align="center" class="imagen" src="images/icons/tipodocumento.png"></label>
+				<input type="text" placeholder="Tipo de documento" required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="number" placeholder="Numero de documento" required>
+				<br>
+			</div>
+			<h2>Medio de Pago</h2>
+			<div class="formulario">
+				<label><img align="center" class="imagen" src="images/icons/mediopago.png"></label>
+				<select>
+					<option>Seleccione un medio de pago</option>
+					<option>Tarjeta de Crédito</option>
+					<option>Tarjeta de Débito</option>
+					<option>Efectivo</option>
+					<option>Cajero automático</option>
+					<option>Dinero en cuenta</option>
+				</select>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input style="width: 10vw" type="number" placeholder="Numero de medio de pago" required>
+				<br>
+			</div>
+			<h2>Moneda</h2>
+			<div class="formulario">
+				<label><img align="center" class="imagen" src="images/icons/moneda.png"></label>
+				<input type="text" placeholder="Cadena identificadora" required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" placeholder="Descripcion">
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" placeholder="Simbolo">
+				<br>
+			</div>
+			<h2>Presupuestos</h2>
+			<div class="formulario">
+				<label><img align="center" class="imagen" src="images/icons/presupuesto.png"></label>
+				<input style="width: 12vw" type="number" placeholder="Cantidad mínima de Presupuestos" required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<select>
+					<option>Seleccione un criterio de selección</option>
+					<option>Menor Valor</option>
+				</select>
+				<h2><button type="button" name="button" class="añadir">Añadir Presupuesto</button></h2>
+			</div>
+			<h2><button type="button" name="button" class="añadir">Añadir Etiqueta</button></h2>
+			<h2><button type="button" name="button" class="añadir">Añadir Item</button></h2>
+			<h2><input class="crearEgreso" type="submit" value="CREAR EGRESO"></h2>
+		</form>
+		<a href="/egresos/new" class="nuevoEgreso">Nuevo</a><br><br>
 
 {{/partial}}
 
