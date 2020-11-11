@@ -155,12 +155,12 @@ table{
 
 .option {
     border: 2em solid #3887ba;
-    border-radius: 2em;
+    border-radius: .5em;
     margin: 1em;
     background-color: #3887ba;
-    height: 8em;
+    height: 12em;
     font-size: 150%;
-    width: 12em;
+    width: 16em;
 
 
 }
@@ -258,19 +258,19 @@ flex-wrap: wrap;
 }
 
 .social-link.twitter {
-	background-image: url("/images/twitter.svg");
+	background-image: url(/images/twitter.png);
 }
 
 .social-link.facebook {
-	background-image: url("/images/facebook.svg");
+	background-image: url(/images/facebook.png);
 }
 
 .social-link.github {
-	background-image: url("/images/github.svg");
+	background-image: url(/images/github.png);
 }
 
 .social-link.instagram {
-	background-image: url("/images/instagram.svg");
+	background-image: url(/images/instagram.png);
 }
 
 

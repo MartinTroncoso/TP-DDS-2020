@@ -1,12 +1,8 @@
 package Server;
 
+import dds.gesoc.model.Controllers.*;
 import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 
-import dds.gesoc.model.Controllers.ControllerEgresos;
-import dds.gesoc.model.Controllers.ControllerEntidades;
-import dds.gesoc.model.Controllers.ControllerHome;
-import dds.gesoc.model.Controllers.ControllerLogin;
-import dds.gesoc.model.Controllers.ControllerMensajes;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -22,7 +18,7 @@ public class Router {
 //		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
 //		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
 
-		Spark.get("/",(request,response)-> "Holiwis :-D");
+		Spark.get("/", ControllerRaiz::bienvenida, engine);
 		Spark.get("/home", ControllerHome::home, engine);
 		Spark.get("/login", ControllerLogin::show, engine);
 		Spark.post("/login", ControllerLogin::login, engine);
