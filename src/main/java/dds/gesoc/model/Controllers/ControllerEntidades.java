@@ -40,7 +40,7 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 	}
 	
 	public ModelAndView nuevo(Request req, Response res){
-		return new ModelAndView(null, "entidades/entidadesnew.hbs");
+		return new ModelAndView(null, "entidades/new.hbs");
 	}
 	
 	private void asignarAtributosA(Entidad entidad, Request request){
