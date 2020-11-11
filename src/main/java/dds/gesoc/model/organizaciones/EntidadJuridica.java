@@ -32,16 +32,27 @@ public class EntidadJuridica extends Entidad{
     public EntidadJuridica() {
     }
     
-    public EntidadJuridica (String nombreFicticio, Categoria categoria, double montoEsperado, String razonSocial,String cuit,String direccionPostal) {
+    public EntidadJuridica (String nombreFicticio, Categoria categoria, double montoEsperado, String razonSocial,String cuit,String direccionPostal,int codigoInscripcionIGJ) {
         super(nombreFicticio, categoria, montoEsperado);
-        this.razonSocial = razonSocial;
+        setRazonSocial(razonSocial);
+        setCuit(cuit);
+        setDireccionPostal(direccionPostal);
+        setCodigoInscripcionIGJ(codigoInscripcionIGJ);
+    }
 
-        if (!Pattern.matches(cuitValidoRegex, cuit))
+	public void setDireccionPostal(String direccionPostal) {
+		this.direccionPostal = direccionPostal;
+	}
+
+	public void setCuit(String cuit) {
+		if (!Pattern.matches(cuitValidoRegex, cuit))
             throw new DniOCuitInvalidoException("El cuit o dni no tiene formato valido");
         this.cuit = cuit;
+	}
 
-        this.direccionPostal = direccionPostal;
-    }
+	public void setRazonSocial(String razonSocial) {
+		this.razonSocial = razonSocial;
+	}
     
     public List<Entidad> getEntidades(){
     	return entidades;

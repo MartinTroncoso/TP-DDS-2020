@@ -1,8 +1,39 @@
 {{#partial "contenido"}}
 
-    <p>
-        Estas son entidades
-    </p>
+    <h1>Entidades</h1>
+
+    <table class="table table-stripped">
+        <tr>
+            <th>Nombre Ficticio</th>
+            <th>Categoría</th>
+            <th>Monto Esperado</th>
+            <th>Tipo de Entidad</th>
+            <th>Descripción</th>
+            <th>Razón Social</th>
+            <th>C.U.I.T.</th>
+            <th>Dirección Postal</th>
+            <th>Codigo de Inscripción IGJ</th>
+            <th></th>
+        </tr>
+    
+    <!--{{#each proyectos}}-->
+        <tr>
+            <td>Nombre Ficticio</td>
+            <td>Categoría</td>
+            <td>Monto Esperado</td>
+            <td>Tipo de Entidad</td>
+            <td>Descripción</td>
+            <td>Razón Social</td>
+            <td>C.U.I.T.</td>
+            <td>Dirección Postal</td>
+            <td>Codigo de Inscripción IGJ</td>
+            <td><a href="{{url}}">Ver</a><td>
+        </tr>
+    <!--{{/each}}-->
+    
+    </table>
+
+    <a class="btn btn-primary" type="button" href="/entidades/new">Nueva Entidad</a>
 
 {{/partial}}
 
