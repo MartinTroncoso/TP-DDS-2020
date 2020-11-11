@@ -102,7 +102,7 @@ public class Proveedor extends EntidadPersistente{
 		this.direccion = direccionPostal.getDireccion();
 	}
 
-	/*public String getPais() {
+	public String getPais() {
 		return pais;
 	}
 
@@ -132,7 +132,5 @@ public class Proveedor extends EntidadPersistente{
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
-	}*/
-
-		
+	}	
 }

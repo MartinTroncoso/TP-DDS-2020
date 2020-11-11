@@ -18,8 +18,7 @@ public class Router {
                 .withHelper("isTrue", BooleanHelper.isTrue)
                 .build();
 
-
-
+		Spark.staticFiles.location("/public");
 //		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
 //		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
 
@@ -32,7 +31,7 @@ public class Router {
 		Spark.get("/egresos/:id", ControllerEgresos::mostrar, engine);
 		Spark.post("/egresos", ControllerEgresos::crear);
 		Spark.get("/egresos/:id", ControllerEgresos::modificar, engine);    
-		Spark.post("/egresos/:id", ControllerEgresos::editar);
+		Spark.post("/egresos/:id", ControllerEgresos::editar, engine);
 		Spark.get("/entidades", ControllerEntidades::listar, engine);
 		Spark.get("/entidades/new", ControllerEntidades::nuevo, engine);
 		Spark.get("/entidades/:id", ControllerEntidades::mostrar, engine);

@@ -17,7 +17,6 @@ public class RepoEntidades implements WithGlobalEntityManager{
     //Cada vez que se crea una entidad, se guarda acá
     private List<EntidadBase> entidadesBaseEnUnaEntidadJuridica = new ArrayList<>();
     //private List<EntidadJuridica> entidadesJuridicas = new ArrayList<>();
-    private List<Entidad> todasLasEntidades = new ArrayList<>();
 
     private RepoEntidades() {};
 
@@ -40,8 +39,12 @@ public class RepoEntidades implements WithGlobalEntityManager{
                 .anyMatch(entidad -> entidad.getNombreFicticio().equalsIgnoreCase(unaEntidad.getNombreFicticio()));
     }
     
+    public void agregarEntidad(Entidad entidad) {
+    	entityManager().persist(entidad);
+    }
+    
     public List<Entidad> getEntidades(){
-    	return todasLasEntidades;
+    	return entityManager().createQuery("from entidad", Entidad.class).getResultList();
     }
     
     public Entidad buscar(long id){

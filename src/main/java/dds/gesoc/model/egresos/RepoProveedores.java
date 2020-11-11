@@ -5,9 +5,10 @@ import java.util.List;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
+import dds.gesoc.model.organizaciones.Entidad;
+
 public class RepoProveedores implements WithGlobalEntityManager{
     private static RepoProveedores ourInstance;
-    private List<Proveedor> proveedores = new ArrayList<>();
 
     public static RepoProveedores getInstance() {
         if (ourInstance == null){
@@ -19,11 +20,11 @@ public class RepoProveedores implements WithGlobalEntityManager{
     private RepoProveedores() {}
     
     public void agregarProveedor(Proveedor proveedor) {
-    	proveedores.add(proveedor);
+    	entityManager().persist(proveedor);
     }
     
     public List<Proveedor> getProveedores(){
-    	return proveedores;
+    	return entityManager().createQuery("from proveedor", Proveedor.class).getResultList();
     }
     
     public Proveedor buscar(long id){

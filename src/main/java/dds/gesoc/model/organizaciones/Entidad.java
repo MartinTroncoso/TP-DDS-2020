@@ -40,14 +40,14 @@ public class Entidad extends EntidadPersistente{
     protected List<Egreso> egresosEntidad = new ArrayList<>();
 
     protected Entidad() {
-    	RepoEntidades.getInstance().getEntidades().add(this);
+    	RepoEntidades.getInstance().agregarEntidad(this);;
     }
 
     protected Entidad(String nombreFicticio, Categoria categoria, double montoEsperado) {
         this.nombreFicticio = nombreFicticio;
         this.categoria = categoria;
         this.montoEsperado = montoEsperado;
-        RepoEntidades.getInstance().getEntidades().add(this);
+        RepoEntidades.getInstance().agregarEntidad(this);;
     }
 
     public String getNombreFicticio() {

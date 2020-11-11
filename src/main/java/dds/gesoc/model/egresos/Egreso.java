@@ -78,7 +78,9 @@ public class Egreso extends EntidadPersistente{
 	@Column
 	private boolean valido;  //TODO esto puede causar inconsistencia. Deberia ser calculable
 
-	public Egreso() {}
+	public Egreso(){
+		this.repoEgresos.agregarEgresoNuevo(this);
+	}
 
 	public Egreso(DatosEgreso datosEgreso, Moneda moneda, int cantPresupuestosMinima, CriterioSeleccionProveedor criterioProveedor) {
 		this.proveedor = datosEgreso.getProveedor();
