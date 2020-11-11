@@ -193,6 +193,91 @@ justify-content: center;
 align-content: center;
 flex-wrap: wrap;
 }
-=======
-/*********************************************************/
+
+/*********************************************************Bienvenida*/
+
+.root_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4em;
+}
+
+ h1 h2 h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hero {
+    background-image: url(/images/hero.jpg);
+    object-fit: cover;
+    height: 40em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.hero h1 {
+    font-size: 1000%;
+}
+
+
+.gesoc_details {
+    height: auto;
+    width: 46em;
+    border: .2em solid #3887ba;
+    border-radius: 2em;
+    padding: 2em;
+    background-color: azure;
+    font-size: 120%;
+    color: #53575A;
+    text-align: justify;
+}
+
+
+
+/* Sección de contacto*/
+
+.gesoc_contact {
+    height: 10em;
+    background-color: #3887BA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4em;
+    color: aliceblue;
+}
+
+.social-link {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 0 20px;
+	background-size: 50px 50px;
+}
+
+.social-link.twitter {
+	background-image: url("/images/twitter.svg");
+}
+
+.social-link.facebook {
+	background-image: url("/images/facebook.svg");
+}
+
+.social-link.github {
+	background-image: url("/images/github.svg");
+}
+
+.social-link.instagram {
+	background-image: url("/images/instagram.svg");
+}
+
+
+
+
+/******************************************************************/
+
+
+
 
