@@ -21,7 +21,7 @@ public class Empresa extends EntidadJuridica {
     }
     
     public Empresa (String nombreFicticio, Categoria categoria, double montoEsperado, String razonSocial, String cuit, String direccionPostal, Sector sector, int ventasAnuales) {
-        super(nombreFicticio, categoria, montoEsperado, razonSocial, cuit, direccionPostal);
+        super(nombreFicticio, categoria, montoEsperado, razonSocial, cuit, direccionPostal, ventasAnuales);
         this.sector = sector;
         this.ventasAnuales = ventasAnuales;
         tipoEmpresa = sector.clasificarPorMonto(ventasAnuales);

@@ -2,7 +2,6 @@ package Server;
 
 import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 
-import controllers.ProyectosController;
 import dds.gesoc.model.Controllers.ControllerEgresos;
 import dds.gesoc.model.Controllers.ControllerEntidades;
 import dds.gesoc.model.Controllers.ControllerHome;
