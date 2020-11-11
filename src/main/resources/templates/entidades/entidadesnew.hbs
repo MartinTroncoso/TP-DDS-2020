@@ -2,54 +2,58 @@
 
     <h2>Crear Entidad</h2>
 
-    	<form class="formulario" action="/entidades" method="POST">
-            <div class="form-group">
+    <form class="formulario" action="/entidades" method="POST">
+
+      <div class="form-group">
 				<label for="nombreFicticio">Nombre Entidad</label>
 				<input type="text" placeholder="Ingrese un nombre ficticio para la entidad" name="nombre">
 			</div>
-            <div class="form-group">		
+
+      <div class="form-group">		
 				<label for="montoEsperado">Monto Esperado</label>
 				<input type="number" placeholder="Monto esperado de la entidad" name="montoEsperado">
 			</div>
-            <div class="form-group">
-            	<label for="categoria">Categoría</label>
-                <select class="input-select" name="categoria">
-                   	<option selected disabled>Seleccionar</option>
-                   	<!--{{#each categoria}}-->
-                   		<option value="{{id}}">{{nombre}}</option>
-                   	<!--{{/each}}-->
-                 </select>
-            </div>
-            <div>
-            	<label for="tipo_entidad">Tipo de Entidad</label>
-  				<select name="tipo_entidad" id="tipo_entidad" onchange="cargar(this);">
-  					<option value="1" selected>Seleccionar</option>
-      				<option value="2">Entidad Base</option>
-      				<option value="3">Entidad Jurídica</option>
-  				</select>
+
+      <div class="form-group">
+        <label for="categoria">Categoría</label>
+        <select class="input-select" name="categoria">
+          <option selected disabled>Seleccionar</option>
+          {{#each categorias}}
+            <option value="{{id}}">{{nombre}}</option>
+          {{/each}}
+        </select>
+      </div>
+
+      <div>
+        <label for="tipo_entidad">Tipo de Entidad</label>
+  			<select name="tipo_entidad" id="tipo_entidad" onchange="cargar(this);">
+  				<option value="1" selected>Seleccionar</option>
+      		<option value="2">Entidad Base</option>
+      		<option value="3">Entidad Jurídica</option>
+  			</select>
 			</div>
 
 			<div>
-            	<label for="descripcion">Descripción</label>
+        <label for="descripcion">Descripción</label>
 				<input id="baseInput" type="text" placeholder="Descripción" name="descripcion">
 			</div>
 
 			<div>
-            	<label for="razonSocial">Razón Social</label>
+        <label for="razonSocial">Razón Social</label>
 				<input id="juridicaInput" type="text" placeholder="Razón Social" name="razonSocial">
 			</div>
 
 			<div>
-            	<label for="cuit">C.U.I.T.</label>
+        <label for="cuit">C.U.I.T.</label>
 				<input id="juridicaInput" type="text" placeholder="C.U.I.T." name="cuit">
 			</div>
 
 			<div>
-            	<label for="codigoInscripcionIGJ">Codigo Inscripción IGJ</label>
+        <label for="codigoInscripcionIGJ">Codigo Inscripción IGJ</label>
 				<input id="juridicaInput" type="text" placeholder="Descripción" name="codigoInscripcionIGJ">
 			</div>
 
-        	<input class="btn btn-primary" type="submit" value="Crear Entidad">
+      <input class="btn btn-primary" type="submit" value="Crear Entidad">
 			<a href="/entidades" class="btn btn-default" type="button">Cancelar</a>
 
 		</form>

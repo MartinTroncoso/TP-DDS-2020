@@ -7,29 +7,17 @@
             <th>Nombre Ficticio</th>
             <th>Categoría</th>
             <th>Monto Esperado</th>
-            <th>Tipo de Entidad</th>
-            <th>Descripción</th>
-            <th>Razón Social</th>
-            <th>C.U.I.T.</th>
-            <th>Dirección Postal</th>
-            <th>Codigo de Inscripción IGJ</th>
             <th></th>
         </tr>
     
-    <!--{{#each proyectos}}-->
+    {{#each entidades}}
         <tr>
-            <td>Nombre Ficticio</td>
-            <td>Categoría</td>
-            <td>Monto Esperado</td>
-            <td>Tipo de Entidad</td>
-            <td>Descripción</td>
-            <td>Razón Social</td>
-            <td>C.U.I.T.</td>
-            <td>Dirección Postal</td>
-            <td>Codigo de Inscripción IGJ</td>
+            <td>{{nombreFicticio}}</td>
+            <td>{{categoria.nombre}}</td>
+            <td>{{montoEsperado}}</td>
             <td><a href="{{url}}">Ver</a><td>
         </tr>
-    <!--{{/each}}-->
+    {{/each}}
     
     </table>
 
