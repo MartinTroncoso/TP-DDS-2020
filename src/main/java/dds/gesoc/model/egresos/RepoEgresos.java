@@ -23,7 +23,7 @@ public class RepoEgresos implements WithGlobalEntityManager{
     }
 
     public void agregarEgresoNuevo(Egreso unEgreso) {
-        todosLosEgresos.add(unEgreso);
+    	entityManager().persist(unEgreso);
     }
 
     public void removerEgreso(Egreso unEgreso) {
@@ -39,7 +39,7 @@ public class RepoEgresos implements WithGlobalEntityManager{
     }
     
     public List<Egreso> getEgresos(){
-    	return todosLosEgresos;
+		return entityManager().createQuery("from egreso", Egreso.class).getResultList();
     }
     
     public Egreso buscar(long id){

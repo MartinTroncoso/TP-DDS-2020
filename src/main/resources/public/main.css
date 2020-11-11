@@ -76,6 +76,8 @@ div p{
 }
 
 table{
+    background-color: skyblue;
+    color: black;
     border-style: double;
     padding: 5px;
 }
@@ -117,6 +119,17 @@ table{
     border: 2px solid #0016b0;
  }
 
+ .nuevoEgreso{
+    text-decoration: none;
+    padding: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+    background-color: #149795;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+ }
+
 /*****************************************************************Home*/
 .user_options {
     height: max-content;
@@ -140,15 +153,14 @@ table{
     margin: 3em;
 }
 
-
 .option {
     border: 2em solid #3887ba;
     border-radius: 2em;
     margin: 1em;
     background-color: #3887ba;
-    height: 12em;
+    height: 8em;
     font-size: 150%;
-    width: 16em;
+    width: 12em;
 
 
 }
@@ -171,6 +183,7 @@ table{
     color: white;
 }
 
+
 /*********************************************************/
 .options_panel {
 height: inherit;
@@ -180,3 +193,6 @@ justify-content: center;
 align-content: center;
 flex-wrap: wrap;
 }
+=======
+/*********************************************************/
+

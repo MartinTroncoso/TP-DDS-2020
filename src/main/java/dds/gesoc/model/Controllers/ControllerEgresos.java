@@ -40,14 +40,18 @@ public class ControllerEgresos {
 		//DatosEgreso datosEgresoNuevo = new DatosEgreso(req.queryParams(RepoProveedor.getInstance().buscar(<id>).getNombreORazonSocial().toString()), documento, medioPago);
 		Proveedor proveedor = RepoProveedores.getInstance().buscar(Long.parseLong(id));
 		modelo.put("proveedor",proveedor);
-		return new ModelAndView(null,"/egresos/new.hbs");
+		return new ModelAndView(null,"/egresos/egresosnewnew.hbs");
 	}
 	
 	public static ModelAndView modificar(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/new.hbs");
+		Egreso egreso = RepoEgresos.getInstance().buscar(new Integer(req.params("id")));
+		
+		Map<String, Object> modelo = new HashMap<>();
+		modelo.put("egreso",egreso);
+		return new ModelAndView(modelo,"/egresos/egresosnew.hbs");
 	}
 	
 	public static ModelAndView editar(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/new.hbs");
+		return new ModelAndView(null,"/egresos/egresosnew.hbs");
 	}
 }

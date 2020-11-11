@@ -20,4 +20,12 @@ public class Documento extends EntidadPersistente{
 		this.tipo = tipo;
 		this.numero = numero;
 	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+	
+	public int getNumero() {
+		return numero;
+	}
 }
