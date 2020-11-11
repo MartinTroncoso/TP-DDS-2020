@@ -276,7 +276,33 @@ flex-wrap: wrap;
 
 
 
-/******************************************************************/
+
+/**************************************************************Login*/
+
+.login_container {
+    height: 91%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 253, 253);
+
+}
+
+.login_form h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login_form {
+    height: 25em;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 5px 6px #ccc;
+    background-color: aliceblue;
+}
+
+
 
 
 
