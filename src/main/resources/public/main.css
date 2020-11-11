@@ -68,7 +68,7 @@
 
 h2{
     text-align: center; 
-    text-decoration: underline;
+    /*text-decoration: underline;*/
 }
 
 div p{
@@ -137,7 +137,7 @@ table{
     flex-wrap: wrap;
     box-sizing: border-box;
     margin: inherit;
-    margin-bottom: 3em;
+    margin: 3em;
 }
 
 
@@ -175,7 +175,8 @@ table{
 .options_panel {
 height: inherit;
 width: 70em;
-display: inherit;
-justify-content: inherit;
-align-content: inherit;
+display: flex;
+justify-content: center;
+align-content: center;
+flex-wrap: wrap;
 }
