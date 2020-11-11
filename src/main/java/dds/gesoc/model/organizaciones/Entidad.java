@@ -39,16 +39,24 @@ public class Entidad extends EntidadPersistente{
     @JoinColumn(name = "entidad_id")
     protected List<Egreso> egresosEntidad = new ArrayList<>();
 
-    protected Entidad() {
-    	RepoEntidades.getInstance().agregarEntidad(this);;
+    public Entidad() {
+    	RepoEntidades.getInstance().agregarEntidad(this);
     }
 
     protected Entidad(String nombreFicticio, Categoria categoria, double montoEsperado) {
-        this.nombreFicticio = nombreFicticio;
-        this.categoria = categoria;
-        this.montoEsperado = montoEsperado;
-        RepoEntidades.getInstance().agregarEntidad(this);;
+        setNombreFicticio(nombreFicticio);
+        setCategoria(categoria);
+        setMontoEsperado(montoEsperado);
+        RepoEntidades.getInstance().agregarEntidad(this);
     }
+
+	public void setMontoEsperado(double montoEsperado) {
+		this.montoEsperado = montoEsperado;
+	}
+
+	public void setNombreFicticio(String nombreFicticio) {
+		this.nombreFicticio = nombreFicticio;
+	}
 
     public String getNombreFicticio() {
         return nombreFicticio;
@@ -101,7 +109,7 @@ public class Entidad extends EntidadPersistente{
 
 
     public void setCategoria(Categoria unaCategoria) {
-        this.categoria = unaCategoria;
+        setCategoria(unaCategoria);
     }
 
     public List<Egreso> getEgresos() {
@@ -115,7 +123,6 @@ public class Entidad extends EntidadPersistente{
     public double getMontoEsperado() {
         return montoEsperado;
     }
-
 
 }
 

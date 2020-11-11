@@ -21,7 +21,7 @@ public class EntidadBase extends Entidad {
 
     public EntidadBase(String nombreFicticio, Categoria categoria, double montoEsperado, String descripcion) {
         super(nombreFicticio, categoria, montoEsperado);
-        this.descripcion = descripcion;
+        setDescripcion(descripcion);
         this.repoEntidades = RepoEntidades.getInstance();
     }
 

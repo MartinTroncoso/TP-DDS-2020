@@ -9,6 +9,15 @@ import dds.gesoc.model.organizaciones.EntidadBase;
 
 public class RepositoriosEntidadesH implements WithGlobalEntityManager{
 
+	private static RepositoriosEntidadesH repoEntidades;
+
+	public static RepositoriosEntidadesH getInstance() {
+		if (repoEntidades == null) {
+			repoEntidades = new RepositoriosEntidadesH();
+		}
+		return repoEntidades;
+	}
+	
 	public List<Entidad> todasLasEntidadesJuridicas(){
 		return entityManager()
 				.createQuery("from EntidadJuridica", Entidad.class)
@@ -31,4 +40,19 @@ public class RepositoriosEntidadesH implements WithGlobalEntityManager{
         return this.entidadesBaseEnUnaEntidadJuridica().stream()
                 .anyMatch(entidad -> entidad.getNombreFicticio().equalsIgnoreCase(unaEntidad.getNombreFicticio()));
     }
+    
+    public Entidad buscar(long id){
+        return entityManager().find(Entidad.class, id);
+    }
+
+	public List<Entidad> listar() {
+		return entityManager().createQuery("from Entidad", Entidad.class)
+		.getResultList();
+	}
+
+	public void agregar(Entidad entidad) {
+		entityManager().persist(entidad);
+	}
+
+	
 }

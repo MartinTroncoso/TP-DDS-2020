@@ -38,16 +38,4 @@ public class RepoEntidades implements WithGlobalEntityManager{
         return entidadesBaseEnUnaEntidadJuridica.stream()
                 .anyMatch(entidad -> entidad.getNombreFicticio().equalsIgnoreCase(unaEntidad.getNombreFicticio()));
     }
-    
-    public void agregarEntidad(Entidad entidad) {
-    	entityManager().persist(entidad);
-    }
-    
-    public List<Entidad> getEntidades(){
-    	return entityManager().createQuery("from entidad", Entidad.class).getResultList();
-    }
-    
-    public Entidad buscar(long id){
-        return entityManager().find(Entidad.class, id);
-    }
 }
