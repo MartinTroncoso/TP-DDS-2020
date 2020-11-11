@@ -38,4 +38,8 @@ public class RepoEntidades implements WithGlobalEntityManager{
         return entidadesBaseEnUnaEntidadJuridica.stream()
                 .anyMatch(entidad -> entidad.getNombreFicticio().equalsIgnoreCase(unaEntidad.getNombreFicticio()));
     }
+
+    public void agregarEntidad(Entidad unaEntidad) {
+//TODO: AGREGAR EL CÓDIGO
+    }
 }

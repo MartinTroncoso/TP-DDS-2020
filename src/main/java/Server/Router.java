@@ -3,6 +3,14 @@ package Server;
 import dds.gesoc.model.Controllers.*;
 import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 
+<<<<<<< HEAD
+=======
+import controllers.ProyectosController;
+import dds.gesoc.model.Controllers.ControllerEgresos;
+import dds.gesoc.model.Controllers.ControllerEntidades;
+import dds.gesoc.model.Controllers.ControllerHome;
+import dds.gesoc.model.Controllers.ControllerLogin;
+import dds.gesoc.model.Controllers.ControllerMensajes;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -18,21 +26,29 @@ public class Router {
 //		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
 //		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
 
+
+
+
+		ControllerEntidades controllerEntidades = new ControllerEntidades();
+		ControllerEgresos controllerEgresos = new ControllerEgresos();
+		ControllerMensajes controllerMensajes = new ControllerMensajes();
+
 		Spark.get("/", ControllerRaiz::bienvenida, engine);
+
 		Spark.get("/home", ControllerHome::home, engine);
 		Spark.get("/login", ControllerLogin::show, engine);
 		Spark.post("/login", ControllerLogin::login, engine);
-		Spark.get("/egresos", ControllerEgresos::listar, engine);
-		Spark.get("/egresos/new", ControllerEgresos::nuevo, engine);
-		Spark.get("/egresos/:id", ControllerEgresos::mostrar, engine);
-		Spark.post("/egresos", ControllerEgresos::crear);
-		Spark.get("/egresos/:id", ControllerEgresos::modificar, engine);    
-		Spark.post("/egresos/:id", ControllerEgresos::editar, engine);
-		Spark.get("/entidades", ControllerEntidades::listar, engine);
-		Spark.get("/entidades/new", ControllerEntidades::nuevo, engine);
-		Spark.get("/entidades/:id", ControllerEntidades::mostrar, engine);
-		Spark.post("/entidades", ControllerEntidades::crear);
-		Spark.get("/mensajes", ControllerMensajes::listar, engine);
-		Spark.get("/mensajes/:id", ControllerMensajes::mostrar, engine);
+		Spark.get("/egresos", controllerEgresos::listar, engine);
+		Spark.get("/egresos/new", controllerEgresos::nuevo, engine);
+		Spark.get("/egresos/:id", controllerEgresos::mostrar, engine);
+		Spark.post("/egresos", controllerEgresos::crear);
+		Spark.get("/egresos/:id", controllerEgresos::modificar, engine);    
+		Spark.post("/egresos/:id", controllerEgresos::editar, engine);
+		Spark.get("/entidades", controllerEntidades::listar, engine);
+		Spark.get("/entidades/new", controllerEntidades::nuevo, engine);
+		Spark.get("/entidades/:id", controllerEntidades::mostrar, engine);
+		Spark.post("/entidades", controllerEntidades::crear);
+		Spark.get("/mensajes", controllerMensajes::listar, engine);
+		Spark.get("/mensajes/:id", controllerMensajes::mostrar, engine);
 	}
 }

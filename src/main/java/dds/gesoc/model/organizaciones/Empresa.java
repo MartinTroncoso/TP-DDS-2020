@@ -19,10 +19,10 @@ public class Empresa extends EntidadJuridica {
 
     public Empresa(){
     }
-    
+
     public Empresa (String nombreFicticio, Categoria categoria, double montoEsperado, String razonSocial, String cuit, String direccionPostal, Sector sector, int ventasAnuales) {
-        super(nombreFicticio, categoria, montoEsperado, razonSocial, cuit, direccionPostal);
-        this.sector = sector;
+        super(nombreFicticio, categoria, montoEsperado, razonSocial, cuit, direccionPostal, -1);
+        this.sector = sector; //TODO revisar el código de inscripción IGJ en empresa
         this.ventasAnuales = ventasAnuales;
         tipoEmpresa = sector.clasificarPorMonto(ventasAnuales);
     }

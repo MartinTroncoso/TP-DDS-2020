@@ -54,7 +54,7 @@ public class EgresosTest {
         
         categoriaParaJuridica = new Categoria("ONG");
         categoriaParaBase = new Categoria("ONG");
-        entidadJuridica = new EntidadJuridica("Hermanos Scott", categoriaParaJuridica, 200.0,"IBM","20-42498956-2","6600");
+        entidadJuridica = new EntidadJuridica("Hermanos Scott", categoriaParaJuridica, 200.0,"IBM","20-42498956-2","6600", 9);
         entidadBase = new EntidadBase("Hermanos perez", categoriaParaBase, 200.0, "Venta de autos");
         bloqueoNuevosEgresos = new BloqueoNuevosEgresos();
         bloqueoAgregarEntidadBase = new BloqueoEntidadJuridicaNoAceptaEntidadesBase();
