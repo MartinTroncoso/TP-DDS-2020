@@ -1,8 +1,23 @@
 {{#partial "contenido"}}
 
-    <p>
-        Mostrar un egreso
-    </p>
+    {{#with entidad}}
+		<h1> Entidad {{nombreFicticio}} </h1>
+	
+		<p><strong>Categoría:</strong> {{categoria}}</p>
+		<p><strong>Monto Esperado:</strong> {{montoEsperado}}</p>
+
+		{{#if descripcion}}
+  			<p><strong>Descripción:</strong>{{descripción}}</p>
+		{{/if}}
+
+		{{#if razonSocial || cuit || direccionPostal || codigoInscripciónIGJ}}
+  			<p><strong>Razón Social:</strong>{{razonSocial}}</p>
+  			<p><strong>Razón Social:</strong>{{cuit}}</p>
+  			<p><strong>Razón Social:</strong>{{direccionPostal}}</p>
+  			<p><strong>Razón Social:</strong>{{codigoInscripcionIGJ}}</p>
+		{{/if}}
+
+	{{/with}}
 
 {{/partial}}
 
