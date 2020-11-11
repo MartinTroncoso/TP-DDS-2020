@@ -21,6 +21,7 @@ import spark.Request;
 import spark.Response;
 
 public class ControllerEntidades implements WithGlobalEntityManager, TransactionalOps{
+	
 	public ModelAndView listar(Request req, Response res){
 		Map<String, List<Entidad>> model = new HashMap<>();
 		List<Entidad> entidades = RepositoriosEntidadesH.getInstance().listar();

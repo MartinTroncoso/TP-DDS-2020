@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
+
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.RepoEgresos;
 import dds.gesoc.model.egresos.ResultadoValidacion;
@@ -12,8 +15,9 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
-public class ControllerMensajes{
-	  public static ModelAndView mostrar(Request req, Response res){
+public class ControllerMensajes implements WithGlobalEntityManager, TransactionalOps{
+	  
+	public ModelAndView mostrar(Request req, Response res){
 	        Map<String, ResultadoValidacion> model = new HashMap<>();
 	        String id = req.session().attribute("usuario-logueado");
 
@@ -25,7 +29,7 @@ public class ControllerMensajes{
 	        return new ModelAndView(model, "/mensajes/show.hbs");
 	    }
 	
-	public static ModelAndView listar(Request req, Response res) {
+	public ModelAndView listar(Request req, Response res) {
 		Map<String, List<ResultadoValidacion>> modelo = new HashMap<>();
 		//List<ResultadoValidacion> bandejaDeMensajes = RepoEgresos.getInstance().getEgresos();
 		//modelo.put("bandejaDeMensajes", bandejaDeMensajes);

@@ -2,6 +2,9 @@ package dds.gesoc.model.Controllers;
 
 import java.util.*;
 
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
+
 import dds.gesoc.model.egresos.DatosEgreso;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Proveedor;
@@ -11,19 +14,20 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
-public class ControllerEgresos {
-	public static ModelAndView listar(Request req, Response res) {
+public class ControllerEgresos implements WithGlobalEntityManager, TransactionalOps{
+	
+	public ModelAndView listar(Request req, Response res) {
 		Map<String, List<Egreso>> modelo = new HashMap<>();
 		List<Egreso> egresos = RepoEgresos.getInstance().getEgresos();
 		modelo.put("egresos", egresos);
 		return new ModelAndView(modelo,"/egresos/egresos.hbs");
 	}
 	
-	public static ModelAndView nuevo(Request req, Response res) {
+	public ModelAndView nuevo(Request req, Response res) {
 		return new ModelAndView(null,"/egresos/egresosnew.hbs");
 	}
 	
-	public static ModelAndView mostrar(Request req, Response res) {
+	public ModelAndView mostrar(Request req, Response res) {
 		Map<String,Object> modelo = new HashMap<>();
 		String id = req.params("id");
 		Egreso egreso = RepoEgresos.getInstance().buscar(Long.parseLong(id));
@@ -34,7 +38,7 @@ public class ControllerEgresos {
 	}
 	
 	//TODO: Ver los DatosEgreso
-	public static ModelAndView crear(Request req, Response res) {
+	public ModelAndView crear(Request req, Response res) {
 		Map<String, Proveedor> modelo = new HashMap<>();
 		String id = req.params("id");
 		//DatosEgreso datosEgresoNuevo = new DatosEgreso(req.queryParams(RepoProveedor.getInstance().buscar(<id>).getNombreORazonSocial().toString()), documento, medioPago);
@@ -43,7 +47,7 @@ public class ControllerEgresos {
 		return new ModelAndView(null,"/egresos/egresosnewnew.hbs");
 	}
 	
-	public static ModelAndView modificar(Request req, Response res) {
+	public ModelAndView modificar(Request req, Response res) {
 		Egreso egreso = RepoEgresos.getInstance().buscar(new Integer(req.params("id")));
 		
 		Map<String, Object> modelo = new HashMap<>();
@@ -51,7 +55,7 @@ public class ControllerEgresos {
 		return new ModelAndView(modelo,"/egresos/egresosnew.hbs");
 	}
 	
-	public static ModelAndView editar(Request req, Response res) {
+	public ModelAndView editar(Request req, Response res) {
 		return new ModelAndView(null,"/egresos/egresosnew.hbs");
 	}
 }
