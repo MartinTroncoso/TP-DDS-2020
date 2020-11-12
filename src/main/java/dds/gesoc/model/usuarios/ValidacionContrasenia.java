@@ -6,6 +6,7 @@ import java.util.stream.Stream;
 import dds.gesoc.exceptions.ContraseniaConLongitudCortaException;
 import dds.gesoc.exceptions.ContraseniaConNombreUsuarioException;
 import dds.gesoc.exceptions.ContraseniaConRepetidosSeguidosException;
+import dds.gesoc.exceptions.UsuarioConMismoNombreEncontradoException;
 
 public enum ValidacionContrasenia {
 	
