@@ -38,6 +38,7 @@ public class Usuario extends EntidadPersistente{
 		this.nombreUsuario = Objects.requireNonNull(nombreUsuario);
 		this.tipoUsuario = Objects.requireNonNull(tipoUsuario);
 		this.entidad = Objects.requireNonNull(entidad);
+		this.bandejaDeMensajes = new ArrayList<ResultadoValidacion>();
 		
 		String posibleContrasenia = Objects.requireNonNull(contrasenia);
 		ValidadorDeContrasenias.getInstance().validarContrasenia(nombreUsuario, posibleContrasenia);

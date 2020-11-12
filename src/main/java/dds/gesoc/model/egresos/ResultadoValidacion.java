@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Convert;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -13,6 +14,9 @@ import dds.gesoc.entities.EntidadPersistente;
 
 @Entity
 public class ResultadoValidacion extends EntidadPersistente{
+	
+	@Column
+	private String asunto;
 	
 	@ElementCollection
     private List<String> mensajes;
@@ -24,7 +28,15 @@ public class ResultadoValidacion extends EntidadPersistente{
         this.mensajes = new ArrayList<>();
     }
 
-    public void agregarMensaje(String mensaje) {
+    public String getAsunto() {
+		return asunto;
+	}
+
+	public void setAsunto(String asunto) {
+		this.asunto = asunto;
+	}
+
+	public void agregarMensaje(String mensaje) {
         mensajes.add(mensaje);
     }
 

@@ -6,7 +6,7 @@
 
       <div class="form-group">
 				<label for="nombreFicticio">Nombre Entidad</label>
-				<input type="text" placeholder="Ingrese un nombre ficticio para la entidad" name="nombre">
+				<input type="text" placeholder="Ingrese un nombre ficticio para la entidad" name="nombreFicticio">
 			</div>
 
       <div class="form-group">		
@@ -18,9 +18,9 @@
         <label for="categoria">Categoría</label>
         <select class="input-select" name="categoria">
           <option selected disabled>Seleccionar</option>
-          {{#each categorias}}
-            <option value="{{id}}">{{nombre}}</option>
-          {{/each}}
+          {{#if categoria}}{{#each categoria}}
+            <option value="{{categoria.id}}">{{categoria.nombre}}</option>
+          {{/each}}{{/if}}
         </select>
       </div>
 

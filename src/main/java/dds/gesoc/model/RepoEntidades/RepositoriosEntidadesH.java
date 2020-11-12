@@ -41,7 +41,7 @@ public class RepositoriosEntidadesH implements WithGlobalEntityManager{
                 .anyMatch(entidad -> entidad.getNombreFicticio().equalsIgnoreCase(unaEntidad.getNombreFicticio()));
     }
     
-    public Entidad buscar(long id){
+    public Entidad buscar(int id){
         return entityManager().find(Entidad.class, id);
     }
 
