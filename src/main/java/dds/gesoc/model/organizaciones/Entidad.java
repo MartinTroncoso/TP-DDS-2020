@@ -109,7 +109,7 @@ public class Entidad extends EntidadPersistente{
 
 
     public void setCategoria(Categoria unaCategoria) {
-        setCategoria(unaCategoria);
+        this.categoria = unaCategoria;
     }
 
     public List<Egreso> getEgresos() {
