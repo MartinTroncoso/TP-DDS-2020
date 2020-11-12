@@ -43,7 +43,9 @@ ol, ul {
 	font-family: "Source Sans Pro", sans-serif;
 	/*Tiene un margen por defento*/
 	margin: 0;
-	background-image: url("https://i.pinimg.com/564x/71/8f/32/718f328baef999bfa9c77e23a40d7dad.jpg");
+	background-color: rgb(255, 253, 253);
+	color: grey;
+	/*background-image: url("https://i.pinimg.com/564x/71/8f/32/718f328baef999bfa9c77e23a40d7dad.jpg");*/
 }
 
 
@@ -61,7 +63,7 @@ ol, ul {
     background-color: #A3ACB2;
     color: aliceblue;
     text-align: center;
-    height: 9%;
+    height: 4em;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -152,9 +154,9 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 3px 5px 6px #ccc;
-    background-color: aliceblue;
-    height: 50em;
+
+
+    height: 100%;
     width: 70em;
     flex-wrap: wrap;
     box-sizing: border-box;
@@ -188,7 +190,7 @@ table{
 
 .option img {
 
-    filter: brightness(1000%);
+    filter: brightness(100%);
 }
 
 .link {
