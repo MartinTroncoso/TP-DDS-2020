@@ -37,7 +37,10 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 	}
 	
 	public ModelAndView nuevo(Request req, Response res){
-		return new ModelAndView(null, "entidades/new.hbs");
+		List<Categoria> categorias = RepoCategorias.getInstance().listar();
+        Map<String, List<Categoria>> model = new HashMap<>();
+        model.put("categorias", categorias);
+		return new ModelAndView(model, "entidades/new.hbs");
 	}
 	
 	private void asignarAtributosA(Entidad entidad, Request request){
