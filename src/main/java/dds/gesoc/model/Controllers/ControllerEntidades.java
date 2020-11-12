@@ -7,10 +7,7 @@ import java.util.Map;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
-import dds.gesoc.model.RepoEntidades.RepoEntidades;
 import dds.gesoc.model.RepoEntidades.RepositoriosEntidadesH;
-import dds.gesoc.model.egresos.Egreso;
-import dds.gesoc.model.egresos.RepoEgresos;
 import dds.gesoc.model.organizaciones.Categoria;
 import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
@@ -34,7 +31,7 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 		Map<String, Entidad> model = new HashMap<>();
 		String id = req.params("id");
 		
-		Entidad entidad = RepositoriosEntidadesH.getInstance().buscar(Long.parseLong(id));
+		Entidad entidad = RepositoriosEntidadesH.getInstance().buscar(Integer.parseInt(id));
 		model.put("entidad", entidad);
 		return new ModelAndView(model, "entidades/show.hbs");
 	}
@@ -54,43 +51,48 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
         }
         
         if(request.queryParams("categoria") != null){
-            Categoria unaCategoria = RepoCategorias.getInstance().buscar(new Integer(request.queryParams("rol")));
+            Categoria unaCategoria = RepoCategorias.getInstance().buscar(new Integer(request.queryParams("categoria")));
             entidad.setCategoria(unaCategoria);
-        }
-        
-        if(entidad.getClass().isAssignableFrom(EntidadBase.class)) {
-        	if(request.queryParams("descripcion") != null){
-                ((EntidadBase) entidad).setDescripcion(request.queryParams("descripcion"));
-            }
-        }
-        
-        if(entidad.getClass().isAssignableFrom(EntidadJuridica.class)) {
-        	if(request.queryParams("razonSocial") != null){
-        		((EntidadJuridica) entidad).setRazonSocial(request.queryParams("razonSocial"));
-            }
-        	
-        	if(request.queryParams("cuit") != null){
-        		((EntidadJuridica) entidad).setCuit(request.queryParams("cuit"));
-            }
-        	
-        	if(request.queryParams("direccionPostal") != null){
-        		((EntidadJuridica) entidad).setDireccionPostal(request.queryParams("razonSocial"));
-            }
-        	
-        	if(request.queryParams("codigoInscripcionIGJ") != null){
-                Integer codigoInscripcionIGJ = new Integer(request.queryParams("codigoInscripcionIGJ"));
-                ((EntidadJuridica) entidad).setCodigoInscripcionIGJ(codigoInscripcionIGJ);
-            }
         }
     }
 	
-	public Void crear(Request req, Response res){
-		Entidad entidadNueva = new Entidad();
-		this.asignarAtributosA(entidadNueva, req);
+	public Void crearEntidadBase(Request request, Response response){
+		EntidadBase entidadBaseNueva = new EntidadBase();
+		this.asignarAtributosA(entidadBaseNueva, request);
+		if(request.queryParams("descripcion") != null){
+                entidadBaseNueva.setDescripcion(request.queryParams("descripcion"));
+        } 
 		withTransaction(() ->{
-			RepositoriosEntidadesH.getInstance().agregar(entidadNueva);
+			RepositoriosEntidadesH.getInstance().agregar(entidadBaseNueva);
 		});
-		res.redirect("/entidades");
+		response.redirect("/entidades");
+		return null;
+	}
+	
+	public Void crearEntidadJuridica(Request request, Response response){
+		EntidadJuridica entidadJuridicaNueva = new EntidadJuridica();
+		this.asignarAtributosA(entidadJuridicaNueva, request);
+		
+		if(request.queryParams("razonSocial") != null){
+        	entidadJuridicaNueva.setRazonSocial(request.queryParams("razonSocial"));
+        }	
+        if(request.queryParams("cuit") != null){
+        	entidadJuridicaNueva.setCuit(request.queryParams("cuit"));
+        }
+        	
+        if(request.queryParams("direccionPostal") != null){
+        	entidadJuridicaNueva.setDireccionPostal(request.queryParams("razonSocial"));
+        }
+        	
+        if(request.queryParams("codigoInscripcionIGJ") != null){
+        	Integer codigoInscripcionIGJ = new Integer(request.queryParams("codigoInscripcionIGJ"));
+            entidadJuridicaNueva.setCodigoInscripcionIGJ(codigoInscripcionIGJ);
+        }
+        
+		withTransaction(() ->{
+			RepositoriosEntidadesH.getInstance().agregar(entidadJuridicaNueva);
+		});
+		response.redirect("/entidades");
 		return null;
 	}
 }
