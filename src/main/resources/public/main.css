@@ -26,6 +26,7 @@ ol, ul {
     display: flex;
     flex-direction: column;
 	align-items: center;
+	justify-content: center;
     padding: 0 10px;
     
   }
@@ -230,10 +231,12 @@ flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     color: aliceblue;
+    text-shadow: 0 0 .2em rgb(180, 166, 166);
 }
 
 .hero h1 {
     font-size: 1000%;
+
 }
 
 
