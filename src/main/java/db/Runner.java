@@ -28,6 +28,7 @@ public class Runner {
 		resultado.setAsunto("Asunto #1");
 		resultado.agregarMensaje("Mensajeee");
 		resultado.agregarMensaje("Hola2");
+		resultado.actualizarFecha();
 		usuario.serNotificado(resultado);
 		
 		RepoUsuarios.getInstance().agregarUsuario(usuario);

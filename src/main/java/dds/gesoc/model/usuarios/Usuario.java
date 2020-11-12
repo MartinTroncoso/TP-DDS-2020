@@ -63,4 +63,8 @@ public class Usuario extends EntidadPersistente{
 	public int mensajesEnBandeja() {
 		return bandejaDeMensajes.size();
 	}
+
+	public List<ResultadoValidacion> getBandejaDeMensajes() {
+		return bandejaDeMensajes;
+	}
 }

@@ -4,15 +4,17 @@
 	<h2>Visualizacion de mensaje</h2>
 	<hr />
 	<div class="row form-group">
-		<h3>Asunto: Egreso #123</h3>
-		<h3>Fecha y Hora: No se el formatoo</h3>
+		<h3>Asunto: {{resultado.asunto}}</h3>
+		<h3>Fecha y Hora: {{resultado.horaDeMensaje}}</h3>
 	</div>
 	<div class="row form-group">
-		<button type="button" class="btn btn-primary">Ir atrás</button>
+		<a class="btn btn-primary" type="button" href="/mensajes">Ir atras</a>
 	</div>
 	<div class="row form-group">
 		<div class="jumbotron">
-			<p class="lead">Contenido del mensaje asdasdasdasd</p>
+		    {{#each resultado.mensajes}}
+			<p class="lead">{{this}}</p>
+			{{/each}}
 		</div>
 	</div>
 </div>

@@ -12,27 +12,15 @@
 			</tr>
 		</thead>
 		<tbody>
+		{{#each mensajes}}
 			<tr>
-				<td>John</td>
-				<td>Doe</td>
+				<td>{{horaDeMensaje}}</td>
+				<td>{{asunto}}</td>
 				<td>
-					<button type="button" class="btn btn-primary">Ver</button>
+					<a class="btn btn-primary" type="button" href="/mensajes/{{id}}">Ver</a>
 				</td>
 			</tr>
-			<tr>
-				<td>Mary</td>
-				<td>Moe</td>
-				<td>
-					<button type="button" class="btn btn-primary">Ver</button>
-				</td>
-			</tr>
-			<tr>
-				<td>July</td>
-				<td>Dooley</td>
-				<td>
-					<button type="button" class="btn btn-primary">Ver</button>
-				</td>
-			</tr>
+		{{/each}}
 		</tbody>
 	</table>
 </div>
