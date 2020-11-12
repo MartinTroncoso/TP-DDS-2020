@@ -8,6 +8,9 @@ import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Proveedor;
+import dds.gesoc.model.organizaciones.Categoria;
+import dds.gesoc.model.organizaciones.Entidad;
+import dds.gesoc.model.organizaciones.EntidadBase;
 
 
 public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, TransactionalOps{
@@ -24,6 +27,13 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			Egreso egreso = new Egreso();
 			egreso.setProveedor(proveedor);
 			persist(egreso);
+			
+			Categoria ong = new Categoria("ong");
+			persist(ong);
+			
+			EntidadBase entidadBase = new EntidadBase("juan sa", ong, 2000.00, null);
+			entidadBase.setDescripcion("Organización no Gubernamental");
+			persist(entidadBase);
 		});
 	}
 }
