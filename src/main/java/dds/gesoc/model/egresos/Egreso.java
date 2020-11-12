@@ -30,7 +30,7 @@ import dds.gesoc.model.usuarios.Usuario;
 @Table(name = "egreso")
 public class Egreso extends EntidadPersistente{
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "proveedor_id", referencedColumnName = "id")
 	private Proveedor proveedor;
 	
@@ -38,7 +38,7 @@ public class Egreso extends EntidadPersistente{
 	@JoinColumn(name = "documento_id")
 	private Documento docComercial;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "mediopago_id", referencedColumnName = "id")
 	private MedioPago medioPago;
 	
@@ -47,12 +47,12 @@ public class Egreso extends EntidadPersistente{
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "egreso_id")
-	private List<Item> items;
+	private List<Item> items = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "egresoAsociado", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Presupuesto> presupuestos;
+	private List<Presupuesto> presupuestos = new ArrayList<>();
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "moneda_id", referencedColumnName = "id")
     private Moneda moneda;
 	
@@ -89,8 +89,6 @@ public class Egreso extends EntidadPersistente{
 
 		//TODO: ver como validar si la moneda es alguna de las que nos proporciona la api
 		this.fechaOperacion = LocalDate.now();
-		this.items = new ArrayList<Item>();
-		this.presupuestos = new ArrayList<>();
 		this.moneda = moneda;
 		this.cantPresupuestosMinima = cantPresupuestosMinima;
 		this.criterioProveedor = criterioProveedor;
@@ -288,5 +286,13 @@ public class Egreso extends EntidadPersistente{
 
 	public void setMedioPago(MedioPago medioPago) {
 		this.medioPago = medioPago;
+	}
+	
+	public Moneda getMoneda() {
+		return moneda;
+	}
+	
+	public void setMoneda(Moneda moneda) {
+		this.moneda = moneda;
 	}
 }

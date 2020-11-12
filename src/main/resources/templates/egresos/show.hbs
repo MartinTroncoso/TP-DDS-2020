@@ -2,12 +2,14 @@
 
 	{{#with egreso}}
 		<h1> Egreso {{id}} </h1>
-		<p><strong>Dato</strong></p>
-		<p><strong>Dato</strong></p>
-		<p><strong>Dato</strong></p>
-		<p><strong>Dato</strong></p>
-		<p><strong>Dato</strong></p>
-		<p><strong>Dato</strong></p>
+		<p><strong>{{proveedor.nombreORazonSocial}}</strong></p>
+		<p><strong>{{docComercial.tipo}}</strong></p>
+		<p><strong>{{medioPago.tipo}}</strong></p>
+		<p><strong>{{fechaOperacion}}</strong></p>
+		<p><strong>{{cantidadItems}}</strong></p>
+		<p><strong>{{cantidadPresupuestos}}</strong></p>
+		<p><strong>{{moneda.cadenaIdentificadora}}</strong></p>
+		<p><strong>{{cantidadEtiquetas}}</strong></p>
 	{{/with}}
 
 {{/partial}}

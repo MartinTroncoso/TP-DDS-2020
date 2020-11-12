@@ -37,4 +37,12 @@ public class Moneda extends EntidadPersistente{
 		this.cadenaIdentificadora = cadenaIdentificadora;
 	}
 	
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public void setSimbolo(String simbolo) {
+		this.simbolo = simbolo;
+	}
+	
 }

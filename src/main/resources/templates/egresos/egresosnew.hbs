@@ -3,33 +3,33 @@
 		<form action="/egresos" method="post">
 			<h2>Proveedor</h2>
 			<div class="formulario">
-				<label><img align="center" class="imagen" src="images/icons/otroUsuario.png"></label>
-				<input type="text" name="id" placeholder="Nombre del proveedor" {{#if egreso}} value="{{egreso.proveedor.nombreORazonSocial}}" {{/if}} required>
+				<label><img align="center" class="imagen" src="../images/icons/otroUsuario.png"></label>
+				<input type="text" name="nombre" placeholder="Nombre del proveedor" {{#if egreso}} value="{{egreso.proveedor.nombreORazonSocial}}" {{/if}} required>
 				<br><br>
-				<label><img align="center" class="imagen" src="images/icons/DNI.png"></label>
-				<input type="number" placeholder="DNI" {{#if egreso}} value="{{egreso.proveedor.dniOCuit}}" {{/if}} required>
+				<label><img align="center" class="imagen" src="../images/icons/DNI.png"></label>
+				<input type="text" name="dni" placeholder="DNI" {{#if egreso}} value="{{egreso.proveedor.dniOCuit}}" {{/if}} required>
 				<br><br>
-				<label><img align="center" class="imagen" src="images/icons/house.png"></label>
-				<input type="text" placeholder="Direccion" {{#if egreso}} value="{{egreso.proveedor.direccion}}" {{/if}} required>
+				<label><img align="center" class="imagen" src="../images/icons/house.png"></label>
+				<input type="text" name="direccion" placeholder="Direccion" {{#if egreso}} value="{{egreso.proveedor.direccion}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" placeholder="Ciudad" {{#if egreso}} value="{{egreso.proveedor.ciudad}}" {{/if}} required>
+				<input type="text" name="ciudad" placeholder="Ciudad" {{#if egreso}} value="{{egreso.proveedor.ciudad}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" placeholder="Provincia" {{#if egreso}} value="{{egreso.proveedor.provincia}}" {{/if}} required>
+				<input type="text" name="provincia" placeholder="Provincia" {{#if egreso}} value="{{egreso.proveedor.provincia}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" placeholder="Pais" {{#if egreso}} value="{{egreso.proveedor.pais}}" {{/if}} required>
+				<input type="text" name="pais" placeholder="Pais" {{#if egreso}} value="{{egreso.proveedor.pais}}" {{/if}} required>
 				<br>
 			</div>
 			<h2>Documento Asociado</h2>
 			<div class="formulario">
-				<label><img align="center" class="imagen" src="images/icons/tipodocumento.png"></label>
-				<input type="text" placeholder="Tipo de documento" {{#if egreso}} value="{{egreso.docComercial.tipo}}" {{/if}} required>
+				<label><img align="center" class="imagen" src="../images/icons/tipodocumento.png"></label>
+				<input type="text" name="tipoDocumento" placeholder="Tipo de documento" {{#if egreso}} value="{{egreso.docComercial.tipo}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="number" placeholder="Numero de documento" {{#if egreso}} value="{{egreso.docComercial.numero}}" {{/if}} required>
+				<input type="number" name="numeroDocumento" placeholder="Numero de documento" {{#if egreso}} value="{{egreso.docComercial.numero}}" {{/if}} required>
 				<br>
 			</div>
 			<h2>Medio de Pago</h2>
 			<div class="formulario">
-				<label><img align="center" class="imagen" src="images/icons/mediopago.png"></label>
+				<label><img align="center" class="imagen" src="../images/icons/mediopago.png"></label>
 				<select>
 					<option>Seleccione un medio de pago</option>
 					<option>Tarjeta de Crédito</option>
@@ -39,36 +39,32 @@
 					<option>Dinero en cuenta</option>
 				</select>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input style="width: 10vw" type="number" placeholder="Numero de medio de pago" {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
+				<input style="width: 10vw" type="text" name="numeroMedioPago" placeholder="Numero de medio de pago" {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
 				<br>
 			</div>
 			<h2>Moneda</h2>
 			<div class="formulario">
-				<label><img align="center" class="imagen" src="images/icons/moneda.png"></label>
-				<input type="text" placeholder="Cadena identificadora" {{#if egreso}} value="{{egreso.moneda.cadenaIdentificadora}}" {{/if}} required>
+				<label><img align="center" class="imagen" src="../images/icons/moneda.png"></label>
+				<input type="text" name="cadenaIdentificadora" placeholder="Cadena identificadora" {{#if egreso}} value="{{egreso.moneda.cadenaIdentificadora}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" placeholder="Descripcion" {{#if egreso}} value="{{egreso.moneda.descripcion}}" {{/if}}>
+				<input type="text" name="descripcion" placeholder="Descripcion" {{#if egreso}} value="{{egreso.moneda.descripcion}}" {{/if}}>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" placeholder="Simbolo" {{#if egreso}} value="{{egreso.moneda.simbolo}}" {{/if}}>
+				<input type="text" name="simbolo" placeholder="Simbolo" {{#if egreso}} value="{{egreso.moneda.simbolo}}" {{/if}}>
 				<br>
 			</div>
 			<h2>Presupuestos</h2>
 			<div class="formulario">
-				<label><img align="center" class="imagen" src="images/icons/presupuesto.png"></label>
-				<input style="width: 12vw" type="number" placeholder="Cantidad mínima de Presupuestos" {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
+				<label><img align="center" class="imagen" src="../images/icons/presupuesto.png"></label>
+				<input style="width: 12vw" type="number" name="cantPresupuestosMinima" placeholder="Cantidad mínima de Presupuestos" {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<select>
 					<option>Seleccione un criterio de selección</option>
 					<option>Menor Valor</option>
 				</select>
+				<h2><button type="button" name="button" class="añadir">Añadir Presupuesto</button></h2>
 			</div>
-
-            <div class="botones_añadir">
-            <h2><button type="button" name="button" class="añadir">Añadir Presupuesto</button></h2>
 			<h2><button type="button" name="button" class="añadir">Añadir Etiqueta</button></h2>
 			<h2><button type="button" name="button" class="añadir">Añadir Item</button></h2>
-            </div>
-
 			<h2>
 				<input class="btn btn-primary" type="submit" value="CREAR EGRESO">
 				<a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
