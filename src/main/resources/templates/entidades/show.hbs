@@ -1,23 +1,21 @@
 {{#partial "contenido"}}
 
-    {{#with entidad}}
-		<h1> Entidad {{nombreFicticio}} </h1>
+    {{#if entidad}}
+		<h1> Entidad {{entidad.nombreFicticio}} </h1>
 	
-		<p><strong>Categoría:</strong> {{categoria}}</p>
-		<p><strong>Monto Esperado:</strong> {{montoEsperado}}</p>
+		<p><strong>Categoría:</strong> {{entidad.categoria.nombre}}</p>
+		<p><strong>Monto Esperado:</strong> {{entidad.montoEsperado}}</p>
 
-		{{#if descripcion}}
-  			<p><strong>Descripción:</strong>{{descripción}}</p>
+		{{#if entidad.descripcion}}
+  			<p><strong>Descripción:</strong>{{entidad.descripcion}}</p>
+		{{else}}
+  			<p><strong>Razón Social:</strong>{{entidad.razonSocial}}</p>
+  			<p><strong>Razón Social:</strong>{{entidad.cuit}}</p>
+  			<p><strong>Razón Social:</strong>{{entidad.direccionPostal}}</p>
+  			<p><strong>Razón Social:</strong>{{entidad.codigoInscripcionIGJ}}</p>
 		{{/if}}
 
-		{{#if razonSocial || cuit || direccionPostal || codigoInscripciónIGJ}}
-  			<p><strong>Razón Social:</strong>{{razonSocial}}</p>
-  			<p><strong>Razón Social:</strong>{{cuit}}</p>
-  			<p><strong>Razón Social:</strong>{{direccionPostal}}</p>
-  			<p><strong>Razón Social:</strong>{{codigoInscripcionIGJ}}</p>
-		{{/if}}
-
-	{{/with}}
+	{{/if}}
 
 {{/partial}}
 
