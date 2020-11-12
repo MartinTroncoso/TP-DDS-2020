@@ -248,6 +248,7 @@ public class Egreso extends EntidadPersistente{
 * */
 	public void validar() {
 
+		resultadoValidacion.setAsunto("Validacion Egreso: " + getId());
 		boolean estadoValidacion = this.egresoValido();
         agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
         agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");

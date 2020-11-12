@@ -8,6 +8,8 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
+
 public class EntityManagerHelper {
 
     private static EntityManagerFactory emf;
@@ -28,7 +30,7 @@ public class EntityManagerHelper {
     }
 
     public static EntityManager getEntityManager() {
-        EntityManager manager = threadLocal.get();
+        EntityManager manager = PerThreadEntityManagers.getEntityManager();
         if (manager == null || !manager.isOpen()) {
             manager = emf.createEntityManager();
             threadLocal.set(manager);
@@ -37,7 +39,7 @@ public class EntityManagerHelper {
     }
 
     public static void closeEntityManager() {
-        EntityManager em = threadLocal.get();
+        EntityManager em = PerThreadEntityManagers.getEntityManager();
         threadLocal.set(null);
         em.close();
     }
