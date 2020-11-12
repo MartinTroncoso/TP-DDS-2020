@@ -1,9 +1,40 @@
 {{#partial "contenido"}}
 
-    <p>
-        Estos son mensajes
-    </p>
+<div class="container">
+	<h2>Bandeja de Mensajes</h2>
+	<hr />
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="col-xs-2">Hora de Mensaje</th>
+				<th class="col-xs-8">Asunto</th>
+				<th class="col-xs-2">Ver Mensaje</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>John</td>
+				<td>Doe</td>
+				<td>
+					<button type="button" class="btn btn-primary">Ver</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Mary</td>
+				<td>Moe</td>
+				<td>
+					<button type="button" class="btn btn-primary">Ver</button>
+				</td>
+			</tr>
+			<tr>
+				<td>July</td>
+				<td>Dooley</td>
+				<td>
+					<button type="button" class="btn btn-primary">Ver</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
-{{/partial}}
-
-{{>layout.hbs}}
+{{/partial}} {{>layout.hbs}}
