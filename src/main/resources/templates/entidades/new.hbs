@@ -18,18 +18,18 @@
         <label for="categoria">Categoría</label>
         <select class="input-select" name="categoria">
           <option selected disabled>Seleccionar</option>
-          {{#if categoria}}{{#each categoria}}
-            <option value="{{categoria.id}}">{{categoria.nombre}}</option>
-          {{/each}}{{/if}}
+          {{#each categorias}}
+            <option value="{{id}}">{{nombre}}</option>
+          {{/each}}
         </select>
       </div>
 
       <div>
         <label for="tipo_entidad">Tipo de Entidad</label>
-  			<select name="tipo_entidad" id="tipo_entidad" onchange="cargar(this);">
-  				<option value="1" selected>Seleccionar</option>
-      		<option value="2">Entidad Base</option>
-      		<option value="3">Entidad Jurídica</option>
+  			<select name="tipo_entidad" id="tipo_entidad" onchange="deshabilitar(this);">
+  				<option value="0" selected>Seleccionar</option>
+      		<option value="1">Entidad Base</option>
+      		<option value="2">Entidad Jurídica</option>
   			</select>
 			</div>
 

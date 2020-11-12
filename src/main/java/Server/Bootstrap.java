@@ -29,7 +29,11 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			persist(egreso);
 			
 			Categoria ong = new Categoria("ong");
+			Categoria judicial = new Categoria("judicial");
+			Categoria industrial = new Categoria("industrial");
 			persist(ong);
+			persist(judicial);
+			persist(industrial);
 			
 			EntidadBase entidadBase = new EntidadBase("juan sa", ong, 2000.00, null);
 			entidadBase.setDescripcion("Organización no Gubernamental");

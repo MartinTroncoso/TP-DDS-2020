@@ -1,5 +1,7 @@
 package dds.gesoc.model.RepoEntidades;
 
+import java.util.List;
+
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import dds.gesoc.model.organizaciones.Categoria;
@@ -17,8 +19,13 @@ public class RepoCategorias implements WithGlobalEntityManager{
         return repoCategorias;
     }
 
-	public Categoria buscar(long id) {
+    public Categoria buscar(int id) {
 		return entityManager().find(Categoria.class, id);
+	}
+	
+	public List<Categoria> listar() {
+		return entityManager().createQuery("from Categoria", Categoria.class)
+		.getResultList();
 	}
     
 }
