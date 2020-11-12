@@ -1,6 +1,7 @@
 package dds.gesoc.model.RepoEntidades;
 
 import dds.gesoc.exceptions.EntidadBaseTieneEntidaJuridicaException;
+import dds.gesoc.exceptions.UsuarioConMismoNombreEncontradoException;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
@@ -9,6 +10,8 @@ import dds.gesoc.model.organizaciones.EntidadJuridica;
 import java.util.ArrayList;
 import java.util.List;
 
+import dds.gesoc.model.usuarios.RepoUsuarios;
+import dds.gesoc.model.usuarios.Usuario;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 public class RepoEntidades implements WithGlobalEntityManager{
@@ -40,6 +43,6 @@ public class RepoEntidades implements WithGlobalEntityManager{
     }
 
     public void agregarEntidad(Entidad unaEntidad) {
-//TODO: AGREGAR EL CÓDIGO
+        entityManager().persist(unaEntidad);
     }
 }

@@ -21,7 +21,14 @@ public class Router {
                 .build();
 
 		Spark.staticFiles.location("/public");
-//		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
+/*		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
+*Si el usuario no inició sesión, va a ser redirigido a la página de login
+*				if (!request.pathInfo().contains("/login") &&
+		//			StringUtils.isEmpty(request.cookie("usuario-logueado"))) {
+		//					response.redirect(("/login"));
+		//	}
+*
+*  */
 //		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
 
 
