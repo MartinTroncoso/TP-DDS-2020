@@ -19,19 +19,24 @@
 
         <h1>Hola</h1>
 
-        <form>
+        <form method="POST" action="/login">
             <div class="form-group">
                 <label for="exampleInputEmail1">Nombre de usuario</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su usuario">
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su usuario" name="usuario">
             </div>
+
+
             <div class="form-group">
-                <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña">
+                <label for="exampleInputPassword1">Contraseña</label> <!--Se llama como el query param contrasenia-->
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña" name="contrasenia">
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Recordarme</label>
             </div>
+            {{#if esInvalido}}
+                <h6>El usuario o la contraseña son incorrectos</h6>
+            {{/if}}
             <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </form>
 
