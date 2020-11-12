@@ -100,6 +100,12 @@ table{
 }
 
 .formulario{
+/*Para centrar los campos dentro del formulario*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     border: 10px;
     text-decoration: blink;
     color: black;
@@ -107,6 +113,11 @@ table{
     border-style: double;
     text-align: center;
     background-color: skyblue;
+}
+
+.botones_añadir {
+    display: flex;
+    justify-content: space-around;
 }
 
 .añadir{
