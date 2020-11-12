@@ -29,8 +29,7 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	
 	public ModelAndView mostrar(Request req, Response res) {
 		Map<String,Object> modelo = new HashMap<>();
-		String id = req.params("id");
-		Egreso egreso = RepoEgresos.getInstance().buscar(Long.parseLong(id));
+		Egreso egreso = RepoEgresos.getInstance().buscar(new Integer(req.params("id")));
 		List<Proveedor> proveedores = RepoProveedores.getInstance().getProveedores();
 		modelo.put("proveedores", proveedores);
 		modelo.put("egreso", egreso);
@@ -38,13 +37,12 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	}
 	
 	//TODO: Ver los DatosEgreso
-	public ModelAndView crear(Request req, Response res) {
+	public ModelAndView crear(Request req, Response res){
 		Map<String, Proveedor> modelo = new HashMap<>();
-		String id = req.params("id");
 		//DatosEgreso datosEgresoNuevo = new DatosEgreso(req.queryParams(RepoProveedor.getInstance().buscar(<id>).getNombreORazonSocial().toString()), documento, medioPago);
-		Proveedor proveedor = RepoProveedores.getInstance().buscar(Long.parseLong(id));
+		Proveedor proveedor = RepoProveedores.getInstance().buscar(new Integer(req.queryParams("id")));
 		modelo.put("proveedor",proveedor);
-		return new ModelAndView(null,"/egresos/egresosnewnew.hbs");
+		return new ModelAndView(modelo,"/egresos/egresosnew.hbs");
 	}
 	
 	public ModelAndView modificar(Request req, Response res) {

@@ -24,10 +24,10 @@ public class RepoProveedores implements WithGlobalEntityManager{
     }
     
     public List<Proveedor> getProveedores(){
-    	return entityManager().createQuery("from proveedor", Proveedor.class).getResultList();
+    	return entityManager().createQuery("from Proveedor", Proveedor.class).getResultList();
     }
     
-    public Proveedor buscar(long id){
+    public Proveedor buscar(int id){
         return entityManager().find(Proveedor.class, id);
     }
 }
