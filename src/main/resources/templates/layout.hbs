@@ -17,7 +17,9 @@
 
 
 <body>
-    <header class="header">
+    <header class="header" id="myHeader">
+
+
         <div class="menu_container">
             <a title="GeSoc" href="/" class="logo_gesoc"> <img src="../images/gesoc-logo.png" alt=""></a>
             <nav class="menu">
@@ -43,14 +45,22 @@
                 </ol>
             </nav>
         </div>
+
+
+
+
     </header>
+
+    <div class="content">
 
         {{#block "contenido"}}
 
         {{/block}}
-
+    </div>
     <footer class="footer">
         <p>© Grupo 8</p>
     </footer>
+
+    <script src="/desplazamiento.js"></script>
 </body>
 </html>
