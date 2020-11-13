@@ -37,6 +37,7 @@ public class Router {
 		ControllerEntidades controllerEntidades = new ControllerEntidades();
 		ControllerEgresos controllerEgresos = new ControllerEgresos();
 		ControllerMensajes controllerMensajes = new ControllerMensajes();
+		ControllerUsuarios controllerUsuarios = new ControllerUsuarios();
 
 		Spark.get("/", ControllerRaiz::bienvenida, engine);
 
@@ -56,5 +57,7 @@ public class Router {
 		Spark.post("/entidades", controllerEntidades::crearEntidadJuridica);
 		Spark.get("/mensajes", controllerMensajes::listar, engine);
 		Spark.get("/mensajes/:id", controllerMensajes::mostrar, engine);
+		Spark.get("/usuario", ControllerUsuarios::mostrar, engine);
+		Spark.get("/organizaciones", ControllerOrganizaciones::mostrar, engine);
 	}
 }

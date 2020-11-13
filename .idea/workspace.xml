@@ -61,6 +61,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Server">
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="db.Runner" />
+      <module name="2020-ju-ma-group-08" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.Server" />
       <module name="2020-ju-ma-group-08" />
@@ -101,22 +114,6 @@
       <option name="PACKAGE_NAME" value="dds.gesoc.model" />
       <option name="MAIN_CLASS_NAME" value="dds.gesoc.model.EtiquetasTest" />
       <option name="METHOD_NAME" value="seGeneraUnReporteTotalesSegunEtiqueta" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrganizacionesTest.sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="dds.gesoc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dds.gesoc.model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dds.gesoc.model" />
-      <option name="MAIN_CLASS_NAME" value="dds.gesoc.model.OrganizacionesTest" />
-      <option name="METHOD_NAME" value="sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,16 +162,16 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteEgresosSegunEtiqueta" />
       <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteTotalesSegunEtiqueta" />
-      <item itemvalue="JUnit.OrganizacionesTest.sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" />
       <item itemvalue="JUnit.PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor" />
+      <item itemvalue="Application.Runner" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Runner" />
         <item itemvalue="JUnit.PresupuestosTest.usuarioPuedeDarseDeAltaComoRevisor" />
         <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteEgresosSegunEtiqueta" />
         <item itemvalue="JUnit.EtiquetasTest.seGeneraUnReporteTotalesSegunEtiqueta" />
-        <item itemvalue="JUnit.OrganizacionesTest.sectorServiciosConVENTAS_ANUALES_PEQUENIA_EMPRESAEsPequenia" />
       </list>
     </recent_temporary>
   </component>
@@ -251,22 +248,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="Método y test del integrante 2" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1272" height="197" key="GridCell.Tab.0.bottom" timestamp="1605160247412">
+    <state width="1272" height="197" key="GridCell.Tab.0.bottom" timestamp="1605292213771">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="197" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1605160247412" />
-    <state width="1272" height="197" key="GridCell.Tab.0.center" timestamp="1605160247410">
+    <state width="1272" height="197" key="GridCell.Tab.0.bottom/50.28.1316.740@50.28.1316.740" timestamp="1605292213771" />
+    <state width="1272" height="197" key="GridCell.Tab.0.center" timestamp="1605292213768">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="197" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1605160247410" />
-    <state width="1272" height="197" key="GridCell.Tab.0.left" timestamp="1605160247408">
+    <state width="1272" height="197" key="GridCell.Tab.0.center/50.28.1316.740@50.28.1316.740" timestamp="1605292213768" />
+    <state width="1272" height="197" key="GridCell.Tab.0.left" timestamp="1605292213766">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="197" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1605160247408" />
-    <state width="1272" height="197" key="GridCell.Tab.0.right" timestamp="1605160247411">
+    <state width="1272" height="197" key="GridCell.Tab.0.left/50.28.1316.740@50.28.1316.740" timestamp="1605292213766" />
+    <state width="1272" height="197" key="GridCell.Tab.0.right" timestamp="1605292213769">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
-    <state width="1272" height="197" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1605160247411" />
+    <state width="1272" height="197" key="GridCell.Tab.0.right/50.28.1316.740@50.28.1316.740" timestamp="1605292213769" />
     <state x="371" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1605045325350">
       <screen x="50" y="28" width="1316" height="740" />
     </state>
