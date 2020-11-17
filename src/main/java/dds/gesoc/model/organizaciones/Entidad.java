@@ -65,7 +65,7 @@ public class Entidad extends EntidadPersistente{
     public void agregarEgreso(Egreso unEgreso) {
 
         if(categoria != null)
-            categoria.aplicarReglasDeNegocio(this, TipoRegla.ACEPTACION_NUEVOS_EGRESOS, this.getMontoEsperado(), unEgreso);
+            categoria.aplicarReglasDeNegocio(this, ReglaDeNegocio.ACEPTACION_NUEVOS_EGRESOS, this.getMontoEsperado(), unEgreso);
     	egresosEntidad.add(unEgreso);
     }
 

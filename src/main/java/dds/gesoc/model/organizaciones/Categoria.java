@@ -15,7 +15,7 @@ public class Categoria extends EntidadPersistente{
 	private String nombre;
 	
 	@Transient
-	private List<ComportamientoSegunReglaDeNegocio> comportamientosSegunReglasDeNegocio = new ArrayList<>();
+	private List<ReglaDeNegocio> reglas = new ArrayList<>();
 	
 	public Categoria() {
 	}
@@ -27,22 +27,22 @@ public class Categoria extends EntidadPersistente{
 		return nombre;
 	}
 
-	public void agregarReglaDeNegocio(ComportamientoSegunReglaDeNegocio comportamiento) {
-		if(!comportamientosSegunReglasDeNegocio.contains(comportamiento))
-			comportamientosSegunReglasDeNegocio.add(comportamiento);
+	public void agregarReglaDeNegocio(ReglaDeNegocio regla) {
+		if(!reglas.contains(regla))
+			reglas.add(regla);
 	}
 	
-	public void quitarReglaDeNegocio(ComportamientoSegunReglaDeNegocio comportamiento) {
-		if(comportamientosSegunReglasDeNegocio.contains(comportamiento))
-			comportamientosSegunReglasDeNegocio.remove(comportamiento);
+	public void quitarReglaDeNegocio(ReglaDeNegocio regla) {
+		if(reglas.contains(regla))
+			reglas.remove(regla);
 	}
 
 	/*
 	* Aplica las reglas de negocio relacionadas a la acciónn que quiera realizar una entidad
 	* */
-	public void aplicarReglasDeNegocio(Entidad entidad, TipoRegla tipoRegla, Double monto, Egreso egresoNuevo) {
-		comportamientosSegunReglasDeNegocio.stream().filter(comportamiento -> comportamiento.getTipoDeRegla()
-				.equals(tipoRegla)).forEach(comportamiento -> comportamiento.ejecutarSobre(entidad, monto, egresoNuevo));
+	public void aplicarReglasDeNegocio(Entidad entidad, ReglaDeNegocio regla, Double monto, Egreso egresoNuevo) {
+		reglas.stream().filter(comportamiento -> comportamiento
+				.equals(regla)).forEach(comportamiento -> comportamiento.ejecutarSobre(entidad, monto, egresoNuevo));
 	}
 
 }

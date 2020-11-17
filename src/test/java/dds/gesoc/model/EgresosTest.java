@@ -109,7 +109,7 @@ public class EgresosTest {
 
     @Test(expected = BloqueoEgresoExcedeMontoMaxException.class)
     public void egresoBloqueadoEnEntidad(){
-    	categoriaParaJuridica.agregarReglaDeNegocio(bloqueoNuevosEgresos);
+    	categoriaParaJuridica.agregarReglaDeNegocio(ReglaDeNegocio.ACEPTACION_NUEVOS_EGRESOS);
     	egreso.agregarItem(cebolla);
     	egreso.agregarItem(queso);
     	entidadJuridica.agregarEgreso(egreso);
@@ -118,14 +118,14 @@ public class EgresosTest {
     
     @Test(expected = BloqueoJuridicaNoAceptaEntBasesException.class)
     public void entidadJuridicaNoPuedeAceptarEntidadesBasicasSegunCategoria(){
-    	categoriaParaJuridica.agregarReglaDeNegocio(bloqueoAgregarEntidadBase);
+    	categoriaParaJuridica.agregarReglaDeNegocio(ReglaDeNegocio.ENT_JURIDICA_AGREGA_ENT_BASES);
     	entidadJuridica.agregarEntidadBase(entidadBase);
     	//La entidad jurídica tiene prohibido aceptar entidades base
     }
 
     @Test (expected = BloqueoEntidadBaseNoPuedePertenecerAJuridicasException.class)
 	public void entidadBasicaNoPuedePertenecerAJuridicas() {
-    	categoriaParaBase.agregarReglaDeNegocio(bloqueoEntidadBaseNoPuedePertenecerAJuridica);
+    	categoriaParaBase.agregarReglaDeNegocio(ReglaDeNegocio.ENT_BASE_FORMA_PARTE_ENT_JURIDICA);
     	entidadJuridica.agregarEntidadBase(entidadBase);
     	//La entidad base que quiero agregar en la entdad jurídica tiene prohibido pertenecer a entidades jurídicas
 	}

@@ -65,7 +65,7 @@ public class EntidadJuridica extends Entidad{
     public void agregarEntidadBase(EntidadBase entidadNueva){
     	//BLOQUEOS CATEGORIA
 	if(categoria != null)    
-    		categoria.aplicarReglasDeNegocio(this, TipoRegla.ENT_JURIDICA_AGREGA_ENT_BASES, null, null);
+    		categoria.aplicarReglasDeNegocio(this, ReglaDeNegocio.ENT_JURIDICA_AGREGA_ENT_BASES, null, null);
 
         entidadNueva.formarParteDeEntidadJuridica();
         entidades.add(entidadNueva);

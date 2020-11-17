@@ -36,7 +36,7 @@ public class EntidadBase extends Entidad {
 
     public void formarParteDeEntidadJuridica() {
         if(categoria != null)
-            categoria.aplicarReglasDeNegocio(this, TipoRegla.ENT_BASE_FORMA_PARTE_ENT_JURIDICA, null, null);
+            categoria.aplicarReglasDeNegocio(this, ReglaDeNegocio.ENT_BASE_FORMA_PARTE_ENT_JURIDICA, null, null);
             repoEntidades.agregarEntidadBaseDeEntidadJuridica(this);
     }
 
