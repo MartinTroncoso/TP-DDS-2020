@@ -37,12 +37,39 @@ public class RepoEntidades implements WithGlobalEntityManager{
         entidadesBaseEnUnaEntidadJuridica.add(entidadBase);
     }
 
+    public List<Entidad> todasLasEntidadesJuridicas(){
+		return entityManager()
+				.createQuery("from EntidadJuridica", Entidad.class)
+				.getResultList();
+	}
+	
+	public List<Entidad> todasLasEntidadesBase(){
+		return entityManager()
+				.createQuery("from EntidadBase", Entidad.class)
+				.getResultList();
+	}
+	
+	public List<Entidad> entidadesBaseEnUnaEntidadJuridica(){
+		return entityManager()
+				.createQuery("from EntidadBase where entidad_juridica_propietaria is not null", Entidad.class)
+				.getResultList();
+	}
+	
     public boolean entidadBaseTieneEntidadJuridica(EntidadBase unaEntidad) {
-        return entidadesBaseEnUnaEntidadJuridica.stream()
+        return this.entidadesBaseEnUnaEntidadJuridica().stream()
                 .anyMatch(entidad -> entidad.getNombreFicticio().equalsIgnoreCase(unaEntidad.getNombreFicticio()));
     }
-
-    public void agregarEntidad(Entidad unaEntidad) {
-        entityManager().persist(unaEntidad);
+    
+    public Entidad buscar(int id){
+        return entityManager().find(Entidad.class, id);
     }
+
+	public List<Entidad> listar() {
+		return entityManager().createQuery("from Entidad", Entidad.class)
+		.getResultList();
+	}
+
+	public void agregar(Entidad entidad) {
+		entityManager().persist(entidad);
+	}
 }

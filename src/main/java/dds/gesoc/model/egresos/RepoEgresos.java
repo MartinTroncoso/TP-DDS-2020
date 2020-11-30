@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
+import db.EntityManagerHelper;
+
 public class RepoEgresos implements WithGlobalEntityManager{
 
     private static RepoEgresos ourInstance;
@@ -46,7 +48,9 @@ public class RepoEgresos implements WithGlobalEntityManager{
         return entityManager().find(Egreso.class, id);
     }
     
-    public Egreso get(int index) {
-    	return todosLosEgresos.get(index);
-    }
+    public void modificar(Egreso egreso) {
+	    EntityManagerHelper.getEntityManager().getTransaction().begin();
+	    EntityManagerHelper.getEntityManager().merge(egreso);
+	    EntityManagerHelper.getEntityManager().getTransaction().commit();
+	}
 }
