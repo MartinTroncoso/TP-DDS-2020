@@ -7,12 +7,12 @@ import java.util.Map;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
-import dds.gesoc.model.RepoEntidades.RepositoriosEntidadesH;
 import dds.gesoc.model.organizaciones.Categoria;
 import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
 import dds.gesoc.model.organizaciones.EntidadJuridica;
 import dds.gesoc.model.RepoEntidades.RepoCategorias;
+import dds.gesoc.model.RepoEntidades.RepoEntidades;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -21,7 +21,7 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 	
 	public ModelAndView listar(Request req, Response res){
 		Map<String, List<Entidad>> model = new HashMap<>();
-		List<Entidad> entidades = RepositoriosEntidadesH.getInstance().listar();
+		List<Entidad> entidades = RepoEntidades.getInstance().listar();
 		
 		model.put("entidades", entidades);
 		return new ModelAndView(model, "entidades/entidades.hbs");
@@ -31,7 +31,7 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 		Map<String, Entidad> model = new HashMap<>();
 		String id = req.params("id");
 		
-		Entidad entidad = RepositoriosEntidadesH.getInstance().buscar(Integer.parseInt(id));
+		Entidad entidad = RepoEntidades.getInstance().buscar(Integer.parseInt(id));
 		model.put("entidad", entidad);
 		return new ModelAndView(model, "entidades/show.hbs");
 	}
@@ -59,20 +59,20 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
         }
     }
 	
-	public Void crearEntidadBase(Request request, Response response){
+	public Response crearEntidadBase(Request request, Response response){
 		EntidadBase entidadBaseNueva = new EntidadBase();
 		this.asignarAtributosA(entidadBaseNueva, request);
 		if(request.queryParams("descripcion") != null){
                 entidadBaseNueva.setDescripcion(request.queryParams("descripcion"));
         } 
 		withTransaction(() ->{
-			RepositoriosEntidadesH.getInstance().agregar(entidadBaseNueva);
+			RepoEntidades.getInstance().agregar(entidadBaseNueva);
 		});
 		response.redirect("/entidades");
-		return null;
+		return response;
 	}
 	
-	public Void crearEntidadJuridica(Request request, Response response){
+	public Response crearEntidadJuridica(Request request, Response response){
 		EntidadJuridica entidadJuridicaNueva = new EntidadJuridica();
 		this.asignarAtributosA(entidadJuridicaNueva, request);
 		
@@ -93,9 +93,9 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
         }
         
 		withTransaction(() ->{
-			RepositoriosEntidadesH.getInstance().agregar(entidadJuridicaNueva);
+			RepoEntidades.getInstance().agregar(entidadJuridicaNueva);
 		});
 		response.redirect("/entidades");
-		return null;
+		return response;
 	}
 }

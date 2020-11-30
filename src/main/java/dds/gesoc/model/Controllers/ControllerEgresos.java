@@ -5,8 +5,6 @@ import java.util.*;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
-import dds.gesoc.model.RepoEntidades.RepoCategorias;
-import dds.gesoc.model.RepoEntidades.RepositoriosEntidadesH;
 import dds.gesoc.model.egresos.DatosEgreso;
 import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
@@ -15,10 +13,6 @@ import dds.gesoc.model.egresos.Proveedor;
 import dds.gesoc.model.egresos.RepoEgresos;
 import dds.gesoc.model.egresos.RepoProveedores;
 import dds.gesoc.model.geografia.Moneda;
-import dds.gesoc.model.organizaciones.Categoria;
-import dds.gesoc.model.organizaciones.Entidad;
-import dds.gesoc.model.organizaciones.EntidadBase;
-import dds.gesoc.model.organizaciones.EntidadJuridica;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -33,7 +27,8 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	}
 	
 	public ModelAndView nuevo(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/egresosnew.hbs");
+		//TODO: al crear un egreso hay que inicializar los repositorios de proveedores, presupuestos, items y etiquetas
+		return new ModelAndView(null,"/egresos/egreso.hbs");
 	}
 	
 	public ModelAndView mostrar(Request req, Response res) {
@@ -42,7 +37,7 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 		
 		Egreso egreso = RepoEgresos.getInstance().buscar(Integer.parseInt(id));
 		model.put("egreso", egreso);
-		return new ModelAndView(model,"/egresos/show.hbs");
+		return new ModelAndView(model,"/egresos/egreso.hbs");
 	}
 	
 	private void asignarAtributosA(Egreso egreso, Request request){
@@ -100,7 +95,7 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
         }
     }
 	
-	public ModelAndView crear(Request request, Response response){
+	public Response crear(Request request, Response response){
 		Egreso egreso = new Egreso();
 		Proveedor proveedor = new Proveedor();
 		Documento documento = new Documento();
@@ -117,18 +112,18 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 			RepoEgresos.getInstance().agregarEgresoNuevo(egreso);
 		});
 		response.redirect("/egresos");
-		return null;
+		return response;
 	}
 	
-	public ModelAndView modificar(Request req, Response res) {
+	public Response modificar(Request req, Response res) {
 		Egreso egreso = RepoEgresos.getInstance().buscar(new Integer(req.params("id")));
-		
-		Map<String, Object> modelo = new HashMap<>();
-		modelo.put("egreso",egreso);
-		return new ModelAndView(modelo,"/egresos/egresosnew.hbs");
+        asignarAtributosA(egreso, req);
+        RepoEgresos.getInstance().modificar(egreso);
+        res.redirect("/egresos");
+        return res;
 	}
 	
-	public ModelAndView editar(Request req, Response res) {
+	/*public ModelAndView editar(Request req, Response res) {
 		return new ModelAndView(null,"/egresos/egresosnew.hbs");
-	}
+	}*/
 }
