@@ -3,12 +3,6 @@ package Server;
 import dds.gesoc.model.Controllers.*;
 import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 
-
-import dds.gesoc.model.Controllers.ControllerEgresos;
-import dds.gesoc.model.Controllers.ControllerEntidades;
-import dds.gesoc.model.Controllers.ControllerHome;
-import dds.gesoc.model.Controllers.ControllerLogin;
-import dds.gesoc.model.Controllers.ControllerMensajes;
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -38,6 +32,7 @@ public class Router {
 		ControllerEgresos controllerEgresos = new ControllerEgresos();
 		ControllerMensajes controllerMensajes = new ControllerMensajes();
 		ControllerUsuarios controllerUsuarios = new ControllerUsuarios();
+		ControllerItems controllerItems = new ControllerItems();
 
 		Spark.get("/", ControllerRaiz::bienvenida, engine);
 
@@ -49,6 +44,11 @@ public class Router {
 		Spark.get("/egreso/:id", controllerEgresos::mostrar, engine);
 		Spark.post("/egreso", controllerEgresos::crear);    
 		Spark.post("/egreso/:id", controllerEgresos::modificar);
+		Spark.get("/egreso/:id/items", controllerItems::listarItems, engine);
+		Spark.get("/egreso/:id/item", controllerItems::nuevoItem, engine);
+		Spark.get("/egreso/:id/item/:id", controllerItems::mostrarItem, engine);
+		Spark.post("/egreso/:id/item", controllerItems::crearItem);    
+		Spark.post("/egreso/:id/item/:id", controllerItems::modificarItem);
 		Spark.get("/entidades", controllerEntidades::listar, engine);
 		Spark.get("/entidad", controllerEntidades::nuevo, engine);
 		Spark.get("/entidad/:id", controllerEntidades::mostrar, engine);

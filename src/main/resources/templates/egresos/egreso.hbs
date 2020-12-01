@@ -1,6 +1,6 @@
 {{#partial "contenido"}}
 
-		<form {{#if usuario}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
+		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
 			<h2>Proveedor</h2>
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/otroUsuario.png"></label>

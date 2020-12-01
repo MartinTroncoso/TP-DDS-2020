@@ -23,6 +23,10 @@ public class RepoEgresos implements WithGlobalEntityManager{
     private RepoEgresos() {
     
     }
+    
+    public Egreso get(int index) {
+    	return todosLosEgresos.get(index);
+    }
 
     public void agregarEgresoNuevo(Egreso unEgreso) {
     	entityManager().persist(unEgreso);
@@ -52,5 +56,9 @@ public class RepoEgresos implements WithGlobalEntityManager{
 	    EntityManagerHelper.getEntityManager().getTransaction().begin();
 	    EntityManagerHelper.getEntityManager().merge(egreso);
 	    EntityManagerHelper.getEntityManager().getTransaction().commit();
+	}
+    
+    public List<Item> getItemsDeEgreso(Egreso egreso){
+		return entityManager().createQuery("from Item where egreso_id =" + egreso.getId(), Item.class).getResultList();
 	}
 }

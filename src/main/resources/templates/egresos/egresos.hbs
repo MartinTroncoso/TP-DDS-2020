@@ -12,6 +12,7 @@
 			<th>CANTIDAD DE PRESUPUESTOS</th>
 			<th>MONEDA</th>
 			<th>CANTIDAD DE ETIQUETAS</th>
+			<th>ITEMS</th>
 			<th>OPCIONES</th>
 		</tr>
 		{{#each egresos}}
@@ -26,7 +27,11 @@
 			<td>{{moneda.cadenaIdentificadora}}</td>
 			<td>{{cantidadEtiquetas}}</td>
 			<td>
-				<a style="text-align:center" href="/egreso/{{id}}">Editar</a><br>
+				<a style="text-align:center" href="/egreso/{{id}}/items">Ver items</a>
+			</td>
+			<td>
+				<a style="text-align:center" href="/egreso/{{id}}">Editar</a>
+			</td>
 		</tr>
 		{{/each}}
 	</table>

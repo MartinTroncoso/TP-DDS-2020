@@ -16,8 +16,12 @@ public class ValorMonetario {
 	}
 	
 	public ValorMonetario(double monto, Moneda moneda) {
-		this.monto = monto;
+		setMonto(monto);
 		this.moneda = moneda;
+	}
+
+	public void setMonto(double monto) {
+		this.monto = monto;
 	}
 	
 	public double getMonto() {

@@ -122,8 +122,4 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
         res.redirect("/egresos");
         return res;
 	}
-	
-	/*public ModelAndView editar(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/egresosnew.hbs");
-	}*/
 }

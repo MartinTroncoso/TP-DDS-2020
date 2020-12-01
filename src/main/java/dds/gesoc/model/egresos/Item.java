@@ -20,8 +20,8 @@ public class Item extends EntidadPersistente{
 	}
 	
 	public Item(String descripcion, ValorMonetario valor) {
-		this.descripcion = descripcion;
-		this.valorItem = valor;
+		this.setDescripcion(descripcion);
+		this.setValorItem(valor);
 	}
 	
 	public String getDescripcion() {
@@ -34,5 +34,17 @@ public class Item extends EntidadPersistente{
 	
 	public Moneda getMoneda() {
 		return this.valorItem.getMoneda();
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	public ValorMonetario getValorItem() {
+		return valorItem;
+	}
+
+	public void setValorItem(ValorMonetario valorItem) {
+		this.valorItem = valorItem;
 	}
 }
