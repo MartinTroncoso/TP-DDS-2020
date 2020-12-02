@@ -19,6 +19,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+
 import dds.gesoc.entities.EntidadPersistente;
 import dds.gesoc.exceptions.EtiquetaYaExistenteException;
 import dds.gesoc.exceptions.UsuarioRevisorException;
