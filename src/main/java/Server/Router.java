@@ -41,6 +41,7 @@ public class Router {
 		Spark.get("/login", ControllerLogin::show, engine);
 		Spark.post("/login", ControllerLogin::login, engine);
 		Spark.get("/egresos", controllerEgresos::listar, engine);
+		Spark.post("/egresos", controllerEgresos::validar, engine);
 		Spark.get("/egreso", controllerEgresos::nuevo, engine);
 		Spark.get("/egreso/:id", controllerEgresos::mostrar, engine);
 		Spark.post("/egreso", controllerEgresos::crear);    

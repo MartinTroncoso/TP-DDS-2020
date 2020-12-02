@@ -122,4 +122,10 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
         res.redirect("/egresos");
         return res;
 	}
+
+	public ModelAndView validar(Request request, Response response) {
+		RepoEgresos repo = RepoEgresos.getInstance();
+		repo.validarEgresos();
+		return new ModelAndView(null,"/egresos");
+	}
 }
