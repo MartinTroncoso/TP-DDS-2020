@@ -1,44 +1,48 @@
 {{#partial "contenido"}}
 <h1 style="text-decoration:underline;">Egresos</h1>
 
-	<table align="center" border="5">
-		<tr>
-			<th>EGRESO</th>
-			<th>PROVEEDOR</th>
-			<th>DOCUMENTO</th>
-			<th>MEDIO DE PAGO</th>
-			<th>FECHA DE OPERACIÓN</th>
-			<th>CANTIDAD DE ITEMS</th>
-			<th>CANTIDAD DE PRESUPUESTOS</th>
-			<th>MONEDA</th>
-			<th>CANTIDAD DE ETIQUETAS</th>
-			<th>OPCIONES</th>
-			<th>ESTADO</th>
-		</tr>
-		{{#each egresos}}
-		<tr>
-			<td>Egreso {{id}}</td>
-			<td>{{proveedor.nombreORazonSocial}}</td>
-			<td>{{docComercial.tipo}}</td>
-			<td>{{medioPago.tipo}}</td>
-			<td>{{fechaOperacion}}</td>
-			<td>{{cantidadItems}}</td>
-			<td>{{cantidadPresupuestos}}</td>
-			<td>{{moneda.cadenaIdentificadora}}</td>
-			<td>{{cantidadEtiquetas}}</td>
-			<td style="padding: 5px;">
-				<a style="text-align:center" href="/egreso/{{id}}">
-					<img align="center" class="imagen" src="../images/icons/edit.png">
-				</a>
-				<a style="text-align:center" href="/egreso/{{id}}/items">
-					<img align="center" class="imagen" src="../images/icons/items.png">
-				</a>
-				<a style="text-align:center" href="/egreso/{{id}}/presupuestos">
-					<img align="center" class="imagen" src="../images/icons/presupuestos.png">
-				</a>
-			</td>
+<div class="table-responsive container">
 
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">EGRESO</th>
+            <th scope="col">PROVEEDOR</th>
+            <th scope="col">DOCUMENTO</th>
+            <th scope="col">MEDIO DE PAGO</th>
+            <th scope="col">FECHA DE OPERACIÓN</th>
+            <th scope="col">CANTIDAD DE ITEMS</th>
+            <th scope="col">CANTIDAD DE PRESUPUESTOS</th>
+            <th scope="col">MONEDA</th>
+            <th scope="col">CANTIDAD DE ETIQUETAS</th>
+            <th scope="col">OPCIONES</th>
+            <th scope="col">ESTADO</th>
+        </tr>
+        </thead>
+    <tbody>
 
+        {{#each egresos}}
+        <tr>
+            <td>Egreso {{id}}</td>
+            <td>{{proveedor.nombreORazonSocial}}</td>
+            <td>{{docComercial.tipo}}</td>
+            <td>{{medioPago.tipo}}</td>
+            <td>{{fechaOperacion}}</td>
+            <td>{{cantidadItems}}</td>
+            <td>{{cantidadPresupuestos}}</td>
+            <td>{{moneda.cadenaIdentificadora}}</td>
+            <td>{{cantidadEtiquetas}}</td>
+            <td style="padding: 5px;">
+                <a style="text-align:center" href="/egreso/{{id}}">
+                    <img align="center" class="imagen" src="../images/icons/edit.png">
+                </a>
+                <a style="text-align:center" href="/egreso/{{id}}/items">
+                    <img align="center" class="imagen" src="../images/icons/items.png">
+                </a>
+                <a style="text-align:center" href="/egreso/{{id}}/presupuestos">
+                    <img align="center" class="imagen" src="../images/icons/presupuestos.png">
+                </a>
+            </td>
             <td>
                 {{#if valido}}
                     <img align="center" class="imagen" src="../images/icons/si.png">
@@ -47,12 +51,18 @@
                 {{/if}}
             </td>
 
-		</tr>
-		{{/each}}
-	</table>
-	<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-	<a href="/egreso" class="nuevoEgreso">Nuevo Egreso</a><br><br>
+        </tr>
+
+        </tbody>
+        {{/each}}
+    </table>
+
+    <a href="/egreso" class="nuevoEgreso">Nuevo Egreso</a><br><br>
     <a href="/egresos" class="btn btn-info" role="button">Validar</a>
+</div>
+
+
+
 {{/partial}}
 
 {{>layout.hbs}}
