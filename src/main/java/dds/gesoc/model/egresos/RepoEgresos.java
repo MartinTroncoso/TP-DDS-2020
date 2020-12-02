@@ -61,4 +61,8 @@ public class RepoEgresos implements WithGlobalEntityManager{
     public List<Item> getItemsDeEgreso(Egreso egreso){
 		return entityManager().createQuery("from Item where egreso_id =" + egreso.getId(), Item.class).getResultList();
 	}
+    
+    public Egreso buscarEgresoDeItem(Item item) {
+		return entityManager().createQuery("Select egreso_id from Item where id = " + item.getId(), Egreso.class).getSingleResult();
+	}
 }

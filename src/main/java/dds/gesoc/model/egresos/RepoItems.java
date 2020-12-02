@@ -1,5 +1,7 @@
 package dds.gesoc.model.egresos;
 
+import java.util.List;
+
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import db.EntityManagerHelper;
@@ -27,5 +29,15 @@ public class RepoItems implements WithGlobalEntityManager{
 	    EntityManagerHelper.getEntityManager().getTransaction().begin();
 	    EntityManagerHelper.getEntityManager().merge(item);
 	    EntityManagerHelper.getEntityManager().getTransaction().commit();
+	}
+	
+	public List<Item> getItemsDeEgreso(Egreso egreso){
+		return entityManager().createQuery("from Item where egreso_id =" + egreso.getId(), Item.class).getResultList();
+	}
+
+	public Item buscarItemDeEgreso(Egreso egreso, String id) {
+		return entityManager()
+				.createQuery("from Item where id = " + id + "and egreso_id = " + egreso.getId(), Item.class)
+				.getSingleResult();
 	}
 }
