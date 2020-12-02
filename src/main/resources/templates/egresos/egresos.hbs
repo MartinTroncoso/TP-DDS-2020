@@ -13,6 +13,7 @@
 			<th>MONEDA</th>
 			<th>CANTIDAD DE ETIQUETAS</th>
 			<th>OPCIONES</th>
+			<th>ESTADO</th>
 		</tr>
 		{{#each egresos}}
 		<tr>
@@ -36,6 +37,16 @@
 					<img align="center" class="imagen" src="../images/icons/presupuestos.png">
 				</a>
 			</td>
+
+
+            <td>
+                {{#if valido}}
+                    <img align="center" class="imagen" src="../images/icons/si.png">
+                {{else}}
+                    <img align="center" class="imagen" src="../images/icons/no.png">
+                {{/if}}
+            </td>
+
 		</tr>
 		{{/each}}
 	</table>
