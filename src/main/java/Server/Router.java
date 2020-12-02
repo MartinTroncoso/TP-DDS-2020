@@ -57,8 +57,8 @@ public class Router {
 		Spark.get("/entidades", controllerEntidades::listar, engine);
 		Spark.get("/entidad", controllerEntidades::nuevo, engine);
 		Spark.get("/entidad/:id", controllerEntidades::mostrar, engine);
-		Spark.post("/entidad", controllerEntidades::crearEntidadBase);
-		Spark.post("/entidad", controllerEntidades::crearEntidadJuridica);
+		Spark.post("/entidades", controllerEntidades::crearEntidadBase);
+		Spark.post("/entidades", controllerEntidades::crearEntidadJuridica);
 		Spark.get("/mensajes", controllerMensajes::listar, engine);
 		Spark.get("/mensajes/:id", controllerMensajes::mostrar, engine);
 		Spark.get("/usuario", ControllerUsuarios::mostrar, engine);
