@@ -10,6 +10,6 @@ public class CriterioSeleccionProveedorMenorValor implements CriterioSeleccionPr
     //TODO corregir si es necesario
     @Override
     public Proveedor seleccionarProveedor(List<Presupuesto> listaDePresupuestos) {
-        return listaDePresupuestos.stream().min(Comparator.comparing(Presupuesto::valorTotalNumerico)).get().getUnProveedor();
+        return listaDePresupuestos.stream().min(Comparator.comparing(Presupuesto::valorTotalNumerico)).get().getProveedor();
     }
 }

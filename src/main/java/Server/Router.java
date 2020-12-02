@@ -33,6 +33,7 @@ public class Router {
 		ControllerMensajes controllerMensajes = new ControllerMensajes();
 		ControllerUsuarios controllerUsuarios = new ControllerUsuarios();
 		ControllerItems controllerItems = new ControllerItems();
+		ControllerPresupuestos controllerPresupuestos = new ControllerPresupuestos();
 
 		Spark.get("/", ControllerRaiz::bienvenida, engine);
 
@@ -49,6 +50,10 @@ public class Router {
 		Spark.get("/egreso/:id/item/:id", controllerItems::mostrarItem, engine);
 		Spark.post("/egreso/:id/item", controllerItems::crearItem);    
 		Spark.post("/egreso/:id/item/:id", controllerItems::modificarItem);
+		Spark.get("/egreso/:id/presupuestos", controllerPresupuestos::listarPresupuestos, engine);
+		Spark.get("/egreso/:id/presupuesto", controllerPresupuestos::nuevoPresupuesto, engine);
+		Spark.post("/egreso/:id/presupuesto", controllerPresupuestos::crearPresupuesto);    
+		Spark.post("/egreso/:id/presupuesto/:id", controllerPresupuestos::modificarPresupuesto);
 		Spark.get("/entidades", controllerEntidades::listar, engine);
 		Spark.get("/entidad", controllerEntidades::nuevo, engine);
 		Spark.get("/entidad/:id", controllerEntidades::mostrar, engine);

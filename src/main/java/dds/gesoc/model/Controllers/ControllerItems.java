@@ -43,11 +43,11 @@ public class ControllerItems implements WithGlobalEntityManager, TransactionalOp
 
 	public void asignarAtributosA(Request request, Item item) {
 		if(request.queryParams("descripcion") != null){
-            item.setDescripcion(request.queryParams("descripcion"));
+            item.setDescripcion(request.params("descripcion"));
         }
         
         if(request.queryParams("cantPresupuestosMinima") != null){
-            item.getValorItem().setMonto(new Integer(request.queryParams("cantPresupuestosMinima")));
+            item.getValorItem().setMonto(new Integer(request.params("cantPresupuestosMinima")));
         }
 	}
 	

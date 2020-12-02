@@ -24,7 +24,7 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 		List<Entidad> entidades = RepoEntidades.getInstance().listar();
 		
 		model.put("entidades", entidades);
-		return new ModelAndView(model, "entidades/entidades.hbs");
+		return new ModelAndView(model, "/entidades/entidades.hbs");
 	}
 	
 	public ModelAndView mostrar(Request req, Response res){
@@ -33,14 +33,14 @@ public class ControllerEntidades implements WithGlobalEntityManager, Transaction
 		
 		Entidad entidad = RepoEntidades.getInstance().buscar(Integer.parseInt(id));
 		model.put("entidad", entidad);
-		return new ModelAndView(model, "entidades/show.hbs");
+		return new ModelAndView(model, "/entidades/show.hbs");
 	}
 	
 	public ModelAndView nuevo(Request req, Response res){
 		List<Categoria> categorias = RepoCategorias.getInstance().listar();
         Map<String, List<Categoria>> model = new HashMap<>();
         model.put("categorias", categorias);
-		return new ModelAndView(model, "entidades/new.hbs");
+		return new ModelAndView(model, "/entidades/new.hbs");
 	}
 	
 	private void asignarAtributosA(Entidad entidad, Request request){

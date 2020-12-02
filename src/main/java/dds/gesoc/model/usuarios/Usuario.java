@@ -29,7 +29,7 @@ public class Usuario extends EntidadPersistente{
 	private Entidad entidad;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<ResultadoValidacion> bandejaDeMensajes;
+	private List<ResultadoValidacion> bandejaDeMensajes = new ArrayList<>();
 	
 	public Usuario(){}
 	
@@ -38,7 +38,6 @@ public class Usuario extends EntidadPersistente{
 		this.nombreUsuario = Objects.requireNonNull(nombreUsuario);
 		this.tipoUsuario = Objects.requireNonNull(tipoUsuario);
 		this.entidad = Objects.requireNonNull(entidad);
-		this.bandejaDeMensajes = new ArrayList<ResultadoValidacion>();
 		
 		String posibleContrasenia = Objects.requireNonNull(contrasenia);
 		ValidadorDeContrasenias.getInstance().validarContrasenia(nombreUsuario, posibleContrasenia);
@@ -54,11 +53,9 @@ public class Usuario extends EntidadPersistente{
 		return contrasenia.equals(contraseniaCandidataHasheada);
 	}
 
-
 	public void serNotificado(ResultadoValidacion respuestaEgreso) {
 		bandejaDeMensajes.add(respuestaEgreso);
 	}
-
 
 	public int mensajesEnBandeja() {
 		return bandejaDeMensajes.size();

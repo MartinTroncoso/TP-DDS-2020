@@ -121,9 +121,25 @@ table{
     padding: 5px;
 }
 
+th{
+    font-size: 15;
+    text-align: center;
+    padding: 10px;
+}
+
+td{
+    text-align: center;
+    padding: 5px;
+}
+
+h1{
+    text-align: center;
+    color: #000000;
+}
+
 
 .imagen{
-    width: 1.5vw;
+    width: 2vw;
 }
 
 .formulario{

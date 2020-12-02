@@ -43,7 +43,7 @@ public class Egreso extends EntidadPersistente{
 	private MedioPago medioPago;
 	
 	@Column(columnDefinition = "DATE")
-	private LocalDate fechaOperacion;
+	private LocalDate fechaOperacion = LocalDate.now();
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "egreso_id")
@@ -73,7 +73,7 @@ public class Egreso extends EntidadPersistente{
 	
 	@ElementCollection
 	@Column(name="nombre_etiqueta")
-	private Set<String> etiquetas;
+	private Set<String> etiquetas = new HashSet<>();
 	
 	@Column
 	private boolean valido;  //TODO esto puede causar inconsistencia. Deberia ser calculable
@@ -88,16 +88,14 @@ public class Egreso extends EntidadPersistente{
 		this.medioPago = datosEgreso.getMedioPago();
 
 		//TODO: ver como validar si la moneda es alguna de las que nos proporciona la api
-		this.fechaOperacion = LocalDate.now();
 		this.moneda = moneda;
 		this.cantPresupuestosMinima = cantPresupuestosMinima;
 		this.criterioProveedor = criterioProveedor;
 		this.usuariosRevisores = new ArrayList<>();
 		this.repoEgresos = RepoEgresos.getInstance();
-		this.repoEgresos.agregarEgresoNuevo(this);
+//		this.repoEgresos.agregarEgresoNuevo(this);
 		this.setValido(false);
 		this.resultadoValidacion = new ResultadoValidacion();
-		this.etiquetas = new HashSet<>();
 	}
 
 

@@ -37,7 +37,7 @@ public class Presupuesto extends EntidadPersistente{
 	
 	@ManyToOne
 	@JoinColumn(name = "proveedor_id", referencedColumnName = "id")
-	private Proveedor unProveedor;
+	private Proveedor proveedor;
 	
 	@ManyToOne
 	@JoinColumn(name = "egreso_id", referencedColumnName = "id")
@@ -54,7 +54,7 @@ public class Presupuesto extends EntidadPersistente{
 		this.docComercial = docComercial;
 		this.setDetalle(detalle);
 		this.items = new ArrayList<>();
-		this.unProveedor = unProveedor;
+		this.proveedor = unProveedor;
 		this.moneda = moneda;
 		this.establecerEgresoAsociado(unEgreso);
 	}
@@ -90,8 +90,8 @@ public class Presupuesto extends EntidadPersistente{
 		return valorTotal().getMonto();
 	}
 
-	public Proveedor getUnProveedor() {
-		return unProveedor;
+	public Proveedor getProveedor() {
+		return proveedor;
 	}
 
 	public String getDetalle() {
@@ -103,7 +103,7 @@ public class Presupuesto extends EntidadPersistente{
 	}
 
 	public boolean compraRealizadaSegunEstePresupuesto(Egreso unEgreso) {
-		return this.getUnProveedor().equals(unEgreso.getProveedor())
+		return this.getProveedor().equals(unEgreso.getProveedor())
 			   && this.getItems().equals(unEgreso.getItems())
 			   && this.valorTotal().getMonto() == unEgreso.valorTotal().getMonto();
 	}
