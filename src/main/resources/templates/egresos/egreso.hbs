@@ -61,122 +61,12 @@
 					<option>Seleccione un criterio de selección</option>
 					<option>Menor Valor</option>
 				</select>
-				<h2><button type="button" name="button" class="añadir">Añadir Presupuesto</button></h2>
 			</div>
-			<h2><button type="button" name="button" class="añadir">Añadir Etiqueta</button></h2>
-			<h2><button type="button" name="button" class="añadir">Añadir Item</button></h2>
 			<h2>
-				<input class="btn btn-primary" type="submit" value="CREAR EGRESO">
+				<input class="btn btn-primary" type="submit" {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
 				<a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
 			</h2>
 		</form>
-
-        <!-- ****************************************** -->
-        <h1>Crear Egreso</h1>
-        <form class="needs-validation" novalidate>
-            <h2>Datos</h2>
-            <div class="contenedor_formulario_pequenio">
-                <h4>Proveedor</h4>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect1">Proveedores existentes</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Proveedor 1</option>
-                        <option>Proveedor 2</option>
-                        <option>Proveedor 3</option>
-                        <option>Proveedor 4</option>
-                        <option>Proveedor 5</option>
-                    </select>
-                </div>
-
-                <div class="nuevo_en_formulario_pequenio">
-                    <h4>Nuevo proveedor</h4>
-                <div class="form-row">
-
-                    <div class="col-md-4 mb-3">
-                        <label for="nombre_proveedor">Nombre</label>
-                        <input type="text" class="form-control" id="nombre_proveedor" placeholder="Nombre del proveedor">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="id_proveedor">DNI</label>
-                        <input type="text" class="form-control" id="id_proveedor" placeholder="DNI/Cuit del proveedor">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="direccion_proveedor">Dirección</label>
-                        <input type="text" class="form-control" id="direccion_proveedor" placeholder="Nombre del proveedor">
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="ciudad_proveedor">Cuidad</label>
-                        <input type="text" class="form-control" id="ciudad_proveedor" placeholder="Ciudad del proveedor">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="provincia_proveedor">Provincia</label>
-                        <input type="text" class="form-control" id="provincia_proveedor" placeholder="Provincia del proveedor">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="pais_proveedor">País</label>
-                        <input type="text" class="form-control" id="pais_proveedor" placeholder="País del proveedor">
-                    </div>
-
-                </div>
-
-            <div class="contenedor_formulario_pequenio">
-                <h4>Documento asociado</h4>
-                <div class="container">
-                    <div class="col">
-                        <label for="tipo_documento">Tipo</label>
-                        <input type="text" class="form-control" id="tipo_documento" placeholder="Tipo del documento">
-                    </div>
-                    <div class="col">
-                        <label for="nro_documento">Número</label>
-                        <input type="number" class="form-control" id="nro_documento" placeholder="Número del documento">
-                    </div>
-                </div>
-            </div>
-
-            <div class="contenedor_formulario_pequenio">
-                <h4>Medio de pago</h4>
-                <div class="container">
-                    <div class="col">
-                        <label for="tipo_medio">Tipo</label>
-                        <input type="text" class="form-control" id="tipo_medio" placeholder="Tipo de medio de pago">
-                    </div>
-                    <div class="col">
-                        <label for="nro_documento">Número</label>
-                        <input type="number" class="form-control" id="nro_documento" placeholder="Número del medio de pago">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="contenedor_formulario_pequenio">
-                <h4>Items</h4>
-                <div class="container">
-                    <div class="col">
-                        <label for="desc_item">Descripción</label>
-                        <input type="text" class="form-control" id="desc_item" placeholder="Descripción del item">
-                    </div>
-                    <div class="col">
-                        <label for="valor_item">Valor</label>
-                        <input type="number" class="form-control" id="valor_item" placeholder="Valor monetario del item">
-                    </div>
-                    <label for="lista_monedas">Moneda</label>
-                    <select class="form-control" id="lista_monedas">
-                        <option>Moneda 1</option>
-                        <option>Moneda 2</option>
-                        <option>Moneda 3</option>
-                        <option>Moneda 4</option>
-                        <option>Moneda 5</option>
-                    </select>
-                </div>
-            </div>
-
-
-
-        </form>
-
 {{/partial}}
 
 {{>layout.hbs}}

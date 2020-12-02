@@ -24,7 +24,8 @@
 	</table>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 
-	<a {{#if egreso}} href="/egreso/{{egreso.id}}/item" {{/if}} class="nuevoEgreso">Nuevo Item</a><br><br>
+	<a {{#if egreso}} href="/egreso/{{egreso.id}}/item" {{/if}} class="btn btn-primary">Nuevo Item</a>
+	<a {{#if egreso}} href="/egresos" {{/if}} class="btn btn-default" type="button">Volver</a>
 {{/partial}}
 
 {{>layout.hbs}}

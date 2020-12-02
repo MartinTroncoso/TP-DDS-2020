@@ -1,0 +1,41 @@
+{{#partial "contenido"}}
+	
+	<h1 style="text-decoration:underline;">Presupuestos del egreso {{#if egreso}} {{egreso.id}} {{/if}}</h1>
+
+	<table align="center" border="5">
+		<tr>
+			<th>PRESUPUESTO</th>
+			<th>DOCUMENTO</th>
+			<th>DETALLE</th>
+			<th>PROVEEDOR</th>
+			<th>EGRESO ASOCIADO</th>
+			<th>MONEDA</th>
+			<th>OPCIONES</th>
+		</tr>
+		{{#if egreso}}
+		{{#each egreso.presupuestos}}
+		<tr>
+			<td>Presupuesto {{egreso.presupuesto.id}}</td>
+			<td>{{egreso.presupuesto.documento.tipo}}</td>
+			<td>{{egreso.presupuesto.detalle}}</td>
+			<td>{{egreso.presupuesto.proveedor.nombre}}</td>
+			<td>Egreso {{egreso.id}}</td>
+			<td>{{egreso.presupuesto.moneda.cadenaIdentificatoria}}</td>
+			<td>
+				<a style="text-align:center" href="/egreso/{{egreso.id}}/presupuesto/{{egreso.presupuesto.id}}">
+					<img align="center" class="imagen" src="../images/icons/edit.png">
+				</a>
+				<a style="text-align:center" href="/egreso/{{egreso.id}}/presupuesto/{{egreso.presupuesto.id}}/itemsPresupuesto">
+					<img align="center" class="imagen" src="../images/icons/items.png">
+				</a>
+			</td>
+		</tr>
+		{{/each}}{{/if}}
+	</table>
+	<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+	<a {{#if egreso}} href="/egreso/{{egreso.id}}/presupuesto" {{/if}} class="btn btn-primary">Nuevo Presupuesto</a>
+	<a {{#if egreso}} href="/egresos" {{/if}} class="btn btn-default" type="button">Volver</a>
+{{/partial}}
+
+{{>layout.hbs}}

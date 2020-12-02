@@ -3,14 +3,14 @@
 		<form {{#if egreso}}{{#if egreso.item}} action="/egreso/{{egreso.id}}/item/{{egreso.item.id}}" method="post" {{else}} action="/egreso/{{egreso.id}}/item" method="post" {{/if}}{{/if}} style="">
 			<h2>Item</h2>
 			<div class="formulario">
-				<input type="text" name="descripcion" placeholder="Descripción" {{#if egreso.item}} value="{{egreso.item.descripcion}}" {{/if}} required>
+				<input type="text" name="descripcion" placeholder="Descripción" value="{{egreso.item.descripcion}}" required>
 				<br><br>
-				<input type="text" name="monto" placeholder="Monto" {{#if egreso.item}} value="{{egreso.item.monto}}" {{/if}} required>
+				<input type="text" name="monto" placeholder="Monto" value="{{egreso.item.monto}}" required>
 			</div>
 			
 			<h2>
-				<input class="btn btn-primary" type="submit" value="CREAR ITEM">
-				<a {{#if egreso}} href="/egreso/{{egreso.id}}/items" {{/if}} class="btn btn-default" type="button">Cancelar</a>
+				<input class="btn btn-primary" type="submit" {{#if egreso.item}} value="MODIFICAR ITEM" {{else}} value="CREAR ITEM" {{/if}}>
+				<a {{#if egreso}} href="/egreso/{{egreso.id}}/items" {{else}} href="/egresos" {{/if}} class="btn btn-default" type="button">Cancelar</a>
 			</h2>
 		</form>
 
