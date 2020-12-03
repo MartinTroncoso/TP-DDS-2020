@@ -1,6 +1,6 @@
 {{#partial "contenido"}}
 
-		<form {{#if egreso}}{{#if egreso.presupuesto}} action="/egreso/{{egreso.id}}/presupuesto/{{egreso.presupuesto.id}}" method="post" {{else}} action="/egreso/{{egreso.id}}/presupuesto" method="post" {{/if}}{{/if}} style="">
+		<form {{#if egreso}}{{#if egreso.presupuesto}} action="/egreso/{{egreso.id}}/presupuesto/{{egreso.presupuesto.id}}" method="post" {{else}} action="/egreso/{{egreso.id}}/presupuesto" {{/if}}{{/if}} method="post" style="">
 			<h2>Documento</h2>
 			<div style="text-align: center; background-color: skyblue; padding: 15px; border: 10px; align-items: center; border-style: double; color: black;">
 				<input type="text" name="tipoDocumento" placeholder="Tipo de documento" value="{{egreso.presupuesto.docComercial.tipoDocumento}}" required>
@@ -28,13 +28,13 @@
 			<div style="text-align: center; background-color: skyblue; padding: 15px; border: 10px; align-items: center; border-style: double; color: black;">
 				<input type="text" name="cadenaIdentificadora" placeholder="Cadena identificadora" value="{{presupuesto.moneda.cadenaIdentificadora}}" required>
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="descripcion" placeholder="Descripcion" value="{{presupuesto.moneda.descripcion}}" required>
+				<input type="text" name="descripcionMoneda" placeholder="Descripcion" value="{{presupuesto.moneda.descripcion}}" required>
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<input type="text" name="simbolo" placeholder="Simbolo" value="{{presupuesto.moneda.simbolo}}" required>
 				<br>
 			</div>			
 			<h2>
-				<input class="btn btn-primary" type="submit" {{#if egreso.item}} value="MODIFICAR PRESUPUESTO" {{else}} value="CREAR PRESUPUESTO" {{/if}}>
+				<input class="btn btn-primary" type="submit" {{#if egreso.presupuesto}} value="MODIFICAR PRESUPUESTO" {{else}} value="CREAR PRESUPUESTO" {{/if}}>
 				<a {{#if egreso}} href="/egreso/{{egreso.id}}/presupuestos" {{else}} href="/egresos" {{/if}} class="btn btn-default" type="button">Cancelar</a>
 			</h2>
 		</form>

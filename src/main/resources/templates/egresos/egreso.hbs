@@ -1,6 +1,6 @@
 {{#partial "contenido"}}
-
-		<!-- form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
+<!--
+		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
 			<h2>Proveedor</h2>
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/otroUsuario.png"></label>
@@ -32,11 +32,11 @@
 				<label><img align="center" class="imagen" src="../images/icons/mediopago.png"></label>
 				<select>
 					<option>Seleccione un medio de pago</option>
-					<option>Tarjeta de Crédito</option>
-					<option>Tarjeta de Débito</option>
-					<option>Efectivo</option>
-					<option>Cajero automático</option>
-					<option>Dinero en cuenta</option>
+					<option>TARJETA_DE_CREDITO</option>
+					<option>TARJETA_DE_DEBITO</option>
+					<option>EFECTIVO</option>
+					<option>CAJERO_AUTOMATICO</option>
+					<option>DINERO_EN_CUENTA</option>
 				</select>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<input style="width: 10vw" type="text" name="numeroMedioPago" placeholder="Numero de medio de pago" {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
@@ -66,14 +66,9 @@
 				<input class="btn btn-primary" type="submit" {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
 				<a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
 			</h2>
-		</form --->
-
-
-
-        <!-- ********************************************************************************* -->
-
-
-        <div class="container">
+		</form>
+-->
+<div class="container">
 
 
             <h1>Crear Egreso</h1>
@@ -259,10 +254,6 @@
 
 
         </div>
-
-
-
-
 
 {{/partial}}
 

@@ -10,27 +10,21 @@
 			<th>PROVEEDOR</th>
 			<th>EGRESO ASOCIADO</th>
 			<th>MONEDA</th>
-			<th>OPCIONES</th>
+			<!--<th>OPCIONES</th>-->
 		</tr>
-		{{#if egreso}}
 		{{#each egreso.presupuestos}}
 		<tr>
-			<td>Presupuesto {{egreso.presupuesto.id}}</td>
-			<td>{{egreso.presupuesto.documento.tipo}}</td>
-			<td>{{egreso.presupuesto.detalle}}</td>
-			<td>{{egreso.presupuesto.proveedor.nombre}}</td>
-			<td>Egreso {{egreso.id}}</td>
-			<td>{{egreso.presupuesto.moneda.cadenaIdentificatoria}}</td>
-			<td>
-				<a style="text-align:center" href="/egreso/{{egreso.id}}/presupuesto/{{egreso.presupuesto.id}}">
-					<img align="center" class="imagen" src="../images/icons/edit.png">
-				</a>
-				<a style="text-align:center" href="/egreso/{{egreso.id}}/presupuesto/{{egreso.presupuesto.id}}/itemsPresupuesto">
-					<img align="center" class="imagen" src="../images/icons/items.png">
-				</a>
-			</td>
+			<td>Presupuesto {{id}}</td>
+			<td>{{docComercial.tipo}}</td>
+			<td>{{detalle}}</td>
+			<td>{{proveedor.nombreORazonSocial}}</td>
+			<td>Egreso {{egresoAsociado.id}}</td>
+			<td>{{moneda.cadenaIdentificadora}}</td>
+			<!--<td>
+				<a style="text-align:center" href="/egreso/{{egreso.id}}/presupuesto/{{id}}">Editar</a>
+			</td>-->
 		</tr>
-		{{/each}}{{/if}}
+		{{/each}}
 	</table>
 	<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 

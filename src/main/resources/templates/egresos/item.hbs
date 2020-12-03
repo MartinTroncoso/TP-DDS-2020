@@ -1,6 +1,6 @@
 {{#partial "contenido"}}
 
-		<form {{#if egreso.item}} action="/egreso/{{egreso.id}}/item/{{egreso.item.id}}" {{else}} action="/egreso/{{egreso.id}}/item" {{/if}} method="post" style="">
+		<form {{#if egreso}}{{#if egreso.item}} action="/egreso/{{egreso.id}}/item/{{egreso.item.id}}" {{else}} action="/egreso/{{egreso.id}}/item" {{/if}}{{/if}} method="post" style="">
 			<h2>Item</h2>
 			<div class="formulario">
 				<input type="text" name="descripcion" placeholder="Descripción" {{#if egreso.item}} value="{{egreso.item.descripcion}}" {{/if}} required>
