@@ -35,15 +35,15 @@ public class Presupuesto extends EntidadPersistente{
 	@JoinColumn(name = "presupuesto_id")
 	private List<Item> items;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "proveedor_id", referencedColumnName = "id")
 	private Proveedor proveedor;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "egreso_id", referencedColumnName = "id")
 	private Egreso egresoAsociado;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "moneda_id", referencedColumnName = "id")
 	private Moneda moneda;
 
@@ -59,7 +59,7 @@ public class Presupuesto extends EntidadPersistente{
 		this.establecerEgresoAsociado(unEgreso);
 	}
 
-	private void establecerEgresoAsociado(Egreso unEgreso) {
+	public void establecerEgresoAsociado(Egreso unEgreso) {
 		if (unEgreso == null)
 			throw new PresupuestoSinEgresoAsociadoException("No se pueden crear presupuestos sin un egreso asociado");
 		this.egresoAsociado = unEgreso;
@@ -93,6 +93,14 @@ public class Presupuesto extends EntidadPersistente{
 	public Proveedor getProveedor() {
 		return proveedor;
 	}
+	
+	public void setProveedor(Proveedor proveedor) {
+		this.proveedor = proveedor;
+	}
+	
+	public void setMoneda(Moneda moneda) {
+		this.moneda = moneda;
+	}
 
 	public String getDetalle() {
 		return detalle;
@@ -108,4 +116,11 @@ public class Presupuesto extends EntidadPersistente{
 			   && this.valorTotal().getMonto() == unEgreso.valorTotal().getMonto();
 	}
 
+	public Moneda getMoneda() {
+		return moneda;
+	}
+	
+	public Egreso getEgresoAsociado() {
+		return egresoAsociado;
+	}
 }

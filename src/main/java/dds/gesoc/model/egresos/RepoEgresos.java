@@ -51,18 +51,18 @@ public class RepoEgresos implements WithGlobalEntityManager{
     public Egreso buscar(int id){
         return entityManager().find(Egreso.class, id);
     }
-    
+
     public void modificar(Egreso egreso) {
 	    EntityManagerHelper.getEntityManager().getTransaction().begin();
 	    EntityManagerHelper.getEntityManager().merge(egreso);
 	    EntityManagerHelper.getEntityManager().getTransaction().commit();
 	}
-    
+
     public List<Item> getItemsDeEgreso(Egreso egreso){
 		return entityManager().createQuery("from Item where egreso_id =" + egreso.getId(), Item.class).getResultList();
 	}
-    
+
     public Egreso buscarEgresoDeItem(Item item) {
-		return entityManager().createQuery("Select egreso_id from Item where id = " + item.getId(), Egreso.class).getSingleResult();
+    	return entityManager().createQuery("select egreso_id from Item where id=" + item.getId(), Egreso.class).getSingleResult();
 	}
 }

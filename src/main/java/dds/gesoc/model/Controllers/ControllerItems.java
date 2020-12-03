@@ -72,7 +72,7 @@ public class ControllerItems implements WithGlobalEntityManager, TransactionalOp
 	
 	public Response modificarItem(Request req, Response res) {
 		Egreso egreso = RepoEgresos.getInstance().buscar(Integer.parseInt(req.params("id")));
-		Item item = RepoItems.getInstance().buscar(new Integer(req.params("id")));
+		Item item = RepoItems.getInstance().buscar(Integer.parseInt(req.params("id")));
         
 		asignarAtributosA(req, item);
         RepoItems.getInstance().modificar(item);

@@ -46,4 +46,8 @@ public class RepoPresupuestos implements WithGlobalEntityManager{
 	    EntityManagerHelper.getEntityManager().merge(presupuesto);
 	    EntityManagerHelper.getEntityManager().getTransaction().commit();
 	}
+    
+	public List<Presupuesto> getPresupuestosDeEgreso(Egreso egreso){
+		return entityManager().createQuery("from Presupuesto where egreso_id =" + egreso.getId(), Presupuesto.class).getResultList();
+	}
 }

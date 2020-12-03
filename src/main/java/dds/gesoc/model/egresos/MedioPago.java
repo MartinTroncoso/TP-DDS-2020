@@ -3,6 +3,7 @@ package dds.gesoc.model.egresos;
 import java.util.regex.Pattern;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Transient;
 
@@ -12,7 +13,7 @@ import dds.gesoc.exceptions.ValidarTarjetaException;
 @Entity
 public class MedioPago extends EntidadPersistente{
 	
-	@Enumerated
+	@Enumerated(value = EnumType.STRING)
 	private TipoMedioPago tipo;
 	private String numero;
 	@Transient

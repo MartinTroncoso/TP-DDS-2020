@@ -50,10 +50,13 @@ public class Proveedor extends EntidadPersistente{
 		//RepoProveedores.getInstance().agregarProveedor(this);
 	}
 	
-	public Proveedor(String nombreORazonSocial, String dniOCuit, DireccionPostal direccionPostal) {
+	public Proveedor(String nombreORazonSocial, String dniOCuit, String pais, String provincia, String ciudad, String direccion) {
 		this.nombreORazonSocial = nombreORazonSocial;
 		this.establecerDniOCuit(dniOCuit);
-		this.setDireccionPostal(direccionPostal);
+		this.pais = pais;
+		this.provincia = provincia;
+		this.ciudad = ciudad;
+		this.direccion = direccion;
 		//RepoProveedores.getInstance().agregarProveedor(this);
 	}
 

@@ -21,7 +21,7 @@ public class Usuario extends EntidadPersistente{
 	@Column
 	private String contrasenia;
 	
-	@Enumerated
+	@Enumerated(value = EnumType.ORDINAL)
 	private TipoUsuario tipoUsuario;
 	
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -46,6 +46,14 @@ public class Usuario extends EntidadPersistente{
 	
 	public String getNombreUsuario() {
 		return nombreUsuario;
+	}
+	
+	public String getContrasenia() {
+		return contrasenia;
+	}
+	
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
 	}
 	
 	public boolean autenticarUsuario(String contraseniaCandidata) {
