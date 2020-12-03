@@ -1,6 +1,6 @@
 {{#partial "contenido"}}
 
-		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
+		<!-- form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
 			<h2>Proveedor</h2>
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/otroUsuario.png"></label>
@@ -66,7 +66,204 @@
 				<input class="btn btn-primary" type="submit" {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
 				<a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
 			</h2>
-		</form>
+		</form --->
+
+
+
+        <!-- ********************************************************************************* -->
+
+
+        <h2 class="container">
+
+
+            <h1>Crear Egreso</h1>
+            <form class="container"   {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="" >
+                <h2><img align="center" class="imagen" src="../images/icons/DNI.png"> Datos</h2>
+                <div class="container">
+                    <div class="container row">
+                        <h4> <img align="center" class="imagen" src="../images/icons/otroUsuario.png"> Proveedor</h4>
+
+                        <div class="col-md-4">
+                            <label for="exampleFormControlSelect1">Proveedores existentes</label>
+                            <select class="col-4 form-control " id="exampleFormControlSelect1">
+                                <option>Proveedor 1</option>
+                                <option>Proveedor 2</option>
+                                <option>Proveedor 3</option>
+                                <option>Proveedor 4</option>
+                                <option>Proveedor 5</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="nuevo_en_formulario_pequenio">
+                        <div class="container form-row">
+                            <h4>Nuevo proveedor</h4>
+
+                            <div class="form-group col-md-3">
+                                <label for="nombre_proveedor">Nombre</label>
+                                <input type="text" class="form-control" id="nombre_proveedor"
+                                       placeholder="Nombre del proveedor"   {{#if egreso}} value="{{egreso.proveedor.nombreORazonSocial}}" {{/if}} required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="id_proveedor">DNI</label>
+                                <input type="text" class="form-control" id="id_proveedor" placeholder="DNI/Cuit del proveedor"    {{#if egreso}} value="{{egreso.proveedor.dniOCuit}}" {{/if}} required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="direccion_proveedor">Dirección</label>
+                                <input type="text" class="form-control" id="direccion_proveedor"
+                                       placeholder="Nombre del proveedor"  {{#if egreso}} value="{{egreso.proveedor.direccion}}" {{/if}} required>
+                            </div>
+                        </div>
+
+                        <div class="container form-row">
+                            <div class="col-md-3">
+                                <label for="ciudad_proveedor">Cuidad</label>
+                                <input type="text" class="form-control" id="ciudad_proveedor"
+                                       placeholder="Ciudad del proveedor"    {{#if egreso}} value="{{egreso.proveedor.ciudad}}" {{/if}} required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="provincia_proveedor">Provincia</label>
+                                <input type="text" class="form-control" id="provincia_proveedor"
+                                       placeholder="Provincia del proveedor"  {{#if egreso}} value="{{egreso.proveedor.provincia}}" {{/if}} required>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="pais_proveedor">País</label>
+                                <input type="text" class="form-control" id="pais_proveedor" placeholder="País del proveedor"   {{#if egreso}} value="{{egreso.proveedor.pais}}" {{/if}} required>
+                            </div>
+
+                        </div>
+                        <div>
+                            <h2>
+                                <button type="button" class="btn btn-info mr-1">+ Nuevo</button>
+                            </h2>
+
+                        </div>
+                        <div class="contenedor_formulario_pequenio">
+                            <div class="container form-row">
+                                <h4><img align="center" class="imagen" src="../images/icons/tipodocumento.png"> Documento asociado</h4>
+                                <div class="col-md-4">
+                                    <label for="tipo_documento">Tipo</label>
+                                    <input type="text" class="form-control" id="tipo_documento"
+                                           placeholder="Tipo del documento"   {{#if egreso}} value="{{egreso.docComercial.tipo}}" {{/if}} required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="nro_documento">Número</label>
+                                    <input type="number" class="form-control" id="nro_documento"
+                                           placeholder="Número del documento"  {{#if egreso}} value="{{egreso.docComercial.numero}}" {{/if}} required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contenedor_formulario_pequenio">
+                            <div class="container form-row">
+                                <h4><img align="center" class="imagen" src="../images/icons/mediopago.png"> Medio de pago</h4>
+
+
+                                <div class="col-md-2">
+                                    <label for="tipo_medio">Tipo</label>
+                                    <select class="form-control" id="tipo_medio">
+                                        <option>Tarjeta de Crédito</option>
+                                        <option>Tarjeta de Débito</option>
+                                        <option>Efectivo</option>
+                                        <option>Cajero automático</option>
+                                        <option>Dinero en cuenta</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <label for="nro_documento">Número</label>
+                                    <input type="number" class="form-control" id="nro_documento"
+                                           placeholder="Número del medio de pago"  {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container">
+                            <h2><img align="center" class="imagen" src="../images/icons/moneda.png"> Moneda</h2>
+                            <div class="container form-row">
+
+                                <div class="col-md-2">
+                                    <label for="lista_monedas">Monedas disponibles</label>
+                                    <select class="form-control" id="lista_monedas">
+                                        <option>Moneda 1</option>
+                                        <option>Moneda 2</option>
+                                        <option>Moneda 3</option>
+                                        <option>Moneda 4</option>
+                                        <option>Moneda 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <h4><img align="center" class="imagen" src="../images/icons/moneda.png">Nueva moneda</h4>
+                            <div class="container form-row">
+
+                                <div class="col-md-3">
+
+                                    <label for="moneda_cadena">Identificador de moneda</label>
+                                    <input type="text" class="form-control" id="moneda_cadena"
+                                           placeholder="Cadena identificadora"  {{#if egreso}} value="{{egreso.moneda.cadenaIdentificadora}}" {{/if}} required>
+
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="moneda_desc">Descripción</label>
+                                    <input type="text" class="form-control" id="moneda_desc"
+                                           placeholder="Descripcion de la moneda"   {{#if egreso}} value="{{egreso.moneda.descripcion}}" {{/if}}>
+
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="moneda_simbolo">Símbolo</label>
+                                    <input type="text" class="form-control" id="moneda_simbolo"
+                                           placeholder="Símbolo de la moneda"  {{#if egreso}} value="{{egreso.moneda.simbolo}}" {{/if}}>
+                                </div>
+                            </div>
+                            <h2>
+                                <button type="button" class="btn btn-info">+ Nuevo</button>
+                            </h2>
+                        </div>
+
+
+                        <div class="contenedor_formulario_pequenio">
+                            <h2><img align="center" class="imagen" src="../images/icons/presupuesto.png"> Presupuestos</h2>
+                            <div class="container form-row">
+                                <div class="col-md-2">
+                                    <label for="presup_min">Cantidad mínima</label>
+                                    <input type="number" class="form-control" id="presup_min" placeholder="Cantidad mínima de presupuestos"  {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="lista_monedas">¿Cómo validará el proveedor?</label>
+                                    <select class="form-control" id="lista_monedas">
+                                        <option>Menor Valor</option>
+                                        <option>Criterio de validación 2</option>
+                                        <option>Criterio de validación 3</option>
+                                        <option>Criterio de validación 4</option>
+                                        <option>Criterio de validación 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+            </form>
+
+
+
+            <h2>
+                <a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
+                <input class="btn btn-primary" type="submit"   {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
+
+            </h2>
+
+
+        </div>
+
+
+
+
+
 {{/partial}}
 
 {{>layout.hbs}}
