@@ -1,10 +1,12 @@
-package dds.gesoc.model.egresos;
+package dds.gesoc.model.repositorios;
 
 import java.util.List;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import db.EntityManagerHelper;
+import dds.gesoc.model.egresos.Egreso;
+import dds.gesoc.model.egresos.Item;
 
 public class RepoItems implements WithGlobalEntityManager{
 	

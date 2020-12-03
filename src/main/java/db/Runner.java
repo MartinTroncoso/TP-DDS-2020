@@ -10,7 +10,7 @@ import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.organizaciones.Empresa;
 import dds.gesoc.model.organizaciones.SectorServicios;
-import dds.gesoc.model.usuarios.RepoUsuarios;
+import dds.gesoc.model.repositorios.RepoUsuarios;
 import dds.gesoc.model.usuarios.TipoUsuario;
 import dds.gesoc.model.usuarios.Usuario;
 

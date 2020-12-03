@@ -2,9 +2,9 @@
 package dds.gesoc.model.organizaciones;
 
 import dds.gesoc.entities.EntidadPersistente;
-import dds.gesoc.model.RepoEntidades.RepoEntidades;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.geografia.ValorMonetario;
+import dds.gesoc.model.repositorios.RepoEntidades;
 
 import java.util.*;
 import java.util.stream.Collectors;

@@ -25,6 +25,7 @@ import dds.gesoc.exceptions.EtiquetaYaExistenteException;
 import dds.gesoc.exceptions.UsuarioRevisorException;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
+import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.usuarios.Usuario;
 
 @Entity

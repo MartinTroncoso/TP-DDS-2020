@@ -1,4 +1,4 @@
-package Server;
+package spark.utils;
 
 import com.github.jknack.handlebars.Handlebars;
 import com.github.jknack.handlebars.Helper;

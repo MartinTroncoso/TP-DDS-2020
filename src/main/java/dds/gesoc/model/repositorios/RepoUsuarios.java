@@ -1,10 +1,11 @@
-package dds.gesoc.model.usuarios;
+package dds.gesoc.model.repositorios;
 
 import java.util.List;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
 import dds.gesoc.exceptions.UsuarioConMismoNombreEncontradoException;
+import dds.gesoc.model.usuarios.Usuario;
 
 
 

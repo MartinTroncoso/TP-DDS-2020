@@ -8,9 +8,9 @@ import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
 import dds.gesoc.model.egresos.Egreso;
-import dds.gesoc.model.egresos.RepoEgresos;
 import dds.gesoc.model.egresos.ResultadoValidacion;
-import dds.gesoc.model.usuarios.RepoUsuarios;
+import dds.gesoc.model.repositorios.RepoEgresos;
+import dds.gesoc.model.repositorios.RepoUsuarios;
 import dds.gesoc.model.usuarios.Usuario;
 import spark.ModelAndView;
 import spark.Request;

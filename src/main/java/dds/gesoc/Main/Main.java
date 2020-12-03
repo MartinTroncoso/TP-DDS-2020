@@ -8,6 +8,7 @@ import dds.gesoc.model.egresos.*;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.organizaciones.Empresa;
 import dds.gesoc.model.organizaciones.SectorServicios;
+import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.usuarios.TipoUsuario;
 import dds.gesoc.model.usuarios.Usuario;
 

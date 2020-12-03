@@ -5,7 +5,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
-import dds.gesoc.model.RepoEntidades.RepoEntidades;
+import dds.gesoc.model.repositorios.RepoEntidades;
 
 @Entity
 @DiscriminatorValue("B")

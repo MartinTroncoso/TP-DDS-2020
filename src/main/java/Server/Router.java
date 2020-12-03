@@ -5,6 +5,8 @@ import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 
 import spark.Spark;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+import spark.utils.BooleanHelper;
+import spark.utils.HandlebarsTemplateEngineBuilder;
 
 public class Router {
 	public static void configure() {

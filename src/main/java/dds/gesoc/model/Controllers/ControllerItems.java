@@ -9,9 +9,9 @@ import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Item;
-import dds.gesoc.model.egresos.RepoEgresos;
-import dds.gesoc.model.egresos.RepoItems;
 import dds.gesoc.model.geografia.ValorMonetario;
+import dds.gesoc.model.repositorios.RepoEgresos;
+import dds.gesoc.model.repositorios.RepoItems;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;

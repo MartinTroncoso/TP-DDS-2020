@@ -1,6 +1,6 @@
 package dds.gesoc.model.Controllers;
 
-import dds.gesoc.model.usuarios.RepoUsuarios;
+import dds.gesoc.model.repositorios.RepoUsuarios;
 import dds.gesoc.model.usuarios.Usuario;
 import spark.ModelAndView;
 import spark.Request;

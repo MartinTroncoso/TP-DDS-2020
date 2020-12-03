@@ -1,10 +1,11 @@
-package dds.gesoc.model.egresos;
+package dds.gesoc.model.repositorios;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
+import dds.gesoc.model.egresos.Proveedor;
 import dds.gesoc.model.organizaciones.Entidad;
 
 public class RepoProveedores implements WithGlobalEntityManager{

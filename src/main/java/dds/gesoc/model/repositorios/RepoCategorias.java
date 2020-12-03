@@ -1,4 +1,4 @@
-package dds.gesoc.model.RepoEntidades;
+package dds.gesoc.model.repositorios;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package dds.gesoc.model.RepoEntidades;
+package dds.gesoc.model.repositorios;
 
 import dds.gesoc.exceptions.EntidadBaseTieneEntidaJuridicaException;
 import dds.gesoc.exceptions.UsuarioConMismoNombreEncontradoException;
@@ -10,7 +10,6 @@ import dds.gesoc.model.organizaciones.EntidadJuridica;
 import java.util.ArrayList;
 import java.util.List;
 
-import dds.gesoc.model.usuarios.RepoUsuarios;
 import dds.gesoc.model.usuarios.Usuario;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
