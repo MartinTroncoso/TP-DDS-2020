@@ -295,6 +295,10 @@ flex-wrap: wrap;
 }
 
 
+.gesoc_introduction  {
+    color: white !important;
+}
+
 .gesoc_details {
     height: auto;
     width: 46em;
