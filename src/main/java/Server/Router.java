@@ -9,31 +9,38 @@ import spark.utils.BooleanHelper;
 import spark.utils.HandlebarsTemplateEngineBuilder;
 
 public class Router {
-	public static void configure() {
-		HandlebarsTemplateEngine engine = HandlebarsTemplateEngineBuilder
+
+	private static HandlebarsTemplateEngine engine;
+
+    private static void initEngine() {
+        Router.engine = HandlebarsTemplateEngineBuilder
                 .create()
                 .withDefaultHelpers()
                 .withHelper("isTrue", BooleanHelper.isTrue)
                 .build();
+    }
 
-		Spark.staticFiles.location("/public");
+    public static void init() {
+        Router.initEngine();
+        Spark.staticFileLocation("/public");
+        Router.configure();
+    }
+    
+	public static void configure() {
 		Spark.before((request, response) -> {PerThreadEntityManagers.getEntityManager();});
-/*Si el usuario no inició sesión, va a ser redirigido a la página de login
-*				if (!request.pathInfo().contains("/login") &&
-		//			StringUtils.isEmpty(request.cookie("usuario-logueado"))) {
-		//					response.redirect(("/login"));
-		//	}
-*
-*  */
+		
+		/*Si el usuario no inició sesión, va a ser redirigido a la página de login
+		if (!request.pathInfo().contains("/login") && StringUtils.isEmpty(request.cookie("usuario-logueado"))) {
+			response.redirect(("/login"));
+		}*/
+		
 		Spark.after((request, response) -> {PerThreadEntityManagers.closeEntityManager();});
-
-
 
 
 		ControllerEntidades controllerEntidades = new ControllerEntidades();
 		ControllerEgresos controllerEgresos = new ControllerEgresos();
 		ControllerMensajes controllerMensajes = new ControllerMensajes();
-		ControllerUsuarios controllerUsuarios = new ControllerUsuarios();
+		//ControllerUsuarios controllerUsuarios = new ControllerUsuarios(); (esta variable nunca es usada)
 		ControllerItems controllerItems = new ControllerItems();
 		ControllerPresupuestos controllerPresupuestos = new ControllerPresupuestos();
 
