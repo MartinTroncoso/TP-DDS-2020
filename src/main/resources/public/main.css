@@ -11,6 +11,7 @@ html {
     align-items: center;
     font-weight: bold;
     box-shadow: 0 0.4em 0.5em lightgrey;
+    z-index: 9;
 }
 
 
