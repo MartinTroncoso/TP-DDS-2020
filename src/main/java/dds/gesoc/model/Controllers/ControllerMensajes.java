@@ -41,10 +41,13 @@ public class ControllerMensajes implements WithGlobalEntityManager, Transactiona
 		// String id = req.session().attribute("usuario-logueado");
 		// TODO: Hardcodeado 1 por el momento
 		Usuario unUsuario = RepoUsuarios.getInstance().buscarUsuarioPorId(1);
-		List<ResultadoValidacion> resultados = unUsuario.getBandejaDeMensajes();
-		model.put("mensajes", resultados);
-		
 
+		List<ResultadoValidacion> resultados;
+		if(unUsuario != null) {
+			resultados = unUsuario.getBandejaDeMensajes();
+			model.put("mensajes", resultados);
+		}
+		else model.put("mensajes", null);
 		return new ModelAndView(model, "/mensajes/mensajes.hbs");
 	}
 }
