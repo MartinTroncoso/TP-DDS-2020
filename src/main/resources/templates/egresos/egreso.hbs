@@ -1,5 +1,5 @@
 {{#partial "contenido"}}
-<!--
+
 		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
 			<h2>Proveedor</h2>
 			<div class="formulario">
@@ -67,8 +67,8 @@
 				<a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
 			</h2>
 		</form>
--->
-<div class="container">
+
+<!-- div class="container">
 
 
             <h1>Crear Egreso</h1>
@@ -226,7 +226,7 @@
                             <div class="container form-row">
                                 <div class="col-md-2">
                                     <label for="presup_min">Cantidad mínima</label>
-                                    <input type="number" class="form-control" id="presup_min" placeholder="Cantidad mínima de presupuestos"  {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
+                                    <input type="number" class="form-control" id="presup_min"  name="cantPresupuestosMinima"  placeholder="Cantidad mínima de presupuestos"  {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
                                 </div>
                                 <div class="col-md-4">
                                     <label for="lista_monedas">¿Cómo validará el proveedor?</label>
@@ -253,7 +253,7 @@
             </h2>
 
 
-        </div>
+        </div -->
 
 {{/partial}}
 
