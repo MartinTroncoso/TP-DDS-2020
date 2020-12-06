@@ -1,24 +1,24 @@
-var baseInput = document.getElementById('baseInput');
-var juridicaInput = document.getElementById('baseInput');
+$( function() {
+  $("#tipo_entidad").change( function() {
+    if ($(this).val() === "0") {
+      $("#razonsocial_input").prop("disabled", true);
+      $("#cuit_input").prop("disabled", true);
+      $("#codigoinscripcionigj_input").prop("disabled", true);
+      $("#descripcion_input").prop("disabled", true);
+    }
 
-function deshabilitar(elemento) {
-  d = elemento.value;
-  
-  if(d == "0"){
-    baseInput.disabled = true;
-  }else{
-    juridicaInput.disabled = true;
-  }
+    if ($(this).val() === "1") {
+      $("#razonsocial_input").prop("disabled", true);
+      $("#cuit_input").prop("disabled", true);
+      $("#codigoinscripcionigj_input").prop("disabled", true);
+      $("#descripcion_input").prop("disabled", false);
+    }
 
-  if(d == "1"){
-    baseInput.disabled = false;
-  }else{
-    juridicaInput.disabled = true;
-  }
-
-  if(d == "2"){
-    baseInput.disabled = true;
-  }else{
-    juridicaInput.disabled = false;
-  }
-}
+    if ($(this).val() === "2") {
+      $("#razonsocial_input").prop("disabled", false);
+      $("#cuit_input").prop("disabled", false);
+      $("#codigoinscripcionigj_input").prop("disabled", false);
+      $("#descripcion_input").prop("disabled", true);
+    }
+  });
+});

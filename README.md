@@ -17,3 +17,6 @@
 :pencil2: [Enunciado de la 4ta entrega](https://docs.google.com/document/d/1GNJDaTuO192ntS5Y8sqic2sucV5HPIvHt3izsl-ySLs/edit)
 
 :pencil2: [Enunciado de la 5ta entrega](https://docs.google.com/document/d/1_PWZduzAN-C1fsrlG1qLui_hnKKSNFlt5J8MHolGixI/edit)
+
+:pencil2: [Enunciado de la 6ta entrega](https://docs.google.com/document/d/1nFw8GDDhiiYcv3arwPKD5Lk8z5oBKbW59QCSjHirOTQ/edit) y [Deployar en Heroku](https://docs.google.com/document/d/1ezGI4s_Jy13JI7Mn-eMXUOUkq7SmVkIYN74hW__6hXI/edit#)
+    
