@@ -13,7 +13,6 @@ import dds.gesoc.model.egresos.Item;
 public class RepoEgresos implements WithGlobalEntityManager{
 
     private static RepoEgresos ourInstance;
-    private List<Egreso> todosLosEgresos = new ArrayList<>();
 
     public static RepoEgresos getInstance() {
         if (ourInstance == null){
@@ -27,19 +26,19 @@ public class RepoEgresos implements WithGlobalEntityManager{
     }
     
     public Egreso get(int index) {
-    	return todosLosEgresos.get(index);
+    	return getEgresos().get(index);
     }
-
+    
     public void agregarEgresoNuevo(Egreso unEgreso) {
     	entityManager().persist(unEgreso);
     }
 
     public void removerEgreso(Egreso unEgreso) {
-        todosLosEgresos.remove(unEgreso);
+    	getEgresos().remove(unEgreso);
     }
 
     public List<Egreso> egresosNoValidados() {
-		return todosLosEgresos.stream().filter(e -> !e.isValido()).collect(Collectors.toList());
+		return getEgresos().stream().filter(e -> !e.isValido()).collect(Collectors.toList());
     }
     
     public void validarEgresos() {
