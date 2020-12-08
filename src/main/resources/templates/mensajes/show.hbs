@@ -3,20 +3,21 @@
 <div class="container">
 	<h2>Visualizacion de mensaje</h2>
 	<hr />
+	{{#if usuario.resultadovalidacion}}
 	<div class="row form-group">
-		<h3>Asunto: {{resultado.asunto}}</h3>
-		<h3>Fecha y Hora: {{resultado.horaDeMensaje}}</h3>
+		<h3>Asunto: {{usuario.resultadovalidacion.asunto}}</h3>
+		<h3>Fecha y Hora: {{usuario.resultadovalidacion.horaDeMensaje}}</h3>
 	</div>
 	<div class="row form-group">
 		<a class="btn btn-primary" type="button" href="/mensajes">Ir atras</a>
 	</div>
 	<div class="row form-group">
 		<div class="jumbotron">
-		    {{#each resultado.mensajes}}
+		    {{#each usuario.resultadovalidacion.mensajes}}
 			<p class="lead">{{this}}</p>
 			{{/each}}
 		</div>
-	</div>
+	</div>{{/if}}
 </div>
 
 {{/partial}} {{>layout.hbs}}

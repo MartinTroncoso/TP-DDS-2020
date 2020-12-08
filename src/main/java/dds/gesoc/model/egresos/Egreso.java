@@ -104,6 +104,10 @@ public class Egreso extends EntidadPersistente{
 	public Set<String> getEtiquetas() {
 		return this.etiquetas;
 	}
+	
+	public ResultadoValidacion getResultadoValidacion() {
+		return this.resultadoValidacion;
+	}
 
 	public void agregarEtiqueta(String etiqueta) {
 		this.etiquetas.add(etiqueta.toLowerCase());
@@ -228,9 +232,10 @@ public class Egreso extends EntidadPersistente{
 	}
 
 	public void notificarUsuariosRevisores() {
-		resultadoValidacion.actualizarFecha();
-		usuariosRevisores.forEach(usuario -> usuario.serNotificado(resultadoValidacion));
-		resultadoValidacion = new ResultadoValidacion();
+		this.getResultadoValidacion().actualizarFecha();
+		this.getUsuariosRevisores()
+			.forEach(usuario -> usuario.serNotificado(this.getResultadoValidacion()));
+		//resultadoValidacion = new ResultadoValidacion();
 	}
 
 /*
@@ -246,7 +251,7 @@ public class Egreso extends EntidadPersistente{
 * */
 	public void validar() {
 
-		resultadoValidacion.setAsunto("Validacion Egreso: " + getId());
+		this.getResultadoValidacion().setAsunto("Validacion Egreso: " + getId());
 		boolean estadoValidacion = this.egresoValido();
         agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
         agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");
@@ -294,5 +299,9 @@ public class Egreso extends EntidadPersistente{
 	
 	public void setMoneda(Moneda moneda) {
 		this.moneda = moneda;
+	}
+	
+	public void setResultadoValidacion(ResultadoValidacion resultado) {
+		this.resultadoValidacion = resultado;
 	}
 }

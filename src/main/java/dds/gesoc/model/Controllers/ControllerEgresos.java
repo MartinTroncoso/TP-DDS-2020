@@ -10,6 +10,7 @@ import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
+import dds.gesoc.model.egresos.ResultadoValidacion;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.repositorios.RepoProveedores;
@@ -123,9 +124,18 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
         return res;
 	}
 
-	public ModelAndView validar(Request request, Response response) {
+	public Response validar(Request request, Response response) {
 		RepoEgresos repo = RepoEgresos.getInstance();
-		repo.validarEgresos();
-		return new ModelAndView(null,"/egresos");
+		ResultadoValidacion resultado = new ResultadoValidacion();
+		
+		List<Egreso> egresosValidados = repo.validarEgresos(resultado);
+		
+		withTransaction(() ->{
+			egresosValidados.forEach(e -> entityManager().persist(e.getResultadoValidacion()));
+		});
+		
+		egresosValidados.forEach(e -> repo.modificar(e));
+		response.redirect("/egresos");
+		return response;
 	}
 }

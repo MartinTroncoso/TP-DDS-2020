@@ -9,6 +9,7 @@ import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import db.EntityManagerHelper;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Item;
+import dds.gesoc.model.egresos.ResultadoValidacion;
 
 public class RepoEgresos implements WithGlobalEntityManager{
 
@@ -38,11 +39,20 @@ public class RepoEgresos implements WithGlobalEntityManager{
     }
 
     public List<Egreso> egresosNoValidados() {
-		return getEgresos().stream().filter(e -> !e.isValido()).collect(Collectors.toList());
+    	//return todosLosEgresos.stream().filter(e -> !e.isValido()).collect(Collectors.toList());
+    	return entityManager().createQuery("from Egreso where valido = 0", Egreso.class).getResultList();
     }
     
-    public void validarEgresos() {
-    	this.egresosNoValidados().forEach(e -> e.validar());
+    public List<Egreso> validarEgresos(ResultadoValidacion resultado) {
+    	List<Egreso> egresosValidados = new ArrayList<Egreso>();
+    	
+    	this.egresosNoValidados().forEach(e -> {	
+    		e.setResultadoValidacion(resultado);
+    		e.validar();
+    		egresosValidados.add(e);
+    	});
+    	
+    	return egresosValidados;
     }
     
     public List<Egreso> getEgresos(){
