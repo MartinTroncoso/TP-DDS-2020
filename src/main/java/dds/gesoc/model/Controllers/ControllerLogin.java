@@ -34,7 +34,7 @@ public class ControllerLogin {
 
 
 		if(resultadoAutenticacion) {
-			req.session().attribute("usuario-logueado", nombre);
+			req.session().attribute("usuario-logueado", usuario.getId());
 			res.redirect("/home");
 			return null;
 		}

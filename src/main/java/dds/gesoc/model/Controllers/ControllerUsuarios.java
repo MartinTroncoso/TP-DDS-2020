@@ -4,9 +4,16 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ControllerUsuarios {
     public static ModelAndView mostrar(Request req, Response res) {
-        return new ModelAndView(null,"/usuarios/show.hbs");
+        String id = req.cookie("usuario-logueado");
+
+        Map<String, String> modelo = new HashMap<>();
+        modelo.put("id", id);
+        return new ModelAndView(modelo,"/usuarios/show.hbs");
     }
 
 }
