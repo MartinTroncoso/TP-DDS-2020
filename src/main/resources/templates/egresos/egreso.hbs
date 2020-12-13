@@ -1,24 +1,6 @@
 {{#partial "contenido"}}
 
 		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
-			<h2>Proveedor</h2>
-			<div class="formulario">
-				<label><img align="center" class="imagen" src="../images/icons/otroUsuario.png"></label>
-				<input type="text" name="nombre" placeholder="Nombre del proveedor" {{#if egreso}} value="{{egreso.proveedor.nombreORazonSocial}}" {{/if}} required>
-				<br><br>
-				<label><img align="center" class="imagen" src="../images/icons/DNI.png"></label>
-				<input type="text" name="dni" placeholder="DNI" {{#if egreso}} value="{{egreso.proveedor.dniOCuit}}" {{/if}} required>
-				<br><br>
-				<label><img align="center" class="imagen" src="../images/icons/house.png"></label>
-				<input type="text" name="direccion" placeholder="Direccion" {{#if egreso}} value="{{egreso.proveedor.direccion}}" {{/if}} required>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="ciudad" placeholder="Ciudad" {{#if egreso}} value="{{egreso.proveedor.ciudad}}" {{/if}} required>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="provincia" placeholder="Provincia" {{#if egreso}} value="{{egreso.proveedor.provincia}}" {{/if}} required>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="pais" placeholder="Pais" {{#if egreso}} value="{{egreso.proveedor.pais}}" {{/if}} required>
-				<br>
-			</div>
 			<h2>Documento Asociado</h2>
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/tipodocumento.png"></label>
@@ -68,7 +50,8 @@
 			</h2>
 		</form>
 
-<!-- div class="container">
+<!--
+<div class="container">
 
 
             <h1>Crear Egreso</h1>
@@ -251,7 +234,6 @@
                 <input class="btn btn-primary" type="submit"   {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
 
             </h2>
-
 
         </div -->
 

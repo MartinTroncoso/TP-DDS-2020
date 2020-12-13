@@ -1,0 +1,29 @@
+{{#partial "contenido"}}
+		<form {{#if proveedor}} action="/proveedor/{{proveedor.id}}" method="post" {{else}} action="/proveedor" method="post" {{/if}} style="">			
+			<h2>Proveedor</h2>
+			<div class="formulario">
+				<label><img align="center" class="imagen" src="../images/icons/otroUsuario.png"></label>
+				<input type="text" name="nombre" placeholder="Nombre del proveedor" {{#if proveedor}} value="{{proveedor.nombreORazonSocial}}" {{/if}} required>
+				<br><br>
+			<label><img align="center" class="imagen" src="../images/icons/DNI.png"></label>
+				<input type="text" name="dni" placeholder="DNI" {{#if proveedor}} value="{{proveedor.dniOCuit}}" {{/if}} required>
+				<br><br>
+				<label><img align="center" class="imagen" src="../images/icons/house.png"></label>
+				<input type="text" name="direccion" placeholder="Direccion" {{#if proveedor}} value="{{proveedor.direccion}}" {{/if}} required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" name="ciudad" placeholder="Ciudad" {{#if proveedor}} value="{{proveedor.ciudad}}" {{/if}} required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" name="provincia" placeholder="Provincia" {{#if proveedor}} value="{{proveedor.provincia}}" {{/if}} required>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+				<input type="text" name="pais" placeholder="Pais" {{#if proveedor}} value="{{proveedor.pais}}" {{/if}} required>
+				<br>
+			</div>
+
+			<h2>
+				<input class="btn btn-primary" type="submit" {{#if proveedor}} value="MODIFICAR PROVEEDOR" {{else}} value="CREAR PROVEEDOR" {{/if}}>
+				<a href="/proveedores" class="btn btn-default" type="button">Cancelar</a>
+			</h2>
+		</form>
+{{/partial}}
+
+{{>layout.hbs}}
