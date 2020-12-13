@@ -38,10 +38,10 @@ public class Main {
     
     private static RepoEgresos repo;
 
-    public static void validar() {
+    /*public static void validar() {
         repo.validarEgresos();
         //System.out.println("Hola");
-    }
+    }*/
     
 //    public static void main(String[] args) {
 //

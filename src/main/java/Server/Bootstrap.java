@@ -11,6 +11,7 @@ import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
+import dds.gesoc.model.egresos.ResultadoValidacion;
 import dds.gesoc.model.egresos.TipoMedioPago;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.organizaciones.Categoria;
@@ -59,6 +60,19 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			
 			Usuario usuario = new Usuario("Nico","holaquetal",TipoUsuario.ADMINISTRADOR,entidadBase);
 			persist(usuario);
+			
+			Usuario nico = (Usuario) entityManager().createQuery("from Usuario where nombreUsuario = 'Nico'").getSingleResult();
+			
+			ResultadoValidacion resultado = new ResultadoValidacion();
+			resultado.setAsunto("Asunto #2");
+			resultado.agregarMensaje("Mensajeeee");
+			resultado.agregarMensaje("Hola3");
+			resultado.actualizarFecha();
+			entityManager().persist(resultado);
+			
+			
+			nico.serNotificado(resultado);
+			entityManager().merge(nico);
 		});
 	}
 }
