@@ -1,0 +1,47 @@
+{{#partial "contenido"}}
+<h1 style="text-decoration:underline;">Proveedores</h1>
+
+<div class="table-responsive container">
+
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">PROVEEDOR</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">DNI</th>
+            <th scope="col">DIRECCION</th>
+            <th scope="col">CIUDAD</th>
+            <th scope="col">PROVINCIA</th>
+            <th scope="col">PAIS</th>
+            <th scope="col">OPCIONES</th>
+        </tr>
+        </thead>
+    <tbody>
+
+        {{#each proveedores}}
+        <tr>
+            <td>Proveedor {{id}}</td>
+            <td>{{nombreORazonSocial}}</td>
+            <td>{{dniOCuit}}</td>
+            <td>{{direccion}}</td>
+            <td>{{ciudad}}</td>
+            <td>{{provincia}}</td>
+            <td>{{pais}}</td>
+            <td style="padding: 5px;">
+                <a title="Editar" style="text-align:center" href="/proveedor/{{id}}">
+                    <img align="center" class="imagen" src="../images/icons/edit.png">
+                </a>
+            </td>
+        </tr>
+        </tbody>
+        {{/each}}
+    </table>
+
+    <a href="/proveedor" class="btn btn-primary">Nuevo Proveedor</a>
+    <a href="/home" class="btn btn-default" role="button">Cancelar</a>
+</div>
+<br>
+
+{{/partial}}
+
+{{>layout.hbs}}
