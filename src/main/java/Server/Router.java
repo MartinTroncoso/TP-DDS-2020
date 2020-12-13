@@ -43,6 +43,7 @@ public class Router {
 		//ControllerUsuarios controllerUsuarios = new ControllerUsuarios(); (esta variable nunca es usada)
 		ControllerItems controllerItems = new ControllerItems();
 		ControllerPresupuestos controllerPresupuestos = new ControllerPresupuestos();
+		ControllerProveedores controllerProveedores = new ControllerProveedores();
 
 		Spark.get("/", ControllerRaiz::bienvenida, engine);
 
@@ -50,7 +51,7 @@ public class Router {
 		Spark.get("/login", ControllerLogin::show, engine);
 		Spark.post("/login", ControllerLogin::login, engine);
 		Spark.get("/egresos", controllerEgresos::listar, engine);
-		Spark.post("/egresos", controllerEgresos::validar);
+		Spark.post("/egresos", controllerEgresos::validar, engine);
 		Spark.get("/egreso", controllerEgresos::nuevo, engine);
 		Spark.get("/egreso/:id", controllerEgresos::mostrar, engine);
 		Spark.post("/egreso", controllerEgresos::crear);    
@@ -64,6 +65,12 @@ public class Router {
 		Spark.get("/egreso/:id/presupuesto", controllerPresupuestos::nuevoPresupuesto, engine);
 		Spark.post("/egreso/:id/presupuesto", controllerPresupuestos::crearPresupuesto);    
 		Spark.post("/egreso/:id/presupuesto/:id", controllerPresupuestos::modificarPresupuesto);
+		Spark.get("/proveedores", controllerProveedores::listarProveedores, engine);
+		Spark.get("/proveedor", controllerProveedores::nuevo, engine);
+		Spark.post("/proveedor", controllerProveedores::crear);
+		Spark.get("/proveedor/:id", controllerProveedores::mostrarProveedor, engine);
+		Spark.post("/proveedor/:id", controllerProveedores::modificar);
+		Spark.post("/egreso/:id", controllerEgresos::modificar);
 		Spark.get("/entidades", controllerEntidades::listar, engine);
 		Spark.get("/entidad", controllerEntidades::nuevo, engine);
 		Spark.get("/entidad/:id", controllerEntidades::mostrar, engine);
@@ -74,4 +81,14 @@ public class Router {
 		Spark.get("/usuario", ControllerUsuarios::mostrar, engine);
 		Spark.get("/organizaciones", ControllerOrganizaciones::mostrar, engine);
 	}
+	
+	static int getHerokuAssignedPort() {
+	    ProcessBuilder processBuilder = new ProcessBuilder();
+	    if (processBuilder.environment().get("PORT") != null) {
+	        return Integer.parseInt(processBuilder.environment().get("PORT"));
+	    }
+	    
+	    return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+	}
+
 }
