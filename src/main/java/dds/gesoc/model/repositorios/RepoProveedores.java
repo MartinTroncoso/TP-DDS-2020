@@ -23,7 +23,7 @@ public class RepoProveedores implements WithGlobalEntityManager{
     	entityManager().persist(proveedor);
     }
     
-    public List<Proveedor> getProveedores(){
+    public  List<Proveedor> getProveedores(){
     	return entityManager().createQuery("from Proveedor", Proveedor.class).getResultList();
     }
     

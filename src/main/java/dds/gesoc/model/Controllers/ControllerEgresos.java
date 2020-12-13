@@ -28,7 +28,12 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	
 	public ModelAndView nuevo(Request req, Response res) {
 		//TODO: al crear un egreso hay que inicializar los repositorios de proveedores, presupuestos, items y etiquetas
-		return new ModelAndView(null,"/egresos/egreso.hbs");
+
+		Map<String, List<Proveedor>> modelo = new HashMap<>();
+		List<Proveedor> proveedores = RepoProveedores.getInstance().getProveedores();
+		modelo.put("proveedores",proveedores);
+
+		return new ModelAndView(modelo,"/egresos/egreso.hbs");
 	}
 	
 	public ModelAndView mostrar(Request req, Response res) {

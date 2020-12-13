@@ -1,6 +1,21 @@
 {{#partial "contenido"}}
 
 		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
+            
+            <h2>Proveedor</h2>
+            <div class="formulario">
+                <select>
+                        <option value="" disabled selected >Seleccione un proveedor</option>
+                    {{#each proveedores}}
+                        <option value="{{id}}"> {{nombreORazonSocial}} </option>
+                    {{/each}}
+                </select>
+                <h2>
+                    <a class="btn btn-info mr-1" href="/proveedor" role="button"  target="popup"
+                       onclick="window.open('/proveedor','popup','width=600,height=600'); return false;">+ Nuevo</a>
+                </h2>
+            </div>
+            
 			<h2>Documento Asociado</h2>
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/tipodocumento.png"></label>
@@ -13,7 +28,7 @@
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/mediopago.png"></label>
 				<select>
-					<option>Seleccione un medio de pago</option>
+					<option  value="" disabled selected>Seleccione un medio de pago</option>
 					<option>TARJETA_DE_CREDITO</option>
 					<option>TARJETA_DE_DEBITO</option>
 					<option>EFECTIVO</option>
@@ -40,7 +55,7 @@
 				<input style="width: 12vw" type="number" name="cantPresupuestosMinima" placeholder="Cantidad mínima de Presupuestos" {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
 				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<select>
-					<option>Seleccione un criterio de selección</option>
+					<option  value="" disabled selected>Seleccione un criterio de selección</option>
 					<option>Menor Valor</option>
 				</select>
 			</div>
