@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/egresos/egreso.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+            <state relative-caret-position="141">
+              <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
               <folding>
                 <element signature="e#1207#1226#0#HTML" expanded="true" />
                 <element signature="e#2202#2221#0#HTML" expanded="true" />
@@ -137,6 +137,7 @@
       <find>gesoc</find>
       <find>prove</find>
       <find>nuevo</find>
+      <find>seleccio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -644,12 +645,12 @@
       <window_info id="Favorites" order="6" sideWeight="0.502439" side_tool="true" weight="0.24281392" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36824876" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.36824876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.33551556" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1767594" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3289689" />
@@ -873,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/egresos/egreso.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+        <state relative-caret-position="141">
+          <caret line="58" column="48" lean-forward="true" selection-start-line="58" selection-start-column="48" selection-end-line="58" selection-end-column="48" />
           <folding>
             <element signature="e#1207#1226#0#HTML" expanded="true" />
             <element signature="e#2202#2221#0#HTML" expanded="true" />
