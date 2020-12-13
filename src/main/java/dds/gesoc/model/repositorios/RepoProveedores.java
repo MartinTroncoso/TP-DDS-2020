@@ -1,12 +1,11 @@
 package dds.gesoc.model.repositorios;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
+import db.EntityManagerHelper;
 import dds.gesoc.model.egresos.Proveedor;
-import dds.gesoc.model.organizaciones.Entidad;
 
 public class RepoProveedores implements WithGlobalEntityManager{
     private static RepoProveedores ourInstance;
@@ -31,4 +30,10 @@ public class RepoProveedores implements WithGlobalEntityManager{
     public Proveedor buscar(int id){
         return entityManager().find(Proveedor.class, id);
     }
+    
+    public void modificar(Proveedor proveedor) {
+	    EntityManagerHelper.getEntityManager().getTransaction().begin();
+	    EntityManagerHelper.getEntityManager().merge(proveedor);
+	    EntityManagerHelper.getEntityManager().getTransaction().commit();
+	}
 }

@@ -10,7 +10,6 @@ import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
-import dds.gesoc.model.egresos.ResultadoValidacion;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.repositorios.RepoProveedores;
@@ -41,31 +40,7 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 		return new ModelAndView(model,"/egresos/egreso.hbs");
 	}
 	
-	private void asignarAtributosA(Egreso egreso, Request request){
-        if(request.queryParams("nombre") != null){
-        	egreso.getProveedor().setNombreORazonSocial(request.queryParams("nombre"));
-        }
-        
-        if(request.queryParams("dni") != null){
-        	egreso.getProveedor().setDniOCuit(request.queryParams("dni"));
-        }
-        
-        if(request.queryParams("direccion") != null){
-        	egreso.getProveedor().setDireccion(request.queryParams("direccion"));
-        }
-        
-        if(request.queryParams("ciudad") != null){
-        	egreso.getProveedor().setCiudad(request.queryParams("ciudad"));
-        }
-        
-        if(request.queryParams("provincia") != null){
-        	egreso.getProveedor().setProvincia(request.queryParams("provincia"));
-        }
-        
-        if(request.queryParams("pais") != null){
-        	egreso.getProveedor().setPais(request.queryParams("pais"));
-        }
-        
+	private void asignarAtributosA(Egreso egreso, Request request){     
         if(request.queryParams("tipoDocumento") != null){
         	egreso.getDocComercial().setTipo(request.queryParams("tipoDocumento"));
         }
@@ -98,13 +73,11 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	
 	public Response crear(Request request, Response response){
 		Egreso egreso = new Egreso();
-		Proveedor proveedor = new Proveedor();
 		Documento documento = new Documento();
 		MedioPago medioPago = new MedioPago();
 		Moneda moneda = new Moneda();
 		egreso.setDocComercial(documento);
 		egreso.setMedioPago(medioPago);
-		egreso.setProveedor(proveedor);
 		egreso.setMoneda(moneda);
 		
 		this.asignarAtributosA(egreso, request);
@@ -124,18 +97,9 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
         return res;
 	}
 
-	public Response validar(Request request, Response response) {
+	public ModelAndView validar(Request request, Response response) {
 		RepoEgresos repo = RepoEgresos.getInstance();
-		ResultadoValidacion resultado = new ResultadoValidacion();
-		
-		List<Egreso> egresosValidados = repo.validarEgresos(resultado);
-		
-		withTransaction(() ->{
-			egresosValidados.forEach(e -> entityManager().persist(e.getResultadoValidacion()));
-		});
-		
-		egresosValidados.forEach(e -> repo.modificar(e));
-		response.redirect("/egresos");
-		return response;
+		repo.validarEgresos();
+		return new ModelAndView(null,"/egresos");
 	}
 }
