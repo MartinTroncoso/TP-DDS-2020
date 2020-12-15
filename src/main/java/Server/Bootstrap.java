@@ -1,6 +1,7 @@
 package Server;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.uqbarproject.jpa.java8.extras.EntityManagerOps;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
@@ -13,6 +14,7 @@ import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
 import dds.gesoc.model.egresos.TipoMedioPago;
 import dds.gesoc.model.geografia.Moneda;
+import dds.gesoc.model.mercadolibre.ServicioGeograficoMercadoLibre;
 import dds.gesoc.model.organizaciones.Categoria;
 import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
@@ -28,8 +30,32 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 	
 	public void init(){
 		withTransaction(() ->{
+
+			/*
+			 * Persistencia de monedas (se llama a la api)
+			 */
+			
+			ServicioGeograficoMercadoLibre mercadoLibreService = new ServicioGeograficoMercadoLibre();
+			List<Moneda> monedas = mercadoLibreService.obtenerTodasLasMonedas();
+			monedas.forEach(moneda -> persist(moneda));
+			
+			/*
+			 * Persistencia de Medios de Pago (en el controller de egresos paso el queryparam de String a TipoMedioPago)
+			 */
+			
+			/*TipoMedioPago tarjetaDeCredito = TipoMedioPago.TARJETA_DE_CREDITO;
+			TipoMedioPago tarjetaDeDebito = TipoMedioPago.TARJETA_DE_DEBITO;
+			TipoMedioPago efectivo = TipoMedioPago.EFECTIVO;
+			TipoMedioPago cajeroAutomatico = TipoMedioPago.CAJERO_AUTOMATICO;
+			TipoMedioPago dineroEnCuenta = TipoMedioPago.DINERO_EN_CUENTA;*/
+			
+			/*
+			 * Persistencia de un proveedor
+			 */
+			
 			Proveedor proveedor = new Proveedor("Martín","42498956","Argentina", "Cordoba", "Villa Carlos Paz", "Arrecifes 2140");
 			persist(proveedor);
+
 			
 			Documento documento = new Documento("Tarjeta chica",2703);
 			persist(documento);
@@ -37,6 +63,10 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			persist(medioPago);
 			Moneda moneda = new Moneda("peso","no para de engordar","$");
 			persist(moneda);
+			
+			/*
+			 * Persistencia de un egreso
+			 */
 			
 			Egreso egreso = new Egreso();
 			egreso.setProveedor(proveedor);
@@ -53,11 +83,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			persist(judicial);
 			persist(industrial);
 			
-//			TipoMedioPago tarjetaDeCredito = TipoMedioPago.TARJETA_DE_CREDITO;
-//			TipoMedioPago tarjetaDeDebito = TipoMedioPago.TARJETA_DE_DEBITO;
-//			TipoMedioPago efectivo = TipoMedioPago.EFECTIVO;
-//			TipoMedioPago cajeroAutomatico = TipoMedioPago.CAJERO_AUTOMATICO;
-//			TipoMedioPago dineroEnCuenta = TipoMedioPago.DINERO_EN_CUENTA;			
+		
 
 			EntidadBase entidadBase = new EntidadBase("juan sa", ong, 2000.00, null);
 			entidadBase.setDescripcion("Organización no Gubernamental");
