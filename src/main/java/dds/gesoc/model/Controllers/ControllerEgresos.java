@@ -12,6 +12,7 @@ import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.repositorios.RepoEgresos;
+import dds.gesoc.model.repositorios.RepoMonedas;
 import dds.gesoc.model.repositorios.RepoProveedores;
 import spark.ModelAndView;
 import spark.Request;
@@ -29,9 +30,13 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	public ModelAndView nuevo(Request req, Response res) {
 		//TODO: al crear un egreso hay que inicializar los repositorios de proveedores, presupuestos, items y etiquetas
 
-		Map<String, List<Proveedor>> modelo = new HashMap<>();
+		Map<String, Object> modelo = new HashMap<>();
 		List<Proveedor> proveedores = RepoProveedores.getInstance().getProveedores();
+		List<Moneda> monedas = RepoMonedas.getInstance().getMonedas();
+		
+		
 		modelo.put("proveedores",proveedores);
+		modelo.put("monedas", monedas);
 
 		return new ModelAndView(modelo,"/egresos/egreso.hbs");
 	}

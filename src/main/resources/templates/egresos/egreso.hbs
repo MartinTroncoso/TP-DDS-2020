@@ -5,14 +5,13 @@
             <h2>Proveedor</h2>
             <div class="formulario">
                 <select>
-                        <option value="" disabled selected >Seleccione un proveedor</option>
+                    <option value="" disabled selected >Seleccione un proveedor</option>
                     {{#each proveedores}}
                         <option value="{{id}}"> {{nombreORazonSocial}} </option>
                     {{/each}}
                 </select>
                 <h2>
-                    <a class="btn btn-info mr-1" href="/proveedor" role="button"  target="popup"
-                       onclick="window.open('/proveedor','popup','width=600,height=600'); return false;">+ Nuevo</a>
+                    <a class="btn btn-info mr-1" href="/proveedor" role="button"  target="popup" onclick="window.open('/proveedor','popup','width=600,height=600'); return false;">+ Nuevo</a>
                 </h2>
             </div>
             
@@ -24,31 +23,41 @@
 				<input type="number" name="numeroDocumento" placeholder="Numero de documento" {{#if egreso}} value="{{egreso.docComercial.numero}}" {{/if}} required>
 				<br>
 			</div>
+
 			<h2>Medio de Pago</h2>
-			<div class="formulario">
-				<label><img align="center" class="imagen" src="../images/icons/mediopago.png"></label>
-				<select>
-					<option  value="" disabled selected>Seleccione un medio de pago</option>
-					<option>TARJETA_DE_CREDITO</option>
-					<option>TARJETA_DE_DEBITO</option>
-					<option>EFECTIVO</option>
-					<option>CAJERO_AUTOMATICO</option>
-					<option>DINERO_EN_CUENTA</option>
-				</select>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input style="width: 10vw" type="text" name="numeroMedioPago" placeholder="Numero de medio de pago" {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
-				<br>
-			</div>
+            <div class="formulario">
+                <label><img align="center" class="imagen" src="../images/icons/mediopago.png"></label>
+                <select name="tipoMedioPago" id="tipoMedioPago">
+                    <option value="0" disabled selected>Seleccione un medio de pago</option>
+                    <option value="1">TARJETA_DE_CREDITO</option>
+                    <option value="2">TARJETA_DE_DEBITO</option>
+                    <option value="3">EFECTIVO</option>
+                    <option value="4">CAJERO_AUTOMATICO</option>
+                    <option value="5">DINERO_EN_CUENTA</option>
+                </select>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input id="numeroMedioPago" style="width: 10vw" type="text" name="numeroMedioPago" placeholder="Numero de medio de pago" {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
+                <br>
+            </div>
+
 			<h2>Moneda</h2>
-			<div class="formulario">
-				<label><img align="center" class="imagen" src="../images/icons/moneda.png"></label>
-				<input type="text" name="cadenaIdentificadora" placeholder="Cadena identificadora" {{#if egreso}} value="{{egreso.moneda.cadenaIdentificadora}}" {{/if}} required>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="descripcion" placeholder="Descripcion" {{#if egreso}} value="{{egreso.moneda.descripcion}}" {{/if}}>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="simbolo" placeholder="Simbolo" {{#if egreso}} value="{{egreso.moneda.simbolo}}" {{/if}}>
-				<br>
-			</div>
+            <div class="formulario">
+                <label for="moneda">Moneda</label>
+                <select class="input-select" name="moneda">
+                    <option value="0" selected disabled>Seleccionar</option>
+                    {{#each monedas}}
+                        <option value="{{id}}">{{descripcion}}</option>
+                    {{/each}}
+                </select>
+                <!--label><img align="center" class="imagen" src="../images/icons/moneda.png"></label>
+                <input type="text" name="cadenaIdentificadora" placeholder="Cadena identificadora" {{#if egreso}} value="{{egreso.moneda.cadenaIdentificadora}}" {{/if}} required>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="text" name="descripcion" placeholder="Descripcion" {{#if egreso}} value="{{egreso.moneda.descripcion}}" {{/if}}>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="text" name="simbolo" placeholder="Simbolo" {{#if egreso}} value="{{egreso.moneda.simbolo}}" {{/if}}>
+                <br-->
+            </div>
+            
 			<h2>Presupuestos</h2>
 			<div class="formulario">
 				<label><img align="center" class="imagen" src="../images/icons/presupuesto.png"></label>

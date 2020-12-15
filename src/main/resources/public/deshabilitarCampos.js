@@ -21,4 +21,12 @@ $( function() {
       $("#descripcion_input").prop("disabled", true);
     }
   });
+
+  $("#tipoMedioPago").change( function() {
+    if ($(this).val() === "1" || $(this).val() === "2") {
+      $("#numeroMedioPago").prop("disabled", false);
+    }else {
+      $("#numeroMedioPago").prop("disabled", true);
+    }
+  });
 });
