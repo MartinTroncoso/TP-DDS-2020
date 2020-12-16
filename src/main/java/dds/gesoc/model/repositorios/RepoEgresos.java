@@ -42,7 +42,10 @@ public class RepoEgresos implements WithGlobalEntityManager{
     }
     
     public void validarEgresos() {
-    	this.egresosNoValidados().forEach(e -> e.validar());
+    	this.egresosNoValidados().forEach(egreso -> {
+    		egreso.validar();
+    		this.modificar(egreso);
+    	});
     }
     
     public List<Egreso> getEgresos(){

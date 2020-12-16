@@ -7,6 +7,7 @@ import org.uqbarproject.jpa.java8.extras.EntityManagerOps;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
+import db.EntityManagerHelper;
 import dds.gesoc.model.egresos.DireccionPostal;
 import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
@@ -18,6 +19,8 @@ import dds.gesoc.model.mercadolibre.ServicioGeograficoMercadoLibre;
 import dds.gesoc.model.organizaciones.Categoria;
 import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
+import dds.gesoc.model.repositorios.RepoEgresos;
+import dds.gesoc.model.repositorios.RepoEntidades;
 import dds.gesoc.model.repositorios.RepoMonedas;
 import dds.gesoc.model.usuarios.TipoUsuario;
 import dds.gesoc.model.usuarios.Usuario;
@@ -100,6 +103,12 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			
 			Usuario usuario = new Usuario("Nico","holaquetal",TipoUsuario.ADMINISTRADOR,entidadBase);
 			persist(usuario);
+			
+			Entidad entidad = RepoEntidades.getInstance().buscar(1);
+			Egreso egresoo = RepoEgresos.getInstance().buscar(1);
+			Usuario usuarioSuscriptor = new Usuario("Damián", "holamuybuenas", TipoUsuario.ADMINISTRADOR, entidad);
+			egreso.agregarUsuarioRevisor(usuarioSuscriptor);
+			EntityManagerHelper.getEntityManager().merge(egresoo);
 		});
 	}
 }
