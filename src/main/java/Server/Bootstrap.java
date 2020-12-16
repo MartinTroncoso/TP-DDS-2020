@@ -18,6 +18,7 @@ import dds.gesoc.model.mercadolibre.ServicioGeograficoMercadoLibre;
 import dds.gesoc.model.organizaciones.Categoria;
 import dds.gesoc.model.organizaciones.Entidad;
 import dds.gesoc.model.organizaciones.EntidadBase;
+import dds.gesoc.model.repositorios.RepoMonedas;
 import dds.gesoc.model.usuarios.TipoUsuario;
 import dds.gesoc.model.usuarios.Usuario;
 
@@ -62,9 +63,10 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			persist(documento);
 			/*MedioPago medioPago = new MedioPago(TipoMedioPago.TARJETA_DE_CREDITO);
 			persist(medioPago);*/
-			Moneda moneda = new Moneda("peso","no para de engordar","$");
-			persist(moneda);
+			/*Moneda moneda = new Moneda("peso","no para de engordar","$");
+			persist(moneda);*/
 			
+			Moneda moneda = RepoMonedas.getInstance().buscar(1);
 			Egreso egreso = new Egreso();
 			egreso.setProveedor(proveedor);
 			egreso.setDocComercial(documento);

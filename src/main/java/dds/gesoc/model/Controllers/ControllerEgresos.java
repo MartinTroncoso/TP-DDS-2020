@@ -10,6 +10,7 @@ import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.MedioPago;
 import dds.gesoc.model.egresos.Proveedor;
+import dds.gesoc.model.egresos.TipoMedioPago;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.repositorios.RepoMonedas;
@@ -51,6 +52,11 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	}
 	
 	private void asignarAtributosA(Egreso egreso, Request request){     
+		if(request.queryParams("proveedor") != null){
+			Proveedor proveedor = RepoProveedores.getInstance().buscar(new Integer(request.queryParams("proveedor")));
+        	egreso.setProveedor(proveedor);
+        }
+		
         if(request.queryParams("tipoDocumento") != null){
         	egreso.getDocComercial().setTipo(request.queryParams("tipoDocumento"));
         }
@@ -60,24 +66,28 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
             egreso.getDocComercial().setNumero(numeroDocumento);
         }
         
+        if(request.queryParams("tipoMedioPago") != null){
+        	TipoMedioPago tipo = TipoMedioPago.valueOf(request.queryParams("tipoMedioPago"));
+            egreso.getMedioPago().setTipo(tipo);
+        }
+        
         if(request.queryParams("numeroMedioPago") != null){
             egreso.getMedioPago().setNumero(request.queryParams("numeroMedioPago"));
         }
         
-        if(request.queryParams("cadenaIdentificadora") != null){
-            egreso.getMoneda().setCadenaIdentificadora(request.queryParams("cadenaIdentificadora"));
-        }
-        
-        if(request.queryParams("descripcion") != null){
-            egreso.getMoneda().setDescripcion(request.queryParams("descripcion"));
-        }
-        
-        if(request.queryParams("simbolo") != null){
-            egreso.getMoneda().setSimbolo(request.queryParams("simbolo"));
+        if(request.queryParams("moneda") != null){
+        	Moneda moneda = RepoMonedas.getInstance().buscar(new Integer(request.queryParams("moneda")));
+        	egreso.setMoneda(moneda);
         }
         
         if(request.queryParams("cantPresupuestosMinima") != null){
             egreso.setCantPresupuestosMinima(new Integer(request.queryParams("cantPresupuestosMinima")));
+        }
+        
+        if(request.queryParams("etiquetas") != null) {
+        	String etiquetas = request.queryParams("etiquetas");
+        	List<String> listaDeEtiquetas = Arrays.asList(etiquetas.split(","));
+        	listaDeEtiquetas.forEach(etiqueta -> egreso.agregarEtiqueta(etiqueta));
         }
     }
 	

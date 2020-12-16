@@ -1,11 +1,11 @@
 {{#partial "contenido"}}
 
-		<form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
+        <form {{#if egreso}} action="/egreso/{{egreso.id}}" method="post" {{else}} action="/egreso" method="post" {{/if}} style="">
             
             <h2>Proveedor</h2>
             <div class="formulario">
-                <select>
-                    <option name="idProveedor" value="" disabled selected >Seleccione un proveedor</option>
+                <select class="input-select" name="proveedor">
+                    <option value="" disabled selected >Seleccione un proveedor</option>
                     {{#each proveedores}}
                         <option value="{{id}}"> {{nombreORazonSocial}} </option>
                     {{/each}}
@@ -15,32 +15,32 @@
                 </h2>
             </div>
             
-			<h2>Documento Asociado</h2>
-			<div class="formulario">
-				<label><img align="center" class="imagen" src="../images/icons/tipodocumento.png"></label>
-				<input type="text" name="tipoDocumento" placeholder="Tipo de documento" {{#if egreso}} value="{{egreso.docComercial.tipo}}" {{/if}} required>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="number" name="numeroDocumento" placeholder="Numero de documento" {{#if egreso}} value="{{egreso.docComercial.numero}}" {{/if}} required>
-				<br>
-			</div>
+            <h2>Documento Asociado</h2>
+            <div class="formulario">
+                <label><img align="center" class="imagen" src="../images/icons/tipodocumento.png"></label>
+                <input type="text" name="tipoDocumento" placeholder="Tipo de documento" {{#if egreso}} value="{{egreso.docComercial.tipo}}" {{/if}} required>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <input type="number" name="numeroDocumento" placeholder="Numero de documento" {{#if egreso}} value="{{egreso.docComercial.numero}}" {{/if}} required>
+                <br>
+            </div>
 
-			<h2>Medio de Pago</h2>
+            <h2>Medio de Pago</h2>
             <div class="formulario">
                 <label><img align="center" class="imagen" src="../images/icons/mediopago.png"></label>
                 <select name="tipoMedioPago" id="tipoMedioPago">
                     <option value="0" disabled selected>Seleccione un medio de pago</option>
-                    <option value="1">TARJETA_DE_CREDITO</option>
-                    <option value="2">TARJETA_DE_DEBITO</option>
-                    <option value="3">EFECTIVO</option>
-                    <option value="4">CAJERO_AUTOMATICO</option>
-                    <option value="5">DINERO_EN_CUENTA</option>
+                    <option value="TARJETA_DE_CREDITO">TARJETA_DE_CREDITO</option>
+                    <option value="TARJETA_DE_DEBITO">TARJETA_DE_DEBITO</option>
+                    <option value="EFECTIVO">EFECTIVO</option>
+                    <option value="CAJERO_AUTOMATICO">CAJERO_AUTOMATICO</option>
+                    <option value="DINERO_EN_CUENTA">DINERO_EN_CUENTA</option>
                 </select>
                 <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 <input id="numeroMedioPago" style="width: 10vw" type="text" name="numeroMedioPago" placeholder="Numero de medio de pago" {{#if egreso}} value="{{egreso.medioPago.numero}}" {{/if}} required>
                 <br>
             </div>
 
-			<h2>Moneda</h2>
+            <h2>Moneda</h2>
             <div class="formulario">
                 <label for="moneda">Moneda</label>
                 <select class="input-select" name="moneda">
@@ -49,30 +49,31 @@
                         <option value="{{id}}">{{descripcion}}</option>
                     {{/each}}
                 </select>
-                <!--label><img align="center" class="imagen" src="../images/icons/moneda.png"></label>
-                <input type="text" name="cadenaIdentificadora" placeholder="Cadena identificadora" {{#if egreso}} value="{{egreso.moneda.cadenaIdentificadora}}" {{/if}} required>
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" name="descripcion" placeholder="Descripcion" {{#if egreso}} value="{{egreso.moneda.descripcion}}" {{/if}}>
-                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <input type="text" name="simbolo" placeholder="Simbolo" {{#if egreso}} value="{{egreso.moneda.simbolo}}" {{/if}}>
-                <br-->
             </div>
             
-			<h2>Presupuestos</h2>
-			<div class="formulario">
-				<label><img align="center" class="imagen" src="../images/icons/presupuesto.png"></label>
-				<input style="width: 12vw" type="number" min="0"  name="cantPresupuestosMinima" placeholder="Cantidad mínima de Presupuestos" {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
-				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<select>
-					<option  value="" disabled selected>Seleccione un criterio de selección</option>
-					<option>Menor Valor</option>
-				</select>
-			</div>
-			<h2>
-				<input class="btn btn-primary" type="submit" {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
-				<a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
-			</h2>
-		</form>
+            <h2>Presupuestos</h2>
+            <div class="formulario">
+                <label><img align="center" class="imagen" src="../images/icons/presupuesto.png"></label>
+                <input style="width: 12vw" type="number" min="0"  name="cantPresupuestosMinima" placeholder="Cantidad mínima de Presupuestos" {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <select>
+                    <option  value="" disabled selected>Seleccione un criterio de selección</option>
+                    <option>Menor Valor</option>
+                </select>
+            </div>
+
+            <h2>Etiquetas</h2>
+            <div class="formulario">
+                <label><img align="center" class="imagen" src="../images/icons/tipodocumento.png"></label>
+                <input type="text" name="etiquetas" placeholder="Etiquetas (separadas por coma, p.ej.: egreso,entidad)" {{#if egreso}} value="{{etiquetas}}" {{/if}} required>
+                <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </div>
+
+            <h2>
+                <input class="btn btn-primary" type="submit" {{#if egreso}} value="MODIFICAR EGRESO" {{else}} value="CREAR EGRESO" {{/if}}>
+                <a href="/egresos" class="btn btn-default" type="button">Cancelar</a>
+            </h2>
+        </form>
 
 <!--
 <div class="container">

@@ -23,7 +23,7 @@ $( function() {
   });
 
   $("#tipoMedioPago").change( function() {
-    if ($(this).val() === "1" || $(this).val() === "2") {
+    if ($(this).val() === "TARJETA_DE_CREDITO" || $(this).val() === "TARJETA_DE_DEBITO") {
       $("#numeroMedioPago").prop("disabled", false);
     }else {
       $("#numeroMedioPago").prop("disabled", true);

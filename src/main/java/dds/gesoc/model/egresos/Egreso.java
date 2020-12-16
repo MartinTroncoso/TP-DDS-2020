@@ -45,7 +45,7 @@ public class Egreso extends EntidadPersistente{
 	private MedioPago medioPago;
 	
 	@Column(columnDefinition = "DATE")
-	private LocalDate fechaOperacion;
+	private LocalDate fechaOperacion = LocalDate.now();
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "egreso_id")
@@ -88,7 +88,6 @@ public class Egreso extends EntidadPersistente{
 		this.proveedor = datosEgreso.getProveedor();
 		this.docComercial = datosEgreso.getDocComercial();
 		this.medioPago = datosEgreso.getMedioPago();
-		this.fechaOperacion = LocalDate.now();
 		//TODO: ver como validar si la moneda es alguna de las que nos proporciona la api
 		this.moneda = moneda;
 		this.cantPresupuestosMinima = cantPresupuestosMinima;
