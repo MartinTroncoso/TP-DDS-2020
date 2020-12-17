@@ -112,14 +112,18 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
 	public Response modificar(Request req, Response res) {
 		Egreso egreso = RepoEgresos.getInstance().buscar(new Integer(req.params("id")));
         asignarAtributosA(egreso, req);
-        RepoEgresos.getInstance().modificar(egreso);
+        withTransaction(() ->{
+        	RepoEgresos.getInstance().modificar(egreso);
+        });
         res.redirect("/egresos");
         return res;
 	}
 
-	public ModelAndView validar(Request request, Response response) {
-		RepoEgresos repo = RepoEgresos.getInstance();
-		repo.validarEgresos();
-		return new ModelAndView(null,"/egresos");
+	public Response validar(Request request, Response response) {
+		withTransaction(() ->{
+			RepoEgresos.getInstance().validarEgresos();
+		});
+		response.redirect("/egresos");
+		return response;
 	}
 }

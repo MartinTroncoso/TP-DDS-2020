@@ -49,8 +49,8 @@ public class PresupuestosTest {
 
         moneda = new Moneda("ARS", "plata", "$");
 
-        egreso = new Egreso(datosEgreso, moneda, 2, new CriterioSeleccionProveedorMenorValor());
-        egresoInvalido = new Egreso(datosEgreso, moneda, 5, new CriterioSeleccionProveedorMenorValor());
+        egreso = new Egreso(datosEgreso, moneda, 2, CriterioSeleccionProveedor.MENOR_VALOR);
+        egresoInvalido = new Egreso(datosEgreso, moneda, 5, CriterioSeleccionProveedor.MENOR_VALOR);
 
         presupuestoCasa9DeJulio = new Presupuesto(proveedorA, presupuestoDocumento, moneda, "Vende cerca", egreso);
         presupuestoJardinBarato = new Presupuesto(proveedorBarato, presupuestoDocumento, moneda, "Vende barato", egreso);

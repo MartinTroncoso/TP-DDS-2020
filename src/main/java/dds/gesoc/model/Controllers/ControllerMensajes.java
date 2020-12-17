@@ -22,11 +22,11 @@ public class ControllerMensajes implements WithGlobalEntityManager, Transactiona
 		
 		Map<String, Object> model = new HashMap<>();
 		
-		// String id = req.session().attribute("usuario-logueado");
 		int idMensaje = Integer.parseInt(req.params("id"));
 		
-		// TODO: Hardcodeado 1 por el momento
-		Usuario unUsuario = RepoUsuarios.getInstance().buscarUsuarioPorId(1);
+		int idUsuario = req.session().attribute("usuario-logueado");
+		Usuario unUsuario = RepoUsuarios.getInstance().buscarUsuarioPorId(idUsuario);
+		
 		List<ResultadoValidacion> resultados = unUsuario.getBandejaDeMensajes();
 		ResultadoValidacion resultadoElegido = resultados.stream().filter(r -> r.getId() == idMensaje).findFirst().orElseGet(null);
 		
@@ -38,9 +38,9 @@ public class ControllerMensajes implements WithGlobalEntityManager, Transactiona
 	public ModelAndView listar(Request req, Response res) {
 		Map<String, Object> model = new HashMap<>();
 		
-		// String id = req.session().attribute("usuario-logueado");
-		// TODO: Hardcodeado 1 por el momento
-		Usuario unUsuario = RepoUsuarios.getInstance().buscarUsuarioPorId(1);
+		int idUsuario = req.session().attribute("usuario-logueado");
+		System.out.println("Holaa" + idUsuario);
+		Usuario unUsuario = RepoUsuarios.getInstance().buscarUsuarioPorId(idUsuario);
 
 		List<ResultadoValidacion> resultados;
 		if(unUsuario != null) {

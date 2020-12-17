@@ -44,7 +44,7 @@ public class RepoEgresos implements WithGlobalEntityManager{
     public void validarEgresos() {
     	this.egresosNoValidados().forEach(egreso -> {
     		egreso.validar();
-    		this.modificar(egreso);
+    		modificar(egreso);
     	});
     }
     
@@ -57,9 +57,7 @@ public class RepoEgresos implements WithGlobalEntityManager{
     }
 
     public void modificar(Egreso egreso) {
-	    EntityManagerHelper.getEntityManager().getTransaction().begin();
-	    EntityManagerHelper.getEntityManager().merge(egreso);
-	    EntityManagerHelper.getEntityManager().getTransaction().commit();
+	    entityManager().merge(egreso);
 	}
 
     public List<Item> getItemsDeEgreso(Egreso egreso){

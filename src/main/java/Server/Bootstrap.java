@@ -8,6 +8,7 @@ import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
 import db.EntityManagerHelper;
+import dds.gesoc.model.egresos.CriterioSeleccionProveedor;
 import dds.gesoc.model.egresos.DireccionPostal;
 import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
@@ -30,6 +31,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 	
 	public static void main(String[] args) {
 		new Bootstrap().init();
+		System.exit(0);
 	}
 	
 	public void init(){
@@ -76,6 +78,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			egreso.setMedioPago(tarjetaDeCredito);
 			egreso.setMoneda(moneda);
 			egreso.setCantPresupuestosMinima(3);
+			egreso.setCriterioProveedor(CriterioSeleccionProveedor.MENOR_VALOR);
 			persist(egreso);
 			
 			/*
@@ -108,7 +111,7 @@ public class Bootstrap implements WithGlobalEntityManager, EntityManagerOps, Tra
 			Egreso egresoo = RepoEgresos.getInstance().buscar(1);
 			Usuario usuarioSuscriptor = new Usuario("Damián", "holamuybuenas", TipoUsuario.ADMINISTRADOR, entidad);
 			egreso.agregarUsuarioRevisor(usuarioSuscriptor);
-			EntityManagerHelper.getEntityManager().merge(egresoo);
+			merge(egresoo);
 		});
 	}
 }

@@ -10,6 +10,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -61,17 +63,17 @@ public class Egreso extends EntidadPersistente{
 	@Column
 	private int cantPresupuestosMinima;
 	
-	@Transient //TODO: ver si es mapeable
+	@Enumerated(value = EnumType.STRING)
 	private CriterioSeleccionProveedor criterioProveedor;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Usuario> usuariosRevisores;
+	private List<Usuario> usuariosRevisores = new ArrayList<>();
 	
 	@Transient
 	private RepoEgresos repoEgresos;
 	
 	@Transient //TODO: ver si hay relacion entre ResultadoValidacion y Egreso
-	private ResultadoValidacion resultadoValidacion;
+	private ResultadoValidacion resultadoValidacion = new ResultadoValidacion();
 	
 	@ElementCollection
 	@Column(name="nombre_etiqueta")
@@ -219,7 +221,7 @@ public class Egreso extends EntidadPersistente{
 	}
 
 	public boolean eligioProveedorSegunCriterio() {
-        return  this.proveedorCandidatoSegunCriterio().equals(this.getProveedor());
+        return false; //this.proveedorCandidatoSegunCriterio().equals(this.getProveedor());
 	}
 
 	public boolean tieneCantidadMinimaDePresupuestos() {
@@ -247,6 +249,7 @@ public class Egreso extends EntidadPersistente{
 
 		resultadoValidacion.setAsunto("Validacion Egreso: " + getId());
 		boolean estadoValidacion = this.egresoValido();
+		System.out.println("holisSSSSSSSSSSSSSSSS");
         agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
         agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");
         agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"Proveedor fue elegido según el criterio de " + "selección de presupuestos" );
