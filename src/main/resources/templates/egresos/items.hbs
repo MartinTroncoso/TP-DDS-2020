@@ -7,16 +7,15 @@
 			<th>ITEM</th>
 			<th>DESCRIPCION</th>
 			<th>MONTO</th>
+			<th>MONEDA</th>
 			<!--<th>OPCIONES</th>-->
-
-
-
 		</tr>
 		{{#each egreso.items}}
 		<tr>
 			<td>Item {{id}}</td>
 			<td>{{descripcion}}</td>
 			<td>{{valorItem.monto}}</td>
+			<td>{{valorItem.moneda.descripcion}}</td>
 			<!--<td>
 				<a style="text-align:center" href="/egreso/{{egreso.id}}/item/{{id}}">Editar</a>
 			</td>-->

@@ -8,6 +8,7 @@
 			<th>DOCUMENTO</th>
 			<th>DETALLE</th>
 			<th>PROVEEDOR</th>
+			<th>MONTO TOTAL</th>
 			<th>EGRESO ASOCIADO</th>
 			<th>MONEDA</th>
 			<!--<th>OPCIONES</th>-->
@@ -18,8 +19,9 @@
 			<td>{{docComercial.tipo}}</td>
 			<td>{{detalle}}</td>
 			<td>{{proveedor.nombreORazonSocial}}</td>
+			<td>{{montoTotal}}</td>
 			<td>Egreso {{egresoAsociado.id}}</td>
-			<td>{{moneda.cadenaIdentificadora}}</td>
+			<td>{{moneda.descripcion}}</td>
 			<!--<td>
 				<a style="text-align:center" href="/egreso/{{egreso.id}}/presupuesto/{{id}}">Editar</a>
 			</td>-->

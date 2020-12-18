@@ -9,30 +9,30 @@
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 				<input type="text" name="detalle" placeholder="Detalle del presupuesto" value="{{egreso.presupuesto.detalle}}" required>
 			</div>
-			<h2>Proveedor</h2>
-			<div style="text-align: center; background-color: skyblue; padding: 15px; border: 10px; align-items: center; border-style: double; color: black;">
-				<input type="text" name="nombre" placeholder="Nombre del proveedor" {{#if egreso}} value="{{egreso.presupuesto.proveedor.nombreORazonSocial}}" {{/if}} required>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="dni" placeholder="DNI" {{#if egreso}} value="{{egreso.proveedor.dniOCuit}}" {{/if}} required>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="direccion" placeholder="Direccion" {{#if egreso}} value="{{egreso.proveedor.direccion}}" {{/if}} required>
-				<br><br>
-				<input type="text" name="ciudad" placeholder="Ciudad" {{#if egreso}} value="{{egreso.proveedor.ciudad}}" {{/if}} required>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="provincia" placeholder="Provincia" {{#if egreso}} value="{{egreso.proveedor.provincia}}" {{/if}} required>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="pais" placeholder="Pais" {{#if egreso}} value="{{egreso.proveedor.pais}}" {{/if}} required>
-				<br>
-			</div>
-			<h2>Moneda</h2>
-			<div style="text-align: center; background-color: skyblue; padding: 15px; border: 10px; align-items: center; border-style: double; color: black;">
-				<input type="text" name="cadenaIdentificadora" placeholder="Cadena identificadora" value="{{presupuesto.moneda.cadenaIdentificadora}}" required>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="descripcionMoneda" placeholder="Descripcion" value="{{presupuesto.moneda.descripcion}}" required>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-				<input type="text" name="simbolo" placeholder="Simbolo" value="{{presupuesto.moneda.simbolo}}" required>
-				<br>
-			</div>			
+            <h2>Proveedor</h2>
+            <div class="formulario">
+                <select class="input-select" name="proveedor">
+                    <option value="" disabled selected >Seleccione un proveedor</option>
+                    {{#each proveedores}}
+                        <option value="{{id}}"> {{nombreORazonSocial}} </option>
+                    {{/each}}
+                </select>
+                <h2>
+                    <a class="btn btn-info mr-1" href="/proveedor" role="button"  target="popup" onclick="window.open('/proveedor','popup','width=600,height=600'); return false;">+ Nuevo</a>
+                </h2>
+            </div>
+            <h2>Moneda</h2>
+            <div class="formulario">
+                <label for="moneda">Moneda</label>
+                <select class="input-select" name="moneda">
+                    <option value="0" selected disabled>Seleccionar</option>
+                    {{#each monedas}}
+                        <option value="{{id}}">{{descripcion}}</option>
+                    {{/each}}
+                </select>
+                <br>
+                <input type="number" name="montoTotal" placeholder="Monto del presupuesto" value="{{egreso.presupuesto.montoTotal}}" required>
+            </div>			
 			<h2>
 				<input class="btn btn-primary" type="submit" {{#if egreso.presupuesto}} value="MODIFICAR PRESUPUESTO" {{else}} value="CREAR PRESUPUESTO" {{/if}}>
 				<a {{#if egreso}} href="/egreso/{{egreso.id}}/presupuestos" {{else}} href="/egresos" {{/if}} class="btn btn-default" type="button">Cancelar</a>

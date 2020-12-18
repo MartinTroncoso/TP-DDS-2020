@@ -3,14 +3,22 @@
 		<form {{#if egreso}}{{#if egreso.item}} action="/egreso/{{egreso.id}}/item/{{egreso.item.id}}" {{else}} action="/egreso/{{egreso.id}}/item" {{/if}}{{/if}} method="post" style="">
 			<h2>Item</h2>
 			<div class="formulario">
-				<input type="text" name="descripcion" placeholder="Descripción" {{#if egreso.item}} value="{{egreso.item.descripcion}}" {{/if}} required>
+			   <input type="text" name="descripcion" placeholder="Descripción" {{#if egreso.item}} value="{{egreso.item.descripcion}}" {{/if}} required>
 				<br><br>
 				<input type="text" name="monto" placeholder="Monto" {{#if egreso.item}} value="{{egreso.item.valorItem.monto}}" {{/if}} required>
+               
+                <label for="moneda">Moneda</label>
+                <select class="input-select" name="moneda">
+                    <option value="0" selected disabled>Seleccionar</option>
+                    {{#each monedas}}
+                        <option value="{{id}}">{{descripcion}}</option>
+                    {{/each}}
+                </select>
 			</div>
 			
 			<h2>
 				<input class="btn btn-primary" type="submit" {{#if egreso.item}} value="MODIFICAR ITEM" {{else}} value="CREAR ITEM" {{/if}}>
-				<a {{#if egreso}} href="/egreso/{{egreso.id}}/items" {{/if}} class="btn btn-default" type="button">Cancelar</a>
+				<a {{#if egreso}} href="/egreso/{{egreso.id}}/items" {{else}} href="/egresos" {{/if}} class="btn btn-default" type="button">Cancelar</a>
 			</h2>
 		</form>
 
