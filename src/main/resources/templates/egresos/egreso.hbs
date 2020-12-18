@@ -56,9 +56,9 @@
                 <label><img align="center" class="imagen" src="../images/icons/presupuesto.png"></label>
                 <input style="width: 12vw" type="number" min="0"  name="cantPresupuestosMinima" placeholder="Cantidad mínima de Presupuestos" {{#if egreso}} value="{{egreso.cantPresupuestosMinima}}" {{/if}} required>
                 <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                <select>
-                    <option  value="" disabled selected>Seleccione un criterio de selección</option>
-                    <option>Menor Valor</option>
+                <select name="criterioProveedor" id="criterioProveedor">
+                    <option value="" disabled selected>Seleccione un criterio de selección</option>
+                    <option value="MENOR_VALOR">MENOR_VALOR</option>
                 </select>
             </div>
 

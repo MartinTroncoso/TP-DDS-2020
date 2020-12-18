@@ -30,6 +30,10 @@ public class ValorMonetario {
 	public Moneda getMoneda() {
 		return moneda;
 	}
+	
+	public void setMoneda(Moneda moneda){
+		this.moneda = moneda;
+	}
 
 	public double getMontoConvertido(Moneda moneda) {
 

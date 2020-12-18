@@ -246,14 +246,13 @@ public class Egreso extends EntidadPersistente{
 * Validar notifica a los usuarios el resultado de una validación
 * */
 	public void validar() {
-
 		resultadoValidacion.setAsunto("Validacion Egreso: " + getId());
 		boolean estadoValidacion = this.egresoValido();
 		System.out.println("holisSSSSSSSSSSSSSSSS");
         agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
-        agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "Compra realizada segíún un presupuesto");
-        agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"Proveedor fue elegido según el criterio de " + "selección de presupuestos" );
-        agregarMensajeSegunEstado(this.tieneCantidadMinimaDePresupuestos(), "Compra realizada con cantidad minima de presupuestos");
+        agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "COMPRA REALIZADA SEGUN UN PRESUPUESTO");
+        agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"PROVEEDOR FUE ELEGIDO SEGUN EL CRITERIO DE SELECCION DE PRESUPUESTOS" );
+        agregarMensajeSegunEstado(this.tieneCantidadMinimaDePresupuestos(), "COMPRA REALIZADA CON CANTIDAD MINIMA DE PRESUPUESTOS");
 		notificarUsuariosRevisores();
 		this.setValido(estadoValidacion);
 	}

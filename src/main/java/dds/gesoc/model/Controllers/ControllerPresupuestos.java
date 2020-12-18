@@ -15,7 +15,9 @@ import dds.gesoc.model.egresos.Proveedor;
 import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.repositorios.RepoItems;
+import dds.gesoc.model.repositorios.RepoMonedas;
 import dds.gesoc.model.repositorios.RepoPresupuestos;
+import dds.gesoc.model.repositorios.RepoProveedores;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -32,7 +34,14 @@ public class ControllerPresupuestos implements WithGlobalEntityManager, Transact
 	}
 	
 	public ModelAndView nuevoPresupuesto(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/presupuesto.hbs");
+		Map<String, Object> modelo = new HashMap<>();
+		List<Proveedor> proveedores = RepoProveedores.getInstance().getProveedores();
+		List<Moneda> monedas = RepoMonedas.getInstance().getMonedas();
+		
+		modelo.put("proveedores",proveedores);
+		modelo.put("monedas", monedas);
+
+		return new ModelAndView(modelo,"/egresos/presupuesto.hbs");
 	}
 	
 	public Response crearPresupuesto(Request request, Response response){
@@ -70,40 +79,18 @@ public class ControllerPresupuestos implements WithGlobalEntityManager, Transact
             presupuesto.setDetalle((request.queryParams("detalle")));
         }
         
-        if(request.queryParams("nombre") != null){
-        	presupuesto.getProveedor().setNombreORazonSocial(request.queryParams("nombre"));
+        if(request.queryParams("montoTotal") != null){
+            presupuesto.setMontoTotal(new Integer(request.queryParams("montoTotal")));
         }
         
-        if(request.queryParams("dni") != null){
-        	presupuesto.getProveedor().setDniOCuit(request.queryParams("dni"));
+		if(request.queryParams("proveedor") != null){
+			Proveedor proveedor = RepoProveedores.getInstance().buscar(new Integer(request.queryParams("proveedor")));
+        	presupuesto.setProveedor(proveedor);
         }
         
-        if(request.queryParams("direccion") != null){
-        	presupuesto.getProveedor().setDireccion(request.queryParams("direccion"));
-        }
-        
-        if(request.queryParams("ciudad") != null){
-        	presupuesto.getProveedor().setCiudad(request.queryParams("ciudad"));
-        }
-        
-        if(request.queryParams("provincia") != null){
-        	presupuesto.getProveedor().setProvincia(request.queryParams("provincia"));
-        }
-        
-        if(request.queryParams("pais") != null){
-        	presupuesto.getProveedor().setPais(request.queryParams("pais"));
-        }
-        
-        if(request.queryParams("cadenaIdentificadora") != null){
-        	presupuesto.getMoneda().setCadenaIdentificadora(request.queryParams("cadenaIdentificadora"));
-        }
-        
-        if(request.queryParams("descripcionMoneda") != null){
-        	presupuesto.getMoneda().setDescripcion(request.queryParams("descripcionMoneda"));
-        }
-        
-        if(request.queryParams("simbolo") != null){
-        	presupuesto.getMoneda().setSimbolo(request.queryParams("simbolo"));
+        if(request.queryParams("moneda") != null){
+        	Moneda moneda = RepoMonedas.getInstance().buscar(new Integer(request.queryParams("moneda")));
+        	presupuesto.setMoneda(moneda);
         }       
 	}
 	

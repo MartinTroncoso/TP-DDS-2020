@@ -12,7 +12,7 @@ public enum CriterioSeleccionProveedor {
 	MENOR_VALOR {
 		@Override
 		public Proveedor seleccionarProveedor(List<Presupuesto> listaDePresupuestos) {
-			return listaDePresupuestos.stream().min(Comparator.comparing(Presupuesto::valorTotalNumerico)).get().getProveedor();
+			return listaDePresupuestos.stream().min(Comparator.comparing(Presupuesto::getMontoTotal)).get().getProveedor();
 		}
 	};
 	public abstract Proveedor seleccionarProveedor(List<Presupuesto> listaDePresupuestos);

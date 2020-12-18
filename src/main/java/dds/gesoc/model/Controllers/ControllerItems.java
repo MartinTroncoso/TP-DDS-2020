@@ -9,9 +9,13 @@ import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
 import dds.gesoc.model.egresos.Egreso;
 import dds.gesoc.model.egresos.Item;
+import dds.gesoc.model.egresos.Proveedor;
+import dds.gesoc.model.geografia.Moneda;
 import dds.gesoc.model.geografia.ValorMonetario;
 import dds.gesoc.model.repositorios.RepoEgresos;
 import dds.gesoc.model.repositorios.RepoItems;
+import dds.gesoc.model.repositorios.RepoMonedas;
+import dds.gesoc.model.repositorios.RepoProveedores;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -28,13 +32,18 @@ public class ControllerItems implements WithGlobalEntityManager, TransactionalOp
 	}
 	
 	public ModelAndView nuevoItem(Request req, Response res) {
-		return new ModelAndView(null,"/egresos/item.hbs");
+		Map<String, List<Moneda>> modelo = new HashMap<>();
+		List<Moneda> monedas = RepoMonedas.getInstance().getMonedas();
+		modelo.put("monedas", monedas);
+		return new ModelAndView(modelo,"/egresos/item.hbs");
 	}
 	
 	public Response crearItem(Request request, Response response){
 		Egreso egreso = RepoEgresos.getInstance().buscar(Integer.parseInt(request.params("id")));
 		Item item = new Item();
 		ValorMonetario valorItem = new ValorMonetario();
+		Moneda moneda = new Moneda();
+		valorItem.setMoneda(moneda);
         item.setValorItem(valorItem);
 		asignarAtributosA(request, item);
 		egreso.agregarItem(item);
@@ -55,6 +64,11 @@ public class ControllerItems implements WithGlobalEntityManager, TransactionalOp
         if(request.queryParams("monto") != null){
             item.getValorItem().setMonto(new Double(request.queryParams("monto")));
         }
+        
+        if(request.queryParams("moneda") != null){
+        	Moneda moneda = RepoMonedas.getInstance().buscar(new Integer(request.queryParams("moneda")));
+        	item.getValorItem().setMoneda(moneda);
+        }
 	}
 	
 	public ModelAndView mostrarItem(Request req, Response res) {
@@ -63,7 +77,6 @@ public class ControllerItems implements WithGlobalEntityManager, TransactionalOp
 		
 		Item item = RepoItems.getInstance().buscar(Integer.parseInt(itemId));
 		Egreso egreso = RepoEgresos.getInstance().buscarEgresoDeItem(item);
-		
 		
 		model.put("egreso", egreso);
 		model.put("item", item);

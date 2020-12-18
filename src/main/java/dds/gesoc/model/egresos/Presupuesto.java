@@ -30,10 +30,9 @@ public class Presupuesto extends EntidadPersistente{
 	
 	@Column
 	private String detalle;
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "presupuesto_id")
-	private List<Item> items;
+
+	@Column
+	private double montoTotal;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "proveedor_id", referencedColumnName = "id")
@@ -50,12 +49,12 @@ public class Presupuesto extends EntidadPersistente{
 	public Presupuesto() {
 	}
 	
-	public Presupuesto(Proveedor unProveedor, Documento docComercial, Moneda moneda, String detalle, Egreso unEgreso) {
+	public Presupuesto(Proveedor unProveedor, Documento docComercial, Moneda moneda, String detalle, Egreso unEgreso, double montoTotal) {
 		this.docComercial = docComercial;
 		this.setDetalle(detalle);
-		this.items = new ArrayList<>();
 		this.proveedor = unProveedor;
 		this.moneda = moneda;
+		this.montoTotal = montoTotal;
 		this.establecerEgresoAsociado(unEgreso);
 	}
 
@@ -72,22 +71,6 @@ public class Presupuesto extends EntidadPersistente{
 
 	public void setDocComercial(Documento docComercial) {
 		this.docComercial = docComercial;
-	}
-
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void agregarItem(Item item) {
-		this.getItems().add(item);
-	}
-	
-	public ValorMonetario valorTotal() {
-		return new ValorMonetario(this.getItems().stream().mapToDouble(Item::getMonto).sum(), moneda);
-	}
-
-	public double valorTotalNumerico() {
-		return valorTotal().getMonto();
 	}
 
 	public Proveedor getProveedor() {
@@ -112,8 +95,15 @@ public class Presupuesto extends EntidadPersistente{
 
 	public boolean compraRealizadaSegunEstePresupuesto(Egreso unEgreso) {
 		return this.getProveedor().equals(unEgreso.getProveedor())
-			   && this.getItems().equals(unEgreso.getItems())
-			   && this.valorTotal().getMonto() == unEgreso.valorTotal().getMonto();
+			   && this.getMontoTotal() == unEgreso.valorTotal().getMonto();
+	}
+	
+	public double getMontoTotal() {
+		return montoTotal;
+	}
+	
+	public void setMontoTotal(double montoTotal) {
+		this.montoTotal = montoTotal;
 	}
 
 	public Moneda getMoneda() {

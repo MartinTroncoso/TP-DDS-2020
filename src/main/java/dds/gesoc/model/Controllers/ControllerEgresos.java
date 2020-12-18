@@ -5,6 +5,7 @@ import java.util.*;
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
 
+import dds.gesoc.model.egresos.CriterioSeleccionProveedor;
 import dds.gesoc.model.egresos.DatosEgreso;
 import dds.gesoc.model.egresos.Documento;
 import dds.gesoc.model.egresos.Egreso;
@@ -78,6 +79,11 @@ public class ControllerEgresos implements WithGlobalEntityManager, Transactional
         if(request.queryParams("moneda") != null){
         	Moneda moneda = RepoMonedas.getInstance().buscar(new Integer(request.queryParams("moneda")));
         	egreso.setMoneda(moneda);
+        }
+        
+        if(request.queryParams("criterioProveedor") != null){
+        	CriterioSeleccionProveedor criterio = CriterioSeleccionProveedor.valueOf(request.queryParams("criterioProveedor"));
+            egreso.setCriterioProveedor(criterio);
         }
         
         if(request.queryParams("cantPresupuestosMinima") != null){
