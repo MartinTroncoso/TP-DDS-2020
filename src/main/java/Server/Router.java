@@ -44,6 +44,7 @@ public class Router {
 		ControllerItems controllerItems = new ControllerItems();
 		ControllerPresupuestos controllerPresupuestos = new ControllerPresupuestos();
 		ControllerProveedores controllerProveedores = new ControllerProveedores();
+		ControllerSuscripciones controllerSuscripciones = new ControllerSuscripciones();
 
 		Spark.get("/", ControllerRaiz::bienvenida, engine);
 
@@ -80,6 +81,12 @@ public class Router {
 		Spark.get("/mensajes/:id", controllerMensajes::mostrar, engine);
 		Spark.get("/usuario", ControllerUsuarios::mostrar, engine);
 		Spark.get("/organizaciones", ControllerOrganizaciones::mostrar, engine);
+		
+		/* Nuevo */
+		Spark.get("/suscripciones", controllerSuscripciones::listar, engine);
+		Spark.post("/egresos/:id/suscribir", controllerSuscripciones::suscribirse);
+		Spark.post("/egresos/:id/desuscribir", controllerSuscripciones::desuscribirse);
+	
 	}
 	
 	static int getHerokuAssignedPort() {

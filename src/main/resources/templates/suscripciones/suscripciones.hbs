@@ -1,0 +1,72 @@
+{{#partial "contenido"}}
+
+
+<h2 style="text-decoration:underline;">Egresos suscriptos</h2>
+
+<div class="table-responsive container">
+
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">EGRESO</th>
+            <th scope="col">PROVEEDOR</th>
+            <th scope="col">FECHA DE OPERACION</th>
+            <th scope="col">OPCIONES</th>
+        </tr>
+        </thead>
+    <tbody>
+
+        {{#each egresosSuscriptos}}
+        <tr>
+            <td>Egreso {{id}}</td>
+            <td>{{proveedor.nombreORazonSocial}}</td>
+            <td>{{fechaOperacion}}</td>
+            <td style="padding: 5px;">
+    			<form action="/egresos/{{id}}/desuscribir" method="post">
+    				<input class="btn btn-danger" type="submit" value="Desuscribirse" >
+				</form>
+            </td>
+        </tr>
+        </tbody>
+        {{/each}}
+    </table>
+</div>
+<br>
+
+<h2 style="text-decoration:underline;">Egresos no suscriptos</h2>
+
+<div class="table-responsive container">
+
+    <table class="table table-hover table-responsive">
+        <thead>
+        <tr>
+            <th scope="col">EGRESO</th>
+            <th scope="col">PROVEEDOR</th>
+            <th scope="col">FECHA DE OPERACION</th>
+            <th scope="col">OPCIONES</th>
+        </tr>
+        </thead>
+    <tbody>
+
+        {{#each egresosNoSuscriptos}}
+        <tr>
+            <td>Egreso {{id}}</td>
+            <td>{{proveedor.nombreORazonSocial}}</td>
+            <td>{{fechaOperacion}}</td>
+            <td style="padding: 5px;">
+    			<form action="/egresos/{{id}}/suscribir" method="post">
+    				<input class="btn btn-success" type="submit" value="Suscribirse" >
+				</form>
+            </td>
+        </tr>
+        </tbody>
+        {{/each}}
+    </table>
+</div>
+<br>
+
+
+
+{{/partial}}
+
+{{>layout.hbs}}

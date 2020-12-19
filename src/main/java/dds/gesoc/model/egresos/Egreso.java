@@ -197,7 +197,7 @@ public class Egreso extends EntidadPersistente{
 			throw new UsuarioRevisorException("El usuario no estaba suscrito al egreso en un principio");
 		}
 		
-		this.usuariosRevisores.add(usuario);
+		this.usuariosRevisores.remove(usuario);
 	}
 
 	public Proveedor getProveedorSeleccionado() {
