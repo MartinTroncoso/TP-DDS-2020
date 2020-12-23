@@ -221,7 +221,9 @@ public class Egreso extends EntidadPersistente{
 	}
 
 	public boolean eligioProveedorSegunCriterio() {
-        return false; //this.proveedorCandidatoSegunCriterio().equals(this.getProveedor());
+		if(this.proveedorCandidatoSegunCriterio() == null || cantPresupuestosMinima == 0)
+			return true;
+        return this.proveedorCandidatoSegunCriterio().equals(this.getProveedor());
 	}
 
 	public boolean tieneCantidadMinimaDePresupuestos() {
@@ -248,7 +250,7 @@ public class Egreso extends EntidadPersistente{
 	public void validar() {
 		resultadoValidacion.setAsunto("Validacion Egreso: " + getId());
 		boolean estadoValidacion = this.egresoValido();
-		System.out.println("holisSSSSSSSSSSSSSSSS");
+
         agregarMensajeSegunEstado(estadoValidacion, "----\nEgreso valido");
         agregarMensajeSegunEstado(this.compraRealizadaSegunAlgunPresupuesto(), "COMPRA REALIZADA SEGUN UN PRESUPUESTO");
         agregarMensajeSegunEstado(this.eligioProveedorSegunCriterio(),"PROVEEDOR FUE ELEGIDO SEGUN EL CRITERIO DE SELECCION DE PRESUPUESTOS" );

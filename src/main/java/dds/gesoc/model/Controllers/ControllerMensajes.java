@@ -39,7 +39,6 @@ public class ControllerMensajes implements WithGlobalEntityManager, Transactiona
 		Map<String, Object> model = new HashMap<>();
 		
 		int idUsuario = req.session().attribute("usuario-logueado");
-		System.out.println("Holaa" + idUsuario);
 		Usuario unUsuario = RepoUsuarios.getInstance().buscarUsuarioPorId(idUsuario);
 
 		List<ResultadoValidacion> resultados;
