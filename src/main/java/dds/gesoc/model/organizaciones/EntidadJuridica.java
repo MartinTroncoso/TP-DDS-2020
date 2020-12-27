@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -22,7 +23,7 @@ public class EntidadJuridica extends Entidad{
     private String direccionPostal;
     private int codigoInscripcionIGJ;
     
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "ent_juridica_propietaria")
     private List<Entidad> entidades = new ArrayList<>();
 

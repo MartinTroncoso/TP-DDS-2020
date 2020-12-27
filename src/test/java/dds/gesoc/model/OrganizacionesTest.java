@@ -4,11 +4,14 @@ import dds.gesoc.exceptions.DniOCuitInvalidoException;
 import dds.gesoc.exceptions.EntidadBaseTieneEntidaJuridicaException;
 import dds.gesoc.exceptions.NoClasificaComoPymeException;
 import dds.gesoc.model.organizaciones.*;
+import dds.gesoc.model.repositorios.RepoEntidades;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 
-public class OrganizacionesTest {
+public class OrganizacionesTest implements WithGlobalEntityManager {
 
     private static final int VENTAS_ANUALES_EMPRESA_MEDIANA1 = 425169999;
     private static final int VENTAS_ANUALES_GRAN_EMPRESA = 999999999;
@@ -65,7 +68,10 @@ public class OrganizacionesTest {
 
     @Test (expected = EntidadBaseTieneEntidaJuridicaException.class)
     public void unaEntidadBaseNoPuedeEstarEnVariasEntidadesJuridicas() {
-        empresaDeModa.agregarEntidadBase(entidadBase);
+    	entityManager().getTransaction().begin();
+    	empresaDeModa.agregarEntidadBase(entidadBase);
+        RepoEntidades.getInstance().agregar(empresaDeModa);
+        entityManager().getTransaction().commit();
         empresaDeTrajes.agregarEntidadBase(entidadBase);
     }
 

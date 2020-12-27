@@ -40,7 +40,7 @@
 			<artifactId>hsqldb</artifactId>
 			<version>2.4.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
@@ -59,15 +59,15 @@
 			<artifactId>gson</artifactId>
 			<version>2.8.5</version>
 		</dependency>
-		
+
 		<!-- ********************* -->
-		
+
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.21</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.sparkjava</groupId>
 			<artifactId>spark-core</artifactId>
@@ -115,27 +115,27 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<executions>
 					<execution>
 						<phase>package</phase>
-						 <goals>
-							 <goal>single</goal>
-						 </goals>
-					 </execution>
-				 </executions>
-				 <configuration>
-					 <descriptorRefs>
-						 <!-- This tells Maven to include all dependencies -->
-						 <descriptorRef>jar-with-dependencies</descriptorRef>
-					 </descriptorRefs>
-					 <archive>
-						 <manifest>
-							 <mainClass>Server.Server</mainClass>
-						 </manifest>
-					 </archive>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<descriptorRefs>
+						<!-- This tells Maven to include all dependencies -->
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>Server.Server</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 			</plugin>
 
@@ -148,11 +148,26 @@
 					<appName>ddsgrupo8</appName>
 					<processTypes>
 						<!-- Tell Heroku how to launch your application -->
-						<!-- You might have to remove the ./ in front   -->
+						<!-- You might have to remove the ./ in front -->
 						<web>java -jar target/dds.gesoc-jar-with-dependencies.jar</web>
 					</processTypes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>1.10</version>
+				<configuration>
+					<programs>
+						<program>
+							<mainClass>dds.gesoc.Main.ValidadorEgresos</mainClass>
+							<id>app</id>
+						</program>
+					</programs>
+				</configuration>
+			</plugin>
+
 		</plugins>
 		<finalName>${artifactId}</finalName>
 	</build>

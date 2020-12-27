@@ -50,7 +50,7 @@ public class RepoEntidades implements WithGlobalEntityManager{
 	
 	public List<Entidad> entidadesBaseEnUnaEntidadJuridica(){
 		return entityManager()
-				.createQuery("from EntidadBase where entidad_juridica_propietaria is not null", Entidad.class)
+				.createQuery("from EntidadBase where ent_juridica_propietaria is not null", Entidad.class)
 				.getResultList();
 	}
 	

@@ -52,9 +52,9 @@ public class PresupuestosTest {
         egreso = new Egreso(datosEgreso, moneda, 2, CriterioSeleccionProveedor.MENOR_VALOR);
         egresoInvalido = new Egreso(datosEgreso, moneda, 5, CriterioSeleccionProveedor.MENOR_VALOR);
 
-        presupuestoCasa9DeJulio = new Presupuesto(proveedorA, presupuestoDocumento, moneda, "Vende cerca", egreso,100);
-        presupuestoJardinBarato = new Presupuesto(proveedorBarato, presupuestoDocumento, moneda, "Vende barato", egreso,150);
-        presupuestoGarbarino = new Presupuesto(proveedorC, presupuestoDocumento, moneda, "Vende caro", egreso,200);
+        presupuestoCasa9DeJulio = new Presupuesto(proveedorA, presupuestoDocumento, moneda, "Vende cerca", egreso,12500);
+        presupuestoJardinBarato = new Presupuesto(proveedorBarato, presupuestoDocumento, moneda, "Vende barato", egreso,1200);
+        presupuestoGarbarino = new Presupuesto(proveedorC, presupuestoDocumento, moneda, "Vende caro", egreso,35000);
 
 
         parrillaCara = new Item("parrilla", new ValorMonetario(35000, moneda));
